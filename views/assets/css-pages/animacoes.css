@@ -1,0 +1,25 @@
+.fade-in {
+  animation: fade 0.4s ease;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: none;
+  }
+}
+
+.hover-up {
+  transition: var(--transition);
+}
+
+.hover-up:hover {
+  transform: translateY(-5px);
+}

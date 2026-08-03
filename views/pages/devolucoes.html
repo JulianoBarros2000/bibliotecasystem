@@ -1,0 +1,1659 @@
+<div class="devolucoes-page">
+
+
+    <!-- =================================
+     HEADER
+================================= -->
+
+
+    <div class="page-header">
+
+
+        <div>
+
+
+            <h2>
+
+                <i class="fa-solid fa-rotate-left"></i>
+
+                Devoluções
+
+            </h2>
+
+
+            <p>
+
+                Gestão de devoluções, atrasos e multas
+
+            </p>
+
+
+        </div>
+
+
+
+
+
+
+
+        <button class="btn-movimento" data-bs-toggle="modal" data-bs-target="#modalDevolucao">
+
+
+            <i class="fa-solid fa-plus"></i>
+
+
+            Nova Devolução
+
+
+        </button>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <!-- =================================
+     CARDS
+================================= -->
+
+
+    <div class="row g-4 mb-4">
+
+
+
+
+
+        <!-- PENDENTES -->
+
+
+        <div class="col-xl-3 col-md-6">
+
+
+            <div class="loan-card">
+
+
+                <div class="loan-icon blue">
+
+
+                    <i class="fa-solid fa-clock"></i>
+
+
+                </div>
+
+
+
+                <div>
+
+
+                    <span>
+
+                        Pendentes
+
+                    </span>
+
+
+                    <h3>
+
+                        12
+
+                    </h3>
+
+
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+        <!-- DEVOLVIDOS HOJE -->
+
+
+        <div class="col-xl-3 col-md-6">
+
+
+            <div class="loan-card">
+
+
+                <div class="loan-icon green">
+
+
+                    <i class="fa-solid fa-check-circle"></i>
+
+
+                </div>
+
+
+
+                <div>
+
+
+                    <span>
+
+                        Devolvidos Hoje
+
+                    </span>
+
+
+                    <h3>
+
+                        8
+
+                    </h3>
+
+
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+        <!-- ATRASADOS -->
+
+
+        <div class="col-xl-3 col-md-6">
+
+
+            <div class="loan-card">
+
+
+                <div class="loan-icon orange">
+
+
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+
+
+                </div>
+
+
+
+                <div>
+
+
+                    <span>
+
+                        Atrasados
+
+                    </span>
+
+
+                    <h3>
+
+                        5
+
+                    </h3>
+
+
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+        <!-- MULTAS -->
+
+
+        <div class="col-xl-3 col-md-6">
+
+
+            <div class="loan-card">
+
+
+                <div class="loan-icon purple">
+
+
+                    <i class="fa-solid fa-money-bill-wave"></i>
+
+
+                </div>
+
+
+
+                <div>
+
+
+                    <span>
+
+                        Multas Pendentes
+
+                    </span>
+
+
+                    <h3>
+
+                        75.000 Kz
+
+                    </h3>
+
+
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+
+
+    </div>
+    <!-- =================================
+     TABELA DE DEVOLUÇÕES
+================================= -->
+
+
+    <div class="table-card">
+
+
+
+        <div class="table-header">
+
+
+
+
+
+            <!-- PESQUISA -->
+
+            <div class="search-area">
+
+
+                <i class="fa-solid fa-search"></i>
+
+
+                <input type="text" id="searchReturn" placeholder="Pesquisar cliente ou livro...">
+
+
+            </div>
+
+
+
+
+
+
+
+            <!-- FILTRO -->
+
+            <select id="statusFilter" class="form-select">
+
+
+                <option value="">
+
+                    Todos os estados
+
+                </option>
+
+
+
+                <option value="Pendente">
+
+                    Pendente
+
+                </option>
+
+
+
+                <option value="Devolvido">
+
+                    Devolvido
+
+                </option>
+
+
+
+                <option value="Atrasado">
+
+                    Atrasado
+
+                </option>
+
+
+            </select>
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+        <div class="table-responsive">
+
+
+
+            <table id="returnsTable" class="table align-middle">
+
+
+
+
+
+                <thead>
+
+
+                    <tr>
+
+
+
+                        <th>
+
+                            Cliente
+
+                        </th>
+
+
+
+                        <th>
+
+                            Livro
+
+                        </th>
+
+
+
+                        <th>
+
+                            Data Empréstimo
+
+                        </th>
+
+
+
+                        <th>
+
+                            Data Prevista
+
+                        </th>
+
+
+
+                        <th>
+
+                            Devolução
+
+                        </th>
+
+
+
+                        <th>
+
+                            Atraso
+
+                        </th>
+
+
+
+                        <th>
+
+                            Multa
+
+                        </th>
+
+
+
+                        <th>
+
+                            Estado
+
+                        </th>
+
+
+
+                        <th>
+
+                            Ações
+
+                        </th>
+
+
+
+                    </tr>
+
+
+
+                </thead>
+
+
+
+
+
+
+
+
+
+                <tbody>
+
+
+
+
+
+
+
+                    <!-- DEVOLUÇÃO PENDENTE -->
+
+
+                    <tr>
+
+
+
+                        <td>
+
+
+                            <div class="client-info">
+
+
+
+                                <img src="views/assets/img/avatar.png">
+
+
+
+                                <div>
+
+
+                                    <strong>
+
+                                        João Manuel
+
+                                    </strong>
+
+
+                                    <small>
+
+                                        Cliente
+
+                                    </small>
+
+
+                                </div>
+
+
+                            </div>
+
+
+                        </td>
+
+
+
+
+
+
+
+
+                        <td>
+
+                            Programação Java
+
+                        </td>
+
+
+
+
+
+
+
+
+                        <td>
+
+                            02/08/2026
+
+                        </td>
+
+
+
+
+
+
+
+
+                        <td>
+
+                            15/08/2026
+
+                        </td>
+
+
+
+
+
+
+
+
+                        <td>
+
+                            --
+
+                        </td>
+
+
+
+
+
+
+
+
+                        <td>
+
+                            0 dias
+
+                        </td>
+
+
+
+
+
+
+
+
+                        <td>
+
+                            0 Kz
+
+                        </td>
+
+
+
+
+
+
+
+
+                        <td>
+
+
+                            <span class="payment partial">
+
+                                Pendente
+
+                            </span>
+
+
+                        </td>
+
+
+
+
+
+
+
+
+                        <td>
+
+
+                            <div class="action-buttons">
+
+
+
+
+
+                                <button class="action return" title="Registar devolução">
+
+
+                                    <i class="fa-solid fa-rotate-left"></i>
+
+
+                                </button>
+
+
+
+
+
+
+
+                                <button class="action view" title="Ver">
+
+
+                                    <i class="fa-solid fa-eye"></i>
+
+
+                                </button>
+
+
+
+
+
+
+                            </div>
+
+
+                        </td>
+
+
+
+
+
+
+
+                    </tr>
+
+
+
+
+
+
+
+
+
+                    <!-- DEVOLVIDO -->
+
+
+                    <tr>
+
+
+
+                        <td>
+
+
+                            <div class="client-info">
+
+
+
+                                <img src="views/assets/img/avatar.png">
+
+
+
+                                <div>
+
+
+                                    <strong>
+
+                                        Maria José
+
+                                    </strong>
+
+
+                                    <small>
+
+                                        Cliente
+
+                                    </small>
+
+
+                                </div>
+
+
+                            </div>
+
+
+                        </td>
+
+
+
+
+
+
+
+
+                        <td>
+
+                            Banco de Dados
+
+                        </td>
+
+
+
+
+
+
+
+
+                        <td>
+
+                            01/08/2026
+
+                        </td>
+
+
+
+
+
+
+
+
+                        <td>
+
+                            10/08/2026
+
+                        </td>
+
+
+
+
+
+
+
+
+                        <td>
+
+                            09/08/2026
+
+                        </td>
+
+
+
+
+
+
+
+
+                        <td>
+
+                            0 dias
+
+                        </td>
+
+
+
+
+
+
+
+
+                        <td>
+
+                            0 Kz
+
+                        </td>
+
+
+
+
+
+
+
+
+                        <td>
+
+
+                            <span class="payment paid">
+
+                                Devolvido
+
+                            </span>
+
+
+                        </td>
+
+
+
+
+
+
+
+
+                        <td>
+
+
+                            <div class="action-buttons">
+
+
+
+                                <button class="action view">
+
+
+                                    <i class="fa-solid fa-eye"></i>
+
+
+                                </button>
+
+
+
+
+                            </div>
+
+
+                        </td>
+
+
+
+
+
+
+                    </tr>
+
+
+
+
+
+
+
+
+                    <!-- ATRASADO -->
+
+
+                    <tr>
+
+
+
+                        <td>
+
+
+                            <div class="client-info">
+
+
+                                <img src="views/assets/img/avatar.png">
+
+
+                                <div>
+
+
+                                    <strong>
+
+                                        Carlos António
+
+                                    </strong>
+
+
+                                    <small>
+
+                                        Cliente
+
+                                    </small>
+
+
+                                </div>
+
+
+                            </div>
+
+
+                        </td>
+
+
+
+
+
+
+
+                        <td>
+
+                            PHP Avançado
+
+                        </td>
+
+
+
+
+
+
+
+                        <td>
+
+                            20/07/2026
+
+                        </td>
+
+
+
+
+
+
+
+                        <td>
+
+                            30/07/2026
+
+                        </td>
+
+
+
+
+
+
+
+                        <td>
+
+                            --
+
+                        </td>
+
+
+
+
+
+
+
+                        <td>
+
+                            10 dias
+
+                        </td>
+
+
+
+
+
+
+
+                        <td>
+
+                            10.000 Kz
+
+                        </td>
+
+
+
+
+
+
+
+                        <td>
+
+
+                            <span class="payment pending">
+
+                                Atrasado
+
+                            </span>
+
+
+                        </td>
+
+
+
+
+
+
+
+                        <td>
+
+
+                            <div class="action-buttons">
+
+
+
+                                <button class="action return">
+
+
+                                    <i class="fa-solid fa-rotate-left"></i>
+
+
+                                </button>
+
+
+
+
+                            </div>
+
+
+                        </td>
+
+
+
+
+
+
+
+                    </tr>
+
+
+
+
+
+
+
+
+
+                </tbody>
+
+
+
+            </table>
+
+
+
+        </div>
+
+
+
+    </div>
+    <!-- =================================
+     MODAL NOVA DEVOLUÇÃO
+================================= -->
+
+
+    <div class="modal fade" id="modalDevolucao" tabindex="-1">
+
+
+
+
+
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+
+
+
+
+
+            <div class="modal-content modern-modal">
+
+
+
+
+
+                <!-- HEADER -->
+
+                <div class="modal-header premium-header">
+
+
+
+
+
+                    <div class="modal-title-box">
+
+
+
+
+
+                        <div class="modal-symbol">
+
+
+                            <i class="fa-solid fa-rotate-left"></i>
+
+
+                        </div>
+
+
+
+
+
+                        <div>
+
+
+                            <h4>
+
+                                Nova Devolução
+
+                            </h4>
+
+
+
+                            <p>
+
+                                Registar devolução de livro
+
+                            </p>
+
+
+
+                        </div>
+
+
+
+
+
+                    </div>
+
+
+
+
+
+
+
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal">
+
+
+                    </button>
+
+
+
+
+
+
+
+                </div>
+
+
+
+
+
+
+
+
+
+                <!-- BODY -->
+
+                <div class="modal-body">
+
+
+
+
+
+                    <form id="formDevolucao">
+
+
+
+
+
+
+
+                        <!-- CLIENTE -->
+
+                        <div class="form-section">
+
+
+
+                            <h6>
+
+
+                                <i class="fa-solid fa-user"></i>
+
+
+                                Dados do Empréstimo
+
+
+                            </h6>
+
+
+
+
+
+
+
+                            <div class="row g-4">
+
+
+
+
+
+                                <div class="col-md-6">
+
+
+
+                                    <label>
+
+                                        Cliente
+
+                                    </label>
+
+
+
+                                    <select id="clienteDevolucao" class="form-select select2">
+
+
+
+                                        <option></option>
+
+
+
+                                        <option>
+
+                                            João Manuel
+
+                                        </option>
+
+
+
+                                        <option>
+
+                                            Maria José
+
+                                        </option>
+
+
+
+                                    </select>
+
+
+
+                                </div>
+
+
+
+
+
+
+
+
+
+
+                                <div class="col-md-6">
+
+
+
+                                    <label>
+
+                                        Livro
+
+                                    </label>
+
+
+
+                                    <select id="livroDevolucao" class="form-select select2">
+
+
+
+                                        <option></option>
+
+
+
+                                        <option>
+
+                                            Programação Java
+
+                                        </option>
+
+
+
+                                        <option>
+
+                                            Banco de Dados
+
+                                        </option>
+
+
+
+                                    </select>
+
+
+
+                                </div>
+
+
+
+
+
+
+                            </div>
+
+
+
+
+                        </div>
+
+
+
+
+
+
+
+
+
+                        <!-- DATAS -->
+
+                        <div class="form-section">
+
+
+
+                            <h6>
+
+
+                                <i class="fa-solid fa-calendar"></i>
+
+
+                                Datas
+
+
+                            </h6>
+
+
+
+
+
+
+
+                            <div class="row g-4">
+
+
+
+
+
+                                <div class="col-md-4">
+
+
+                                    <label>
+
+                                        Data Prevista
+
+                                    </label>
+
+
+
+                                    <input id="dataPrevista" type="date" class="form-control">
+
+
+                                </div>
+
+
+
+
+
+
+
+
+
+                                <div class="col-md-4">
+
+
+                                    <label>
+
+                                        Data Devolução
+
+                                    </label>
+
+
+
+                                    <input id="dataDevolucao" type="date" class="form-control">
+
+
+                                </div>
+
+
+
+
+
+
+
+
+
+                                <div class="col-md-4">
+
+
+                                    <label>
+
+                                        Dias de atraso
+
+                                    </label>
+
+
+
+                                    <input id="diasAtraso" readonly class="form-control">
+
+
+                                </div>
+
+
+
+
+
+
+
+                            </div>
+
+
+
+
+                        </div>
+
+
+
+
+
+
+
+
+
+                        <!-- MULTA -->
+
+                        <div class="form-section">
+
+
+
+                            <h6>
+
+
+                                <i class="fa-solid fa-money-bill"></i>
+
+
+                                Multa
+
+
+                            </h6>
+
+
+
+
+
+
+
+                            <div class="row g-4">
+
+
+
+
+
+                                <div class="col-md-6">
+
+
+                                    <label>
+
+                                        Valor da multa
+
+                                    </label>
+
+
+
+                                    <div class="input-icon">
+
+
+                                        <i class="fa-solid fa-coins"></i>
+
+
+
+                                        <input id="valorMulta" readonly class="form-control" value="0">
+
+
+                                    </div>
+
+
+
+                                </div>
+
+
+
+
+
+
+
+                                <div class="col-md-6">
+
+
+                                    <label>
+
+                                        Estado do livro
+
+                                    </label>
+
+
+
+                                    <select id="estadoLivro" class="form-select">
+
+
+
+                                        <option>
+
+                                            Bom estado
+
+                                        </option>
+
+
+
+                                        <option>
+
+                                            Danificado
+
+                                        </option>
+
+
+
+                                        <option>
+
+                                            Perdido
+
+                                        </option>
+
+
+
+                                    </select>
+
+
+
+                                </div>
+
+
+
+
+
+
+                            </div>
+
+
+
+                        </div>
+
+
+
+
+
+
+
+
+                        <div class="form-section">
+
+
+                            <label>
+
+                                Observação
+
+                            </label>
+
+
+                            <textarea class="form-control" rows="3" placeholder="Notas da devolução...">
+
+</textarea>
+
+
+                        </div>
+
+
+
+
+
+
+
+                    </form>
+
+
+
+
+
+                </div>
+
+
+
+
+
+
+
+
+
+                <!-- FOOTER -->
+
+                <div class="modal-footer modern-footer">
+
+
+
+
+
+                    <button class="btn-secondary-modern" data-bs-dismiss="modal">
+
+
+                        Cancelar
+
+
+                    </button>
+
+
+
+
+
+
+
+                    <button class="btn-primary-modern">
+
+
+                        <i class="fa-solid fa-check"></i>
+
+
+                        Confirmar Devolução
+
+
+                    </button>
+
+
+
+
+
+
+
+                </div>
+
+
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+    </div>

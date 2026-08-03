@@ -1,0 +1,155 @@
+<div class="novo-livro-page">
+  <!-- HEADER -->
+
+  <div class="page-header">
+    <div>
+      <h2>
+        <i class="fa-solid fa-book-medical"></i>
+
+        Novo Livro
+      </h2>
+
+      <p>Cadastre um novo livro no acervo da biblioteca</p>
+    </div>
+
+    <button class="btn-back">
+      <i class="fa-solid fa-arrow-left"></i>
+
+      Voltar
+    </button>
+  </div>
+
+  <form id="bookForm">
+    <div class="row g-4">
+      <!-- INFORMAÇÕES PRINCIPAIS -->
+
+      <div class="col-lg-8">
+        <div class="form-card">
+          <div class="card-title">
+            <i class="fa-solid fa-circle-info"></i>
+
+            Informações do Livro
+          </div>
+
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label> Título do Livro </label>
+
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Ex: Desenvolvimento Web"
+                required
+              />
+            </div>
+
+            <div class="col-md-6">
+              <label> ISBN </label>
+
+              <input
+                type="text"
+                class="form-control"
+                placeholder="978-000000000"
+              />
+            </div>
+
+            <div class="col-md-6">
+              <label> Autor </label>
+
+              <select class="form-select select-search">
+                <option>Selecionar autor</option>
+
+                <option>João Silva</option>
+
+                <option>Maria Costa</option>
+              </select>
+            </div>
+
+            <div class="col-md-6">
+              <label> Categoria </label>
+
+              <select class="form-select select-search">
+                <option>Selecionar categoria</option>
+
+                <option>Tecnologia</option>
+
+                <option>Romance</option>
+              </select>
+            </div>
+
+            <div class="col-md-4">
+              <label> Ano </label>
+
+              <input type="number" class="form-control" placeholder="2026" />
+            </div>
+
+            <div class="col-md-4">
+              <label> Quantidade </label>
+
+              <input type="number" class="form-control" value="1" />
+            </div>
+
+            <div class="col-md-4">
+              <label> Localização </label>
+
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Estante A1"
+              />
+            </div>
+
+            <div class="col-12">
+              <label> Descrição </label>
+
+              <textarea
+                class="form-control"
+                rows="4"
+                placeholder="Descrição do livro..."
+              ></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CAPA -->
+
+      <div class="col-lg-4">
+        <div class="form-card upload-card">
+          <div class="card-title">
+            <i class="fa-solid fa-image"></i>
+
+            Capa do Livro
+          </div>
+
+          <div class="image-preview">
+            <img
+              id="previewImage"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPH8Xm3vDdhmqecaHdvkSsfSsnj_9-EPpq9PIA3YaLvpzkfLAVF46ulaOo&s=10"
+            />
+          </div>
+
+          <label class="upload-btn">
+            <i class="fa-solid fa-upload"></i>
+
+            Escolher Imagem
+
+            <input type="file" id="bookImage" accept="image/*" hidden />
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTÕES -->
+
+    <div class="form-actions">
+      <button type="reset" class="btn-cancel">Limpar</button>
+
+      <button type="submit" class="btn-save">
+        <i class="fa-solid fa-check"></i>
+
+        Guardar Livro
+      </button>
+    </div>
+  </form>
+</div>

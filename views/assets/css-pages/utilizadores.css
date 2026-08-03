@@ -1,0 +1,440 @@
+/* ==========================================
+   UTILIZADORES - CSS PREMIUM
+========================================== */
+
+.usuarios-page {
+  padding: 25px;
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.page-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 30px;
+}
+
+.page-header h2 {
+  font-size: 28px;
+
+  font-weight: 700;
+
+  margin: 0;
+
+  color: var(--color-text);
+}
+
+.page-header h2 i {
+  color: #2563eb;
+
+  margin-right: 10px;
+}
+
+.page-header p {
+  margin-top: 8px;
+
+  color: var(--color-text-secondary);
+}
+
+/* BOTÃO */
+
+.btn-add {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  background: #2563eb;
+
+  color: white;
+
+  border: none;
+
+  padding: 12px 22px;
+
+  border-radius: 12px;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.btn-add:hover {
+  background: #1d4ed8;
+
+  transform: translateY(-3px);
+}
+
+/* ==========================================
+   CARDS
+========================================== */
+
+.user-card {
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 20px;
+
+  padding: 22px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+
+  transition: 0.35s;
+}
+
+.user-card:hover {
+  transform: translateY(-7px);
+}
+
+.user-card span {
+  color: #64748b;
+
+  font-size: 13px;
+}
+
+.user-card h3 {
+  margin: 6px 0 0;
+
+  font-size: 26px;
+
+  font-weight: 700;
+
+  color: #334155;
+}
+
+/* ÍCONES */
+
+.user-icon {
+  width: 55px;
+
+  height: 55px;
+
+  border-radius: 16px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  font-size: 22px;
+}
+
+.user-icon.blue {
+  background: #dbeafe;
+
+  color: #2563eb;
+}
+
+.user-icon.green {
+  background: #dcfce7;
+
+  color: #16a34a;
+}
+
+.user-icon.orange {
+  background: #fef3c7;
+
+  color: #d97706;
+}
+
+.user-icon.purple {
+  background: #ede9fe;
+
+  color: #7c3aed;
+}
+
+/* ==========================================
+   TABELA
+========================================== */
+
+.table-card {
+  background: white;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 22px;
+
+  padding: 20px;
+
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+}
+
+.table-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 20px;
+}
+
+.search-area {
+  position: relative;
+
+  flex: 1;
+}
+
+.search-area i {
+  position: absolute;
+
+  left: 15px;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #94a3b8;
+}
+
+.search-area input {
+  height: 46px;
+
+  width: 100%;
+
+  padding-left: 45px;
+
+  border-radius: 12px;
+
+  border: 1px solid #e2e8f0;
+
+  background: #f8fafc;
+}
+
+.form-select {
+  width: 220px;
+
+  border-radius: 12px !important;
+
+  border: 1px solid #e2e8f0 !important;
+}
+
+/* ==========================================
+   UTILIZADOR NA TABELA
+========================================== */
+
+.user-info {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+.user-info img {
+  width: 45px;
+
+  height: 45px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+}
+
+.user-info strong {
+  display: block;
+
+  font-size: 14px;
+
+  color: #334155;
+}
+
+.user-info small {
+  color: #94a3b8;
+}
+
+/* ==========================================
+   PERFIS
+========================================== */
+
+.role {
+  padding: 7px 14px;
+
+  border-radius: 20px;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+.role.admin {
+  background: #dbeafe;
+
+  color: #2563eb;
+}
+
+.role.bibliotecario {
+  background: #dcfce7;
+
+  color: #15803d;
+}
+
+.role.leitor {
+  background: #fef3c7;
+
+  color: #b45309;
+}
+
+/* ==========================================
+   STATUS
+========================================== */
+
+.status {
+  padding: 7px 14px;
+
+  border-radius: 20px;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+.status.active {
+  background: #dcfce7;
+
+  color: #15803d;
+}
+
+.status.blocked {
+  background: #fee2e2;
+
+  color: #dc2626;
+}
+
+/* ==========================================
+   AÇÕES
+========================================== */
+
+.action-buttons {
+  display: flex;
+
+  gap: 8px;
+}
+
+.action {
+  width: 36px;
+
+  height: 36px;
+
+  border: none;
+
+  background: transparent;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 10px;
+
+  transition: 0.3s;
+}
+
+.action:hover {
+  background: #f1f5f9;
+
+  transform: translateY(-2px);
+}
+
+.action.view {
+  color: #2563eb;
+}
+
+.action.edit {
+  color: #f59e0b;
+}
+
+.action.delete {
+  color: #ef4444;
+}
+
+/* ==========================================
+   PAGINAÇÃO
+========================================== */
+
+.page-link {
+  border: none !important;
+
+  color: #2563eb;
+}
+
+.page-item.active .page-link {
+  background: #2563eb !important;
+
+  border-radius: 10px;
+
+  color: white;
+}
+
+/* ==========================================
+   DARK MODE
+========================================== */
+
+[data-theme="dark"] .user-card,
+[data-theme="dark"] .table-card {
+  background: #1e293b;
+
+  border-color: #334155;
+}
+
+[data-theme="dark"] .user-card h3,
+[data-theme="dark"] .user-info strong {
+  color: #f8fafc;
+}
+
+[data-theme="dark"] .search-area input,
+[data-theme="dark"] .form-select {
+  background: #0f172a;
+
+  color: white;
+
+  border-color: #334155 !important;
+}
+
+/* ==========================================
+   RESPONSIVO
+========================================== */
+
+@media (max-width: 992px) {
+  .page-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 15px;
+  }
+
+  .table-header {
+    flex-direction: column;
+  }
+
+  .form-select {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .usuarios-page {
+    padding: 15px;
+  }
+
+  .table-card {
+    padding: 10px;
+  }
+}

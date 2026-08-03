@@ -1,0 +1,58 @@
+:root {
+  /* CORES PRINCIPAIS */
+
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+
+  --sidebar: #1e293b;
+
+  --background: #f8fafc;
+
+  --card: #ffffff;
+
+  --text: #334155;
+
+  --muted: #64748b;
+
+  --border: #e2e8f0;
+
+  /* ESTADOS */
+
+  --success: #16a34a;
+
+  --warning: #f59e0b;
+
+  --danger: #dc2626;
+
+  /* SOMBRAS */
+
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.06);
+
+  --shadow-md: 0 10px 30px rgba(15, 23, 42, 0.08);
+
+  /* RAIO */
+
+  --radius-sm: 10px;
+
+  --radius-md: 16px;
+
+  --radius-lg: 22px;
+
+  /* TRANSIÇÃO */
+
+  --transition: 0.3s ease;
+}
+
+/* DARK MODE */
+
+body.dark {
+  --background: #0f172a;
+
+  --card: #1e293b;
+
+  --text: #f8fafc;
+
+  --muted: #94a3b8;
+
+  --border: #334155;
+}

@@ -1,0 +1,175 @@
+<div class="usuarios-page">
+  <!-- HEADER -->
+
+  <div class="page-header">
+    <div>
+      <h2>
+        <i class="fa-solid fa-users"></i>
+
+        Utilizadores
+      </h2>
+
+      <p>Gestão de utilizadores e permissões do sistema</p>
+    </div>
+
+    <button class="btn-add">
+      <i class="fa-solid fa-user-plus"></i>
+
+      Novo Utilizador
+    </button>
+  </div>
+
+  <!-- CARDS -->
+
+  <div class="row g-4 mb-4">
+    <div class="col-xl-3 col-md-6">
+      <div class="user-card">
+        <div class="user-icon blue">
+          <i class="fa-solid fa-users"></i>
+        </div>
+
+        <div>
+          <span> Total Utilizadores </span>
+
+          <h3>2.540</h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6">
+      <div class="user-card">
+        <div class="user-icon green">
+          <i class="fa-solid fa-user-check"></i>
+        </div>
+
+        <div>
+          <span> Utilizadores Ativos </span>
+
+          <h3>2.420</h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6">
+      <div class="user-card">
+        <div class="user-icon orange">
+          <i class="fa-solid fa-user-shield"></i>
+        </div>
+
+        <div>
+          <span> Administradores </span>
+
+          <h3>15</h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6">
+      <div class="user-card">
+        <div class="user-icon purple">
+          <i class="fa-solid fa-user-clock"></i>
+        </div>
+
+        <div>
+          <span> Novos este mês </span>
+
+          <h3>+120</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TABELA -->
+
+  <div class="table-card">
+    <div class="table-header">
+      <div class="search-area">
+        <i class="fa-solid fa-search"></i>
+
+        <input
+          type="text"
+          id="searchUser"
+          placeholder="Pesquisar utilizador..."
+        />
+      </div>
+
+      <select id="roleFilter" class="form-select">
+        <option value="">Todos perfis</option>
+
+        <option>Administrador</option>
+
+        <option>Bibliotecário</option>
+
+        <option>Leitor</option>
+      </select>
+    </div>
+
+    <div class="table-responsive">
+      <table id="usersTable" class="table align-middle">
+        <thead>
+          <tr>
+            <th>Utilizador</th>
+
+            <th>Perfil</th>
+
+            <th>Email</th>
+
+            <th>Telefone</th>
+
+            <th>Estado</th>
+
+            <th>Data Cadastro</th>
+
+            <th>Ações</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>
+              <div class="user-info">
+                <img src="views/assets/img/avatar.png" />
+
+                <div>
+                  <strong> Juliano Barros </strong>
+
+                  <small> Administrador </small>
+                </div>
+              </div>
+            </td>
+
+            <td>
+              <span class="role admin"> Administrador </span>
+            </td>
+
+            <td>juliano@email.com</td>
+
+            <td>923 000 000</td>
+
+            <td>
+              <span class="status active"> Ativo </span>
+            </td>
+
+            <td>03/08/2026</td>
+
+            <td>
+              <div class="action-buttons">
+                <button class="action view">
+                  <i class="fa-solid fa-eye"></i>
+                </button>
+
+                <button class="action edit">
+                  <i class="fa-solid fa-pen"></i>
+                </button>
+
+                <button class="action delete">
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

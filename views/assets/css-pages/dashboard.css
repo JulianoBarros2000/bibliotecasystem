@@ -1,0 +1,351 @@
+/* =====================================
+   DASHBOARD GERAL
+===================================== */
+
+.dashboard-page {
+  animation: dashboardShow 0.5s ease;
+}
+
+@keyframes dashboardShow {
+  from {
+    opacity: 0;
+
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: none;
+  }
+}
+
+/* =====================================
+   DATA / REFRESH
+===================================== */
+
+.dashboard-info {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+}
+
+.dashboard-info span {
+  color: #64748b;
+
+  font-size: 14px;
+}
+
+.btn-refresh {
+  border: none;
+
+  background: #2563eb;
+
+  color: white;
+
+  padding: 10px 18px;
+
+  border-radius: 14px;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.btn-refresh:hover {
+  background: #1d4ed8;
+
+  transform: translateY(-3px);
+}
+
+/* =====================================
+   CARDS PRINCIPAIS
+===================================== */
+
+.dashboard-card {
+  background: #ffffff;
+
+  border-radius: 24px;
+
+  padding: 25px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  min-height: 140px;
+
+  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.08);
+
+  transition: 0.35s;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow: 0 25px 50px rgba(15, 23, 42, 0.15);
+}
+
+.dashboard-card span {
+  color: #64748b;
+
+  font-size: 14px;
+}
+
+.dashboard-card h3 {
+  margin: 8px 0;
+
+  color: #334155;
+
+  font-size: 30px;
+
+  font-weight: 800;
+}
+
+.dashboard-card small {
+  color: #16a34a;
+
+  font-weight: 600;
+}
+
+.card-icon {
+  width: 65px;
+
+  height: 65px;
+
+  border-radius: 20px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  color: white;
+
+  font-size: 28px;
+}
+
+.dashboard-card.blue .card-icon {
+  background: #2563eb;
+}
+
+.dashboard-card.green .card-icon {
+  background: #16a34a;
+}
+
+.dashboard-card.orange .card-icon {
+  background: #f59e0b;
+}
+
+.dashboard-card.purple .card-icon {
+  background: #7c3aed;
+}
+
+/* =====================================
+   MINI CARDS
+===================================== */
+
+.mini-card {
+  background: white;
+
+  padding: 20px;
+
+  border-radius: 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+
+  transition: 0.3s;
+}
+
+.mini-card:hover {
+  transform: translateY(-5px);
+}
+
+.mini-card i {
+  font-size: 30px;
+
+  color: #2563eb;
+}
+
+.mini-card strong {
+  display: block;
+
+  font-size: 24px;
+
+  color: #334155;
+}
+
+.mini-card span {
+  color: #64748b;
+
+  font-size: 14px;
+}
+
+/* =====================================
+   GRAFICOS
+===================================== */
+
+.chart-card {
+  background: white;
+
+  border-radius: 25px;
+
+  padding: 25px;
+
+  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.08);
+}
+
+.chart-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 20px;
+}
+
+.chart-header h5 {
+  color: #334155;
+
+  font-weight: 700;
+}
+
+.chart-header span {
+  background: #dbeafe;
+
+  color: #2563eb;
+
+  padding: 5px 12px;
+
+  border-radius: 20px;
+
+  font-size: 12px;
+}
+
+canvas {
+  max-height: 300px;
+}
+
+/* =====================================
+   RANKING
+===================================== */
+
+.ranking-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 18px 0;
+
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.position {
+  font-size: 22px;
+}
+
+.ranking-item strong {
+  display: block;
+
+  color: #334155;
+}
+
+.ranking-item small {
+  color: #64748b;
+}
+
+/* =====================================
+   BOTÃO VER TODOS
+===================================== */
+
+.btn-view-all {
+  border: none;
+
+  background: #dbeafe;
+
+  color: #2563eb;
+
+  padding: 8px 15px;
+
+  border-radius: 12px;
+
+  font-weight: 600;
+}
+
+/* =====================================
+   ALERTAS
+===================================== */
+
+.alert-card {
+  background: white;
+
+  border-radius: 22px;
+
+  padding: 25px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.08);
+}
+
+.alert-card i {
+  font-size: 35px;
+}
+
+.alert-card strong {
+  display: block;
+
+  color: #334155;
+}
+
+.alert-card p {
+  margin: 5px 0 0;
+
+  color: #64748b;
+}
+
+.alert-card.danger i {
+  color: #dc2626;
+}
+
+.alert-card.warning i {
+  color: #f59e0b;
+}
+
+.alert-card.success i {
+  color: #16a34a;
+}
+
+/* =====================================
+   RESPONSIVO
+===================================== */
+
+@media (max-width: 768px) {
+  .dashboard-info {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .dashboard-card h3 {
+    font-size: 25px;
+  }
+}

@@ -1,0 +1,377 @@
+/* ==========================================
+   LIVROS - CSS
+========================================== */
+
+.livros-page {
+  padding: 25px;
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.page-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 30px;
+}
+
+.page-header h2 {
+  margin: 0;
+
+  font-size: 28px;
+
+  font-weight: 700;
+
+  color: var(--color-text);
+}
+
+.page-header h2 i {
+  color: #2563eb;
+
+  margin-right: 10px;
+}
+
+.page-header p {
+  margin-top: 8px;
+
+  color: var(--color-text-secondary);
+}
+
+/* BOTÃO NOVO */
+
+.btn-add {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  background: #2563eb;
+
+  color: white;
+
+  border: none;
+
+  padding: 12px 20px;
+
+  border-radius: 12px;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.btn-add:hover {
+  background: #1d4ed8;
+
+  transform: translateY(-2px);
+}
+
+/* ==========================================
+   TOOLBAR
+========================================== */
+
+.book-toolbar {
+  display: flex;
+
+  gap: 15px;
+
+  background: white;
+
+  padding: 20px;
+
+  border-radius: 20px;
+
+  border: 1px solid #e2e8f0;
+
+  margin-bottom: 25px;
+}
+
+.search-area {
+  position: relative;
+
+  flex: 1;
+}
+
+.search-area i {
+  position: absolute;
+
+  left: 15px;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #94a3b8;
+}
+
+.search-area input {
+  width: 100%;
+
+  padding: 12px 15px 12px 45px;
+
+  border-radius: 12px;
+
+  border: 1px solid #e2e8f0;
+
+  background: #f8fafc;
+}
+
+.book-toolbar select {
+  border: 1px solid #e2e8f0;
+
+  border-radius: 12px;
+
+  padding: 0 15px;
+
+  background: #fff;
+
+  color: #334155;
+}
+
+/* ==========================================
+   TABELA
+========================================== */
+
+.book-table-card {
+  background: white;
+
+  border-radius: 22px;
+
+  border: 1px solid #e2e8f0;
+
+  padding: 20px;
+
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+}
+
+.table {
+  margin: 0;
+}
+
+.table thead th {
+  background: #f8fafc;
+
+  color: #64748b;
+
+  font-size: 12px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.5px;
+
+  padding: 16px;
+
+  border: none;
+}
+
+.table tbody td {
+  padding: 16px;
+
+  vertical-align: middle;
+
+  border-color: #f1f5f9;
+
+  color: #334155;
+}
+
+.table tbody tr {
+  transition: 0.3s;
+}
+
+.table tbody tr:hover {
+  background: #f8fafc;
+}
+
+/* ==========================================
+   IMAGEM DO LIVRO
+========================================== */
+
+.book-image {
+  width: 45px;
+
+  height: 60px;
+
+  object-fit: cover;
+
+  border-radius: 8px;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+/* ==========================================
+   BADGES
+========================================== */
+
+.category-badge {
+  background: #dbeafe;
+
+  color: #1d4ed8;
+
+  padding: 6px 12px;
+
+  border-radius: 20px;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+.status {
+  padding: 7px 13px;
+
+  border-radius: 20px;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+.available {
+  background: #dcfce7;
+
+  color: #15803d;
+}
+
+.borrowed {
+  background: #fef3c7;
+
+  color: #b45309;
+}
+
+.late {
+  background: #fee2e2;
+
+  color: #b91c1c;
+}
+
+/* ==========================================
+   AÇÕES
+========================================== */
+
+.action-buttons {
+  display: flex;
+
+  gap: 8px;
+}
+
+.action {
+  width: 35px;
+
+  height: 35px;
+
+  border: none;
+
+  background: transparent;
+
+  border-radius: 10px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  transition: 0.25s;
+}
+
+.action:hover {
+  background: #f1f5f9;
+
+  transform: translateY(-2px);
+}
+
+.view {
+  color: #2563eb;
+}
+
+.edit {
+  color: #f59e0b;
+}
+
+.delete {
+  color: #ef4444;
+}
+
+/* ==========================================
+   DATATABLES
+========================================== */
+
+.dataTables_wrapper {
+  padding-top: 15px;
+}
+
+.dataTables_filter input {
+  border: 1px solid #e2e8f0 !important;
+
+  border-radius: 12px !important;
+
+  padding: 10px 15px !important;
+}
+
+.dataTables_length select {
+  border: 1px solid #e2e8f0 !important;
+
+  border-radius: 10px !important;
+
+  padding: 6px;
+}
+
+/* PAGINAÇÃO */
+
+.page-link {
+  border: none !important;
+
+  color: #2563eb;
+}
+
+.page-item.active .page-link {
+  background: #2563eb !important;
+
+  color: white !important;
+
+  border-radius: 10px;
+}
+
+/* ==========================================
+   RESPONSIVO
+========================================== */
+
+@media (max-width: 992px) {
+  .book-toolbar {
+    flex-direction: column;
+  }
+
+  .page-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 15px;
+  }
+
+  .btn-add {
+    width: 100%;
+
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .livros-page {
+    padding: 15px;
+  }
+
+  .book-table-card {
+    padding: 10px;
+  }
+
+  .table {
+    min-width: 900px;
+  }
+}

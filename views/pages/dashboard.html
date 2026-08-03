@@ -1,0 +1,459 @@
+<div class="dashboard-page">
+     <!-- =================================
+     HEADER DASHBOARD
+================================= -->
+
+     <div class="page-header">
+          <div>
+               <h2>
+                    <i class="fa-solid fa-chart-line"></i>
+
+                    Dashboard
+               </h2>
+
+               <p>Visão geral da Biblioteca Pro em tempo real</p>
+          </div>
+
+          <div class="dashboard-info">
+               <span>
+                    <i class="fa-solid fa-calendar"></i>
+
+                    <span id="currentDate"></span>
+               </span>
+
+               <button class="btn-refresh" id="refreshDashboard">
+                    <i class="fa-solid fa-rotate"></i>
+
+                    Atualizar
+               </button>
+          </div>
+     </div>
+
+     <!-- =================================
+     CARDS PRINCIPAIS
+================================= -->
+
+     <div class="row g-4">
+          <!-- LIVROS -->
+
+          <div class="col-xl-3 col-md-6">
+               <div class="dashboard-card blue">
+                    <div class="card-icon">
+                         <i class="fa-solid fa-book"></i>
+                    </div>
+
+                    <div>
+                         <span> Total de Livros </span>
+
+                         <h3>12.850</h3>
+
+                         <small> +8.5% este mês </small>
+                    </div>
+               </div>
+          </div>
+
+          <!-- LEITORES -->
+
+          <div class="col-xl-3 col-md-6">
+               <div class="dashboard-card green">
+                    <div class="card-icon">
+                         <i class="fa-solid fa-users"></i>
+                    </div>
+
+                    <div>
+                         <span> Total de Leitores </span>
+
+                         <h3>850</h3>
+
+                         <small> +60 novos </small>
+                    </div>
+               </div>
+          </div>
+
+          <!-- EMPRESTIMOS -->
+
+          <div class="col-xl-3 col-md-6">
+               <div class="dashboard-card orange">
+                    <div class="card-icon">
+                         <i class="fa-solid fa-book-open-reader"></i>
+                    </div>
+
+                    <div>
+                         <span> Empréstimos Ativos </span>
+
+                         <h3>320</h3>
+
+                         <small> 75 pendentes </small>
+                    </div>
+               </div>
+          </div>
+
+          <!-- RECEITA -->
+
+          <div class="col-xl-3 col-md-6">
+               <div class="dashboard-card purple">
+                    <div class="card-icon">
+                         <i class="fa-solid fa-wallet"></i>
+                    </div>
+
+                    <div>
+                         <span> Receita Mensal </span>
+
+                         <h3>1.850.000 Kz</h3>
+
+                         <small> +15% crescimento </small>
+                    </div>
+               </div>
+          </div>
+     </div>
+
+     <!-- =================================
+     SEGUNDA LINHA
+================================= -->
+
+     <div class="row g-4 mt-1">
+          <!-- DISPONIVEIS -->
+
+          <div class="col-xl-3 col-md-6">
+               <div class="mini-card">
+                    <i class="fa-solid fa-box-open"></i>
+
+                    <div>
+                         <strong> 9.500 </strong>
+
+                         <span> Livros Disponíveis </span>
+                    </div>
+               </div>
+          </div>
+
+          <!-- VENDAS -->
+
+          <div class="col-xl-3 col-md-6">
+               <div class="mini-card">
+                    <i class="fa-solid fa-cart-shopping"></i>
+
+                    <div>
+                         <strong> 185 </strong>
+
+                         <span> Livros Vendidos </span>
+                    </div>
+               </div>
+          </div>
+
+          <!-- DEVOLUÇÕES -->
+
+          <div class="col-xl-3 col-md-6">
+               <div class="mini-card">
+                    <i class="fa-solid fa-rotate-left"></i>
+
+                    <div>
+                         <strong> 120 </strong>
+
+                         <span> Devoluções </span>
+                    </div>
+               </div>
+          </div>
+
+          <!-- MULTAS -->
+
+          <div class="col-xl-3 col-md-6">
+               <div class="mini-card">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+
+                    <div>
+                         <strong> 75.000 Kz </strong>
+
+                         <span> Multas Pendentes </span>
+                    </div>
+               </div>
+          </div>
+     </div>
+</div>
+<!-- =================================
+     GRAFICOS ESTATISTICOS
+================================= -->
+
+<div class="row g-4 mt-2">
+     <!-- EMPRESTIMOS POR MES -->
+
+     <div class="col-xl-8">
+          <div class="chart-card">
+               <div class="chart-header">
+                    <h5>
+                         <i class="fa-solid fa-chart-line"></i>
+
+                         Empréstimos por mês
+                    </h5>
+
+                    <span> 2026 </span>
+               </div>
+
+               <canvas id="emprestimosChart"></canvas>
+          </div>
+     </div>
+
+     <!-- ESTADO DOS LIVROS -->
+
+     <div class="col-xl-4">
+          <div class="chart-card">
+               <div class="chart-header">
+                    <h5>
+                         <i class="fa-solid fa-chart-pie"></i>
+
+                         Estado dos livros
+                    </h5>
+               </div>
+
+               <canvas id="livrosStatusChart"></canvas>
+          </div>
+     </div>
+</div>
+
+<div class="row g-4 mt-2">
+     <!-- RECEITA -->
+
+     <div class="col-xl-6">
+          <div class="chart-card">
+               <div class="chart-header">
+                    <h5>
+                         <i class="fa-solid fa-money-bill-trend-up"></i>
+
+                         Receita mensal
+                    </h5>
+               </div>
+
+               <canvas id="receitaChart"></canvas>
+          </div>
+     </div>
+
+     <!-- CATEGORIAS -->
+
+     <div class="col-xl-6">
+          <div class="chart-card">
+               <div class="chart-header">
+                    <h5>
+                         <i class="fa-solid fa-layer-group"></i>
+
+                         Categorias mais procuradas
+                    </h5>
+               </div>
+
+               <canvas id="categoriaChart"></canvas>
+          </div>
+     </div>
+</div>
+<!-- =================================
+     MOVIMENTOS E RANKING
+================================= -->
+
+<div class="row g-4 mt-2">
+     <!-- MOVIMENTOS RECENTES -->
+
+     <div class="col-xl-8">
+          <div class="table-card">
+               <div class="table-header">
+                    <h5>
+                         <i class="fa-solid fa-clock-rotate-left"></i>
+
+                         Movimentos Recentes
+                    </h5>
+
+                    <button class="btn-view-all">Ver todos</button>
+               </div>
+
+               <div class="table-responsive">
+                    <table class="table align-middle">
+                         <thead>
+                              <tr>
+                                   <th>Leitor</th>
+
+                                   <th>Livro</th>
+
+                                   <th>Movimento</th>
+
+                                   <th>Data</th>
+
+                                   <th>Estado</th>
+                              </tr>
+                         </thead>
+
+                         <tbody>
+                              <tr>
+                                   <td>
+                                        <div class="client-info">
+                                             <img src="views/assets/img/avatar.png" />
+
+                                             <div>
+                                                  <strong> João Manuel </strong>
+
+                                                  <small> Leitor </small>
+                                             </div>
+                                        </div>
+                                   </td>
+
+                                   <td>Programação Java</td>
+
+                                   <td>
+                                        <span class="type loan"> Empréstimo </span>
+                                   </td>
+
+                                   <td>Hoje</td>
+
+                                   <td>
+                                        <span class="payment partial"> Pendente </span>
+                                   </td>
+                              </tr>
+
+                              <tr>
+                                   <td>
+                                        <div class="client-info">
+                                             <img src="views/assets/img/avatar.png" />
+
+                                             <div>
+                                                  <strong> Maria José </strong>
+
+                                                  <small> Leitora </small>
+                                             </div>
+                                        </div>
+                                   </td>
+
+                                   <td>Banco de Dados</td>
+
+                                   <td>
+                                        <span class="type sale"> Venda </span>
+                                   </td>
+
+                                   <td>Hoje</td>
+
+                                   <td>
+                                        <span class="payment paid"> Pago </span>
+                                   </td>
+                              </tr>
+
+                              <tr>
+                                   <td>
+                                        <div class="client-info">
+                                             <img src="views/assets/img/avatar.png" />
+
+                                             <div>
+                                                  <strong> Carlos António </strong>
+
+                                                  <small> Leitor </small>
+                                             </div>
+                                        </div>
+                                   </td>
+
+                                   <td>Redes de Computadores</td>
+
+                                   <td>
+                                        <span class="type loan"> Devolução </span>
+                                   </td>
+
+                                   <td>Ontem</td>
+
+                                   <td>
+                                        <span class="payment paid"> Concluído </span>
+                                   </td>
+                              </tr>
+                         </tbody>
+                    </table>
+               </div>
+          </div>
+     </div>
+
+     <!-- RANKING LIVROS -->
+
+     <div class="col-xl-4">
+          <div class="table-card ranking-card">
+               <div class="table-header">
+                    <h5>
+                         <i class="fa-solid fa-ranking-star"></i>
+
+                         Mais Emprestados
+                    </h5>
+               </div>
+
+               <div class="ranking-item">
+                    <span class="position"> 🥇 </span>
+
+                    <div>
+                         <strong> Programação Java </strong>
+
+                         <small> 120 empréstimos </small>
+                    </div>
+               </div>
+
+               <div class="ranking-item">
+                    <span class="position"> 🥈 </span>
+
+                    <div>
+                         <strong> Banco de Dados </strong>
+
+                         <small> 98 empréstimos </small>
+                    </div>
+               </div>
+
+               <div class="ranking-item">
+                    <span class="position"> 🥉 </span>
+
+                    <div>
+                         <strong> Redes de Computadores </strong>
+
+                         <small> 85 empréstimos </small>
+                    </div>
+               </div>
+
+               <div class="ranking-item">
+                    <span class="position"> 4 </span>
+
+                    <div>
+                         <strong> PHP Moderno </strong>
+
+                         <small> 70 empréstimos </small>
+                    </div>
+               </div>
+          </div>
+     </div>
+</div>
+
+<!-- =================================
+     ALERTAS DO SISTEMA
+================================= -->
+
+<div class="row g-4 mt-2">
+     <div class="col-xl-4">
+          <div class="alert-card danger">
+               <i class="fa-solid fa-book-open"></i>
+
+               <div>
+                    <strong> Livros atrasados </strong>
+
+                    <p>35 leitores possuem devoluções atrasadas</p>
+               </div>
+          </div>
+     </div>
+
+     <div class="col-xl-4">
+          <div class="alert-card warning">
+               <i class="fa-solid fa-triangle-exclamation"></i>
+
+               <div>
+                    <strong> Multas pendentes </strong>
+
+                    <p>75.000 Kz por receber</p>
+               </div>
+          </div>
+     </div>
+
+     <div class="col-xl-4">
+          <div class="alert-card success">
+               <i class="fa-solid fa-user-plus"></i>
+
+               <div>
+                    <strong> Novos leitores </strong>
+
+                    <p>60 novos cadastros este mês</p>
+               </div>
+          </div>
+     </div>
+</div>

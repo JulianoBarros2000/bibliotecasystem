@@ -1,0 +1,654 @@
+/* =====================================================
+   EMPRESTIMOS - PREMIUM ERP DESIGN
+===================================================== */
+
+/* ===============================
+   PAGE
+================================ */
+
+.emprestimos-page {
+  padding: 25px;
+
+  animation: pageIn 0.4s ease;
+}
+/* =====================================
+   AVATAR CLIENTE - TABELA
+===================================== */
+
+.client-info {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+.client-info img {
+  width: 42px;
+
+  height: 42px;
+
+  min-width: 42px;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  border: 2px solid #e2e8f0;
+}
+
+.client-info strong {
+  display: block;
+
+  font-size: 14px;
+
+  color: #334155;
+}
+
+.client-info small {
+  color: #64748b;
+
+  font-size: 12px;
+}
+
+@keyframes pageIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* =====================================
+   ESTADOS DE PAGAMENTO
+===================================== */
+
+.payment {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 6px 14px;
+
+  border-radius: 30px;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  line-height: 1;
+}
+
+/* PAGO */
+
+.payment.paid {
+  background: #dcfce7;
+
+  color: #16a34a;
+}
+
+/* PAGAMENTO PARCIAL */
+
+.payment.partial {
+  background: #fef3c7;
+
+  color: #d97706;
+}
+
+/* PENDENTE */
+
+.payment.pending {
+  background: #fee2e2;
+
+  color: #dc2626;
+}
+
+/* ATRASADO */
+
+.payment.late {
+  background: #f1f5f9;
+
+  color: #475569;
+}
+
+/* =====================================
+   TIPO DE MOVIMENTO
+===================================== */
+
+.type {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding: 6px 14px;
+
+  border-radius: 30px;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+/* EMPRÉSTIMO */
+
+.type.loan {
+  background: #dbeafe;
+
+  color: #2563eb;
+}
+
+/* VENDA */
+
+.type.sale {
+  background: #dcfce7;
+
+  color: #16a34a;
+}
+
+/* ===============================
+   HEADER
+================================ */
+
+.page-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 30px;
+}
+
+.page-header h2 {
+  font-size: 28px;
+
+  font-weight: 800;
+
+  margin: 0;
+}
+
+.page-header h2 i {
+  color: #2563eb;
+}
+
+.page-header p {
+  margin-top: 8px;
+
+  color: #64748b;
+}
+
+/* ===============================
+   BOTÃO NOVO MOVIMENTO
+================================ */
+
+.movimento-dropdown {
+  position: relative;
+}
+
+.btn-movimento {
+  border: none;
+
+  padding: 14px 25px;
+
+  border-radius: 16px;
+
+  color: white;
+
+  font-weight: 700;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+
+  box-shadow: 0 15px 35px rgba(37, 99, 235, 0.35);
+
+  transition: 0.3s;
+}
+
+.btn-movimento:hover {
+  transform: translateY(-3px);
+}
+
+/* DROPDOWN */
+
+.movimento-menu {
+  position: absolute;
+
+  right: 0;
+
+  top: 65px;
+
+  width: 260px;
+
+  padding: 10px;
+
+  background: white;
+
+  border-radius: 20px;
+
+  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.18);
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transform: translateY(20px);
+
+  transition: 0.35s;
+
+  z-index: 2000;
+}
+
+.movimento-dropdown:hover .movimento-menu {
+  opacity: 1;
+
+  visibility: visible;
+
+  transform: none;
+}
+
+.movimento-menu a {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 14px;
+
+  text-decoration: none;
+
+  color: #334155;
+
+  border-radius: 14px;
+
+  transition: 0.3s;
+}
+
+.movimento-menu a:hover {
+  background: #f1f5f9;
+
+  color: #2563eb;
+}
+
+/* ===============================
+   CARDS
+================================ */
+
+.loan-card {
+  background: white;
+
+  border-radius: 24px;
+
+  padding: 24px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  border: 1px solid #e2e8f0;
+
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+
+  transition: 0.35s;
+}
+
+.loan-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow: 0 25px 50px rgba(37, 99, 235, 0.15);
+}
+
+.loan-card span {
+  color: #64748b;
+
+  font-size: 14px;
+}
+
+.loan-card h3 {
+  margin: 5px 0 0;
+
+  font-size: 26px;
+}
+
+.loan-icon {
+  width: 65px;
+
+  height: 65px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 20px;
+
+  font-size: 25px;
+}
+
+.loan-icon.blue {
+  background: #dbeafe;
+
+  color: #2563eb;
+}
+
+.loan-icon.green {
+  background: #dcfce7;
+
+  color: #16a34a;
+}
+
+.loan-icon.orange {
+  background: #fef3c7;
+
+  color: #d97706;
+}
+
+.loan-icon.purple {
+  background: #ede9fe;
+
+  color: #7c3aed;
+}
+
+/* ===============================
+   TABELA
+================================ */
+
+.table-card {
+  background: white;
+
+  padding: 25px;
+
+  border-radius: 24px;
+
+  border: 1px solid #e2e8f0;
+
+  box-shadow: 0 10px 35px rgba(15, 23, 42, 0.06);
+}
+
+.table-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 25px;
+}
+
+.search-area {
+  position: relative;
+
+  width: 420px;
+}
+
+.search-area i {
+  position: absolute;
+
+  left: 15px;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #94a3b8;
+}
+
+.search-area input {
+  height: 48px;
+
+  width: 100%;
+
+  padding-left: 45px;
+
+  border-radius: 14px;
+
+  border: 1px solid #e2e8f0;
+}
+
+.table thead th {
+  color: #64748b;
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+.table tbody tr {
+  transition: 0.25s;
+}
+
+.table tbody tr:hover {
+  background: #f8fafc;
+}
+
+/* ===============================
+   ACTION BUTTONS
+================================ */
+
+.action {
+  background: none;
+
+  border: none;
+
+  width: 38px;
+
+  height: 38px;
+
+  transition: 0.3s;
+}
+
+.action:hover {
+  transform: scale(1.15);
+}
+
+.action.pay {
+  color: #16a34a;
+}
+
+.action.view {
+  color: #2563eb;
+}
+
+.action.delete {
+  color: #ef4444;
+}
+
+/* ===============================
+   MODAL MODERNO
+================================ */
+
+.modern-modal {
+  border-radius: 30px;
+
+  overflow: hidden;
+
+  border: none;
+
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.25);
+
+  animation: modalShow 0.4s ease;
+}
+
+@keyframes modalShow {
+  from {
+    opacity: 0;
+
+    transform: translateY(40px) scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: none;
+  }
+}
+
+.premium-header {
+  padding: 25px;
+
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+
+  color: white;
+}
+
+.modal-title-box {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+}
+
+.modal-symbol {
+  width: 55px;
+
+  height: 55px;
+
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.2);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 25px;
+}
+
+.form-section {
+  background: #f8fafc;
+
+  padding: 20px;
+
+  border-radius: 20px;
+
+  margin-bottom: 20px;
+}
+
+.form-section h6 {
+  font-weight: 700;
+
+  margin-bottom: 20px;
+}
+
+.form-control,
+.form-select {
+  height: 50px !important;
+
+  border-radius: 14px !important;
+
+  border: 1px solid #e2e8f0 !important;
+}
+
+.btn-primary-modern {
+  border: none;
+
+  background: #2563eb;
+
+  color: white;
+
+  padding: 13px 25px;
+
+  border-radius: 14px;
+
+  font-weight: 700;
+}
+
+.btn-secondary-modern {
+  border: none;
+
+  background: #f1f5f9;
+
+  padding: 13px 25px;
+
+  border-radius: 14px;
+}
+
+/* ===============================
+   SELECT2 PREMIUM
+================================ */
+
+.select2-container {
+  width: 100% !important;
+}
+
+.select2-selection--single {
+  height: 50px !important;
+
+  border-radius: 14px !important;
+
+  border: 1px solid #e2e8f0 !important;
+
+  display: flex !important;
+
+  align-items: center;
+}
+
+.select2-selection__rendered {
+  padding-left: 15px !important;
+}
+
+.select2-dropdown {
+  border: none !important;
+
+  border-radius: 18px !important;
+
+  overflow: hidden;
+
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+/* ===============================
+   DARK MODE
+================================ */
+
+[data-theme="dark"] .loan-card,
+[data-theme="dark"] .table-card,
+[data-theme="dark"] .modern-modal,
+[data-theme="dark"] .movimento-menu {
+  background: #1e293b;
+
+  border-color: #334155;
+}
+
+[data-theme="dark"] .form-section {
+  background: #0f172a;
+}
+
+/* ===============================
+   MOBILE
+================================ */
+
+@media (max-width: 992px) {
+  .page-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 20px;
+  }
+
+  .table-header {
+    flex-direction: column;
+  }
+
+  .search-area {
+    width: 100%;
+  }
+}

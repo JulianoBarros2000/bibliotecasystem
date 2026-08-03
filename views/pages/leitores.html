@@ -1,0 +1,523 @@
+<div class="leitores-page">
+  <!-- =================================
+     HEADER
+================================= -->
+
+  <div class="page-header">
+    <div>
+      <h2>
+        <i class="fa-solid fa-users"></i>
+
+        Leitores
+      </h2>
+
+      <p>Gestão de leitores da biblioteca</p>
+    </div>
+
+    <button
+      class="btn-movimento"
+      data-bs-toggle="modal"
+      data-bs-target="#modalLeitor"
+    >
+      <i class="fa-solid fa-user-plus"></i>
+
+      Novo Leitor
+    </button>
+  </div>
+
+  <!-- =================================
+     CARDS
+================================= -->
+
+  <div class="row g-4 mb-4">
+    <!-- TOTAL LEITORES -->
+
+    <div class="col-xl-3 col-md-6">
+      <div class="loan-card">
+        <div class="loan-icon blue">
+          <i class="fa-solid fa-users"></i>
+        </div>
+
+        <div>
+          <span> Total de Leitores </span>
+
+          <h3>850</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- ATIVOS -->
+
+    <div class="col-xl-3 col-md-6">
+      <div class="loan-card">
+        <div class="loan-icon green">
+          <i class="fa-solid fa-user-check"></i>
+        </div>
+
+        <div>
+          <span> Leitores Ativos </span>
+
+          <h3>790</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- BLOQUEADOS -->
+
+    <div class="col-xl-3 col-md-6">
+      <div class="loan-card">
+        <div class="loan-icon orange">
+          <i class="fa-solid fa-user-lock"></i>
+        </div>
+
+        <div>
+          <span> Bloqueados </span>
+
+          <h3>35</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- NOVOS -->
+
+    <div class="col-xl-3 col-md-6">
+      <div class="loan-card">
+        <div class="loan-icon purple">
+          <i class="fa-solid fa-user-plus"></i>
+        </div>
+
+        <div>
+          <span> Novos este mês </span>
+
+          <h3>60</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =================================
+     ÁREA DE INFORMAÇÃO
+================================= -->
+
+  <div class="row g-4">
+    <div class="col-lg-8">
+      <div class="table-card">
+        <div class="table-header">
+          <h5>
+            <i class="fa-solid fa-address-book"></i>
+
+            Últimos Leitores
+          </h5>
+        </div>
+
+        <div class="p-4">
+          <p class="text-muted">
+            A tabela completa de leitores será carregada na próxima etapa.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <div class="table-card">
+        <div class="table-header">
+          <h5>
+            <i class="fa-solid fa-chart-line"></i>
+
+            Resumo
+          </h5>
+        </div>
+
+        <div class="p-4">
+          <div class="permission-box mb-3">
+            <span> Empréstimos ativos </span>
+
+            <strong> 320 </strong>
+          </div>
+
+          <div class="permission-box mb-3">
+            <span> Livros comprados </span>
+
+            <strong> 185 </strong>
+          </div>
+
+          <div class="permission-box">
+            <span> Multas pendentes </span>
+
+            <strong> 20 </strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- =================================
+     TABELA DE LEITORES
+================================= -->
+
+<div class="table-card mt-4">
+  <!-- HEADER -->
+
+  <div class="table-header">
+    <div class="search-area">
+      <i class="fa-solid fa-search"></i>
+
+      <input type="text" id="searchLeitor" placeholder="Pesquisar leitor..." />
+    </div>
+
+    <select id="statusLeitor" class="form-select">
+      <option value="">Todos os estados</option>
+
+      <option value="Ativo">Ativos</option>
+
+      <option value="Bloqueado">Bloqueados</option>
+
+      <option value="Suspenso">Suspensos</option>
+    </select>
+  </div>
+
+  <!-- TABLE -->
+
+  <div class="table-responsive">
+    <table id="leitoresTable" class="table align-middle">
+      <thead>
+        <tr>
+          <th>Leitor</th>
+
+          <th>BI</th>
+
+          <th>Telefone</th>
+
+          <th>Estado</th>
+
+          <th>Empréstimos</th>
+
+          <th>Multas</th>
+
+          <th>Cadastro</th>
+
+          <th>Ações</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <!-- LEITOR 1 -->
+
+        <tr>
+          <td>
+            <div class="client-info">
+              <img src="views/assets/img/avatar.png" />
+
+              <div>
+                <strong> João Manuel </strong>
+
+                <small> Leitor desde 2026 </small>
+              </div>
+            </div>
+          </td>
+
+          <td>000123456LA</td>
+
+          <td>923 000 000</td>
+
+          <td>
+            <span class="payment paid"> Ativo </span>
+          </td>
+
+          <td>3 livros</td>
+
+          <td>
+            <span class="payment partial"> 5.000 Kz </span>
+          </td>
+
+          <td>02/08/2026</td>
+
+          <td>
+            <div class="action-buttons">
+              <button class="action view" title="Perfil">
+                <i class="fa-solid fa-eye"></i>
+              </button>
+
+              <button class="action edit" title="Editar">
+                <i class="fa-solid fa-pen"></i>
+              </button>
+
+              <button class="action delete" title="Eliminar">
+                <i class="fa-solid fa-trash"></i>
+              </button>
+            </div>
+          </td>
+        </tr>
+
+        <!-- LEITOR 2 -->
+
+        <tr>
+          <td>
+            <div class="client-info">
+              <img src="views/assets/img/avatar.png" />
+
+              <div>
+                <strong> Maria José </strong>
+
+                <small> Leitora desde 2025 </small>
+              </div>
+            </div>
+          </td>
+
+          <td>000987654LA</td>
+
+          <td>924 111 222</td>
+
+          <td>
+            <span class="payment paid"> Ativo </span>
+          </td>
+
+          <td>1 livro</td>
+
+          <td>
+            <span class="payment paid"> 0 Kz </span>
+          </td>
+
+          <td>15/07/2026</td>
+
+          <td>
+            <div class="action-buttons">
+              <button class="action view">
+                <i class="fa-solid fa-eye"></i>
+              </button>
+
+              <button class="action edit">
+                <i class="fa-solid fa-pen"></i>
+              </button>
+
+              <button class="action delete">
+                <i class="fa-solid fa-trash"></i>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<!-- =================================
+     MODAL NOVO LEITOR
+================================= -->
+
+<div class="modal fade" id="modalLeitor" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content modern-modal">
+      <div class="modal-header premium-header">
+        <div class="modal-title-box">
+          <div class="modal-symbol">
+            <i class="fa-solid fa-user-plus"></i>
+          </div>
+
+          <div>
+            <h4>Novo Leitor</h4>
+
+            <p>Cadastro de novo leitor</p>
+          </div>
+        </div>
+
+        <button
+          class="btn-close btn-close-white"
+          data-bs-dismiss="modal"
+        ></button>
+      </div>
+
+      <div class="modal-body">
+        <form id="formLeitor">
+          <div class="form-section">
+            <h6>
+              <i class="fa-solid fa-user"></i>
+
+              Dados pessoais
+            </h6>
+
+            <div class="row g-4">
+              <div class="col-md-6">
+                <label> Nome completo </label>
+
+                <input class="form-control" placeholder="Nome do leitor" />
+              </div>
+
+              <div class="col-md-3">
+                <label> BI / Documento </label>
+
+                <input class="form-control" placeholder="000000LA000" />
+              </div>
+
+              <div class="col-md-3">
+                <label> Data nascimento </label>
+
+                <input type="date" class="form-control" />
+              </div>
+
+              <div class="col-md-4">
+                <label> Sexo </label>
+
+                <select class="form-select select2">
+                  <option>Masculino</option>
+
+                  <option>Feminino</option>
+                </select>
+              </div>
+
+              <div class="col-md-4">
+                <label> Telefone </label>
+
+                <input class="form-control" placeholder="923..." />
+              </div>
+
+              <div class="col-md-4">
+                <label> Email </label>
+
+                <input class="form-control" placeholder="email@exemplo.com" />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h6>
+              <i class="fa-solid fa-location-dot"></i>
+
+              Endereço
+            </h6>
+
+            <textarea
+              class="form-control"
+              rows="3"
+              placeholder="Morada completa"
+            >
+            </textarea>
+          </div>
+
+          <div class="form-section">
+            <h6>
+              <i class="fa-solid fa-circle-info"></i>
+
+              Estado
+            </h6>
+
+            <select class="form-select">
+              <option>Ativo</option>
+
+              <option>Suspenso</option>
+
+              <option>Bloqueado</option>
+            </select>
+          </div>
+        </form>
+      </div>
+
+      <div class="modal-footer modern-footer">
+        <button class="btn-secondary-modern" data-bs-dismiss="modal">
+          Cancelar
+        </button>
+
+        <button class="btn-primary-modern">
+          <i class="fa-solid fa-save"></i>
+
+          Guardar Leitor
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- =================================
+     PERFIL LEITOR
+================================= -->
+
+<div class="modal fade" id="modalPerfilLeitor" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content modern-modal">
+      <div class="modal-header premium-header">
+        <div class="modal-title-box">
+          <div class="modal-symbol">
+            <i class="fa-solid fa-id-card"></i>
+          </div>
+
+          <div>
+            <h4>Perfil do Leitor</h4>
+
+            <p>Informações e histórico</p>
+          </div>
+        </div>
+
+        <button
+          class="btn-close btn-close-white"
+          data-bs-dismiss="modal"
+        ></button>
+      </div>
+
+      <div class="modal-body">
+        <div class="profile-box">
+          <img src="views/assets/img/avatar.png" />
+
+          <div>
+            <h4>João Manuel</h4>
+
+            <p>Leitor ativo</p>
+          </div>
+        </div>
+
+        <div class="row g-3 mt-3">
+          <div class="col-md-4">
+            <div class="permission-box">
+              <span> Empréstimos </span>
+
+              <strong> 3 </strong>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="permission-box">
+              <span> Compras </span>
+
+              <strong> 5 </strong>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="permission-box">
+              <span> Multas </span>
+
+              <strong> 5.000 Kz </strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="modalEditarLeitor" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content modern-modal">
+      <div class="modal-header premium-header">
+        <h4>Editar Leitor</h4>
+
+        <button
+          class="btn-close btn-close-white"
+          data-bs-dismiss="modal"
+        ></button>
+      </div>
+
+      <div class="modal-body">
+        <div class="form-section">
+          <label> Nome </label>
+
+          <input class="form-control" value="João Manuel" />
+
+          <label class="mt-3"> Telefone </label>
+
+          <input class="form-control" value="923000000" />
+        </div>
+      </div>
+
+      <div class="modal-footer modern-footer">
+        <button class="btn-primary-modern">Guardar Alterações</button>
+      </div>
+    </div>
+  </div>
+</div>

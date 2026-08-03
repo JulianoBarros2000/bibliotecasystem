@@ -1,0 +1,597 @@
+<div class="autores-page">
+
+
+    <!-- HEADER -->
+
+    <div class="page-header">
+
+
+        <div>
+
+            <h2>
+
+                <i class="fa-solid fa-user-pen"></i>
+
+                Autores
+
+            </h2>
+
+
+            <p>
+
+                Gestão dos autores cadastrados na biblioteca
+
+            </p>
+
+
+        </div>
+
+
+
+        <button class="btn-add">
+
+            <i class="fa-solid fa-plus"></i>
+
+            Novo Autor
+
+        </button>
+
+
+    </div>
+
+
+
+
+
+
+    <!-- CARDS RESUMO -->
+
+
+    <div class="row g-4 mb-4">
+
+
+
+        <div class="col-xl-3 col-md-6">
+
+
+            <div class="author-card">
+
+
+                <div class="author-icon blue">
+
+                    <i class="fa-solid fa-users"></i>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+
+                        Total de Autores
+
+                    </span>
+
+
+                    <h3>
+
+                        248
+
+                    </h3>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+
+        <div class="col-xl-3 col-md-6">
+
+
+            <div class="author-card">
+
+
+                <div class="author-icon green">
+
+                    <i class="fa-solid fa-user-check"></i>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+
+                        Autores Ativos
+
+                    </span>
+
+
+                    <h3>
+
+                        220
+
+                    </h3>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+
+        <div class="col-xl-3 col-md-6">
+
+
+            <div class="author-card">
+
+
+                <div class="author-icon orange">
+
+                    <i class="fa-solid fa-book"></i>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+
+                        Livros Publicados
+
+                    </span>
+
+
+                    <h3>
+
+                        1.540
+
+                    </h3>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+
+        <div class="col-xl-3 col-md-6">
+
+
+            <div class="author-card">
+
+
+                <div class="author-icon purple">
+
+                    <i class="fa-solid fa-star"></i>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+
+                        Mais Popular
+
+                    </span>
+
+
+                    <h3>
+
+                        Machado
+
+                    </h3>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+    <!-- TABELA -->
+
+
+    <div class="table-card">
+
+
+
+        <div class="table-header">
+
+
+
+            <div class="search-area">
+
+
+                <i class="fa-solid fa-search"></i>
+
+
+                <input type="text" id="searchAuthor" placeholder="Pesquisar autor...">
+
+
+            </div>
+
+
+
+
+
+            <select id="statusFilter" class="form-select">
+
+
+                <option value="">
+
+                    Todos estados
+
+                </option>
+
+
+                <option>
+
+                    Ativo
+
+                </option>
+
+
+                <option>
+
+                    Inativo
+
+                </option>
+
+
+            </select>
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+        <div class="table-responsive">
+
+
+            <table id="authorsTable" class="table align-middle">
+
+
+                <thead>
+
+
+                    <tr>
+
+
+                        <th>
+
+                            Autor
+
+                        </th>
+
+
+                        <th>
+
+                            Nacionalidade
+
+                        </th>
+
+
+                        <th>
+
+                            Data Nascimento
+
+                        </th>
+
+
+                        <th>
+
+                            Livros
+
+                        </th>
+
+
+                        <th>
+
+                            Estado
+
+                        </th>
+
+
+                        <th>
+
+                            Ações
+
+                        </th>
+
+
+                    </tr>
+
+
+                </thead>
+
+
+
+                <tbody>
+
+
+                    <tr>
+
+
+                        <td>
+
+
+                            <div class="author-info">
+
+
+                                <img src="views/assets/img/avatar.png">
+
+
+                                <div>
+
+
+                                    <strong>
+
+                                        José Saramago
+
+                                    </strong>
+
+
+                                    <small>
+
+                                        Escritor
+
+                                    </small>
+
+
+                                </div>
+
+
+                            </div>
+
+
+                        </td>
+
+
+
+                        <td>
+
+                            Português
+
+                        </td>
+
+
+
+                        <td>
+
+                            16/11/1922
+
+                        </td>
+
+
+
+                        <td>
+
+                            35
+
+                        </td>
+
+
+
+                        <td>
+
+                            <span class="status active">
+
+                                Ativo
+
+                            </span>
+
+                        </td>
+
+
+
+                        <td>
+
+
+                            <div class="action-buttons">
+
+
+                                <button class="action view">
+
+                                    <i class="fa-solid fa-eye"></i>
+
+                                </button>
+
+
+                                <button class="action edit">
+
+                                    <i class="fa-solid fa-pen"></i>
+
+                                </button>
+
+
+                                <button class="action delete">
+
+                                    <i class="fa-solid fa-trash"></i>
+
+                                </button>
+
+
+                            </div>
+
+
+                        </td>
+
+
+                    </tr>
+
+
+
+
+
+                    <tr>
+
+
+                        <td>
+
+
+                            <div class="author-info">
+
+
+                                <img src="views/assets/img/avatar.png">
+
+
+                                <div>
+
+
+                                    <strong>
+
+                                        Machado de Assis
+
+                                    </strong>
+
+
+                                    <small>
+
+                                        Escritor
+
+                                    </small>
+
+
+                                </div>
+
+
+                            </div>
+
+
+                        </td>
+
+
+
+                        <td>
+
+                            Brasileiro
+
+                        </td>
+
+
+
+                        <td>
+
+                            21/06/1839
+
+                        </td>
+
+
+
+                        <td>
+
+                            40
+
+                        </td>
+
+
+
+                        <td>
+
+                            <span class="status active">
+
+                                Ativo
+
+                            </span>
+
+                        </td>
+
+
+
+                        <td>
+
+
+                            <div class="action-buttons">
+
+
+                                <button class="action view">
+
+                                    <i class="fa-solid fa-eye"></i>
+
+                                </button>
+
+
+                                <button class="action edit">
+
+                                    <i class="fa-solid fa-pen"></i>
+
+                                </button>
+
+
+                                <button class="action delete">
+
+                                    <i class="fa-solid fa-trash"></i>
+
+                                </button>
+
+
+                            </div>
+
+
+                        </td>
+
+
+                    </tr>
+
+
+
+                </tbody>
+
+
+
+            </table>
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+</div>

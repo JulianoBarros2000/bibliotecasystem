@@ -1,0 +1,1690 @@
+<div class="emprestimos-page">
+
+
+    <!-- =================================
+     HEADER
+================================= -->
+
+    <div class="page-header">
+
+
+        <div>
+
+            <h2>
+
+                <i class="fa-solid fa-book-open-reader"></i>
+
+                Empréstimos
+
+            </h2>
+
+
+            <p>
+
+                Gestão de empréstimos, vendas e pagamentos
+
+            </p>
+
+
+        </div>
+
+
+
+
+
+        <!-- NOVO MOVIMENTO -->
+
+        <div class="movimento-dropdown">
+
+
+            <button class="btn-movimento">
+
+
+                <i class="fa-solid fa-plus"></i>
+
+
+                Novo Movimento
+
+
+                <i class="fa-solid fa-chevron-down arrow"></i>
+
+
+            </button>
+
+
+
+
+
+            <div class="movimento-menu">
+
+
+
+                <a href="#" data-bs-toggle="modal" data-bs-target="#modalEmprestimo">
+
+
+                    <span class="menu-icon blue">
+
+
+                        <i class="fa-solid fa-book"></i>
+
+
+                    </span>
+
+
+
+                    Novo Empréstimo
+
+
+                </a>
+
+
+
+
+
+
+
+                <a href="#" data-bs-toggle="modal" data-bs-target="#modalVenda">
+
+
+                    <span class="menu-icon green">
+
+
+                        <i class="fa-solid fa-cart-shopping"></i>
+
+
+                    </span>
+
+
+
+                    Nova Venda
+
+
+                </a>
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <!-- =================================
+     CARDS
+================================= -->
+
+
+    <div class="row g-4 mb-4">
+
+
+
+
+
+        <!-- LIVROS EMPRESTADOS -->
+
+        <div class="col-xl-3 col-md-6">
+
+
+            <div class="loan-card">
+
+
+                <div class="loan-icon blue">
+
+
+                    <i class="fa-solid fa-book-open"></i>
+
+
+                </div>
+
+
+
+                <div>
+
+
+                    <span>
+
+                        Livros Emprestados
+
+                    </span>
+
+
+                    <h3>
+
+                        320
+
+                    </h3>
+
+
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+
+
+
+        <!-- LIVROS VENDIDOS -->
+
+
+        <div class="col-xl-3 col-md-6">
+
+
+            <div class="loan-card">
+
+
+                <div class="loan-icon green">
+
+
+                    <i class="fa-solid fa-cart-shopping"></i>
+
+
+                </div>
+
+
+
+                <div>
+
+
+                    <span>
+
+                        Livros Vendidos
+
+                    </span>
+
+
+                    <h3>
+
+                        185
+
+                    </h3>
+
+
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <!-- PAGAMENTOS -->
+
+
+        <div class="col-xl-3 col-md-6">
+
+
+            <div class="loan-card">
+
+
+                <div class="loan-icon orange">
+
+
+                    <i class="fa-solid fa-clock"></i>
+
+
+                </div>
+
+
+
+                <div>
+
+
+                    <span>
+
+                        Pagamentos Pendentes
+
+                    </span>
+
+
+                    <h3>
+
+                        75
+
+                    </h3>
+
+
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- VALORES -->
+
+
+        <div class="col-xl-3 col-md-6">
+
+
+            <div class="loan-card">
+
+
+                <div class="loan-icon purple">
+
+
+                    <i class="fa-solid fa-wallet"></i>
+
+
+                </div>
+
+
+
+                <div>
+
+
+                    <span>
+
+                        Valores a Receber
+
+                    </span>
+
+
+                    <h3>
+
+                        650.000 Kz
+
+                    </h3>
+
+
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+    <!-- =================================
+     TABELA DE MOVIMENTOS
+================================= -->
+
+
+    <div class="table-card">
+
+
+
+        <div class="table-header">
+
+
+
+            <!-- PESQUISA -->
+
+            <div class="search-area">
+
+
+                <i class="fa-solid fa-search"></i>
+
+
+                <input type="text" id="searchLoan" placeholder="Pesquisar cliente ou livro...">
+
+
+            </div>
+
+
+
+
+
+
+            <!-- FILTRO -->
+
+            <select id="typeFilter" class="form-select">
+
+
+                <option value="">
+
+                    Todos os movimentos
+
+                </option>
+
+
+
+                <option value="Empréstimo">
+
+                    Empréstimos
+
+                </option>
+
+
+
+                <option value="Venda">
+
+                    Vendas
+
+                </option>
+
+
+
+            </select>
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+        <div class="table-responsive">
+
+
+
+            <table id="loansTable" class="table align-middle">
+
+
+
+
+
+                <thead>
+
+
+                    <tr>
+
+
+                        <th>
+
+                            Cliente
+
+                        </th>
+
+
+
+                        <th>
+
+                            Livro
+
+                        </th>
+
+
+
+                        <th>
+
+                            Tipo
+
+                        </th>
+
+
+
+                        <th>
+
+                            Data
+
+                        </th>
+
+
+
+                        <th>
+
+                            Valor Total
+
+                        </th>
+
+
+
+                        <th>
+
+                            Pago
+
+                        </th>
+
+
+
+                        <th>
+
+                            Saldo
+
+                        </th>
+
+
+
+                        <th>
+
+                            Estado
+
+                        </th>
+
+
+
+                        <th>
+
+                            Ações
+
+                        </th>
+
+
+
+                    </tr>
+
+
+                </thead>
+
+
+
+
+
+
+
+
+
+                <tbody>
+
+
+
+
+
+                    <!-- =========================
+     EMPRÉSTIMO
+========================= -->
+
+                    <tr>
+
+
+
+                        <td>
+
+
+                            <div class="client-info">
+
+
+
+                                <img src="views/assets/img/avatar.png">
+
+
+
+                                <div>
+
+
+                                    <strong>
+
+                                        João Manuel
+
+                                    </strong>
+
+
+
+                                    <small>
+
+                                        Cliente
+
+                                    </small>
+
+
+
+                                </div>
+
+
+
+                            </div>
+
+
+                        </td>
+
+
+
+
+
+
+
+                        <td>
+
+                            Programação Java
+
+                        </td>
+
+
+
+
+
+
+
+                        <td>
+
+
+                            <span class="type loan">
+
+                                Empréstimo
+
+                            </span>
+
+
+                        </td>
+
+
+
+
+
+
+
+                        <td>
+
+                            02/08/2026
+
+                        </td>
+
+
+
+
+
+
+
+                        <td>
+
+                            30.000 Kz
+
+                        </td>
+
+
+
+
+
+
+
+                        <td>
+
+                            10.000 Kz
+
+                        </td>
+
+
+
+
+
+
+
+                        <td>
+
+                            20.000 Kz
+
+                        </td>
+
+
+
+
+
+
+
+                        <td>
+
+
+                            <span class="payment partial">
+
+                                Parcial
+
+                            </span>
+
+
+                        </td>
+
+
+
+
+
+
+
+                        <td>
+
+
+                            <div class="action-buttons">
+
+
+
+                                <button class="action pay" title="Receber pagamento">
+
+
+                                    <i class="fa-solid fa-money-bill"></i>
+
+
+                                </button>
+
+
+
+
+
+
+
+                                <button class="action view" title="Visualizar">
+
+
+                                    <i class="fa-solid fa-eye"></i>
+
+
+                                </button>
+
+
+
+
+
+
+
+                                <button class="action delete" title="Eliminar">
+
+
+                                    <i class="fa-solid fa-trash"></i>
+
+
+                                </button>
+
+
+
+
+                            </div>
+
+
+                        </td>
+
+
+
+
+
+
+                    </tr>
+
+
+
+
+
+
+
+
+
+
+
+                    <!-- =========================
+     VENDA
+========================= -->
+
+
+                    <tr>
+
+
+
+                        <td>
+
+
+                            <div class="client-info">
+
+
+
+                                <img src="views/assets/img/avatar.png">
+
+
+
+                                <div>
+
+
+                                    <strong>
+
+                                        Maria José
+
+                                    </strong>
+
+
+
+                                    <small>
+
+                                        Cliente
+
+                                    </small>
+
+
+
+                                </div>
+
+
+
+                            </div>
+
+
+                        </td>
+
+
+
+
+
+
+
+                        <td>
+
+                            Banco de Dados
+
+                        </td>
+
+
+
+
+
+
+
+                        <td>
+
+
+                            <span class="type sale">
+
+                                Venda
+
+                            </span>
+
+
+                        </td>
+
+
+
+
+
+
+
+                        <td>
+
+                            01/08/2026
+
+                        </td>
+
+
+
+
+
+
+
+                        <td>
+
+                            25.000 Kz
+
+                        </td>
+
+
+
+
+
+
+
+                        <td>
+
+                            25.000 Kz
+
+                        </td>
+
+
+
+
+
+
+
+                        <td>
+
+                            0 Kz
+
+                        </td>
+
+
+
+
+
+
+
+                        <td>
+
+
+                            <span class="payment paid">
+
+                                Pago
+
+                            </span>
+
+
+                        </td>
+
+
+
+
+
+
+
+                        <td>
+
+
+                            <div class="action-buttons">
+
+
+
+                                <button class="action view" title="Visualizar">
+
+
+                                    <i class="fa-solid fa-eye"></i>
+
+
+                                </button>
+
+
+
+                            </div>
+
+
+                        </td>
+
+
+
+
+
+
+                    </tr>
+
+
+
+
+
+
+
+
+                </tbody>
+
+
+
+            </table>
+
+
+
+        </div>
+
+
+
+    </div>
+
+    <!-- =================================
+     MODAL EMPRESTIMO
+================================= -->
+
+
+    <div class="modal fade" id="modalEmprestimo" tabindex="-1">
+
+
+
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+
+
+
+            <div class="modal-content modern-modal">
+
+
+
+
+
+                <!-- HEADER -->
+
+                <div class="modal-header premium-header">
+
+
+                    <div class="modal-title-box">
+
+
+                        <div class="modal-symbol">
+
+                            <i class="fa-solid fa-book-open"></i>
+
+                        </div>
+
+
+
+                        <div>
+
+
+                            <h4>
+
+                                Novo Empréstimo
+
+                            </h4>
+
+
+                            <p>
+
+                                Registo de saída de livro
+
+                            </p>
+
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal">
+
+                    </button>
+
+
+
+                </div>
+
+
+
+
+
+
+
+
+
+                <!-- BODY -->
+
+                <div class="modal-body">
+
+
+
+                    <form id="formEmprestimo">
+
+
+
+
+
+                        <div class="form-section">
+
+
+                            <h6>
+
+                                <i class="fa-solid fa-user"></i>
+
+                                Dados do Cliente
+
+                            </h6>
+
+
+
+                            <div class="row g-4">
+
+
+
+                                <div class="col-md-6">
+
+
+                                    <label>
+
+                                        Cliente
+
+                                    </label>
+
+
+                                    <select id="clienteEmprestimo" class="form-select select2">
+
+
+                                        <option></option>
+
+                                        <option>
+                                            João Manuel
+                                        </option>
+
+
+                                        <option>
+                                            Maria José
+                                        </option>
+
+
+                                    </select>
+
+
+                                </div>
+
+
+
+
+
+
+
+                                <div class="col-md-6">
+
+
+                                    <label>
+
+                                        Livro
+
+                                    </label>
+
+
+                                    <select id="livroEmprestimo" class="form-select select2">
+
+
+                                        <option></option>
+
+                                        <option>
+                                            Programação Java
+                                        </option>
+
+
+                                        <option>
+                                            Banco de Dados
+                                        </option>
+
+
+                                    </select>
+
+
+                                </div>
+
+
+
+                            </div>
+
+
+                        </div>
+
+
+
+
+
+
+
+
+
+                        <div class="form-section">
+
+
+                            <h6>
+
+                                <i class="fa-solid fa-calendar"></i>
+
+                                Informações
+
+                            </h6>
+
+
+
+
+                            <div class="row g-4">
+
+
+
+                                <div class="col-md-4">
+
+
+                                    <label>
+
+                                        Data Empréstimo
+
+                                    </label>
+
+
+                                    <input id="dataEmprestimo" type="date" class="form-control">
+
+
+                                </div>
+
+
+
+
+
+
+
+                                <div class="col-md-4">
+
+
+                                    <label>
+
+                                        Data Devolução
+
+                                    </label>
+
+
+                                    <input type="date" class="form-control">
+
+
+                                </div>
+
+
+
+
+
+
+
+                                <div class="col-md-4">
+
+
+                                    <label>
+
+                                        Valor
+
+                                    </label>
+
+
+                                    <input type="number" class="form-control" placeholder="0 Kz">
+
+
+                                </div>
+
+
+
+                            </div>
+
+
+
+                        </div>
+
+
+
+
+
+
+
+                    </form>
+
+
+                </div>
+
+
+
+
+
+
+
+                <!-- FOOTER -->
+
+
+                <div class="modal-footer">
+
+
+                    <button class="btn-secondary-modern" data-bs-dismiss="modal">
+
+                        Cancelar
+
+                    </button>
+
+
+
+
+
+                    <button class="btn-primary-modern">
+
+
+                        <i class="fa-solid fa-check"></i>
+
+
+                        Guardar Empréstimo
+
+
+                    </button>
+
+
+                </div>
+
+
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- =================================
+     MODAL VENDA
+================================= -->
+
+
+    <div class="modal fade" id="modalVenda" tabindex="-1">
+
+
+
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+
+
+
+            <div class="modal-content modern-modal">
+
+
+
+
+
+                <div class="modal-header premium-header">
+
+
+                    <div class="modal-title-box">
+
+
+                        <div class="modal-symbol">
+
+
+                            <i class="fa-solid fa-cart-shopping"></i>
+
+
+                        </div>
+
+
+
+                        <div>
+
+
+                            <h4>
+
+                                Nova Venda
+
+                            </h4>
+
+
+                            <p>
+
+                                Venda de livros e pagamentos
+
+                            </p>
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal">
+
+                    </button>
+
+
+                </div>
+
+
+
+
+
+
+
+
+
+                <div class="modal-body">
+
+
+                    <form id="formVenda">
+
+
+
+
+
+                        <div class="form-section">
+
+
+                            <h6>
+
+                                <i class="fa-solid fa-book"></i>
+
+                                Produto
+
+                            </h6>
+
+
+
+
+                            <div class="row g-4">
+
+
+
+                                <div class="col-md-6">
+
+
+                                    <label>
+
+                                        Cliente
+
+                                    </label>
+
+
+                                    <select id="clienteVenda" class="form-select select2">
+
+
+                                        <option></option>
+
+                                        <option>
+                                            João Manuel
+                                        </option>
+
+                                        <option>
+                                            Maria José
+                                        </option>
+
+
+                                    </select>
+
+
+                                </div>
+
+
+
+
+
+
+
+                                <div class="col-md-6">
+
+
+                                    <label>
+
+                                        Livro
+
+                                    </label>
+
+
+                                    <select id="livroVenda" class="form-select select2">
+
+
+                                        <option></option>
+
+
+                                        <option>
+                                            Programação Java
+                                        </option>
+
+
+                                        <option>
+                                            Banco de Dados
+                                        </option>
+
+
+                                    </select>
+
+
+                                </div>
+
+
+                            </div>
+
+
+
+                        </div>
+
+
+
+
+
+
+
+
+
+                        <div class="form-section">
+
+
+                            <h6>
+
+                                <i class="fa-solid fa-money-bill"></i>
+
+                                Pagamento
+
+                            </h6>
+
+
+
+
+
+                            <div class="row g-4">
+
+
+
+
+
+                                <div class="col-md-3">
+
+
+                                    <label>
+
+                                        Quantidade
+
+                                    </label>
+
+
+                                    <input id="quantidadeVenda" type="number" value="1" class="form-control">
+
+
+                                </div>
+
+
+
+
+
+
+
+                                <div class="col-md-3">
+
+
+                                    <label>
+
+                                        Preço
+
+                                    </label>
+
+
+                                    <input id="precoVenda" type="number" class="form-control">
+
+
+                                </div>
+
+
+
+
+
+
+
+                                <div class="col-md-3">
+
+
+                                    <label>
+
+                                        Total
+
+                                    </label>
+
+
+                                    <input id="totalVenda" readonly class="form-control">
+
+
+                                </div>
+
+
+
+
+
+
+
+                                <div class="col-md-3">
+
+
+                                    <label>
+
+                                        Valor Pago
+
+                                    </label>
+
+
+                                    <input id="valorPago" type="number" class="form-control">
+
+
+                                </div>
+
+
+
+                            </div>
+
+
+
+                        </div>
+
+
+
+
+
+
+
+
+
+                        <div class="form-section">
+
+
+                            <h6>
+
+                                <i class="fa-solid fa-calendar-days"></i>
+
+                                Parcelamento
+
+                            </h6>
+
+
+
+
+
+                            <div class="row g-4">
+
+
+
+                                <div class="col-md-6">
+
+
+                                    <label>
+
+                                        Tipo Pagamento
+
+                                    </label>
+
+
+                                    <select id="tipoPagamento" class="form-select">
+
+
+                                        <option value="total">
+
+                                            Pagamento Total
+
+                                        </option>
+
+
+                                        <option value="parcelado">
+
+                                            Parcelado
+
+                                        </option>
+
+
+                                    </select>
+
+
+                                </div>
+
+
+
+
+
+
+
+                                <div class="col-md-6">
+
+
+                                    <label>
+
+                                        Próximo Pagamento
+
+                                    </label>
+
+
+                                    <input id="proximoPagamento" type="date" class="form-control">
+
+
+                                </div>
+
+
+
+                            </div>
+
+
+
+                        </div>
+
+
+
+
+
+                    </form>
+
+
+                </div>
+
+
+
+
+
+
+
+
+
+                <div class="modal-footer">
+
+
+                    <button class="btn-secondary-modern" data-bs-dismiss="modal">
+
+                        Cancelar
+
+                    </button>
+
+
+
+
+                    <button class="btn-primary-modern">
+
+
+                        <i class="fa-solid fa-check"></i>
+
+
+                        Registrar Venda
+
+
+                    </button>
+
+
+                </div>
+
+
+
+
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>

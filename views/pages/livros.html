@@ -1,0 +1,292 @@
+<!-- <div class="page-header">
+
+<div>
+<h2>Livros</h2>
+<p>Gestão do acervo da biblioteca</p>
+</div>
+
+
+<button class="btn btn-primary">
+<i class="fa-solid fa-plus"></i>
+Novo Livro
+</button>
+
+</div>
+
+
+
+<div class="content-card">
+
+
+<div class="table-responsive">
+
+
+<table id="tabelaLivros" class="table table-hover align-middle">
+
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+
+<th>Capa</th>
+
+<th>Título</th>
+
+<th>Autor</th>
+
+<th>Categoria</th>
+
+<th>Ano</th>
+
+<th>Quantidade</th>
+
+<th>Estado</th>
+
+<th>Ações</th>
+
+
+</tr>
+
+</thead>
+
+
+
+<tbody>
+
+
+<tr>
+
+<td>1</td>
+
+<td>
+<img src="assets/img/book.png" width="45">
+</td>
+
+<td>
+Programação Web
+</td>
+
+<td>
+Carlos Silva
+</td>
+
+<td>
+Tecnologia
+</td>
+
+<td>
+2025
+</td>
+
+<td>
+15
+</td>
+
+<td>
+
+<span class="badge bg-success">
+Disponível
+</span>
+
+</td>
+
+
+<td>
+
+
+<button class="btn btn-sm btn-primary">
+
+<i class="fa-solid fa-pen"></i>
+
+</button>
+
+
+<button class="btn btn-sm btn-danger">
+
+<i class="fa-solid fa-trash"></i>
+
+</button>
+
+
+</td>
+
+
+</tr>
+
+
+</tbody>
+
+
+</table>
+
+
+</div>
+
+
+</div> -->
+
+<div class="livros-page">
+  <!-- CABEÇALHO -->
+
+  <div class="page-header">
+    <div>
+      <h2>
+        <i class="fa-solid fa-book-open"></i>
+
+        Livros
+      </h2>
+
+      <p>Gerencie o acervo completo da biblioteca</p>
+    </div>
+
+    <button class="btn-add">
+      <i class="fa-solid fa-plus"></i>
+
+      Novo Livro
+    </button>
+  </div>
+
+  <!-- FILTROS -->
+
+  <div class="book-toolbar">
+    <div class="search-area">
+      <i class="fa-solid fa-search"></i>
+
+      <input type="text" id="searchBook" placeholder="Pesquisar livro..." />
+    </div>
+
+    <select id="categoryFilter">
+      <option value="">Todas Categorias</option>
+
+      <option>Programação</option>
+
+      <option>Romance</option>
+
+      <option>História</option>
+    </select>
+
+    <select id="statusFilter">
+      <option value="">Todos Estados</option>
+
+      <option>Disponível</option>
+
+      <option>Emprestado</option>
+
+      <option>Atrasado</option>
+    </select>
+  </div>
+
+  <!-- TABELA -->
+
+  <div class="book-table-card">
+    <div class="table-responsive">
+      <table id="booksTable" class="table">
+        <thead>
+          <tr>
+            <th>Capa</th>
+
+            <th>Código</th>
+
+            <th>Título</th>
+
+            <th>Autor</th>
+
+            <th>Categoria</th>
+
+            <th>Ano</th>
+
+            <th>Estado</th>
+
+            <th>Ações</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>
+              <img
+                src="https://m.fca.pt/fotos/produtos/d_9789727228973_capa_introdu_o_ao_desenvolvimento_moderno_para_a_web.jpg"
+                class="book-image"
+              />
+            </td>
+
+            <td>BK001</td>
+
+            <td>Desenvolvimento Web Moderno</td>
+
+            <td>João Silva</td>
+
+            <td>
+              <span class="category-badge"> Programação </span>
+            </td>
+
+            <td>2025</td>
+
+            <td>
+              <span class="status available"> Disponível </span>
+            </td>
+
+            <td>
+              <div class="action-buttons">
+                <button class="action view">
+                  <i class="fa-solid fa-eye"></i>
+                </button>
+
+                <button class="action edit">
+                  <i class="fa-solid fa-pen"></i>
+                </button>
+
+                <button class="action delete">
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs3IkENDRFJXifCjMnREa2ZR9U7dYZw3PLEEdd4IfRCPcb_sDAWXwTOCAu&s=10"
+                class="book-image"
+              />
+            </td>
+
+            <td>BK002</td>
+
+            <td>Banco de Dados Avançado</td>
+
+            <td>Maria Costa</td>
+
+            <td>
+              <span class="category-badge"> Tecnologia </span>
+            </td>
+
+            <td>2024</td>
+
+            <td>
+              <span class="status borrowed"> Emprestado </span>
+            </td>
+
+            <td>
+              <div class="action-buttons">
+                <button class="action view">
+                  <i class="fa-solid fa-eye"></i>
+                </button>
+
+                <button class="action edit">
+                  <i class="fa-solid fa-pen"></i>
+                </button>
+
+                <button class="action delete">
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

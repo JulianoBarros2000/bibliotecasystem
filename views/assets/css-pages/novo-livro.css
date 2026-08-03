@@ -1,0 +1,527 @@
+/* ==========================================
+   NOVO LIVRO - CSS
+========================================== */
+
+.novo-livro-page {
+  padding: 25px;
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.page-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 30px;
+}
+
+.page-header h2 {
+  margin: 0;
+
+  font-size: 28px;
+
+  font-weight: 700;
+
+  color: var(--color-text);
+}
+
+.page-header h2 i {
+  color: #2563eb;
+
+  margin-right: 10px;
+}
+
+.page-header p {
+  margin-top: 8px;
+
+  color: var(--color-text-secondary);
+}
+
+/* BOTÃO VOLTAR */
+
+.btn-back {
+  border: none;
+
+  background: transparent;
+
+  color: #2563eb;
+
+  font-weight: 600;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 10px 15px;
+
+  border-radius: 12px;
+
+  transition: 0.3s;
+}
+
+.btn-back:hover {
+  background: #eff6ff;
+}
+
+/* ==========================================
+   CARD DO FORMULÁRIO
+========================================== */
+
+.form-card {
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 22px;
+
+  padding: 25px;
+
+  height: 100%;
+
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+}
+
+.card-title {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  font-size: 17px;
+
+  font-weight: 700;
+
+  color: #334155;
+
+  padding-bottom: 20px;
+
+  margin-bottom: 20px;
+
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.card-title i {
+  color: #2563eb;
+}
+
+/* ==========================================
+   LABELS
+========================================== */
+
+.form-card label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  color: #475569;
+}
+
+/* ==========================================
+   INPUTS
+========================================== */
+
+.form-control {
+  height: 48px;
+
+  border-radius: 12px !important;
+
+  border: 1px solid #e2e8f0 !important;
+
+  background: #f8fafc;
+
+  padding: 0 15px;
+
+  color: #334155;
+
+  transition: 0.3s;
+}
+
+textarea.form-control {
+  height: auto;
+
+  padding: 15px;
+
+  resize: none;
+}
+
+.form-control:focus {
+  border-color: #2563eb !important;
+
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12) !important;
+
+  background: #ffffff;
+}
+
+/* ==========================================
+   UPLOAD CAPA
+========================================== */
+
+.upload-card {
+  text-align: center;
+}
+
+.image-preview {
+  width: 100%;
+
+  height: 300px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: #f8fafc;
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  margin-bottom: 20px;
+
+  border: 2px dashed #cbd5e1;
+}
+
+.image-preview img {
+  max-width: 100%;
+
+  max-height: 100%;
+
+  object-fit: contain;
+}
+
+.upload-btn {
+  width: 100%;
+
+  height: 48px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  background: #2563eb;
+
+  color: white;
+
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.upload-btn:hover {
+  background: #1d4ed8;
+}
+
+/* ==========================================
+   AÇÕES
+========================================== */
+
+.form-actions {
+  margin-top: 30px;
+
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 15px;
+}
+
+.btn-cancel {
+  border: none;
+
+  background: transparent;
+
+  color: #64748b;
+
+  padding: 12px 25px;
+
+  border-radius: 12px;
+
+  font-weight: 600;
+}
+
+.btn-cancel:hover {
+  background: #f1f5f9;
+
+  color: #334155;
+}
+
+.btn-save {
+  border: none;
+
+  background: #2563eb;
+
+  color: white;
+
+  padding: 12px 28px;
+
+  border-radius: 12px;
+
+  font-weight: 600;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.btn-save:hover {
+  background: #1d4ed8;
+}
+
+/* ==========================================
+   DARK MODE
+========================================== */
+
+[data-theme="dark"] .form-card {
+  background: #1e293b;
+
+  border-color: #334155;
+}
+
+[data-theme="dark"] .card-title {
+  color: #f8fafc;
+
+  border-color: #334155;
+}
+
+[data-theme="dark"] .form-card label {
+  color: #cbd5e1;
+}
+
+[data-theme="dark"] .form-control {
+  background: #0f172a;
+
+  border-color: #334155 !important;
+
+  color: #f8fafc;
+}
+
+[data-theme="dark"] .form-control:focus {
+  background: #0f172a;
+}
+
+[data-theme="dark"] .image-preview {
+  background: #0f172a;
+
+  border-color: #475569;
+}
+
+/* ==========================================
+   SELECT PREMIUM
+========================================== */
+
+.form-control,
+.form-select {
+  height: 48px;
+
+  border-radius: 12px !important;
+
+  border: 1px solid #e2e8f0 !important;
+
+  background: #f8fafc;
+
+  padding: 0 45px 0 15px;
+
+  color: #334155;
+
+  font-size: 14px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+
+  appearance: none;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2364748B' viewBox='0 0 16 16'%3E%3Cpath d='M1.5 5.5L8 12l6.5-6.5-1.5-1.5L8 9 3 4z'/%3E%3C/svg%3E");
+
+  background-repeat: no-repeat;
+
+  background-position: right 15px center;
+
+  background-size: 14px;
+}
+
+.form-select:hover,
+.form-control:hover {
+  border-color: #cbd5e1 !important;
+}
+
+.form-select:focus,
+.form-control:focus {
+  border-color: #2563eb !important;
+
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12) !important;
+
+  outline: none;
+}
+
+/* opções */
+
+select option {
+  padding: 12px;
+
+  background: white;
+
+  color: #334155;
+}
+
+/* DARK MODE */
+
+[data-theme="dark"] .form-select {
+  background-color: #0f172a;
+
+  color: #f8fafc;
+
+  border-color: #334155 !important;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23CBD5E1' viewBox='0 0 16 16'%3E%3Cpath d='M1.5 5.5L8 12l6.5-6.5-1.5-1.5L8 9 3 4z'/%3E%3C/svg%3E");
+}
+
+[data-theme="dark"] select option {
+  background: #1e293b;
+
+  color: #f8fafc;
+}
+
+/* =====================================
+   SELECT2 PREMIUM
+===================================== */
+
+.select2-container {
+  width: 100% !important;
+}
+
+.select2-selection {
+  height: 48px !important;
+
+  border-radius: 12px !important;
+
+  border: 1px solid #e2e8f0 !important;
+
+  background: #f8fafc !important;
+
+  display: flex !important;
+
+  align-items: center;
+
+  padding: 0 12px;
+}
+
+.select2-selection__rendered {
+  color: #334155 !important;
+
+  font-size: 14px;
+}
+
+.select2-selection__arrow {
+  top: 10px !important;
+
+  right: 10px !important;
+}
+
+.select2-dropdown {
+  border: none !important;
+
+  border-radius: 15px !important;
+
+  overflow: hidden;
+
+  box-shadow: 0 15px 40px rgba(15, 23, 42, 0.15);
+}
+
+.select2-search__field {
+  border-radius: 10px !important;
+
+  padding: 10px !important;
+
+  border: 1px solid #e2e8f0 !important;
+}
+
+.select2-results__option {
+  padding: 12px 15px !important;
+}
+
+.select2-results__option--highlighted {
+  background: #2563eb !important;
+}
+
+/* DARK MODE */
+
+[data-theme="dark"] .select2-selection {
+  background: #0f172a !important;
+
+  border-color: #334155 !important;
+}
+
+[data-theme="dark"] .select2-selection__rendered {
+  color: white !important;
+}
+
+[data-theme="dark"] .select2-dropdown {
+  background: #1e293b;
+}
+
+[data-theme="dark"] .select2-results__option {
+  color: white;
+}
+
+/* ==========================================
+   RESPONSIVO
+========================================== */
+
+@media (max-width: 992px) {
+  .page-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 15px;
+  }
+
+  .form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .btn-save,
+  .btn-cancel {
+    width: 100%;
+
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .novo-livro-page {
+    padding: 15px;
+  }
+
+  .form-card {
+    padding: 18px;
+  }
+
+  .image-preview {
+    height: 250px;
+  }
+}

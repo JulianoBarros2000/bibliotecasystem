@@ -1,0 +1,209 @@
+/* =====================================
+   LEITORES PAGE
+===================================== */
+
+.leitores-page {
+  animation: fadeLeitor 0.4s ease;
+}
+
+@keyframes fadeLeitor {
+  from {
+    opacity: 0;
+
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: none;
+  }
+}
+
+/* =====================================
+   PERFIL LEITOR
+===================================== */
+
+.profile-box {
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  background: #f8fafc;
+
+  padding: 20px;
+
+  border-radius: 22px;
+}
+
+.profile-box img {
+  width: 80px;
+
+  height: 80px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+
+  border: 4px solid #2563eb;
+}
+
+.profile-box h4 {
+  margin: 0;
+
+  color: #334155;
+}
+
+.profile-box p {
+  margin: 5px 0;
+
+  color: #16a34a;
+
+  font-weight: 600;
+}
+
+/* =====================================
+   AVATAR TABELA
+===================================== */
+
+.client-info img {
+  width: 42px;
+
+  height: 42px;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+}
+
+.client-info {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+.client-info strong {
+  display: block;
+
+  color: #334155;
+}
+
+.client-info small {
+  color: #64748b;
+}
+
+/* =====================================
+   ESTADOS
+===================================== */
+
+.payment.paid {
+  background: #dcfce7;
+
+  color: #15803d;
+
+  padding: 6px 14px;
+
+  border-radius: 20px;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+.payment.partial {
+  background: #fef3c7;
+
+  color: #b45309;
+
+  padding: 6px 14px;
+
+  border-radius: 20px;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+.payment.blocked {
+  background: #fee2e2;
+
+  color: #dc2626;
+
+  padding: 6px 14px;
+
+  border-radius: 20px;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+/* =====================================
+   ACTION BUTTONS
+===================================== */
+
+.action {
+  width: 35px;
+
+  height: 35px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  display: inline-flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  transition: 0.3s;
+}
+
+.action.view {
+  background: #dbeafe;
+
+  color: #2563eb;
+}
+
+.action.edit {
+  background: #fef3c7;
+
+  color: #d97706;
+}
+
+.action.delete {
+  background: #fee2e2;
+
+  color: #dc2626;
+}
+
+.action:hover {
+  transform: translateY(-3px);
+}
+
+/* =====================================
+   MODAL LEITOR
+===================================== */
+
+#modalLeitor .form-control,
+#modalEditarLeitor .form-control {
+  border-radius: 14px;
+
+  padding: 12px;
+
+  border: 1px solid #e2e8f0;
+}
+
+#modalLeitor label,
+#modalEditarLeitor label {
+  font-weight: 600;
+
+  color: #334155;
+
+  margin-bottom: 7px;
+}
