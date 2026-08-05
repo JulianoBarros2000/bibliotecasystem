@@ -1,377 +1,1301 @@
+```css
 /* ==========================================
    LIVROS - CSS
 ========================================== */
 
 .livros-page {
-  padding: 25px;
+    padding: 25px;
 }
+
 
 /* ==========================================
    HEADER
 ========================================== */
 
 .page-header {
-  display: flex;
+    display: flex;
 
-  justify-content: space-between;
+    justify-content: space-between;
 
-  align-items: center;
+    align-items: center;
 
-  margin-bottom: 30px;
+    margin-bottom: 30px;
 }
+
 
 .page-header h2 {
-  margin: 0;
+    margin: 0;
 
-  font-size: 28px;
+    font-size: 28px;
 
-  font-weight: 700;
+    font-weight: 700;
 
-  color: var(--color-text);
+    color: var(--color-text);
 }
+
 
 .page-header h2 i {
-  color: #2563eb;
+    color: #2563eb;
 
-  margin-right: 10px;
+    margin-right: 10px;
 }
+
 
 .page-header p {
-  margin-top: 8px;
+    margin-top: 8px;
 
-  color: var(--color-text-secondary);
+    color: var(--color-text-secondary);
 }
 
-/* BOTÃO NOVO */
+
+/* ==========================================
+   BOTÃO NOVO
+========================================== */
 
 .btn-add {
-  display: flex;
+    display: flex;
 
-  align-items: center;
+    align-items: center;
 
-  gap: 8px;
+    gap: 8px;
 
-  background: #2563eb;
+    background: #2563eb;
 
-  color: white;
+    color: white;
 
-  border: none;
+    border: none;
 
-  padding: 12px 20px;
+    padding: 12px 20px;
 
-  border-radius: 12px;
+    border-radius: 12px;
 
-  font-weight: 600;
+    font-weight: 600;
 
-  transition: 0.3s;
+    cursor: pointer;
+
+    transition: 0.3s;
 }
+
 
 .btn-add:hover {
-  background: #1d4ed8;
+    background: #1d4ed8;
 
-  transform: translateY(-2px);
+    transform: translateY(-2px);
 }
+
 
 /* ==========================================
    TOOLBAR
 ========================================== */
 
 .book-toolbar {
-  display: flex;
+    display: flex;
 
-  gap: 15px;
+    gap: 15px;
 
-  background: white;
+    background: white;
 
-  padding: 20px;
+    padding: 20px;
 
-  border-radius: 20px;
+    border-radius: 20px;
 
-  border: 1px solid #e2e8f0;
+    border: 1px solid #e2e8f0;
 
-  margin-bottom: 25px;
+    margin-bottom: 25px;
 }
+
 
 .search-area {
-  position: relative;
+    position: relative;
 
-  flex: 1;
+    flex: 1;
 }
+
 
 .search-area i {
-  position: absolute;
+    position: absolute;
 
-  left: 15px;
+    left: 15px;
 
-  top: 50%;
+    top: 50%;
 
-  transform: translateY(-50%);
+    transform: translateY(-50%);
 
-  color: #94a3b8;
+    color: #94a3b8;
+
+    pointer-events: none;
 }
+
 
 .search-area input {
-  width: 100%;
+    width: 100%;
 
-  padding: 12px 15px 12px 45px;
+    box-sizing: border-box;
 
-  border-radius: 12px;
+    padding: 12px 15px 12px 45px;
 
-  border: 1px solid #e2e8f0;
+    border-radius: 12px;
 
-  background: #f8fafc;
+    border: 1px solid #e2e8f0;
+
+    background: #f8fafc;
+
+    outline: none;
 }
+
+
+.search-area input:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(37, 99, 235, 0.08);
+}
+
 
 .book-toolbar select {
-  border: 1px solid #e2e8f0;
+    border: 1px solid #e2e8f0;
 
-  border-radius: 12px;
+    border-radius: 12px;
 
-  padding: 0 15px;
+    padding: 0 15px;
 
-  background: #fff;
+    background: #fff;
 
-  color: #334155;
+    color: #334155;
+
+    outline: none;
 }
+
+
+.book-toolbar select:focus {
+    border-color: #2563eb;
+}
+
 
 /* ==========================================
    TABELA
 ========================================== */
 
 .book-table-card {
-  background: white;
+    background: white;
 
-  border-radius: 22px;
+    border-radius: 22px;
 
-  border: 1px solid #e2e8f0;
+    border: 1px solid #e2e8f0;
 
-  padding: 20px;
+    padding: 20px;
 
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+    box-shadow:
+        0 10px 30px
+        rgba(15, 23, 42, 0.05);
 }
+
 
 .table {
-  margin: 0;
+    margin: 0;
 }
+
 
 .table thead th {
-  background: #f8fafc;
+    background: #f8fafc;
 
-  color: #64748b;
+    color: #64748b;
 
-  font-size: 12px;
+    font-size: 12px;
 
-  text-transform: uppercase;
+    text-transform: uppercase;
 
-  letter-spacing: 0.5px;
+    letter-spacing: 0.5px;
 
-  padding: 16px;
+    padding: 16px;
 
-  border: none;
+    border: none;
 }
+
 
 .table tbody td {
-  padding: 16px;
+    padding: 16px;
 
-  vertical-align: middle;
+    vertical-align: middle;
 
-  border-color: #f1f5f9;
+    border-color: #f1f5f9;
 
-  color: #334155;
+    color: #334155;
 }
+
 
 .table tbody tr {
-  transition: 0.3s;
+    transition: 0.3s;
 }
 
+
 .table tbody tr:hover {
-  background: #f8fafc;
+    background: #f8fafc;
 }
+
 
 /* ==========================================
    IMAGEM DO LIVRO
 ========================================== */
 
 .book-image {
-  width: 45px;
+    width: 45px;
 
-  height: 60px;
+    height: 60px;
 
-  object-fit: cover;
+    object-fit: cover;
 
-  border-radius: 8px;
+    border-radius: 8px;
 
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+    box-shadow:
+        0 5px 15px
+        rgba(0, 0, 0, 0.12);
 }
+
 
 /* ==========================================
    BADGES
 ========================================== */
 
 .category-badge {
-  background: #dbeafe;
+    display: inline-block;
 
-  color: #1d4ed8;
+    background: #dbeafe;
 
-  padding: 6px 12px;
+    color: #1d4ed8;
 
-  border-radius: 20px;
+    padding: 6px 12px;
 
-  font-size: 12px;
+    border-radius: 20px;
 
-  font-weight: 600;
+    font-size: 12px;
+
+    font-weight: 600;
 }
+
 
 .status {
-  padding: 7px 13px;
+    display: inline-block;
 
-  border-radius: 20px;
+    padding: 7px 13px;
 
-  font-size: 12px;
+    border-radius: 20px;
 
-  font-weight: 600;
+    font-size: 12px;
+
+    font-weight: 600;
 }
+
 
 .available {
-  background: #dcfce7;
+    background: #dcfce7;
 
-  color: #15803d;
+    color: #15803d;
 }
+
 
 .borrowed {
-  background: #fef3c7;
+    background: #fef3c7;
 
-  color: #b45309;
+    color: #b45309;
 }
 
-.late {
-  background: #fee2e2;
 
-  color: #b91c1c;
+.late,
+.overdue {
+    background: #fee2e2;
+
+    color: #b91c1c;
 }
+
 
 /* ==========================================
    AÇÕES
 ========================================== */
 
 .action-buttons {
-  display: flex;
+    display: flex;
 
-  gap: 8px;
+    gap: 8px;
 }
+
 
 .action {
-  width: 35px;
+    width: 35px;
 
-  height: 35px;
+    height: 35px;
 
-  border: none;
+    border: none;
 
-  background: transparent;
+    background: transparent;
 
-  border-radius: 10px;
+    border-radius: 10px;
 
-  display: flex;
+    display: flex;
 
-  justify-content: center;
+    justify-content: center;
 
-  align-items: center;
+    align-items: center;
 
-  transition: 0.25s;
+    cursor: pointer;
+
+    transition: 0.25s;
 }
+
 
 .action:hover {
-  background: #f1f5f9;
+    background: #f1f5f9;
 
-  transform: translateY(-2px);
+    transform: translateY(-2px);
 }
+
 
 .view {
-  color: #2563eb;
+    color: #2563eb;
 }
+
 
 .edit {
-  color: #f59e0b;
+    color: #f59e0b;
 }
 
+
 .delete {
-  color: #ef4444;
+    color: #ef4444;
 }
+
 
 /* ==========================================
    DATATABLES
 ========================================== */
 
 .dataTables_wrapper {
-  padding-top: 15px;
+    padding-top: 15px;
 }
+
 
 .dataTables_filter input {
-  border: 1px solid #e2e8f0 !important;
+    border: 1px solid #e2e8f0 !important;
 
-  border-radius: 12px !important;
+    border-radius: 12px !important;
 
-  padding: 10px 15px !important;
+    padding: 10px 15px !important;
+
+    outline: none;
 }
+
+
+.dataTables_filter input:focus {
+    border-color: #2563eb !important;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(37, 99, 235, 0.08);
+}
+
 
 .dataTables_length select {
-  border: 1px solid #e2e8f0 !important;
+    border: 1px solid #e2e8f0 !important;
 
-  border-radius: 10px !important;
+    border-radius: 10px !important;
 
-  padding: 6px;
+    padding: 6px;
+
+    outline: none;
 }
 
-/* PAGINAÇÃO */
-
-.page-link {
-  border: none !important;
-
-  color: #2563eb;
-}
-
-.page-item.active .page-link {
-  background: #2563eb !important;
-
-  color: white !important;
-
-  border-radius: 10px;
-}
 
 /* ==========================================
-   RESPONSIVO
+   PAGINAÇÃO
 ========================================== */
 
-@media (max-width: 992px) {
-  .book-toolbar {
-    flex-direction: column;
-  }
+.page-link {
+    border: none !important;
 
-  .page-header {
-    flex-direction: column;
+    color: #2563eb;
+}
 
-    align-items: flex-start;
 
-    gap: 15px;
-  }
+.page-item.active .page-link {
+    background: #2563eb !important;
 
-  .btn-add {
-    width: 100%;
+    color: white !important;
+
+    border-radius: 10px;
+}
+
+
+/* =====================================================
+   MODAIS — LIVROS
+===================================================== */
+
+/*
+   IMPORTANTE:
+   O modal começa SEMPRE escondido.
+*/
+
+.book-modal-overlay {
+
+    position: fixed !important;
+
+    top: 0 !important;
+
+    right: 0 !important;
+
+    bottom: 0 !important;
+
+    left: 0 !important;
+
+    width: 100% !important;
+
+    height: 100% !important;
+
+    display: none !important;
+
+    align-items: center;
 
     justify-content: center;
-  }
+
+    padding: 20px;
+
+    box-sizing: border-box;
+
+    background:
+        rgba(15, 23, 42, 0.58);
+
+    backdrop-filter: blur(5px);
+
+    -webkit-backdrop-filter: blur(5px);
+
+    z-index: 99999 !important;
+
+    visibility: hidden !important;
+
+    opacity: 0 !important;
+
+    pointer-events: none !important;
 }
+
+
+/*
+   SOMENTE QUANDO O JAVASCRIPT
+   ADICIONAR .active
+*/
+
+.book-modal-overlay.active {
+
+    display: flex !important;
+
+    visibility: visible !important;
+
+    opacity: 1 !important;
+
+    pointer-events: auto !important;
+}
+
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+.book-modal {
+
+    position: relative;
+
+    width: min(760px, 100%);
+
+    max-height: 90vh;
+
+    background: #ffffff;
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 25px 70px
+        rgba(15, 23, 42, 0.25);
+
+    animation:
+        bookModalShow 0.25s ease;
+}
+
+
+@keyframes bookModalShow {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(20px)
+            scale(0.97);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+/* =====================================================
+   HEADER DO MODAL
+===================================================== */
+
+.book-modal-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 22px 26px;
+
+    border-bottom:
+        1px solid #e2e8f0;
+}
+
+
+.book-modal-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+
+.book-modal-title h3 {
+
+    margin: 0;
+
+    color: #0f172a;
+
+    font-size: 17px;
+
+    font-weight: 700;
+}
+
+
+.book-modal-title p {
+
+    margin: 4px 0 0;
+
+    color: #64748b;
+
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   ÍCONE DO MODAL
+===================================================== */
+
+.book-modal-icon {
+
+    width: 45px;
+
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 12px;
+
+    flex-shrink: 0;
+}
+
+
+.book-modal-icon.blue {
+
+    background: #eff6ff;
+
+    color: #2563eb;
+}
+
+
+.book-modal-icon.orange {
+
+    background: #fff7ed;
+
+    color: #ea580c;
+}
+
+
+/* =====================================================
+   BOTÃO FECHAR
+===================================================== */
+
+.book-modal-close {
+
+    width: 36px;
+
+    height: 36px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: transparent;
+
+    color: #64748b;
+
+    cursor: pointer;
+
+    font-size: 17px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition: 0.2s;
+}
+
+
+.book-modal-close:hover {
+
+    background: #f1f5f9;
+
+    color: #0f172a;
+}
+
+
+/* =====================================================
+   BODY
+===================================================== */
+
+.book-modal-body {
+
+    padding: 26px;
+
+    max-height: 60vh;
+
+    overflow-y: auto;
+}
+
+
+/* =====================================================
+   PREVIEW DO LIVRO
+===================================================== */
+
+.book-preview {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding-bottom: 24px;
+
+    margin-bottom: 24px;
+
+    border-bottom:
+        1px solid #e2e8f0;
+}
+
+
+.book-preview img {
+
+    width: 100px;
+
+    height: 135px;
+
+    object-fit: cover;
+
+    border-radius: 9px;
+
+    background: #f1f5f9;
+
+    box-shadow:
+        0 8px 20px
+        rgba(15, 23, 42, 0.12);
+
+    flex-shrink: 0;
+}
+
+
+.book-preview-info {
+
+    min-width: 0;
+}
+
+
+.book-preview-info h3 {
+
+    margin: 0 0 8px;
+
+    color: #0f172a;
+
+    font-size: 19px;
+
+    font-weight: 700;
+}
+
+
+.book-preview-info p {
+
+    margin: 10px 0;
+
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+
+.book-code {
+
+    display: inline-block;
+
+    padding: 4px 8px;
+
+    border-radius: 6px;
+
+    background: #f1f5f9;
+
+    color: #475569;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   DETALHES
+===================================================== */
+
+.book-details-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 14px;
+}
+
+
+.book-detail-item {
+
+    padding: 15px;
+
+    border:
+        1px solid #e2e8f0;
+
+    border-radius: 10px;
+
+    background: #f8fafc;
+}
+
+
+.book-detail-item span {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #94a3b8;
+
+    font-size: 11px;
+}
+
+
+.book-detail-item strong {
+
+    color: #334155;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   FORMULÁRIO
+===================================================== */
+
+.book-form-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 18px;
+}
+
+
+.book-form-group.full {
+
+    grid-column: 1 / -1;
+}
+
+
+.book-form-group label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #334155;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+.book-input {
+
+    position: relative;
+}
+
+
+.book-input > i {
+
+    position: absolute;
+
+    left: 13px;
+
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    color: #94a3b8;
+
+    pointer-events: none;
+
+    font-size: 13px;
+
+    z-index: 2;
+}
+
+
+.book-input input,
+.book-input select {
+
+    width: 100%;
+
+    height: 44px;
+
+    box-sizing: border-box;
+
+    padding:
+        0 13px 0 40px;
+
+    border:
+        1px solid #e2e8f0;
+
+    border-radius: 9px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: #334155;
+
+    font-size: 13px;
+
+    transition: 0.2s;
+}
+
+
+.book-input input:focus,
+.book-input select:focus {
+
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(37, 99, 235, 0.08);
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.book-modal-footer {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    padding: 17px 26px;
+
+    border-top:
+        1px solid #e2e8f0;
+}
+
+
+/* =====================================================
+   BOTÕES DOS MODAIS
+===================================================== */
+
+.btn-book-cancel,
+.btn-book-primary,
+.btn-book-danger {
+
+    height: 40px;
+
+    padding: 0 16px;
+
+    border-radius: 9px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    transition: 0.2s;
+}
+
+
+.btn-book-cancel {
+
+    border:
+        1px solid #e2e8f0;
+
+    background: #f8fafc;
+
+    color: #475569;
+}
+
+
+.btn-book-cancel:hover {
+
+    background: #f1f5f9;
+}
+
+
+.btn-book-primary {
+
+    border: none;
+
+    background: #2563eb;
+
+    color: #ffffff;
+}
+
+
+.btn-book-primary:hover {
+
+    background: #1d4ed8;
+
+    transform: translateY(-1px);
+}
+
+
+.btn-book-danger {
+
+    border: none;
+
+    background: #dc2626;
+
+    color: #ffffff;
+}
+
+
+.btn-book-danger:hover {
+
+    background: #b91c1c;
+
+    transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   MODAL ELIMINAR
+===================================================== */
+
+.delete-book-modal {
+
+    width: min(440px, 100%);
+}
+
+
+.delete-book-content {
+
+    padding: 35px 25px;
+
+    text-align: center;
+}
+
+
+.delete-book-icon {
+
+    width: 60px;
+
+    height: 60px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin: 0 auto 17px;
+
+    border-radius: 50%;
+
+    background: #fef2f2;
+
+    color: #dc2626;
+
+    font-size: 22px;
+}
+
+
+.delete-book-content h3 {
+
+    margin: 0 0 8px;
+
+    color: #0f172a;
+
+    font-size: 18px;
+}
+
+
+.delete-book-content p {
+
+    margin: 0;
+
+    color: #475569;
+
+    font-size: 13px;
+}
+
+
+.delete-book-content span {
+
+    display: block;
+
+    margin-top: 7px;
+
+    color: #94a3b8;
+
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   SCROLLBAR DO MODAL
+===================================================== */
+
+.book-modal-body::-webkit-scrollbar {
+
+    width: 6px;
+}
+
+
+.book-modal-body::-webkit-scrollbar-track {
+
+    background: transparent;
+}
+
+
+.book-modal-body::-webkit-scrollbar-thumb {
+
+    background: #cbd5e1;
+
+    border-radius: 10px;
+}
+
+
+/* =====================================================
+   RESPONSIVO — TABLET
+===================================================== */
+
+@media (max-width: 992px) {
+
+    .book-toolbar {
+
+        flex-direction: column;
+
+    }
+
+
+    .page-header {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+
+    }
+
+
+    .btn-add {
+
+        width: 100%;
+
+        justify-content: center;
+
+    }
+
+}
+
+
+/* =====================================================
+   RESPONSIVO — MODAL
+===================================================== */
+
+@media (max-width: 650px) {
+
+    .book-modal-overlay {
+
+        padding: 12px;
+
+    }
+
+
+    .book-modal {
+
+        width: 100%;
+
+        max-height: 94vh;
+
+        border-radius: 16px;
+
+    }
+
+
+    .book-modal-header {
+
+        padding: 18px;
+
+    }
+
+
+    .book-modal-body {
+
+        padding: 18px;
+
+        max-height: 65vh;
+
+    }
+
+
+    .book-modal-footer {
+
+        padding: 15px 18px;
+
+        flex-wrap: wrap;
+
+    }
+
+
+    .book-form-grid,
+    .book-details-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .book-form-group.full {
+
+        grid-column: auto;
+
+    }
+
+
+    .book-preview {
+
+        align-items: flex-start;
+
+    }
+
+
+    .book-preview img {
+
+        width: 80px;
+
+        height: 110px;
+
+    }
+
+
+    .book-preview-info h3 {
+
+        font-size: 16px;
+
+    }
+
+}
+
+
+/* =====================================================
+   RESPONSIVO — TELEMÓVEL
+===================================================== */
 
 @media (max-width: 576px) {
-  .livros-page {
-    padding: 15px;
-  }
 
-  .book-table-card {
-    padding: 10px;
-  }
+    .livros-page {
 
-  .table {
-    min-width: 900px;
-  }
+        padding: 15px;
+
+    }
+
+
+    .book-table-card {
+
+        padding: 10px;
+
+    }
+
+
+    .table {
+
+        min-width: 900px;
+
+    }
+
+
+    .book-modal-footer {
+
+        flex-direction: column;
+
+    }
+
+
+    .btn-book-cancel,
+    .btn-book-primary,
+    .btn-book-danger {
+
+        width: 100%;
+
+    }
+
 }
+```

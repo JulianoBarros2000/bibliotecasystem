@@ -41,11 +41,17 @@
     <link rel="stylesheet" href="views/assets/css-pages/autores.css" />
     <link rel="stylesheet" href="views/assets/css-pages/emprestimos.css" />
     <link rel="stylesheet" href="views/assets/css-pages/configuracoes.css" />
+    <link rel="stylesheet" href="views/assets/css-pages/config-user.css" />
 
     <title>CRUD</title>
   </head>
 
   <body>
+    <!-- BARRA DE PROCESSAMENTO -->
+    <div id="pageLoader" class="page-loader">
+      <div class="loader-progress"></div>
+    </div>
+
     <div class="dashboard-layout">
       <nav class="navbar navbar-expand-lg bg-white shadow-sm fixed-top px-3">
         <div class="container-fluid px-4 px-lg-5">
@@ -164,7 +170,13 @@
 
                   <!-- Rodapé -->
 
-                  <a href="#" class="view-all"> Ver todas notificações </a>
+                  <a
+                    href="#"
+                    class="view-all menu-link"
+                    data-page="notificacoes"
+                  >
+                    Ver todas notificações
+                  </a>
                 </div>
               </div>
 
@@ -213,31 +225,13 @@
 
                   <!-- Opções -->
 
-                  <a href="#" class="profile-item">
+                  <a href="#" class="profile-item" type="button" id="openUserSettings">
                     <div class="profile-icon">
                       <i class="fa-solid fa-user"></i>
                     </div>
 
                     Meu Perfil
                   </a>
-
-                  <a href="#" class="profile-item">
-                    <div class="profile-icon">
-                      <i class="fa-solid fa-key"></i>
-                    </div>
-
-                    Alterar Palavra-passe
-                  </a>
-
-                  <a href="#" class="profile-item" data-page="configuracoes">
-                    <div class="profile-icon">
-                      <i class="fa-solid fa-gear"></i>
-                    </div>
-
-                    Configurações
-                  </a>
-
-                  <hr class="m-0" />
 
                   <!-- Sair -->
 
@@ -397,7 +391,9 @@
                 <i class="fa-solid fa-gear"></i>
               </span>
 
-              <span class="menu-text"> Configurações </span>
+              <span class="menu-text menu-link" data-page="config-user">
+                Configurações
+              </span>
             </a>
           </li>
         </ul>
@@ -413,6 +409,804 @@
         </div>
       </main>
     </div>
+
+   <div class="user-settings-modal">
+
+    <div class="user-settings-header">
+
+        <div class="settings-title">
+            <div class="settings-title-icon">
+                <i class="fa-solid fa-sliders"></i>
+            </div>
+
+            <div>
+                <h3>Configurações</h3>
+                <p>Personalize a sua conta e experiência</p>
+            </div>
+        </div>
+
+        <button type="button" class="settings-close" id="closeUserSettings">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+    </div>
+
+
+    <div class="user-settings-content">
+
+        <aside class="settings-sidebar">
+
+            <div class="settings-user-preview">
+
+                <div class="settings-avatar">
+                    <img id="settingsAvatarPreview"
+                         src="views/assets/img/avatar.png"
+                         alt="Utilizador">
+
+                    <button type="button" id="changeAvatarButton">
+                        <i class="fa-solid fa-camera"></i>
+                    </button>
+
+                    <input type="file"
+                           id="settingsAvatarInput"
+                           accept="image/*"
+                           hidden>
+                </div>
+
+                <strong id="settingsUserName">Juliano Barros</strong>
+
+                <span id="settingsUserRole">Administrador</span>
+
+            </div>
+
+
+            <nav class="settings-navigation">
+
+                <button class="settings-tab active"
+                        data-tab="profile">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <span>Perfil</span>
+
+                </button>
+
+
+                <button class="settings-tab"
+                        data-tab="security">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                    <span>Segurança</span>
+
+                </button>
+
+
+                <button class="settings-tab"
+                        data-tab="notifications">
+
+                    <i class="fa-solid fa-bell"></i>
+
+                    <span>Notificações</span>
+
+                </button>
+
+
+                <button class="settings-tab"
+                        data-tab="appearance">
+
+                    <i class="fa-solid fa-palette"></i>
+
+                    <span>Aparência</span>
+
+                </button>
+
+
+                <button class="settings-tab"
+                        data-tab="preferences">
+
+                    <i class="fa-solid fa-sliders"></i>
+
+                    <span>Preferências</span>
+
+                </button>
+
+
+                <button class="settings-tab"
+                        data-tab="password">
+
+                    <i class="fa-solid fa-key"></i>
+
+                    <span>Palavra-passe</span>
+
+                </button>
+
+            </nav>
+
+        </aside>
+
+
+        <main class="settings-main">
+
+
+            <!-- PERFIL -->
+
+            <section class="settings-panel active"
+                     data-panel="profile">
+
+                <div class="settings-panel-header">
+
+                    <div>
+                        <h4>Informações do perfil</h4>
+                        <p>Atualize as informações da sua conta.</p>
+                    </div>
+
+                    <i class="fa-solid fa-user"></i>
+
+                </div>
+
+
+                <form id="profileSettingsForm">
+
+                    <div class="settings-form-grid">
+
+                        <div class="settings-field">
+
+                            <label>Nome completo</label>
+
+                            <div class="settings-input">
+
+                                <i class="fa-solid fa-user"></i>
+
+                                <input type="text"
+                                       id="profileName"
+                                       value="Juliano Barros">
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="settings-field">
+
+                            <label>Nome de utilizador</label>
+
+                            <div class="settings-input">
+
+                                <i class="fa-solid fa-at"></i>
+
+                                <input type="text"
+                                       id="profileUsername"
+                                       value="juliano"
+                                       readonly>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="settings-field">
+
+                            <label>Email</label>
+
+                            <div class="settings-input">
+
+                                <i class="fa-solid fa-envelope"></i>
+
+                                <input type="email"
+                                       id="profileEmail"
+                                       value="juliano@email.com">
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="settings-field">
+
+                            <label>Telefone</label>
+
+                            <div class="settings-input">
+
+                                <i class="fa-solid fa-phone"></i>
+
+                                <input type="tel"
+                                       id="profilePhone"
+                                       value="+244 900 000 000">
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="settings-field">
+
+                            <label>Cargo</label>
+
+                            <div class="settings-input">
+
+                                <i class="fa-solid fa-briefcase"></i>
+
+                                <input type="text"
+                                       id="profileRole"
+                                       value="Administrador">
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="settings-field">
+
+                            <label>Departamento</label>
+
+                            <div class="settings-input">
+
+                                <i class="fa-solid fa-building"></i>
+
+                                <input type="text"
+                                       id="profileDepartment"
+                                       value="Tecnologia">
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="settings-field full">
+
+                            <label>Biografia</label>
+
+                            <textarea id="profileBio"
+                                      rows="4">Administrador do sistema de gestão de biblioteca.</textarea>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="settings-actions">
+
+                        <button type="button"
+                                class="settings-btn secondary"
+                                data-close-settings>
+
+                            Cancelar
+
+                        </button>
+
+                        <button type="submit"
+                                class="settings-btn primary">
+
+                            <i class="fa-solid fa-check"></i>
+
+                            Guardar alterações
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+
+
+            <!-- SEGURANÇA -->
+
+            <section class="settings-panel"
+                     data-panel="security">
+
+                <div class="settings-panel-header">
+
+                    <div>
+                        <h4>Segurança da conta</h4>
+                        <p>Controle o acesso e as sessões da sua conta.</p>
+                    </div>
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                </div>
+
+
+                <div class="security-status">
+
+                    <div class="security-status-icon">
+                        <i class="fa-solid fa-shield-check"></i>
+                    </div>
+
+                    <div>
+
+                        <strong>Conta protegida</strong>
+
+                        <span>
+                            Não existem alertas de segurança.
+                        </span>
+
+                    </div>
+
+                    <b>Seguro</b>
+
+                </div>
+
+
+                <div class="security-list">
+
+                    <div class="security-item">
+
+                        <div class="security-item-icon">
+                            <i class="fa-solid fa-desktop"></i>
+                        </div>
+
+                        <div class="security-item-info">
+
+                            <strong>Computador atual</strong>
+
+                            <span>
+                                Windows · Chrome · Sessão atual
+                            </span>
+
+                        </div>
+
+                        <em>Ativo</em>
+
+                    </div>
+
+
+                    <div class="security-item">
+
+                        <div class="security-item-icon">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+
+                        <div class="security-item-info">
+
+                            <strong>Último acesso</strong>
+
+                            <span id="lastAccess">
+                                Hoje, sessão atual
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="settings-info-box">
+
+                    <i class="fa-solid fa-circle-info"></i>
+
+                    <div>
+                        <strong>Proteção da conta</strong>
+
+                        <p>
+                            Recomendamos alterar a sua palavra-passe
+                            regularmente e terminar sessões desconhecidas.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="settings-actions">
+
+                    <button type="button"
+                            class="settings-btn danger"
+                            id="logoutOtherSessions">
+
+                        <i class="fa-solid fa-right-from-bracket"></i>
+
+                        Terminar outras sessões
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- NOTIFICAÇÕES -->
+
+            <section class="settings-panel"
+                     data-panel="notifications">
+
+                <div class="settings-panel-header">
+
+                    <div>
+                        <h4>Notificações</h4>
+                        <p>Escolha quais alertas pretende receber.</p>
+                    </div>
+
+                    <i class="fa-solid fa-bell"></i>
+
+                </div>
+
+
+                <div class="settings-options">
+
+
+                    <div class="settings-option">
+
+                        <div class="option-icon blue">
+                            <i class="fa-solid fa-bell"></i>
+                        </div>
+
+                        <div class="option-text">
+
+                            <strong>Notificações do sistema</strong>
+
+                            <span>
+                                Receber alertas importantes do sistema.
+                            </span>
+
+                        </div>
+
+                        <label class="switch">
+
+                            <input type="checkbox"
+                                   id="notifySystem"
+                                   checked>
+
+                            <span></span>
+
+                        </label>
+
+                    </div>
+
+
+                    <div class="settings-option">
+
+                        <div class="option-icon green">
+                            <i class="fa-solid fa-book"></i>
+                        </div>
+
+                        <div class="option-text">
+
+                            <strong>Empréstimos</strong>
+
+                            <span>
+                                Alertas sobre empréstimos e devoluções.
+                            </span>
+
+                        </div>
+
+                        <label class="switch">
+
+                            <input type="checkbox"
+                                   id="notifyLoans"
+                                   checked>
+
+                            <span></span>
+
+                        </label>
+
+                    </div>
+
+
+                    <div class="settings-option">
+
+                        <div class="option-icon orange">
+                            <i class="fa-solid fa-money-bill"></i>
+                        </div>
+
+                        <div class="option-text">
+
+                            <strong>Pagamentos</strong>
+
+                            <span>
+                                Avisos de pagamentos pendentes.
+                            </span>
+
+                        </div>
+
+                        <label class="switch">
+
+                            <input type="checkbox"
+                                   id="notifyPayments"
+                                   checked>
+
+                            <span></span>
+
+                        </label>
+
+                    </div>
+
+
+                    <div class="settings-option">
+
+                        <div class="option-icon purple">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                        </div>
+
+                        <div class="option-text">
+
+                            <strong>Alertas importantes</strong>
+
+                            <span>
+                                Receber avisos críticos do sistema.
+                            </span>
+
+                        </div>
+
+                        <label class="switch">
+
+                            <input type="checkbox"
+                                   id="notifyAlerts"
+                                   checked>
+
+                            <span></span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <div class="settings-actions">
+
+                    <button class="settings-btn primary"
+                            id="saveNotifications">
+
+                        <i class="fa-solid fa-check"></i>
+
+                        Guardar notificações
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- APARÊNCIA -->
+
+            <section class="settings-panel"
+                     data-panel="appearance">
+
+                <div class="settings-panel-header">
+
+                    <div>
+                        <h4>Aparência</h4>
+                        <p>Personalize a aparência do sistema.</p>
+                    </div>
+
+                    <i class="fa-solid fa-palette"></i>
+
+                </div>
+
+
+                <div class="appearance-title">
+                    Tema do sistema
+                </div>
+
+
+                <div class="theme-options">
+
+                    <button class="theme-card active"
+                            data-theme-option="light">
+
+                        <div class="theme-preview light-preview">
+
+                            <div></div>
+                            <div></div>
+                            <div></div>
+
+                        </div>
+
+                        <strong>
+                            Claro
+                        </strong>
+
+                        <span>
+                            Aparência clara
+                        </span>
+
+                        <i class="fa-solid fa-check"></i>
+
+                    </button>
+
+
+                    <button class="theme-card"
+                            data-theme-option="dark">
+
+                        <div class="theme-preview dark-preview">
+
+                            <div></div>
+                            <div></div>
+                            <div></div>
+
+                        </div>
+
+                        <strong>
+                            Escuro
+                        </strong>
+
+                        <span>
+                            Aparência escura
+                        </span>
+
+                        <i class="fa-solid fa-check"></i>
+
+                    </button>
+
+
+                    <button class="theme-card"
+                            data-theme-option="system">
+
+                        <div class="theme-preview system-preview">
+
+                            <div></div>
+                            <div></div>
+                            <div></div>
+
+                        </div>
+
+                        <strong>
+                            Sistema
+                        </strong>
+
+                        <span>
+                            Seguir sistema
+                        </span>
+
+                        <i class="fa-solid fa-check"></i>
+
+                    </button>
+
+                </div>
+
+
+                <div class="settings-option compact">
+
+                    <div class="option-icon blue">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+
+                    <div class="option-text">
+
+                        <strong>Animações</strong>
+
+                        <span>
+                            Ativar animações e transições do sistema.
+                        </span>
+
+                    </div>
+
+                    <label class="switch">
+
+                        <input type="checkbox"
+                               id="enableAnimations"
+                               checked>
+
+                        <span></span>
+
+                    </label>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- PREFERÊNCIAS -->
+
+            <section class="settings-panel"
+                     data-panel="preferences">
+
+                <div class="settings-panel-header">
+
+                    <div>
+                        <h4>Preferências</h4>
+                        <p>Configure o comportamento padrão do sistema.</p>
+                    </div>
+
+                    <i class="fa-solid fa-sliders"></i>
+
+                </div>
+
+
+                <div class="settings-form-grid">
+
+
+                    <div class="settings-field">
+
+                        <label>Idioma</label>
+
+                        <div class="settings-input">
+
+                            <i class="fa-solid fa-language"></i>
+
+                            <select id="preferenceLanguage">
+
+                                <option value="pt">
+                                    Português
+                                </option>
+
+                                <option value="en">
+                                    English
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+    <script>
+      /* ==========================================
+   PREMIUM PAGE LOADER
+========================================== */
+
+(function () {
+
+    "use strict";
+
+
+    const loader =
+        document.getElementById("pageLoader");
+
+
+    if (!loader) {
+
+        return;
+
+    }
+
+
+    /*
+    ==================================================
+    BLOQUEAR TELA
+    ==================================================
+    */
+
+    document.body.style.overflow = "hidden";
+
+
+    /*
+    ==================================================
+    TEMPO DO CARREGAMENTO
+    ==================================================
+    */
+
+    const loadingTime = 3500;
+
+
+    /*
+    ==================================================
+    FINALIZAR
+    ==================================================
+    */
+
+    setTimeout(function () {
+
+
+        loader.classList.add("loaded");
+
+
+        /*
+        Libera a página depois
+        da animação de desaparecimento
+        */
+
+        setTimeout(function () {
+
+            document.body.style.overflow = "";
+
+            loader.remove();
+
+        }, 800);
+
+
+    }, loadingTime);
+
+
+})();
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script
@@ -422,7 +1216,6 @@
     ></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.datatables.net/2.0.8/js/dataTables.min.js"></script>
-
     <script src="https://cdn.datatables.net/2.0.8/js/dataTables.bootstrap5.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -432,6 +1225,8 @@
     <script src="views/assets/scripts/datatables.js"></script>
     <script src="views/assets/scripts/sidebar.js"></script>
     <script src="views/assets/scripts/script.js"></script>
+    <script src="views/assets/scripts/pesquisa.js"></script>
+    <script src="views/assets/scripts/config-user.js"></script>
 
     <!-- =================================
      FOOTER DO SISTEMA

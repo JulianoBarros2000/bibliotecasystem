@@ -1,3447 +1,1120 @@
 <div class="config-page">
-
-
-
-     <!-- =================================
+  <!-- =================================
      HEADER
 ================================= -->
 
+  <div class="page-header">
+    <div>
+      <h2>
+        <i class="fa-solid fa-gear"></i>
 
-     <div class="page-header">
+        Configurações
+      </h2>
 
+      <p>Gestão geral do sistema e preferências</p>
+    </div>
+  </div>
 
-          <div>
-
-
-               <h2>
-
-                    <i class="fa-solid fa-gear"></i>
-
-                    Configurações
-
-               </h2>
-
-
-
-               <p>
-
-                    Gestão geral do sistema e preferências
-
-               </p>
-
-
-          </div>
-
-
-
-     </div>
-
-
-
-
-
-
-
-
-
-     <!-- =================================
+  <!-- =================================
      CARDS RESUMO
 ================================= -->
 
-
-     <div class="row g-4 mb-4">
-
-
-
-
-
-
-          <!-- UTILIZADORES -->
-
-          <div class="col-xl-3 col-md-6">
-
-
-               <div class="loan-card">
-
-
-
-                    <div class="loan-icon blue">
-
-
-                         <i class="fa-solid fa-users"></i>
-
-
-                    </div>
-
-
-
-
-                    <div>
-
-
-                         <span>
-
-                              Utilizadores
-
-                         </span>
-
-
-
-                         <h3>
-
-                              25
-
-                         </h3>
-
-
-                    </div>
-
-
-
-               </div>
-
-
-          </div>
-
-
-
-
-
-
-
-
-
-
-          <!-- CATEGORIAS -->
-
-
-          <div class="col-xl-3 col-md-6">
-
-
-               <div class="loan-card">
-
-
-
-                    <div class="loan-icon green">
-
-
-                         <i class="fa-solid fa-layer-group"></i>
-
-
-                    </div>
-
-
-
-
-                    <div>
-
-
-                         <span>
-
-                              Categorias
-
-                         </span>
-
-
-
-                         <h3>
-
-                              18
-
-                         </h3>
-
-
-                    </div>
-
-
-
-               </div>
-
-
-          </div>
-
-
-
-
-
-
-
-
-
-          <!-- AUTORES -->
-
-
-          <div class="col-xl-3 col-md-6">
-
-
-               <div class="loan-card">
-
-
-
-                    <div class="loan-icon orange">
-
-
-                         <i class="fa-solid fa-pen"></i>
-
-
-                    </div>
-
-
-
-
-                    <div>
-
-
-                         <span>
-
-                              Autores
-
-                         </span>
-
-
-
-                         <h3>
-
-                              120
-
-                         </h3>
-
-
-                    </div>
-
-
-
-               </div>
-
-
-          </div>
-
-
-
-
-
-
-
-
-
-          <!-- SEGURANÇA -->
-
-
-          <div class="col-xl-3 col-md-6">
-
-
-               <div class="loan-card">
-
-
-
-                    <div class="loan-icon purple">
-
-
-                         <i class="fa-solid fa-shield-halved"></i>
-
-
-                    </div>
-
-
-
-
-                    <div>
-
-
-                         <span>
-
-                              Níveis de Acesso
-
-                         </span>
-
-
-
-                         <h3>
-
-                              5
-
-                         </h3>
-
-
-                    </div>
-
-
-
-               </div>
-
-
-          </div>
-
-
-
-
-
-
-
-     </div>
-
-
-
-
-
-
-
-
-
-     <!-- =================================
+  <div class="row g-4 mb-4">
+    <!-- UTILIZADORES -->
+
+    <div class="col-xl-3 col-md-6">
+      <div class="loan-card">
+        <div class="loan-icon blue">
+          <i class="fa-solid fa-users"></i>
+        </div>
+
+        <div>
+          <span> Utilizadores </span>
+
+          <h3>25</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- CATEGORIAS -->
+
+    <div class="col-xl-3 col-md-6">
+      <div class="loan-card">
+        <div class="loan-icon green">
+          <i class="fa-solid fa-layer-group"></i>
+        </div>
+
+        <div>
+          <span> Categorias </span>
+
+          <h3>18</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- AUTORES -->
+
+    <div class="col-xl-3 col-md-6">
+      <div class="loan-card">
+        <div class="loan-icon orange">
+          <i class="fa-solid fa-pen"></i>
+        </div>
+
+        <div>
+          <span> Autores </span>
+
+          <h3>120</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEGURANÇA -->
+
+    <div class="col-xl-3 col-md-6">
+      <div class="loan-card">
+        <div class="loan-icon purple">
+          <i class="fa-solid fa-shield-halved"></i>
+        </div>
+
+        <div>
+          <span> Níveis de Acesso </span>
+
+          <h3>5</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =================================
      MENU CONFIGURAÇÕES
 ================================= -->
 
-
-     <div class="settings-grid">
-
-
-
-
-
-
-
-          <!-- PERFIL -->
-
-
-          <div class="settings-card" data-bs-toggle="modal" data-bs-target="#modalBiblioteca">
-
-
-               <div class="settings-icon blue">
-
-
-                    <i class="fa-solid fa-building"></i>
-
-
-               </div>
-
-
-
-               <div>
-
-
-                    <h5>
-
-                         Dados da Biblioteca
-
-                    </h5>
-
-
-
-                    <p>
-
-                         Nome, logo, contactos e endereço
-
-                    </p>
-
-
-               </div>
-
-
-               <i class="fa-solid fa-chevron-right"></i>
-
-
-          </div>
-
-
-
-
-
-
-
-
-
-          <!-- UTILIZADORES -->
-
-
-          <div class="settings-card" data-bs-toggle="modal" data-bs-target="#modalUtilizador">
-
-
-               <div class="settings-icon green">
-
-
-                    <i class="fa-solid fa-user-gear"></i>
-
-
-               </div>
-
-
-
-               <div>
-
-
-                    <h5>
-
-                         Utilizadores
-
-                    </h5>
-
-
-
-                    <p>
-
-                         Administradores e funcionários
-
-                    </p>
-
-
-               </div>
-
-
-               <i class="fa-solid fa-chevron-right"></i>
-
-
-          </div>
-
-
-
-
-
-
-
-
-
-          <!-- PERMISSÕES -->
-
-
-          <div class="settings-card" data-bs-toggle="modal" data-bs-target="#modalCategoria">
-
-
-               <div class="settings-icon orange">
-
-
-                    <i class="fa-solid fa-key"></i>
-
-
-               </div>
-
-
-
-               <div>
-
-
-                    <h5>
-
-                         Permissões
-
-                    </h5>
-
-
-
-                    <p>
-
-                         Controlo de acesso ao sistema
-
-                    </p>
-
-
-               </div>
-
-
-               <i class="fa-solid fa-chevron-right"></i>
-
-
-          </div>
-
-
-
-
-
-
-
-
-
-          <!-- CATEGORIAS -->
-
-
-          <div class="settings-card" data-bs-toggle="modal" data-bs-target="#modalPermissoes">
-
-
-               <div class="settings-icon purple">
-
-
-                    <i class="fa-solid fa-book"></i>
-
-
-               </div>
-
-
-
-               <div>
-
-
-                    <h5>
-
-                         Categorias e Autores
-
-                    </h5>
-
-
-
-                    <p>
-
-                         Organização dos livros
-
-                    </p>
-
-
-               </div>
-
-
-               <i class="fa-solid fa-chevron-right"></i>
-
-
-          </div>
-
-
-
-
-
-
-
-
-          <!-- MULTAS -->
-
-
-          <div class="settings-card" data-bs-toggle="modal" data-bs-target="#modalMultas">
-
-
-               <div class="settings-icon red">
-
-
-                    <i class="fa-solid fa-money-bill"></i>
-
-
-               </div>
-
-
-
-               <div>
-
-
-                    <h5>
-
-                         Multas e Pagamentos
-
-                    </h5>
-
-
-
-                    <p>
-
-                         Configurar valores e regras
-
-                    </p>
-
-
-               </div>
-
-
-               <i class="fa-solid fa-chevron-right"></i>
-
-
-          </div>
-
-
-
-
-
-
-
-
-
-          <!-- SISTEMA -->
-
-
-          <div class="settings-card" data-bs-toggle="modal" data-bs-target="#modalSistema">
-
-
-               <div class="settings-icon dark">
-
-
-                    <i class="fa-solid fa-database"></i>
-
-
-               </div>
-
-
-
-               <div>
-
-
-                    <h5>
-
-                         Sistema e Backup
-
-                    </h5>
-
-
-
-                    <p>
-
-                         Segurança e manutenção
-
-                    </p>
-
-
-               </div>
-
-
-               <i class="fa-solid fa-chevron-right"></i>
-
-
-          </div>
-
-
-
-
-
-
-
-
-     </div>
-     <!-- =================================
+  <div class="settings-grid">
+    <!-- PERFIL -->
+
+    <div
+      class="settings-card"
+      data-bs-toggle="modal"
+      data-bs-target="#modalBiblioteca"
+    >
+      <div class="settings-icon blue">
+        <i class="fa-solid fa-building"></i>
+      </div>
+
+      <div>
+        <h5>Dados da Biblioteca</h5>
+
+        <p>Nome, logo, contactos e endereço</p>
+      </div>
+
+      <i class="fa-solid fa-chevron-right"></i>
+    </div>
+
+    <!-- UTILIZADORES -->
+
+    <div
+      class="settings-card"
+      data-bs-toggle="modal"
+      data-bs-target="#modalUtilizador"
+    >
+      <div class="settings-icon green">
+        <i class="fa-solid fa-user-gear"></i>
+      </div>
+
+      <div>
+        <h5>Utilizadores</h5>
+
+        <p>Administradores e funcionários</p>
+      </div>
+
+      <i class="fa-solid fa-chevron-right"></i>
+    </div>
+
+    <!-- PERMISSÕES -->
+
+    <div
+      class="settings-card"
+      data-bs-toggle="modal"
+      data-bs-target="#modalCategoria"
+    >
+      <div class="settings-icon orange">
+        <i class="fa-solid fa-key"></i>
+      </div>
+
+      <div>
+        <h5>Permissões</h5>
+
+        <p>Controlo de acesso ao sistema</p>
+      </div>
+
+      <i class="fa-solid fa-chevron-right"></i>
+    </div>
+
+    <!-- CATEGORIAS -->
+
+    <div
+      class="settings-card"
+      data-bs-toggle="modal"
+      data-bs-target="#modalPermissoes"
+    >
+      <div class="settings-icon purple">
+        <i class="fa-solid fa-book"></i>
+      </div>
+
+      <div>
+        <h5>Categorias e Autores</h5>
+
+        <p>Organização dos livros</p>
+      </div>
+
+      <i class="fa-solid fa-chevron-right"></i>
+    </div>
+
+    <!-- MULTAS -->
+
+    <div
+      class="settings-card"
+      data-bs-toggle="modal"
+      data-bs-target="#modalMultas"
+    >
+      <div class="settings-icon red">
+        <i class="fa-solid fa-money-bill"></i>
+      </div>
+
+      <div>
+        <h5>Multas e Pagamentos</h5>
+
+        <p>Configurar valores e regras</p>
+      </div>
+
+      <i class="fa-solid fa-chevron-right"></i>
+    </div>
+
+    <!-- SISTEMA -->
+
+    <div
+      class="settings-card"
+      data-bs-toggle="modal"
+      data-bs-target="#modalSistema"
+    >
+      <div class="settings-icon dark">
+        <i class="fa-solid fa-database"></i>
+      </div>
+
+      <div>
+        <h5>Sistema e Backup</h5>
+
+        <p>Segurança e manutenção</p>
+      </div>
+
+      <i class="fa-solid fa-chevron-right"></i>
+    </div>
+  </div>
+  <!-- =================================
      UTILIZADORES
 ================================= -->
 
-
-     <div class="table-card mt-4">
-
-
-
-          <div class="table-header">
-
-
-               <h5>
-
-                    <i class="fa-solid fa-users"></i>
-
-                    Utilizadores do Sistema
-
-               </h5>
-
-
-
-               <button class="btn-movimento" data-bs-toggle="modal" data-bs-target="#modalUtilizador">
-
-                    <i class="fa-solid fa-plus"></i>
-
-                    Novo Utilizador
-
-               </button>
-
-
-
-          </div>
-
-
-
-
-
-
-
-
-
-          <div class="table-responsive">
-
-
-
-               <table id="usersTable" class="table align-middle">
-
-
-
-                    <thead>
-
-
-                         <tr>
-
-
-                              <th>
-
-                                   Utilizador
-
-                              </th>
-
-
-                              <th>
-
-                                   Email
-
-                              </th>
-
-
-                              <th>
-
-                                   Perfil
-
-                              </th>
-
-
-                              <th>
-
-                                   Estado
-
-                              </th>
-
-
-                              <th>
-
-                                   Último acesso
-
-                              </th>
-
-
-                              <th>
-
-                                   Ações
-
-                              </th>
-
-
-                         </tr>
-
-
-                    </thead>
-
-
-
-
-
-
-                    <tbody>
-
-
-
-                         <tr>
-
-
-
-                              <td>
-
-
-                                   <div class="client-info">
-
-
-                                        <img src="views/assets/img/avatar.png">
-
-
-                                        <div>
-
-
-                                             <strong>
-
-                                                  Administrador
-
-                                             </strong>
-
-
-                                             <small>
-
-                                                  Admin
-
-                                             </small>
-
-
-                                        </div>
-
-
-                                   </div>
-
-
-                              </td>
-
-
-
-
-
-                              <td>
-
-                                   admin@sistema.com
-
-                              </td>
-
-
-
-
-
-                              <td>
-
-
-                                   <span class="type loan">
-
-                                        Administrador
-
-                                   </span>
-
-
-                              </td>
-
-
-
-
-
-                              <td>
-
-
-                                   <span class="payment paid">
-
-                                        Ativo
-
-                                   </span>
-
-
-                              </td>
-
-
-
-
-
-                              <td>
-
-                                   02/08/2026
-
-                              </td>
-
-
-
-
-
-                              <td>
-
-
-                                   <div class="action-buttons">
-
-
-                                        <button class="action view">
-
-                                             <i class="fa-solid fa-eye"></i>
-
-                                        </button>
-
-
-                                        <button class="action delete">
-
-                                             <i class="fa-solid fa-trash"></i>
-
-                                        </button>
-
-
-                                   </div>
-
-
-                              </td>
-
-
-
-
-                         </tr>
-
-
-
-
-
-                    </tbody>
-
-
-
-               </table>
-
-
-
-          </div>
-
-
-     </div>
-
-
-
-
-
-
-
-
-
-     <!-- =================================
+  <div class="table-card mt-4">
+    <div class="table-header">
+      <h5>
+        <i class="fa-solid fa-users"></i>
+
+        Utilizadores do Sistema
+      </h5>
+
+      <button
+        class="btn-movimento"
+        data-bs-toggle="modal"
+        data-bs-target="#modalUtilizador"
+      >
+        <i class="fa-solid fa-plus"></i>
+
+        Novo Utilizador
+      </button>
+    </div>
+
+    <div class="table-responsive">
+      <table id="usersTable" class="table align-middle">
+        <thead>
+          <tr>
+            <th>Utilizador</th>
+
+            <th>Email</th>
+
+            <th>Perfil</th>
+
+            <th>Estado</th>
+
+            <th>Último acesso</th>
+
+            <th>Ações</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>
+              <div class="client-info">
+                <img src="views/assets/img/avatar.png" />
+
+                <div>
+                  <strong> Administrador </strong>
+
+                  <small> Admin </small>
+                </div>
+              </div>
+            </td>
+
+            <td>admin@sistema.com</td>
+
+            <td>
+              <span class="type loan"> Administrador </span>
+            </td>
+
+            <td>
+              <span class="payment paid"> Ativo </span>
+            </td>
+
+            <td>02/08/2026</td>
+
+            <td>
+              <div class="action-buttons">
+                <button class="action view">
+                  <i class="fa-solid fa-eye"></i>
+                </button>
+
+                <button class="action delete">
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- =================================
      CATEGORIAS
 ================================= -->
 
-
-     <div class="table-card mt-4">
-
-
-
-          <div class="table-header">
-
-
-               <h5>
-
-
-                    <i class="fa-solid fa-layer-group"></i>
-
-
-                    Categorias de Livros
-
-
-               </h5>
-
-
-
-
-               <button class="btn-movimento" data-bs-toggle="modal" data-bs-target="#modalCategoria">
-
-                    <i class="fa-solid fa-plus"></i>
-
-                    Nova Categoria
-
-               </button>
-
-
-
-          </div>
-
-
-
-
-
-
-
-
-
-          <table id="categoriesTable" class="table align-middle">
-
-
-
-               <thead>
-
-
-                    <tr>
-
-
-                         <th>
-
-                              Categoria
-
-                         </th>
-
-
-                         <th>
-
-                              Quantidade de Livros
-
-                         </th>
-
-
-                         <th>
-
-                              Estado
-
-                         </th>
-
-
-                         <th>
-
-                              Ações
-
-                         </th>
-
-
-                    </tr>
-
-
-               </thead>
-
-
-
-
-
-
-               <tbody>
-
-
-
-                    <tr>
-
-
-
-                         <td>
-
-                              Programação
-
-                         </td>
-
-
-
-
-                         <td>
-
-                              350
-
-                         </td>
-
-
-
-
-                         <td>
-
-
-                              <span class="payment paid">
-
-                                   Ativa
-
-                              </span>
-
-
-                         </td>
-
-
-
-
-                         <td>
-
-
-                              <div class="action-buttons">
-
-
-                                   <button class="action view">
-
-                                        <i class="fa-solid fa-pen"></i>
-
-                                   </button>
-
-
-
-                                   <button class="action delete">
-
-                                        <i class="fa-solid fa-trash"></i>
-
-                                   </button>
-
-
-                              </div>
-
-
-                         </td>
-
-
-
-
-                    </tr>
-
-
-
-
-                    <tr>
-
-
-
-                         <td>
-
-                              Banco de Dados
-
-                         </td>
-
-
-
-
-                         <td>
-
-                              120
-
-                         </td>
-
-
-
-
-                         <td>
-
-
-                              <span class="payment paid">
-
-                                   Ativa
-
-                              </span>
-
-
-                         </td>
-
-
-
-
-                         <td>
-
-
-                              <div class="action-buttons">
-
-
-                                   <button class="action view">
-
-                                        <i class="fa-solid fa-pen"></i>
-
-                                   </button>
-
-
-
-                                   <button class="action delete">
-
-                                        <i class="fa-solid fa-trash"></i>
-
-                                   </button>
-
-
-                              </div>
-
-
-                         </td>
-
-
-
-
-                    </tr>
-
-
-
-
-               </tbody>
-
-
-          </table>
-
-
-
-     </div>
-
-
-
-
-
-
-
-
-
-     <!-- =================================
+  <div class="table-card mt-4">
+    <div class="table-header">
+      <h5>
+        <i class="fa-solid fa-layer-group"></i>
+
+        Categorias de Livros
+      </h5>
+
+      <button
+        class="btn-movimento"
+        data-bs-toggle="modal"
+        data-bs-target="#modalCategoria"
+      >
+        <i class="fa-solid fa-plus"></i>
+
+        Nova Categoria
+      </button>
+    </div>
+
+    <table id="categoriesTable" class="table align-middle">
+      <thead>
+        <tr>
+          <th>Categoria</th>
+
+          <th>Quantidade de Livros</th>
+
+          <th>Estado</th>
+
+          <th>Ações</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Programação</td>
+
+          <td>350</td>
+
+          <td>
+            <span class="payment paid"> Ativa </span>
+          </td>
+
+          <td>
+            <div class="action-buttons">
+              <button class="action view">
+                <i class="fa-solid fa-pen"></i>
+              </button>
+
+              <button class="action delete">
+                <i class="fa-solid fa-trash"></i>
+              </button>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Banco de Dados</td>
+
+          <td>120</td>
+
+          <td>
+            <span class="payment paid"> Ativa </span>
+          </td>
+
+          <td>
+            <div class="action-buttons">
+              <button class="action view">
+                <i class="fa-solid fa-pen"></i>
+              </button>
+
+              <button class="action delete">
+                <i class="fa-solid fa-trash"></i>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- =================================
      AUTORES
 ================================= -->
 
-
-     <div class="table-card mt-4">
-
-
-
-          <div class="table-header">
-
-
-               <h5>
-
-
-                    <i class="fa-solid fa-pen"></i>
-
-
-                    Autores
-
-
-               </h5>
-
-
-
-
-               <button class="btn-movimento" data-bs-toggle="modal" data-bs-target="#modalAutor">
-
-                    <i class="fa-solid fa-plus"></i>
-
-                    Novo Autor
-
-               </button>
-
-
-
-          </div>
-
-
-
-
-
-
-
-
-          <table id="authorsTable" class="table align-middle">
-
-
-
-               <thead>
-
-
-                    <tr>
-
-
-                         <th>
-
-                              Autor
-
-                         </th>
-
-
-                         <th>
-
-                              Livros
-
-                         </th>
-
-
-                         <th>
-
-                              Estado
-
-                         </th>
-
-
-                         <th>
-
-                              Ações
-
-                         </th>
-
-
-                    </tr>
-
-
-               </thead>
-
-
-
-
-
-               <tbody>
-
-
-
-                    <tr>
-
-
-
-                         <td>
-
-                              Robert Kiyosaki
-
-                         </td>
-
-
-
-
-                         <td>
-
-                              15
-
-                         </td>
-
-
-
-
-                         <td>
-
-
-                              <span class="payment paid">
-
-                                   Ativo
-
-                              </span>
-
-
-                         </td>
-
-
-
-
-                         <td>
-
-
-                              <div class="action-buttons">
-
-
-                                   <button class="action view">
-
-                                        <i class="fa-solid fa-pen"></i>
-
-                                   </button>
-
-
-                                   <button class="action delete">
-
-                                        <i class="fa-solid fa-trash"></i>
-
-                                   </button>
-
-
-                              </div>
-
-
-                         </td>
-
-
-
-                    </tr>
-
-
-
-
-               </tbody>
-
-
-
-          </table>
-
-
-
-     </div>
-     <!-- =================================
+  <div class="table-card mt-4">
+    <div class="table-header">
+      <h5>
+        <i class="fa-solid fa-pen"></i>
+
+        Autores
+      </h5>
+
+      <button
+        class="btn-movimento"
+        data-bs-toggle="modal"
+        data-bs-target="#modalAutor"
+      >
+        <i class="fa-solid fa-plus"></i>
+
+        Novo Autor
+      </button>
+    </div>
+
+    <table id="authorsTable" class="table align-middle">
+      <thead>
+        <tr>
+          <th>Autor</th>
+
+          <th>Livros</th>
+
+          <th>Estado</th>
+
+          <th>Ações</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Robert Kiyosaki</td>
+
+          <td>15</td>
+
+          <td>
+            <span class="payment paid"> Ativo </span>
+          </td>
+
+          <td>
+            <div class="action-buttons">
+              <button class="action view">
+                <i class="fa-solid fa-pen"></i>
+              </button>
+
+              <button class="action delete">
+                <i class="fa-solid fa-trash"></i>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- =================================
      MODAL UTILIZADOR
 ================================= -->
 
-
-     <div class="modal fade" id="modalUtilizador" tabindex="-1">
-
-
-
-          <div class="modal-dialog modal-lg modal-dialog-centered">
-
-
-               <div class="modal-content modern-modal">
-
-
-
-                    <div class="modal-header premium-header">
-
-
-                         <div class="modal-title-box">
-
-
-                              <div class="modal-symbol">
-
-                                   <i class="fa-solid fa-user-plus"></i>
-
-                              </div>
-
-
-                              <div>
-
-                                   <h4>
-
-                                        Novo Utilizador
-
-                                   </h4>
-
-
-                                   <p>
-
-                                        Criar acesso ao sistema
-
-                                   </p>
-
-
-                              </div>
-
-
-                         </div>
-
-
-
-                         <button class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-
-
-
-                    </div>
-
-
-
-
-
-
-                    <div class="modal-body">
-
-
-                         <form id="formUtilizador">
-
-
-
-                              <div class="form-section">
-
-
-                                   <h6>
-
-                                        <i class="fa-solid fa-user"></i>
-
-                                        Dados pessoais
-
-                                   </h6>
-
-
-
-
-                                   <div class="row g-4">
-
-
-
-                                        <div class="col-md-6">
-
-
-                                             <label>
-
-                                                  Nome
-
-                                             </label>
-
-
-                                             <input class="form-control" placeholder="Nome completo">
-
-
-                                        </div>
-
-
-
-
-
-                                        <div class="col-md-6">
-
-
-                                             <label>
-
-                                                  Email
-
-                                             </label>
-
-
-                                             <input type="email" class="form-control" placeholder="email@exemplo.com">
-
-
-                                        </div>
-
-
-
-
-
-
-                                        <div class="col-md-6">
-
-
-                                             <label>
-
-                                                  Perfil
-
-                                             </label>
-
-
-                                             <select class="form-select select2">
-
-
-                                                  <option>
-
-                                                       Administrador
-
-                                                  </option>
-
-
-                                                  <option>
-
-                                                       Funcionário
-
-                                                  </option>
-
-
-                                                  <option>
-
-                                                       Bibliotecário
-
-                                                  </option>
-
-
-                                             </select>
-
-
-                                        </div>
-
-
-
-
-
-
-
-                                        <div class="col-md-6">
-
-
-                                             <label>
-
-                                                  Estado
-
-                                             </label>
-
-
-                                             <select class="form-select">
-
-
-                                                  <option>
-
-                                                       Ativo
-
-                                                  </option>
-
-
-                                                  <option>
-
-                                                       Bloqueado
-
-                                                  </option>
-
-
-                                             </select>
-
-
-                                        </div>
-
-
-
-
-                                   </div>
-
-
-                              </div>
-
-
-
-
-                         </form>
-
-
-                    </div>
-
-
-
-
-
-
-                    <div class="modal-footer modern-footer">
-
-
-                         <button class="btn-secondary-modern" data-bs-dismiss="modal">
-
-                              Cancelar
-
-                         </button>
-
-
-
-                         <button class="btn-primary-modern">
-
-                              Guardar
-
-                         </button>
-
-
-                    </div>
-
-
-
-               </div>
-
+  <div class="modal fade" id="modalUtilizador" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content modern-modal">
+        <div class="modal-header premium-header">
+          <div class="modal-title-box">
+            <div class="modal-symbol">
+              <i class="fa-solid fa-user-plus"></i>
+            </div>
+
+            <div>
+              <h4>Novo Utilizador</h4>
+
+              <p>Criar acesso ao sistema</p>
+            </div>
           </div>
 
-     </div>
-     <div class="modal fade" id="modalCategoria" tabindex="-1">
-
-
-          <div class="modal-dialog modal-md modal-dialog-centered">
-
-
-               <div class="modal-content modern-modal">
-
-
-
-                    <div class="modal-header premium-header">
-
-
-                         <div class="modal-title-box">
-
-
-                              <div class="modal-symbol">
-
-                                   <i class="fa-solid fa-layer-group"></i>
-
-                              </div>
-
-
-                              <div>
-
-                                   <h4>
-
-                                        Nova Categoria
-
-                                   </h4>
-
-                                   <p>
-
-                                        Organizar livros
-
-                                   </p>
-
-
-                              </div>
-
-
-                         </div>
-
-
-
-                         <button class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-
-
-                    </div>
-
-
-
-
-
-                    <div class="modal-body">
-
-
-                         <div class="form-section">
-
-
-                              <label>
-
-                                   Nome da Categoria
-
-                              </label>
-
-
-                              <input class="form-control" placeholder="Ex: Tecnologia">
-
-
-                         </div>
-
-
-                    </div>
-
-
-
-
-
-                    <div class="modal-footer modern-footer">
-
-
-                         <button class="btn-secondary-modern" data-bs-dismiss="modal">
-
-                              Cancelar
-
-                         </button>
-
-
-
-                         <button class="btn-primary-modern">
-
-                              Guardar
-
-                         </button>
-
-
-                    </div>
-
-
-
-               </div>
-
-
+          <button
+            class="btn-close btn-close-white"
+            data-bs-dismiss="modal"
+          ></button>
+        </div>
+
+        <div class="modal-body">
+          <form id="formUtilizador">
+            <div class="form-section">
+              <h6>
+                <i class="fa-solid fa-user"></i>
+
+                Dados pessoais
+              </h6>
+
+              <div class="row g-4">
+                <div class="col-md-6">
+                  <label> Nome </label>
+
+                  <input class="form-control" placeholder="Nome completo" />
+                </div>
+
+                <div class="col-md-6">
+                  <label> Email </label>
+
+                  <input
+                    type="email"
+                    class="form-control"
+                    placeholder="email@exemplo.com"
+                  />
+                </div>
+
+                <div class="col-md-6">
+                  <label> Perfil </label>
+
+                  <select class="form-select select2">
+                    <option>Administrador</option>
+
+                    <option>Funcionário</option>
+
+                    <option>Bibliotecário</option>
+                  </select>
+                </div>
+
+                <div class="col-md-6">
+                  <label> Estado </label>
+
+                  <select class="form-select">
+                    <option>Ativo</option>
+
+                    <option>Bloqueado</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="modal-footer modern-footer">
+          <button class="btn-secondary-modern" data-bs-dismiss="modal">
+            Cancelar
+          </button>
+
+          <button class="btn-primary-modern">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="modalCategoria" tabindex="-1">
+    <div class="modal-dialog modal-md modal-dialog-centered">
+      <div class="modal-content modern-modal">
+        <div class="modal-header premium-header">
+          <div class="modal-title-box">
+            <div class="modal-symbol">
+              <i class="fa-solid fa-layer-group"></i>
+            </div>
+
+            <div>
+              <h4>Nova Categoria</h4>
+
+              <p>Organizar livros</p>
+            </div>
           </div>
 
-     </div>
-     <div class="modal fade" id="modalCategoria" tabindex="-1">
-
-
-          <div class="modal-dialog modal-md modal-dialog-centered">
-
-
-               <div class="modal-content modern-modal">
-
-
-
-                    <div class="modal-header premium-header">
-
-
-                         <div class="modal-title-box">
-
-
-                              <div class="modal-symbol">
-
-                                   <i class="fa-solid fa-layer-group"></i>
-
-                              </div>
-
-
-                              <div>
-
-                                   <h4>
-
-                                        Nova Categoria
-
-                                   </h4>
-
-                                   <p>
-
-                                        Organizar livros
-
-                                   </p>
-
-
-                              </div>
-
-
-                         </div>
-
-
-
-                         <button class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-
-
-                    </div>
-
-
-
-
-
-                    <div class="modal-body">
-
-
-                         <div class="form-section">
-
-
-                              <label>
-
-                                   Nome da Categoria
-
-                              </label>
-
-
-                              <input class="form-control" placeholder="Ex: Tecnologia">
-
-
-                         </div>
-
-
-                    </div>
-
-
-
-
-
-                    <div class="modal-footer modern-footer">
-
-
-                         <button class="btn-secondary-modern" data-bs-dismiss="modal">
-
-                              Cancelar
-
-                         </button>
-
-
-
-                         <button class="btn-primary-modern">
-
-                              Guardar
-
-                         </button>
-
-
-                    </div>
-
-
-
-               </div>
-
-
+          <button
+            class="btn-close btn-close-white"
+            data-bs-dismiss="modal"
+          ></button>
+        </div>
+
+        <div class="modal-body">
+          <div class="form-section">
+            <label> Nome da Categoria </label>
+
+            <input class="form-control" placeholder="Ex: Tecnologia" />
+          </div>
+        </div>
+
+        <div class="modal-footer modern-footer">
+          <button class="btn-secondary-modern" data-bs-dismiss="modal">
+            Cancelar
+          </button>
+
+          <button class="btn-primary-modern">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="modalCategoria" tabindex="-1">
+    <div class="modal-dialog modal-md modal-dialog-centered">
+      <div class="modal-content modern-modal">
+        <div class="modal-header premium-header">
+          <div class="modal-title-box">
+            <div class="modal-symbol">
+              <i class="fa-solid fa-layer-group"></i>
+            </div>
+
+            <div>
+              <h4>Nova Categoria</h4>
+
+              <p>Organizar livros</p>
+            </div>
           </div>
 
-     </div>
-     <div class="modal fade" id="modalAutor" tabindex="-1">
-
-
-
-          <div class="modal-dialog modal-md modal-dialog-centered">
-
-
-               <div class="modal-content modern-modal">
-
-
-                    <div class="modal-header premium-header">
-
-
-                         <div class="modal-title-box">
-
-
-                              <div class="modal-symbol">
-
-                                   <i class="fa-solid fa-pen"></i>
-
-                              </div>
-
-
-                              <div>
-
-
-                                   <h4>
-
-                                        Novo Autor
-
-                                   </h4>
-
-
-                                   <p>
-
-                                        Cadastro de autor
-
-                                   </p>
-
-
-                              </div>
-
-
-                         </div>
-
-
-                         <button class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-
-
-
-                    </div>
-
-
-
-
-
-
-                    <div class="modal-body">
-
-
-                         <div class="form-section">
-
-
-                              <label>
-
-                                   Nome do Autor
-
-                              </label>
-
-
-                              <input class="form-control" placeholder="Nome completo">
-
-
-                         </div>
-
-
-                    </div>
-
-
-
-
-
-                    <div class="modal-footer modern-footer">
-
-
-                         <button class="btn-secondary-modern" data-bs-dismiss="modal">
-
-                              Cancelar
-
-                         </button>
-
-
-
-                         <button class="btn-primary-modern">
-
-                              Guardar
-
-                         </button>
-
-
-                    </div>
-
-
-
-
-               </div>
-
+          <button
+            class="btn-close btn-close-white"
+            data-bs-dismiss="modal"
+          ></button>
+        </div>
+
+        <div class="modal-body">
+          <div class="form-section">
+            <label> Nome da Categoria </label>
+
+            <input class="form-control" placeholder="Ex: Tecnologia" />
+          </div>
+        </div>
+
+        <div class="modal-footer modern-footer">
+          <button class="btn-secondary-modern" data-bs-dismiss="modal">
+            Cancelar
+          </button>
+
+          <button class="btn-primary-modern">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="modalAutor" tabindex="-1">
+    <div class="modal-dialog modal-md modal-dialog-centered">
+      <div class="modal-content modern-modal">
+        <div class="modal-header premium-header">
+          <div class="modal-title-box">
+            <div class="modal-symbol">
+              <i class="fa-solid fa-pen"></i>
+            </div>
+
+            <div>
+              <h4>Novo Autor</h4>
+
+              <p>Cadastro de autor</p>
+            </div>
           </div>
 
-
-     </div>
-     <div class="modal fade" id="modalBiblioteca" tabindex="-1">
-
-
-          <div class="modal-dialog modal-xl modal-dialog-centered">
-
-
-               <div class="modal-content modern-modal">
-
-
-                    <div class="modal-header premium-header">
-
-
-                         <div class="modal-title-box">
-
-
-                              <div class="modal-symbol">
-
-                                   <i class="fa-solid fa-building"></i>
-
-                              </div>
-
-
-                              <div>
-
-
-                                   <h4>
-
-                                        Dados da Biblioteca
-
-                                   </h4>
-
-
-                                   <p>
-
-                                        Informações gerais
-
-                                   </p>
-
-
-                              </div>
-
-
-                         </div>
-
-
-                         <button class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-
-
-
-                    </div>
-
-
-
-
-
-
-                    <div class="modal-body">
-
-
-                         <div class="row g-4">
-
-
-                              <div class="col-md-6">
-
-
-                                   <label>
-
-                                        Nome
-
-                                   </label>
-
-
-                                   <input class="form-control" placeholder="Nome da biblioteca">
-
-
-                              </div>
-
-
-
-
-                              <div class="col-md-6">
-
-
-                                   <label>
-
-                                        Telefone
-
-                                   </label>
-
-
-                                   <input class="form-control" placeholder="+244 ...">
-
-
-                              </div>
-
-
-
-
-                              <div class="col-md-12">
-
-
-                                   <label>
-
-                                        Endereço
-
-                                   </label>
-
-
-                                   <textarea class="form-control" rows="3"></textarea>
-
-
-                              </div>
-
-
-                         </div>
-
-
-                    </div>
-
-
-
-
-
-
-                    <div class="modal-footer modern-footer">
-
-
-                         <button class="btn-primary-modern">
-
-                              Guardar alterações
-
-                         </button>
-
-
-                    </div>
-
-
-
-               </div>
-
-
+          <button
+            class="btn-close btn-close-white"
+            data-bs-dismiss="modal"
+          ></button>
+        </div>
+
+        <div class="modal-body">
+          <div class="form-section">
+            <label> Nome do Autor </label>
+
+            <input class="form-control" placeholder="Nome completo" />
+          </div>
+        </div>
+
+        <div class="modal-footer modern-footer">
+          <button class="btn-secondary-modern" data-bs-dismiss="modal">
+            Cancelar
+          </button>
+
+          <button class="btn-primary-modern">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="modalBiblioteca" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content modern-modal">
+        <div class="modal-header premium-header">
+          <div class="modal-title-box">
+            <div class="modal-symbol">
+              <i class="fa-solid fa-building"></i>
+            </div>
+
+            <div>
+              <h4>Dados da Biblioteca</h4>
+
+              <p>Informações gerais</p>
+            </div>
           </div>
 
-     </div>
+          <button
+            class="btn-close btn-close-white"
+            data-bs-dismiss="modal"
+          ></button>
+        </div>
 
-     <!-- =================================
+        <div class="modal-body">
+          <div class="row g-4">
+            <div class="col-md-6">
+              <label> Nome </label>
+
+              <input class="form-control" placeholder="Nome da biblioteca" />
+            </div>
+
+            <div class="col-md-6">
+              <label> Telefone </label>
+
+              <input class="form-control" placeholder="+244 ..." />
+            </div>
+
+            <div class="col-md-12">
+              <label> Endereço </label>
+
+              <textarea class="form-control" rows="3"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer modern-footer">
+          <button class="btn-primary-modern">Guardar alterações</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =================================
      MODAL PERMISSÕES
 ================================= -->
 
-
-     <div class="modal fade" id="modalPermissoes" tabindex="-1">
-
-
-
-          <div class="modal-dialog modal-xl modal-dialog-centered">
-
-
-
-               <div class="modal-content modern-modal">
-
-
-
-
-
-                    <!-- HEADER -->
-
-                    <div class="modal-header premium-header">
-
-
-                         <div class="modal-title-box">
-
-
-                              <div class="modal-symbol">
-
-                                   <i class="fa-solid fa-key"></i>
-
-                              </div>
-
-
-
-                              <div>
-
-                                   <h4>
-
-                                        Permissões do Sistema
-
-                                   </h4>
-
-
-                                   <p>
-
-                                        Controle de acesso por perfil
-
-                                   </p>
-
-
-                              </div>
-
-
-                         </div>
-
-
-
-
-
-                         <button class="btn-close btn-close-white" data-bs-dismiss="modal">
-
-                         </button>
-
-
-
-                    </div>
-
-
-
-
-
-
-
-
-
-                    <!-- BODY -->
-
-                    <div class="modal-body">
-
-
-
-
-
-
-                         <div class="form-section">
-
-
-
-                              <h6>
-
-                                   <i class="fa-solid fa-user-shield"></i>
-
-                                   Perfil de acesso
-
-                              </h6>
-
-
-
-
-
-
-                              <div class="row g-4">
-
-
-
-                                   <div class="col-md-6">
-
-
-                                        <label>
-
-                                             Selecionar Perfil
-
-                                        </label>
-
-
-                                        <select class="form-select select2">
-
-
-                                             <option>
-
-                                                  Administrador
-
-                                             </option>
-
-
-                                             <option>
-
-                                                  Funcionário
-
-                                             </option>
-
-
-                                             <option>
-
-                                                  Bibliotecário
-
-                                             </option>
-
-
-                                             <option>
-
-                                                  Operador
-
-                                             </option>
-
-
-                                        </select>
-
-
-                                   </div>
-
-
-
-                              </div>
-
-
-
-                         </div>
-
-
-
-
-
-
-
-
-
-                         <div class="form-section">
-
-
-
-                              <h6>
-
-                                   <i class="fa-solid fa-list-check"></i>
-
-                                   Permissões
-
-                              </h6>
-
-
-
-
-
-
-                              <div class="row g-3">
-
-
-
-
-
-                                   <div class="col-md-4">
-
-
-                                        <div class="permission-box">
-
-
-                                             <span>
-
-                                                  Dashboard
-
-                                             </span>
-
-
-                                             <div class="form-check form-switch">
-
-                                                  <input class="form-check-input" type="checkbox" checked>
-
-                                             </div>
-
-
-                                        </div>
-
-
-                                   </div>
-
-
-
-
-
-
-
-                                   <div class="col-md-4">
-
-
-                                        <div class="permission-box">
-
-
-                                             <span>
-
-                                                  Livros
-
-                                             </span>
-
-
-                                             <div class="form-check form-switch">
-
-                                                  <input class="form-check-input" type="checkbox" checked>
-
-                                             </div>
-
-
-                                        </div>
-
-
-                                   </div>
-
-
-
-
-
-
-
-                                   <div class="col-md-4">
-
-
-                                        <div class="permission-box">
-
-
-                                             <span>
-
-                                                  Clientes
-
-                                             </span>
-
-
-                                             <div class="form-check form-switch">
-
-                                                  <input class="form-check-input" type="checkbox">
-
-                                             </div>
-
-
-                                        </div>
-
-
-                                   </div>
-
-
-
-
-
-
-
-                                   <div class="col-md-4">
-
-
-                                        <div class="permission-box">
-
-
-                                             <span>
-
-                                                  Empréstimos
-
-                                             </span>
-
-
-                                             <div class="form-check form-switch">
-
-                                                  <input class="form-check-input" type="checkbox" checked>
-
-                                             </div>
-
-
-                                        </div>
-
-
-                                   </div>
-
-
-
-
-
-
-
-                                   <div class="col-md-4">
-
-
-                                        <div class="permission-box">
-
-
-                                             <span>
-
-                                                  Vendas
-
-                                             </span>
-
-
-                                             <div class="form-check form-switch">
-
-                                                  <input class="form-check-input" type="checkbox">
-
-                                             </div>
-
-
-                                        </div>
-
-
-                                   </div>
-
-
-
-
-
-
-
-                                   <div class="col-md-4">
-
-
-                                        <div class="permission-box">
-
-
-                                             <span>
-
-                                                  Relatórios
-
-                                             </span>
-
-
-                                             <div class="form-check form-switch">
-
-                                                  <input class="form-check-input" type="checkbox">
-
-                                             </div>
-
-
-                                        </div>
-
-
-                                   </div>
-
-
-
-
-
-
-                              </div>
-
-
-
-
-
-                         </div>
-
-
-
-
-
-
-
-                    </div>
-
-
-
-
-
-
-
-
-
-                    <!-- FOOTER -->
-
-
-                    <div class="modal-footer modern-footer">
-
-
-                         <button class="btn-secondary-modern" data-bs-dismiss="modal">
-
-                              Cancelar
-
-                         </button>
-
-
-
-
-
-                         <button class="btn-primary-modern">
-
-
-                              <i class="fa-solid fa-save"></i>
-
-
-                              Guardar Permissões
-
-
-                         </button>
-
-
-
-                    </div>
-
-
-
-
-
-
-               </div>
-
-
-
+  <div class="modal fade" id="modalPermissoes" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content modern-modal">
+        <!-- HEADER -->
+
+        <div class="modal-header premium-header">
+          <div class="modal-title-box">
+            <div class="modal-symbol">
+              <i class="fa-solid fa-key"></i>
+            </div>
+
+            <div>
+              <h4>Permissões do Sistema</h4>
+
+              <p>Controle de acesso por perfil</p>
+            </div>
           </div>
 
+          <button
+            class="btn-close btn-close-white"
+            data-bs-dismiss="modal"
+          ></button>
+        </div>
 
+        <!-- BODY -->
 
-     </div>
-     <!-- =================================
+        <div class="modal-body">
+          <div class="form-section">
+            <h6>
+              <i class="fa-solid fa-user-shield"></i>
+
+              Perfil de acesso
+            </h6>
+
+            <div class="row g-4">
+              <div class="col-md-6">
+                <label> Selecionar Perfil </label>
+
+                <select class="form-select select2">
+                  <option>Administrador</option>
+
+                  <option>Funcionário</option>
+
+                  <option>Bibliotecário</option>
+
+                  <option>Operador</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h6>
+              <i class="fa-solid fa-list-check"></i>
+
+              Permissões
+            </h6>
+
+            <div class="row g-3">
+              <div class="col-md-4">
+                <div class="permission-box">
+                  <span> Dashboard </span>
+
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" checked />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="permission-box">
+                  <span> Livros </span>
+
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" checked />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="permission-box">
+                  <span> Clientes </span>
+
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="permission-box">
+                  <span> Empréstimos </span>
+
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" checked />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="permission-box">
+                  <span> Vendas </span>
+
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="permission-box">
+                  <span> Relatórios </span>
+
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FOOTER -->
+
+        <div class="modal-footer modern-footer">
+          <button class="btn-secondary-modern" data-bs-dismiss="modal">
+            Cancelar
+          </button>
+
+          <button class="btn-primary-modern">
+            <i class="fa-solid fa-save"></i>
+
+            Guardar Permissões
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- =================================
      MODAL MULTAS
 ================================= -->
 
-
-     <div class="modal fade" id="modalMultas" tabindex="-1">
-
-
-
-
-
-          <div class="modal-dialog modal-lg modal-dialog-centered">
-
-
-
-
-
-               <div class="modal-content modern-modal">
-
-
-
-
-
-
-                    <!-- HEADER -->
-
-
-                    <div class="modal-header premium-header">
-
-
-
-                         <div class="modal-title-box">
-
-
-
-                              <div class="modal-symbol">
-
-
-                                   <i class="fa-solid fa-money-bill-wave"></i>
-
-
-                              </div>
-
-
-
-
-
-                              <div>
-
-
-                                   <h4>
-
-                                        Multas e Pagamentos
-
-                                   </h4>
-
-
-
-                                   <p>
-
-                                        Configuração das regras financeiras
-
-                                   </p>
-
-
-
-                              </div>
-
-
-
-                         </div>
-
-
-
-
-
-
-
-                         <button class="btn-close btn-close-white" data-bs-dismiss="modal">
-
-                         </button>
-
-
-
-                    </div>
-
-
-
-
-
-
-
-
-
-                    <!-- BODY -->
-
-
-                    <div class="modal-body">
-
-
-
-
-
-
-
-                         <div class="form-section">
-
-
-
-                              <h6>
-
-
-                                   <i class="fa-solid fa-coins"></i>
-
-
-                                   Configuração da Multa
-
-
-                              </h6>
-
-
-
-
-
-
-
-
-                              <div class="row g-4">
-
-
-
-
-
-
-
-                                   <div class="col-md-6">
-
-
-                                        <label>
-
-                                             Valor por dia de atraso
-
-                                        </label>
-
-
-
-
-                                        <div class="input-icon">
-
-
-                                             <i class="fa-solid fa-money-bill"></i>
-
-
-
-                                             <input id="multaDia" type="number" class="form-control" value="1000">
-
-
-
-                                        </div>
-
-
-
-                                   </div>
-
-
-
-
-
-
-
-
-                                   <div class="col-md-6">
-
-
-                                        <label>
-
-                                             Moeda
-
-                                        </label>
-
-
-
-                                        <select class="form-select">
-
-
-                                             <option>
-
-                                                  Kz (AOA)
-
-                                             </option>
-
-
-                                             <option>
-
-                                                  USD
-
-                                             </option>
-
-
-                                             <option>
-
-                                                  EUR
-
-                                             </option>
-
-
-                                        </select>
-
-
-
-                                   </div>
-
-
-
-
-
-
-
-                              </div>
-
-
-
-
-                         </div>
-
-
-
-
-
-
-
-
-
-                         <div class="form-section">
-
-
-
-                              <h6>
-
-
-                                   <i class="fa-solid fa-calendar-days"></i>
-
-
-                                   Regras de atraso
-
-
-                              </h6>
-
-
-
-
-
-
-                              <div class="row g-4">
-
-
-
-
-
-
-
-                                   <div class="col-md-6">
-
-
-                                        <label>
-
-                                             Dias permitidos sem multa
-
-                                        </label>
-
-
-                                        <input type="number" class="form-control" value="0">
-
-
-
-                                   </div>
-
-
-
-
-
-
-
-
-                                   <div class="col-md-6">
-
-
-                                        <label>
-
-                                             Limite máximo de multa
-
-                                        </label>
-
-
-                                        <div class="input-icon">
-
-
-                                             <i class="fa-solid fa-ban"></i>
-
-
-
-                                             <input type="number" class="form-control" placeholder="Ex: 50000">
-
-
-
-                                        </div>
-
-
-
-                                   </div>
-
-
-
-
-
-
-
-                              </div>
-
-
-
-                         </div>
-
-
-
-
-
-
-
-
-
-                         <div class="form-section">
-
-
-
-                              <h6>
-
-
-                                   <i class="fa-solid fa-toggle-on"></i>
-
-
-                                   Comportamento do sistema
-
-
-                              </h6>
-
-
-
-
-
-
-
-                              <div class="permission-box">
-
-
-
-                                   <span>
-
-                                        Bloquear empréstimos com multas pendentes
-
-                                   </span>
-
-
-
-
-
-                                   <div class="form-check form-switch">
-
-
-                                        <input class="form-check-input" type="checkbox" checked>
-
-
-
-                                   </div>
-
-
-
-
-                              </div>
-
-
-
-
-
-
-
-
-                              <div class="permission-box mt-3">
-
-
-
-                                   <span>
-
-                                        Enviar alerta de atraso
-
-                                   </span>
-
-
-
-
-
-                                   <div class="form-check form-switch">
-
-
-                                        <input class="form-check-input" type="checkbox" checked>
-
-
-
-                                   </div>
-
-
-
-
-                              </div>
-
-
-
-
-
-
-                         </div>
-
-
-
-
-
-
-                    </div>
-
-
-
-
-
-
-
-
-
-                    <!-- FOOTER -->
-
-
-                    <div class="modal-footer modern-footer">
-
-
-
-                         <button class="btn-secondary-modern" data-bs-dismiss="modal">
-
-                              Cancelar
-
-                         </button>
-
-
-
-
-
-
-
-                         <button class="btn-primary-modern">
-
-
-                              <i class="fa-solid fa-save"></i>
-
-
-                              Guardar Configuração
-
-
-                         </button>
-
-
-
-
-                    </div>
-
-
-
-
-
-
-               </div>
-
-
-
+  <div class="modal fade" id="modalMultas" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content modern-modal">
+        <!-- HEADER -->
+
+        <div class="modal-header premium-header">
+          <div class="modal-title-box">
+            <div class="modal-symbol">
+              <i class="fa-solid fa-money-bill-wave"></i>
+            </div>
+
+            <div>
+              <h4>Multas e Pagamentos</h4>
+
+              <p>Configuração das regras financeiras</p>
+            </div>
           </div>
 
+          <button
+            class="btn-close btn-close-white"
+            data-bs-dismiss="modal"
+          ></button>
+        </div>
 
+        <!-- BODY -->
 
-     </div>
-     <!-- =================================
+        <div class="modal-body">
+          <div class="form-section">
+            <h6>
+              <i class="fa-solid fa-coins"></i>
+
+              Configuração da Multa
+            </h6>
+
+            <div class="row g-4">
+              <div class="col-md-6">
+                <label> Valor por dia de atraso </label>
+
+                <div class="input-icon">
+                  <i class="fa-solid fa-money-bill"></i>
+
+                  <input
+                    id="multaDia"
+                    type="number"
+                    class="form-control"
+                    value="1000"
+                  />
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <label> Moeda </label>
+
+                <select class="form-select">
+                  <option>Kz (AOA)</option>
+
+                  <option>USD</option>
+
+                  <option>EUR</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h6>
+              <i class="fa-solid fa-calendar-days"></i>
+
+              Regras de atraso
+            </h6>
+
+            <div class="row g-4">
+              <div class="col-md-6">
+                <label> Dias permitidos sem multa </label>
+
+                <input type="number" class="form-control" value="0" />
+              </div>
+
+              <div class="col-md-6">
+                <label> Limite máximo de multa </label>
+
+                <div class="input-icon">
+                  <i class="fa-solid fa-ban"></i>
+
+                  <input
+                    type="number"
+                    class="form-control"
+                    placeholder="Ex: 50000"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h6>
+              <i class="fa-solid fa-toggle-on"></i>
+
+              Comportamento do sistema
+            </h6>
+
+            <div class="permission-box">
+              <span> Bloquear empréstimos com multas pendentes </span>
+
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" checked />
+              </div>
+            </div>
+
+            <div class="permission-box mt-3">
+              <span> Enviar alerta de atraso </span>
+
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" checked />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FOOTER -->
+
+        <div class="modal-footer modern-footer">
+          <button class="btn-secondary-modern" data-bs-dismiss="modal">
+            Cancelar
+          </button>
+
+          <button class="btn-primary-modern">
+            <i class="fa-solid fa-save"></i>
+
+            Guardar Configuração
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- =================================
      MODAL SISTEMA E BACKUP
 ================================= -->
 
-
-     <div class="modal fade" id="modalSistema" tabindex="-1">
-
-
-
-
-
-          <div class="modal-dialog modal-xl modal-dialog-centered">
-
-
-
-
-
-
-               <div class="modal-content modern-modal">
-
-
-
-
-
-
-
-                    <!-- HEADER -->
-
-
-                    <div class="modal-header premium-header">
-
-
-
-                         <div class="modal-title-box">
-
-
-
-                              <div class="modal-symbol">
-
-
-                                   <i class="fa-solid fa-database"></i>
-
-
-                              </div>
-
-
-
-
-
-                              <div>
-
-
-                                   <h4>
-
-                                        Sistema e Backup
-
-                                   </h4>
-
-
-
-                                   <p>
-
-                                        Segurança, manutenção e dados
-
-                                   </p>
-
-
-
-                              </div>
-
-
-
-                         </div>
-
-
-
-
-
-
-
-                         <button class="btn-close btn-close-white" data-bs-dismiss="modal">
-
-                         </button>
-
-
-
-
-                    </div>
-
-
-
-
-
-
-
-
-
-                    <!-- BODY -->
-
-
-                    <div class="modal-body">
-
-
-
-
-
-
-
-
-                         <!-- BACKUP -->
-
-
-                         <div class="form-section">
-
-
-
-                              <h6>
-
-                                   <i class="fa-solid fa-hard-drive"></i>
-
-                                   Backup do Sistema
-
-                              </h6>
-
-
-
-
-
-
-
-
-                              <div class="row g-4">
-
-
-
-
-
-
-
-                                   <div class="col-md-6">
-
-
-                                        <div class="backup-card">
-
-
-                                             <div>
-
-
-                                                  <strong>
-
-                                                       Último Backup
-
-                                                  </strong>
-
-
-                                                  <p>
-
-                                                       02/08/2026 - 18:30
-
-                                                  </p>
-
-
-                                             </div>
-
-
-
-                                             <i class="fa-solid fa-check-circle"></i>
-
-
-
-                                        </div>
-
-
-                                   </div>
-
-
-
-
-
-
-
-
-
-                                   <div class="col-md-6">
-
-
-                                        <button class="backup-button" id="btnBackup">
-
-
-
-                                             <i class="fa-solid fa-cloud-arrow-down"></i>
-
-
-
-                                             Criar Backup Agora
-
-
-
-                                        </button>
-
-
-                                   </div>
-
-
-
-
-
-
-
-                              </div>
-
-
-
-
-                         </div>
-
-
-
-
-
-
-
-
-
-                         <!-- SEGURANÇA -->
-
-
-                         <div class="form-section">
-
-
-
-                              <h6>
-
-                                   <i class="fa-solid fa-shield-halved"></i>
-
-                                   Segurança
-
-                              </h6>
-
-
-
-
-
-
-
-
-                              <div class="permission-box">
-
-
-
-                                   <span>
-
-                                        Ativar autenticação segura
-
-                                   </span>
-
-
-
-                                   <div class="form-check form-switch">
-
-
-                                        <input class="form-check-input" type="checkbox" checked>
-
-
-                                   </div>
-
-
-                              </div>
-
-
-
-
-
-
-
-
-                              <div class="permission-box mt-3">
-
-
-
-                                   <span>
-
-                                        Registar histórico de atividades
-
-                                   </span>
-
-
-
-                                   <div class="form-check form-switch">
-
-
-                                        <input class="form-check-input" type="checkbox" checked>
-
-
-                                   </div>
-
-
-                              </div>
-
-
-
-
-
-
-                         </div>
-
-
-
-
-
-
-
-
-
-                         <!-- PREFERÊNCIAS -->
-
-
-                         <div class="form-section">
-
-
-
-                              <h6>
-
-                                   <i class="fa-solid fa-sliders"></i>
-
-                                   Preferências
-
-                              </h6>
-
-
-
-
-
-
-
-
-                              <div class="row g-4">
-
-
-
-
-
-                                   <div class="col-md-6">
-
-
-                                        <label>
-
-                                             Idioma
-
-                                        </label>
-
-
-
-                                        <select class="form-select select2">
-
-
-                                             <option>
-
-                                                  Português
-
-                                             </option>
-
-
-                                             <option>
-
-                                                  English
-
-                                             </option>
-
-
-                                        </select>
-
-
-
-                                   </div>
-
-
-
-
-
-
-
-
-                                   <div class="col-md-6">
-
-
-                                        <label>
-
-                                             Tema
-
-                                        </label>
-
-
-
-                                        <select class="form-select">
-
-
-                                             <option>
-
-                                                  Claro
-
-                                             </option>
-
-
-                                             <option>
-
-                                                  Escuro
-
-                                             </option>
-
-
-                                        </select>
-
-
-
-                                   </div>
-
-
-
-
-
-
-                              </div>
-
-
-
-
-                         </div>
-
-
-
-
-
-
-
-
-
-                    </div>
-
-
-
-
-
-
-
-
-
-
-
-                    <!-- FOOTER -->
-
-
-                    <div class="modal-footer modern-footer">
-
-
-
-                         <button class="btn-secondary-modern" data-bs-dismiss="modal">
-
-                              Cancelar
-
-                         </button>
-
-
-
-
-
-
-
-                         <button class="btn-primary-modern">
-
-
-                              <i class="fa-solid fa-save"></i>
-
-
-                              Guardar Alterações
-
-
-                         </button>
-
-
-
-
-                    </div>
-
-
-
-
-
-
-
-
-               </div>
-
-
-
+  <div class="modal fade" id="modalSistema" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content modern-modal">
+        <!-- HEADER -->
+
+        <div class="modal-header premium-header">
+          <div class="modal-title-box">
+            <div class="modal-symbol">
+              <i class="fa-solid fa-database"></i>
+            </div>
+
+            <div>
+              <h4>Sistema e Backup</h4>
+
+              <p>Segurança, manutenção e dados</p>
+            </div>
           </div>
 
+          <button
+            class="btn-close btn-close-white"
+            data-bs-dismiss="modal"
+          ></button>
+        </div>
 
+        <!-- BODY -->
 
-     </div>
+        <div class="modal-body">
+          <!-- BACKUP -->
+
+          <div class="form-section">
+            <h6>
+              <i class="fa-solid fa-hard-drive"></i>
+
+              Backup do Sistema
+            </h6>
+
+            <div class="row g-4">
+              <div class="col-md-6">
+                <div class="backup-card">
+                  <div>
+                    <strong> Último Backup </strong>
+
+                    <p>02/08/2026 - 18:30</p>
+                  </div>
+
+                  <i class="fa-solid fa-check-circle"></i>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <button class="backup-button" id="btnBackup">
+                  <i class="fa-solid fa-cloud-arrow-down"></i>
+
+                  Criar Backup Agora
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- SEGURANÇA -->
+
+          <div class="form-section">
+            <h6>
+              <i class="fa-solid fa-shield-halved"></i>
+
+              Segurança
+            </h6>
+
+            <div class="permission-box">
+              <span> Ativar autenticação segura </span>
+
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" checked />
+              </div>
+            </div>
+
+            <div class="permission-box mt-3">
+              <span> Registar histórico de atividades </span>
+
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" checked />
+              </div>
+            </div>
+          </div>
+
+          <!-- PREFERÊNCIAS -->
+
+          <div class="form-section">
+            <h6>
+              <i class="fa-solid fa-sliders"></i>
+
+              Preferências
+            </h6>
+
+            <div class="row g-4">
+              <div class="col-md-6">
+                <label> Idioma </label>
+
+                <select class="form-select select2">
+                  <option>Português</option>
+
+                  <option>English</option>
+                </select>
+              </div>
+
+              <div class="col-md-6">
+                <label> Tema </label>
+
+                <select class="form-select">
+                  <option>Claro</option>
+
+                  <option>Escuro</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FOOTER -->
+
+        <div class="modal-footer modern-footer">
+          <button class="btn-secondary-modern" data-bs-dismiss="modal">
+            Cancelar
+          </button>
+
+          <button class="btn-primary-modern">
+            <i class="fa-solid fa-save"></i>
+
+            Guardar Alterações
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

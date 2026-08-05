@@ -1,595 +1,636 @@
 <div class="categorias-page">
 
 
-    <!-- HEADER -->
+<!-- HEADER -->
+<div class="page-header">
+    <div>
+        <h2>
+            <i class="fa-solid fa-layer-group"></i>
+            Categorias
+        </h2>
 
-    <div class="page-header">
+        <p>Organização dos livros por categorias</p>
+    </div>
 
+    <button type="button" class="btn-add" id="openAddCategoryModal">
+        <i class="fa-solid fa-plus"></i>
+        Nova Categoria
+    </button>
+</div>
 
-        <div>
+<!-- CARDS -->
+<div class="row g-4 mb-4">
 
-            <h2>
-
+    <div class="col-xl-3 col-md-6">
+        <div class="category-card">
+            <div class="category-icon blue">
                 <i class="fa-solid fa-layer-group"></i>
+            </div>
+            <div>
+                <span>Total Categorias</span>
+                <h3>18</h3>
+            </div>
+        </div>
+    </div>
 
-                Categorias
+    <div class="col-xl-3 col-md-6">
+        <div class="category-card">
+            <div class="category-icon green">
+                <i class="fa-solid fa-book"></i>
+            </div>
+            <div>
+                <span>Livros Catalogados</span>
+                <h3>1.540</h3>
+            </div>
+        </div>
+    </div>
 
-            </h2>
+    <div class="col-xl-3 col-md-6">
+        <div class="category-card">
+            <div class="category-icon orange">
+                <i class="fa-solid fa-star"></i>
+            </div>
+            <div>
+                <span>Mais Popular</span>
+                <h3>Tecnologia</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6">
+        <div class="category-card">
+            <div class="category-icon purple">
+                <i class="fa-solid fa-chart-line"></i>
+            </div>
+            <div>
+                <span>Crescimento</span>
+                <h3>+12%</h3>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- TABELA -->
+<div class="table-card">
+
+    <div class="table-header">
+
+        <div class="search-area">
+            <i class="fa-solid fa-search"></i>
+            <input
+                type="text"
+                id="searchCategory"
+                placeholder="Pesquisar categoria..."
+            >
+        </div>
+
+    </div>
+
+    <div class="table-responsive">
+
+        <table id="categoriesTable" class="table align-middle">
+
+            <thead>
+                <tr>
+                    <th>Categoria</th>
+                    <th>Descrição</th>
+                    <th>Total Livros</th>
+                    <th>Estado</th>
+                    <th>Data Criação</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr data-id="1">
+
+                    <td>
+                        <div class="category-name">
+                            <div class="small-icon">
+                                <i class="fa-solid fa-code"></i>
+                            </div>
+                            <span>Tecnologia</span>
+                        </div>
+                    </td>
+
+                    <td>Livros de programação e informática</td>
+
+                    <td>350</td>
+
+                    <td>
+                        <span class="status active">Ativa</span>
+                    </td>
+
+                    <td>03/01/2026</td>
+
+                    <td>
+                        <div class="action-buttons">
+
+                            <button
+                                type="button"
+                                class="action view btn-view-category"
+                                title="Visualizar"
+                                data-id="1"
+                            >
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+
+                            <button
+                                type="button"
+                                class="action edit btn-edit-category"
+                                title="Editar"
+                                data-id="1"
+                            >
+                                <i class="fa-solid fa-pen"></i>
+                            </button>
+
+                            <button
+                                type="button"
+                                class="action delete btn-delete-category"
+                                title="Eliminar"
+                                data-id="1"
+                            >
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+
+                        </div>
+                    </td>
+
+                </tr>
+
+                <tr data-id="2">
+
+                    <td>
+                        <div class="category-name">
+                            <div class="small-icon">
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
+                            <span>Romance</span>
+                        </div>
+                    </td>
+
+                    <td>Literatura romântica</td>
+
+                    <td>220</td>
+
+                    <td>
+                        <span class="status active">Ativa</span>
+                    </td>
+
+                    <td>15/02/2026</td>
+
+                    <td>
+                        <div class="action-buttons">
+
+                            <button
+                                type="button"
+                                class="action view btn-view-category"
+                                title="Visualizar"
+                                data-id="2"
+                            >
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+
+                            <button
+                                type="button"
+                                class="action edit btn-edit-category"
+                                title="Editar"
+                                data-id="2"
+                            >
+                                <i class="fa-solid fa-pen"></i>
+                            </button>
+
+                            <button
+                                type="button"
+                                class="action delete btn-delete-category"
+                                title="Eliminar"
+                                data-id="2"
+                            >
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+
+                        </div>
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
 
 
-            <p>
+</div>
 
-                Organização dos livros por categorias
+<!-- =====================================================
+     MODAL NOVA CATEGORIA
+===================================================== -->
 
-            </p>
+<div
+    class="category-modal-overlay"
+    id="addCategoryModal"
+    aria-hidden="true"
+>
 
+
+<div class="category-modal">
+
+    <div class="category-modal-header">
+
+        <div class="category-modal-title">
+
+            <div class="category-modal-icon blue">
+                <i class="fa-solid fa-layer-group"></i>
+            </div>
+
+            <div>
+                <h3>Nova Categoria</h3>
+                <p>Cadastre uma nova categoria</p>
+            </div>
 
         </div>
 
-
-
-
-        <button class="btn-add">
-
-            <i class="fa-solid fa-plus"></i>
-
-            Nova Categoria
-
+        <button
+            type="button"
+            class="category-modal-close"
+            data-close-modal="addCategoryModal"
+        >
+            <i class="fa-solid fa-xmark"></i>
         </button>
 
+    </div>
 
+    <form id="addCategoryForm">
+
+        <div class="category-modal-body">
+
+            <div class="category-form-grid">
+
+                <div class="category-form-group">
+
+                    <label>Nome da Categoria</label>
+
+                    <div class="category-input">
+                        <i class="fa-solid fa-layer-group"></i>
+
+                        <input
+                            type="text"
+                            id="addCategoryName"
+                            required
+                            placeholder="Ex.: Tecnologia"
+                        >
+                    </div>
+
+                </div>
+
+                <div class="category-form-group">
+
+                    <label>Estado</label>
+
+                    <div class="category-input">
+
+                        <i class="fa-solid fa-toggle-on"></i>
+
+                        <select id="addCategoryStatus">
+                            <option value="Ativa">Ativa</option>
+                            <option value="Inativa">Inativa</option>
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <div class="category-form-group full">
+
+                    <label>Descrição</label>
+
+                    <div class="category-input">
+
+                        <i class="fa-solid fa-align-left"></i>
+
+                        <textarea
+                            id="addCategoryDescription"
+                            placeholder="Descrição da categoria..."
+                        ></textarea>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="category-modal-footer">
+
+            <button
+                type="button"
+                class="btn-category-cancel"
+                data-close-modal="addCategoryModal"
+            >
+                Cancelar
+            </button>
+
+            <button
+                type="submit"
+                class="btn-category-primary"
+            >
+                <i class="fa-solid fa-check"></i>
+                Cadastrar
+            </button>
+
+        </div>
+
+    </form>
+
+</div>
+
+
+</div>
+
+<!-- =====================================================
+     MODAL VISUALIZAR
+===================================================== -->
+
+<div
+    class="category-modal-overlay"
+    id="viewCategoryModal"
+    aria-hidden="true"
+>
+
+
+<div class="category-modal">
+
+    <div class="category-modal-header">
+
+        <div class="category-modal-title">
+
+            <div class="category-modal-icon blue">
+                <i class="fa-solid fa-eye"></i>
+            </div>
+
+            <div>
+                <h3>Detalhes da Categoria</h3>
+                <p>Informações da categoria</p>
+            </div>
+
+        </div>
+
+        <button
+            type="button"
+            class="category-modal-close"
+            data-close-modal="viewCategoryModal"
+        >
+            <i class="fa-solid fa-xmark"></i>
+        </button>
 
     </div>
 
+    <div class="category-modal-body">
 
+        <div class="category-preview">
 
-
-
-
-
-
-    <!-- RESUMO -->
-
-    <div class="row g-4 mb-4">
-
-
-
-        <div class="col-xl-3 col-md-6">
-
-
-            <div class="category-card">
-
-
-                <div class="category-icon blue">
-
-                    <i class="fa-solid fa-layer-group"></i>
-
-                </div>
-
-
-                <div>
-
-                    <span>
-
-                        Total Categorias
-
-                    </span>
-
-
-                    <h3>
-
-                        18
-
-                    </h3>
-
-
-                </div>
-
-
+            <div class="category-preview-icon">
+                <i class="fa-solid fa-layer-group"></i>
             </div>
 
+            <div>
+                <h3 id="viewCategoryName">Tecnologia</h3>
+                <span id="viewCategoryId">CAT001</span>
+            </div>
 
         </div>
 
+        <div class="category-details-grid">
 
-
-
-
-
-
-
-        <div class="col-xl-3 col-md-6">
-
-
-            <div class="category-card">
-
-
-                <div class="category-icon green">
-
-                    <i class="fa-solid fa-book"></i>
-
-                </div>
-
-
-                <div>
-
-                    <span>
-
-                        Livros Catalogados
-
-                    </span>
-
-
-                    <h3>
-
-                        1.540
-
-                    </h3>
-
-
-                </div>
-
-
+            <div class="category-detail-item">
+                <span>Descrição</span>
+                <strong id="viewCategoryDescription">-</strong>
             </div>
 
-
-        </div>
-
-
-
-
-
-
-
-
-        <div class="col-xl-3 col-md-6">
-
-
-            <div class="category-card">
-
-
-                <div class="category-icon orange">
-
-                    <i class="fa-solid fa-star"></i>
-
-                </div>
-
-
-                <div>
-
-                    <span>
-
-                        Mais Popular
-
-                    </span>
-
-
-                    <h3>
-
-                        Tecnologia
-
-                    </h3>
-
-
-                </div>
-
-
+            <div class="category-detail-item">
+                <span>Total de Livros</span>
+                <strong id="viewCategoryBooks">-</strong>
             </div>
 
-
-        </div>
-
-
-
-
-
-
-
-
-        <div class="col-xl-3 col-md-6">
-
-
-            <div class="category-card">
-
-
-                <div class="category-icon purple">
-
-                    <i class="fa-solid fa-chart-line"></i>
-
-                </div>
-
-
-                <div>
-
-                    <span>
-
-                        Crescimento
-
-                    </span>
-
-
-                    <h3>
-
-                        +12%
-
-                    </h3>
-
-
-                </div>
-
-
+            <div class="category-detail-item">
+                <span>Estado</span>
+                <strong id="viewCategoryStatus">-</strong>
             </div>
 
+            <div class="category-detail-item">
+                <span>Data de Criação</span>
+                <strong id="viewCategoryDate">-</strong>
+            </div>
 
         </div>
-
-
 
     </div>
 
-
-
-
-
-
-
-
-    <!-- TABELA -->
-
-
-    <div class="table-card">
-
-
-
-        <div class="table-header">
-
-
-            <div class="search-area">
-
-
-                <i class="fa-solid fa-search"></i>
-
-
-                <input type="text" id="searchCategory" placeholder="Pesquisar categoria...">
-
-
-            </div>
-
-
-
-        </div>
-
-
-
-
-
-
-
-
-        <div class="table-responsive">
-
-
-
-            <table id="categoriesTable" class="table align-middle">
-
-
-                <thead>
-
-
-                    <tr>
-
-
-                        <th>
-
-                            Categoria
-
-                        </th>
-
-
-                        <th>
-
-                            Descrição
-
-                        </th>
-
-
-                        <th>
-
-                            Total Livros
-
-                        </th>
-
-
-                        <th>
-
-                            Estado
-
-                        </th>
-
-
-                        <th>
-
-                            Data Criação
-
-                        </th>
-
-
-                        <th>
-
-                            Ações
-
-                        </th>
-
-
-                    </tr>
-
-
-                </thead>
-
-
-
-
-
-
-
-                <tbody>
-
-
-
-                    <tr>
-
-
-
-                        <td>
-
-
-                            <div class="category-name">
-
-
-                                <div class="small-icon">
-
-
-                                    <i class="fa-solid fa-code"></i>
-
-
-                                </div>
-
-
-                                Tecnologia
-
-
-                            </div>
-
-
-
-                        </td>
-
-
-
-
-
-                        <td>
-
-                            Livros de programação e informática
-
-                        </td>
-
-
-
-
-                        <td>
-
-                            350
-
-                        </td>
-
-
-
-
-
-                        <td>
-
-
-                            <span class="status active">
-
-                                Ativa
-
-                            </span>
-
-
-                        </td>
-
-
-
-
-
-                        <td>
-
-                            03/01/2026
-
-                        </td>
-
-
-
-
-
-
-                        <td>
-
-
-                            <div class="action-buttons">
-
-
-                                <button class="action view">
-
-                                    <i class="fa-solid fa-eye"></i>
-
-                                </button>
-
-
-
-                                <button class="action edit">
-
-                                    <i class="fa-solid fa-pen"></i>
-
-                                </button>
-
-
-
-                                <button class="action delete">
-
-                                    <i class="fa-solid fa-trash"></i>
-
-                                </button>
-
-
-                            </div>
-
-
-                        </td>
-
-
-
-                    </tr>
-
-
-
-
-
-
-                    <tr>
-
-
-
-                        <td>
-
-
-                            <div class="category-name">
-
-
-                                <div class="small-icon">
-
-
-                                    <i class="fa-solid fa-heart"></i>
-
-
-                                </div>
-
-
-                                Romance
-
-
-                            </div>
-
-
-
-                        </td>
-
-
-
-
-
-                        <td>
-
-                            Literatura romântica
-
-                        </td>
-
-
-
-
-                        <td>
-
-                            220
-
-                        </td>
-
-
-
-
-
-                        <td>
-
-
-                            <span class="status active">
-
-                                Ativa
-
-                            </span>
-
-
-                        </td>
-
-
-
-
-
-                        <td>
-
-                            15/02/2026
-
-                        </td>
-
-
-
-
-
-
-                        <td>
-
-
-                            <div class="action-buttons">
-
-
-                                <button class="action view">
-
-                                    <i class="fa-solid fa-eye"></i>
-
-                                </button>
-
-
-
-                                <button class="action edit">
-
-                                    <i class="fa-solid fa-pen"></i>
-
-                                </button>
-
-
-
-                                <button class="action delete">
-
-                                    <i class="fa-solid fa-trash"></i>
-
-                                </button>
-
-
-                            </div>
-
-
-                        </td>
-
-
-
-                    </tr>
-
-
-
-                </tbody>
-
-
-
-            </table>
-
-
-
-        </div>
-
-
+    <div class="category-modal-footer">
+
+        <button
+            type="button"
+            class="btn-category-cancel"
+            data-close-modal="viewCategoryModal"
+        >
+            Fechar
+        </button>
 
     </div>
 
+</div>
 
+
+</div>
+
+<!-- =====================================================
+     MODAL EDITAR
+===================================================== -->
+
+<div
+    class="category-modal-overlay"
+    id="editCategoryModal"
+    aria-hidden="true"
+>
+
+
+<div class="category-modal">
+
+    <div class="category-modal-header">
+
+        <div class="category-modal-title">
+
+            <div class="category-modal-icon orange">
+                <i class="fa-solid fa-pen"></i>
+            </div>
+
+            <div>
+                <h3>Editar Categoria</h3>
+                <p>Atualize os dados da categoria</p>
+            </div>
+
+        </div>
+
+        <button
+            type="button"
+            class="category-modal-close"
+            data-close-modal="editCategoryModal"
+        >
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+    </div>
+
+    <form id="editCategoryForm">
+
+        <input type="hidden" id="editCategoryId">
+
+        <div class="category-modal-body">
+
+            <div class="category-form-grid">
+
+                <div class="category-form-group">
+
+                    <label>Nome da Categoria</label>
+
+                    <div class="category-input">
+
+                        <i class="fa-solid fa-layer-group"></i>
+
+                        <input
+                            type="text"
+                            id="editCategoryName"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+                <div class="category-form-group">
+
+                    <label>Estado</label>
+
+                    <div class="category-input">
+
+                        <i class="fa-solid fa-toggle-on"></i>
+
+                        <select id="editCategoryStatus">
+
+                            <option value="Ativa">Ativa</option>
+
+                            <option value="Inativa">Inativa</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <div class="category-form-group full">
+
+                    <label>Descrição</label>
+
+                    <div class="category-input">
+
+                        <i class="fa-solid fa-align-left"></i>
+
+                        <textarea id="editCategoryDescription"></textarea>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="category-modal-footer">
+
+            <button
+                type="button"
+                class="btn-category-cancel"
+                data-close-modal="editCategoryModal"
+            >
+                Cancelar
+            </button>
+
+            <button
+                type="submit"
+                class="btn-category-primary"
+            >
+                <i class="fa-solid fa-save"></i>
+                Guardar Alterações
+            </button>
+
+        </div>
+
+    </form>
+
+</div>
+
+
+</div>
+
+<!-- =====================================================
+     MODAL ELIMINAR
+===================================================== -->
+
+<div
+    class="category-modal-overlay"
+    id="deleteCategoryModal"
+    aria-hidden="true"
+>
+
+<div class="category-modal delete-category-modal">
+
+    <div class="delete-category-content">
+
+        <div class="delete-category-icon">
+            <i class="fa-solid fa-trash"></i>
+        </div>
+
+        <h3>Eliminar Categoria?</h3>
+
+        <p>
+            Tem certeza que deseja eliminar a categoria
+            <strong id="deleteCategoryName">-</strong>?
+        </p>
+
+        <span>
+            Esta ação não poderá ser desfeita.
+        </span>
+
+    </div>
+
+    <div class="category-modal-footer">
+
+        <button
+            type="button"
+            class="btn-category-cancel"
+            data-close-modal="deleteCategoryModal"
+        >
+            Cancelar
+        </button>
+
+        <button
+            type="button"
+            class="btn-category-danger"
+            id="confirmDeleteCategory"
+        >
+            <i class="fa-solid fa-trash"></i>
+            Eliminar
+        </button>
+
+    </div>
+
+</div>
 
 
 </div>

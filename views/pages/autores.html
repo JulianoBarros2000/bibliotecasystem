@@ -1,10 +1,12 @@
+```html
 <div class="autores-page">
 
 
-    <!-- HEADER -->
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
 
     <div class="page-header">
-
 
         <div>
 
@@ -16,46 +18,40 @@
 
             </h2>
 
-
             <p>
-
                 Gestão dos autores cadastrados na biblioteca
-
             </p>
-
 
         </div>
 
 
+        <!-- NOVO AUTOR -->
 
-        <button class="btn-add">
+       <button
+    type="button"
+    class="btn-add"
+    id="openAddAuthorModal">
 
-            <i class="fa-solid fa-plus"></i>
+    <i class="fa-solid fa-plus"></i>
 
-            Novo Autor
+    Novo Autor
 
-        </button>
-
+</button>
 
     </div>
 
 
 
-
-
-
-    <!-- CARDS RESUMO -->
-
+    <!-- =====================================================
+         CARDS RESUMO
+    ====================================================== -->
 
     <div class="row g-4 mb-4">
 
 
-
         <div class="col-xl-3 col-md-6">
 
-
             <div class="author-card">
-
 
                 <div class="author-icon blue">
 
@@ -63,41 +59,27 @@
 
                 </div>
 
-
                 <div>
 
                     <span>
-
                         Total de Autores
-
                     </span>
 
-
                     <h3>
-
                         248
-
                     </h3>
-
 
                 </div>
 
-
             </div>
-
 
         </div>
 
 
 
-
-
-
         <div class="col-xl-3 col-md-6">
 
-
             <div class="author-card">
-
 
                 <div class="author-icon green">
 
@@ -105,41 +87,27 @@
 
                 </div>
 
-
                 <div>
 
                     <span>
-
                         Autores Ativos
-
                     </span>
 
-
                     <h3>
-
                         220
-
                     </h3>
-
 
                 </div>
 
-
             </div>
-
 
         </div>
 
 
 
-
-
-
         <div class="col-xl-3 col-md-6">
 
-
             <div class="author-card">
-
 
                 <div class="author-icon orange">
 
@@ -147,41 +115,27 @@
 
                 </div>
 
-
                 <div>
 
                     <span>
-
                         Livros Publicados
-
                     </span>
 
-
                     <h3>
-
                         1.540
-
                     </h3>
-
 
                 </div>
 
-
             </div>
-
 
         </div>
 
 
 
-
-
-
         <div class="col-xl-3 col-md-6">
 
-
             <div class="author-card">
-
 
                 <div class="author-icon purple">
 
@@ -189,21 +143,555 @@
 
                 </div>
 
-
                 <div>
 
                     <span>
-
                         Mais Popular
-
                     </span>
 
+                    <h3>
+                        Machado
+                    </h3>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         TABELA
+    ====================================================== -->
+
+    <div class="table-card">
+
+
+        <!-- FILTROS -->
+
+        <div class="table-header">
+
+            <div class="search-area">
+
+                <i class="fa-solid fa-search"></i>
+
+                <input
+                    type="text"
+                    id="searchAuthor"
+                    placeholder="Pesquisar autor..."
+                >
+
+            </div>
+
+
+            <select
+                id="authorStatusFilter"
+                class="form-select"
+            >
+
+                <option value="">
+                    Todos estados
+                </option>
+
+                <option value="Ativo">
+                    Ativo
+                </option>
+
+                <option value="Inativo">
+                    Inativo
+                </option>
+
+            </select>
+
+        </div>
+
+
+
+        <!-- TABELA -->
+
+        <div class="table-responsive">
+
+            <table
+                id="authorsTable"
+                class="table align-middle"
+            >
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Autor
+                        </th>
+
+                        <th>
+                            Nacionalidade
+                        </th>
+
+                        <th>
+                            Data Nascimento
+                        </th>
+
+                        <th>
+                            Livros
+                        </th>
+
+                        <th>
+                            Estado
+                        </th>
+
+                        <th>
+                            Ações
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+
+                    <!-- =================================================
+                         AUTOR 1
+                    ================================================== -->
+
+                    <tr data-id="1">
+
+
+                        <td>
+
+                            <div class="author-info">
+
+                                <img
+                                    src="views/assets/img/avatar.png"
+                                    alt="José Saramago"
+                                >
+
+                                <div>
+
+                                    <strong>
+                                        José Saramago
+                                    </strong>
+
+                                    <small>
+                                        Escritor
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+                        </td>
+
+
+                        <td>
+                            Português
+                        </td>
+
+
+                        <td>
+                            16/11/1922
+                        </td>
+
+
+                        <td>
+                            35
+                        </td>
+
+
+                        <td>
+
+                            <span class="status active">
+                                Ativo
+                            </span>
+
+                        </td>
+
+
+                        <td>
+
+<div class="action-buttons">
+
+    <button
+        type="button"
+        class="action view btn-view-author"
+        data-id="1"
+        title="Visualizar autor">
+
+        <i class="fa-solid fa-eye"></i>
+
+    </button>
+
+
+    <button
+        type="button"
+        class="action edit btn-edit-author"
+        data-id="1"
+        title="Editar autor">
+
+        <i class="fa-solid fa-pen"></i>
+
+    </button>
+
+
+    <button
+        type="button"
+        class="action delete btn-delete-author"
+        data-id="1"
+        title="Eliminar autor">
+
+        <i class="fa-solid fa-trash"></i>
+
+    </button>
+
+</div>
+
+                        </td>
+
+
+                    </tr>
+
+
+
+                    <!-- =================================================
+                         AUTOR 2
+                    ================================================== -->
+
+                    <tr data-id="2">
+
+
+                        <td>
+
+                            <div class="author-info">
+
+                                <img
+                                    src="views/assets/img/avatar.png"
+                                    alt="Machado de Assis"
+                                >
+
+                                <div>
+
+                                    <strong>
+                                        Machado de Assis
+                                    </strong>
+
+                                    <small>
+                                        Escritor
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+                        </td>
+
+
+                        <td>
+                            Brasileiro
+                        </td>
+
+
+                        <td>
+                            21/06/1839
+                        </td>
+
+
+                        <td>
+                            40
+                        </td>
+
+
+                        <td>
+
+                            <span class="status active">
+                                Ativo
+                            </span>
+
+                        </td>
+
+
+                        <td>
+
+                          <div class="action-buttons">
+
+    <button
+        type="button"
+        class="action view btn-view-author"
+        data-id="2"
+        title="Visualizar autor">
+
+        <i class="fa-solid fa-eye"></i>
+
+    </button>
+
+
+    <button
+        type="button"
+        class="action edit btn-edit-author"
+        data-id="2"
+        title="Editar autor">
+
+        <i class="fa-solid fa-pen"></i>
+
+    </button>
+
+
+    <button
+        type="button"
+        class="action delete btn-delete-author"
+        data-id="2"
+        title="Eliminar autor">
+
+        <i class="fa-solid fa-trash"></i>
+
+    </button>
+
+</div>
+                            </div>
+
+                        </td>
+
+
+                    </tr>
+
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =========================================================
+     MODAL — NOVO AUTOR
+========================================================== -->
+
+<div
+    class="author-modal-overlay"
+    id="addAuthorModal"
+>
+
+    <div class="author-modal">
+
+
+        <!-- HEADER -->
+
+        <div class="author-modal-header">
+
+            <div class="author-modal-title">
+
+                <div class="author-modal-icon blue">
+
+                    <i class="fa-solid fa-user-plus"></i>
+
+                </div>
+
+                <div>
 
                     <h3>
-
-                        Machado
-
+                        Novo Autor
                     </h3>
+
+                    <p>
+                        Cadastre um novo autor na biblioteca
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="author-modal-close"
+                data-close-modal="addAuthorModal"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+
+        <!-- BODY -->
+
+        <form id="addAuthorForm">
+
+            <div class="author-modal-body">
+
+
+                <div class="author-form-grid">
+
+
+                    <!-- NOME -->
+
+                    <div class="author-form-group full">
+
+                        <label>
+                            Nome completo
+                        </label>
+
+                        <div class="author-input">
+
+                            <i class="fa-solid fa-user"></i>
+
+                            <input
+                                type="text"
+                                id="addAuthorName"
+                                name="nome"
+                                placeholder="Digite o nome do autor"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- NACIONALIDADE -->
+
+                    <div class="author-form-group">
+
+                        <label>
+                            Nacionalidade
+                        </label>
+
+                        <div class="author-input">
+
+                            <i class="fa-solid fa-earth-africa"></i>
+
+                            <input
+                                type="text"
+                                id="addAuthorNationality"
+                                name="nacionalidade"
+                                placeholder="Ex: Angolano"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- DATA NASCIMENTO -->
+
+                    <div class="author-form-group">
+
+                        <label>
+                            Data de nascimento
+                        </label>
+
+                        <div class="author-input">
+
+                            <i class="fa-solid fa-calendar"></i>
+
+                            <input
+                                type="date"
+                                id="addAuthorBirth"
+                                name="data_nascimento"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- PROFISSÃO -->
+
+                    <div class="author-form-group">
+
+                        <label>
+                            Profissão
+                        </label>
+
+                        <div class="author-input">
+
+                            <i class="fa-solid fa-briefcase"></i>
+
+                            <input
+                                type="text"
+                                id="addAuthorProfession"
+                                name="profissao"
+                                placeholder="Ex: Escritor"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- ESTADO -->
+
+                    <div class="author-form-group">
+
+                        <label>
+                            Estado
+                        </label>
+
+                        <div class="author-input">
+
+                            <i class="fa-solid fa-toggle-on"></i>
+
+                            <select
+                                id="addAuthorStatus"
+                                name="estado"
+                            >
+
+                                <option value="Ativo">
+                                    Ativo
+                                </option>
+
+                                <option value="Inativo">
+                                    Inativo
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- BIOGRAFIA -->
+
+                    <div class="author-form-group full">
+
+                        <label>
+                            Biografia
+                        </label>
+
+                        <div class="author-input">
+
+                            <i class="fa-solid fa-align-left"></i>
+
+                            <textarea
+                                id="addAuthorBiography"
+                                name="biografia"
+                                placeholder="Digite uma breve biografia..."
+                            ></textarea>
+
+                        </div>
+
+                    </div>
 
 
                 </div>
@@ -212,386 +700,541 @@
             </div>
 
 
+
+            <!-- FOOTER -->
+
+            <div class="author-modal-footer">
+
+                <button
+                    type="button"
+                    class="btn-author-cancel"
+                    data-close-modal="addAuthorModal"
+                >
+
+                    Cancelar
+
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="btn-author-primary"
+                >
+
+                    <i class="fa-solid fa-plus"></i>
+
+                    Adicionar Autor
+
+                </button>
+
+            </div>
+
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     MODAL — VISUALIZAR AUTOR
+========================================================== -->
+
+<div
+    class="author-modal-overlay"
+    id="viewAuthorModal"
+>
+
+    <div class="author-modal">
+
+
+        <div class="author-modal-header">
+
+            <div class="author-modal-title">
+
+                <div class="author-modal-icon blue">
+
+                    <i class="fa-solid fa-eye"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        Dados do Autor
+                    </h3>
+
+                    <p>
+                        Informações completas do autor
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="author-modal-close"
+                data-close-modal="viewAuthorModal"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
         </div>
 
 
 
-    </div>
+        <div class="author-modal-body">
+
+
+            <div class="author-preview">
+
+                <img
+                    src="views/assets/img/avatar.png"
+                    id="viewAuthorImage"
+                    alt="Autor"
+                >
+
+
+                <div class="author-preview-info">
+
+                    <h3 id="viewAuthorName">
+                        José Saramago
+                    </h3>
+
+                    <p id="viewAuthorProfession">
+                        Escritor
+                    </p>
+
+                    <span
+                        class="author-code"
+                        id="viewAuthorId"
+                    >
+                        AUT001
+                    </span>
+
+                </div>
+
+            </div>
 
 
 
+            <div class="author-details-grid">
+
+
+                <div class="author-detail-item">
+
+                    <span>
+                        Nacionalidade
+                    </span>
+
+                    <strong id="viewAuthorNationality">
+                        Português
+                    </strong>
+
+                </div>
 
 
 
+                <div class="author-detail-item">
+
+                    <span>
+                        Data de nascimento
+                    </span>
+
+                    <strong id="viewAuthorBirth">
+                        16/11/1922
+                    </strong>
+
+                </div>
 
 
-    <!-- TABELA -->
+
+                <div class="author-detail-item">
+
+                    <span>
+                        Livros publicados
+                    </span>
+
+                    <strong id="viewAuthorBooks">
+                        35
+                    </strong>
+
+                </div>
 
 
-    <div class="table-card">
 
+                <div class="author-detail-item">
 
+                    <span>
+                        Estado
+                    </span>
 
-        <div class="table-header">
+                    <strong id="viewAuthorStatus">
+                        Ativo
+                    </strong>
 
-
-
-            <div class="search-area">
-
-
-                <i class="fa-solid fa-search"></i>
-
-
-                <input type="text" id="searchAuthor" placeholder="Pesquisar autor...">
+                </div>
 
 
             </div>
 
 
 
+            <div class="author-biography">
 
+                <span>
+                    Biografia
+                </span>
 
-            <select id="statusFilter" class="form-select">
+                <p id="viewAuthorBiography">
+                    Biografia do autor será apresentada aqui.
+                </p>
 
-
-                <option value="">
-
-                    Todos estados
-
-                </option>
-
-
-                <option>
-
-                    Ativo
-
-                </option>
-
-
-                <option>
-
-                    Inativo
-
-                </option>
-
-
-            </select>
-
+            </div>
 
 
         </div>
 
 
 
+        <div class="author-modal-footer">
 
+            <button
+                type="button"
+                class="btn-author-cancel"
+                data-close-modal="viewAuthorModal"
+            >
 
+                Fechar
 
-
-
-        <div class="table-responsive">
-
-
-            <table id="authorsTable" class="table align-middle">
-
-
-                <thead>
-
-
-                    <tr>
-
-
-                        <th>
-
-                            Autor
-
-                        </th>
-
-
-                        <th>
-
-                            Nacionalidade
-
-                        </th>
-
-
-                        <th>
-
-                            Data Nascimento
-
-                        </th>
-
-
-                        <th>
-
-                            Livros
-
-                        </th>
-
-
-                        <th>
-
-                            Estado
-
-                        </th>
-
-
-                        <th>
-
-                            Ações
-
-                        </th>
-
-
-                    </tr>
-
-
-                </thead>
-
-
-
-                <tbody>
-
-
-                    <tr>
-
-
-                        <td>
-
-
-                            <div class="author-info">
-
-
-                                <img src="views/assets/img/avatar.png">
-
-
-                                <div>
-
-
-                                    <strong>
-
-                                        José Saramago
-
-                                    </strong>
-
-
-                                    <small>
-
-                                        Escritor
-
-                                    </small>
-
-
-                                </div>
-
-
-                            </div>
-
-
-                        </td>
-
-
-
-                        <td>
-
-                            Português
-
-                        </td>
-
-
-
-                        <td>
-
-                            16/11/1922
-
-                        </td>
-
-
-
-                        <td>
-
-                            35
-
-                        </td>
-
-
-
-                        <td>
-
-                            <span class="status active">
-
-                                Ativo
-
-                            </span>
-
-                        </td>
-
-
-
-                        <td>
-
-
-                            <div class="action-buttons">
-
-
-                                <button class="action view">
-
-                                    <i class="fa-solid fa-eye"></i>
-
-                                </button>
-
-
-                                <button class="action edit">
-
-                                    <i class="fa-solid fa-pen"></i>
-
-                                </button>
-
-
-                                <button class="action delete">
-
-                                    <i class="fa-solid fa-trash"></i>
-
-                                </button>
-
-
-                            </div>
-
-
-                        </td>
-
-
-                    </tr>
-
-
-
-
-
-                    <tr>
-
-
-                        <td>
-
-
-                            <div class="author-info">
-
-
-                                <img src="views/assets/img/avatar.png">
-
-
-                                <div>
-
-
-                                    <strong>
-
-                                        Machado de Assis
-
-                                    </strong>
-
-
-                                    <small>
-
-                                        Escritor
-
-                                    </small>
-
-
-                                </div>
-
-
-                            </div>
-
-
-                        </td>
-
-
-
-                        <td>
-
-                            Brasileiro
-
-                        </td>
-
-
-
-                        <td>
-
-                            21/06/1839
-
-                        </td>
-
-
-
-                        <td>
-
-                            40
-
-                        </td>
-
-
-
-                        <td>
-
-                            <span class="status active">
-
-                                Ativo
-
-                            </span>
-
-                        </td>
-
-
-
-                        <td>
-
-
-                            <div class="action-buttons">
-
-
-                                <button class="action view">
-
-                                    <i class="fa-solid fa-eye"></i>
-
-                                </button>
-
-
-                                <button class="action edit">
-
-                                    <i class="fa-solid fa-pen"></i>
-
-                                </button>
-
-
-                                <button class="action delete">
-
-                                    <i class="fa-solid fa-trash"></i>
-
-                                </button>
-
-
-                            </div>
-
-
-                        </td>
-
-
-                    </tr>
-
-
-
-                </tbody>
-
-
-
-            </table>
-
+            </button>
 
         </div>
-
 
 
     </div>
 
+</div>
 
 
+
+<!-- =========================================================
+     MODAL — EDITAR AUTOR
+========================================================== -->
+
+<div
+    class="author-modal-overlay"
+    id="editAuthorModal"
+>
+
+    <div class="author-modal">
+
+
+        <div class="author-modal-header">
+
+            <div class="author-modal-title">
+
+                <div class="author-modal-icon orange">
+
+                    <i class="fa-solid fa-user-pen"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        Editar Autor
+                    </h3>
+
+                    <p>
+                        Atualize os dados do autor
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="author-modal-close"
+                data-close-modal="editAuthorModal"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+
+        <form id="editAuthorForm">
+
+            <div class="author-modal-body">
+
+
+                <input
+                    type="hidden"
+                    id="editAuthorId"
+                >
+
+
+                <div class="author-form-grid">
+
+
+                    <div class="author-form-group full">
+
+                        <label>
+                            Nome completo
+                        </label>
+
+                        <div class="author-input">
+
+                            <i class="fa-solid fa-user"></i>
+
+                            <input
+                                type="text"
+                                id="editAuthorName"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="author-form-group">
+
+                        <label>
+                            Nacionalidade
+                        </label>
+
+                        <div class="author-input">
+
+                            <i class="fa-solid fa-earth-africa"></i>
+
+                            <input
+                                type="text"
+                                id="editAuthorNationality"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="author-form-group">
+
+                        <label>
+                            Data de nascimento
+                        </label>
+
+                        <div class="author-input">
+
+                            <i class="fa-solid fa-calendar"></i>
+
+                            <input
+                                type="date"
+                                id="editAuthorBirth"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="author-form-group">
+
+                        <label>
+                            Profissão
+                        </label>
+
+                        <div class="author-input">
+
+                            <i class="fa-solid fa-briefcase"></i>
+
+                            <input
+                                type="text"
+                                id="editAuthorProfession"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="author-form-group">
+
+                        <label>
+                            Estado
+                        </label>
+
+                        <div class="author-input">
+
+                            <i class="fa-solid fa-toggle-on"></i>
+
+                            <select id="editAuthorStatus">
+
+                                <option value="Ativo">
+                                    Ativo
+                                </option>
+
+                                <option value="Inativo">
+                                    Inativo
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="author-form-group full">
+
+                        <label>
+                            Biografia
+                        </label>
+
+                        <div class="author-input">
+
+                            <i class="fa-solid fa-align-left"></i>
+
+                            <textarea
+                                id="editAuthorBiography"
+                                placeholder="Biografia..."
+                            ></textarea>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="author-modal-footer">
+
+                <button
+                    type="button"
+                    class="btn-author-cancel"
+                    data-close-modal="editAuthorModal"
+                >
+
+                    Cancelar
+
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="btn-author-primary"
+                >
+
+                    <i class="fa-solid fa-save"></i>
+
+                    Guardar Alterações
+
+                </button>
+
+            </div>
+
+
+        </form>
+
+    </div>
 
 </div>
+
+
+
+<!-- =========================================================
+     MODAL — ELIMINAR AUTOR
+========================================================== -->
+
+<div
+    class="author-modal-overlay"
+    id="deleteAuthorModal"
+>
+
+    <div class="author-modal delete-author-modal">
+
+
+        <div class="delete-author-content">
+
+
+            <div class="delete-author-icon">
+
+                <i class="fa-solid fa-trash"></i>
+
+            </div>
+
+
+            <h3>
+                Eliminar Autor?
+            </h3>
+
+
+            <p>
+                Tem certeza que deseja eliminar este autor?
+            </p>
+
+
+            <span id="deleteAuthorName">
+                José Saramago
+            </span>
+
+
+        </div>
+
+
+
+        <div class="author-modal-footer">
+
+            <button
+                type="button"
+                class="btn-author-cancel"
+                data-close-modal="deleteAuthorModal"
+            >
+
+                Cancelar
+
+            </button>
+
+
+            <button
+                type="button"
+                class="btn-author-danger"
+                id="confirmDeleteAuthor"
+            >
+
+                <i class="fa-solid fa-trash"></i>
+
+                Eliminar
+
+            </button>
+
+        </div>
+
+
+    </div>
+
+</div>
+```

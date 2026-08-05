@@ -1,0 +1,444 @@
+<div class="notificacoes-page">
+
+    <!-- HEADER -->
+    <div class="page-header notificacoes-header">
+
+        <div>
+            <h2>
+                <i class="fa-solid fa-bell"></i>
+                Notificações
+            </h2>
+
+            <p>
+                Acompanhe todos os avisos e acontecimentos da biblioteca
+            </p>
+        </div>
+
+        <button
+            type="button"
+            class="btn-mark-all"
+            id="marcarTodasLidas">
+
+            <i class="fa-solid fa-check-double"></i>
+            Marcar todas como lidas
+
+        </button>
+
+    </div>
+
+
+    <!-- RESUMO -->
+    <div class="notification-summary">
+
+        <div class="notification-summary-card active">
+
+            <div class="summary-icon blue">
+                <i class="fa-solid fa-bell"></i>
+            </div>
+
+            <div>
+                <span>Total</span>
+                <strong id="totalNotificacoes">0</strong>
+            </div>
+
+        </div>
+
+
+        <div class="notification-summary-card">
+
+            <div class="summary-icon orange">
+                <i class="fa-solid fa-envelope"></i>
+            </div>
+
+            <div>
+                <span>Não lidas</span>
+                <strong id="naoLidas">0</strong>
+            </div>
+
+        </div>
+
+
+        <div class="notification-summary-card">
+
+            <div class="summary-icon red">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+
+            <div>
+                <span>Importantes</span>
+                <strong id="importantes">0</strong>
+            </div>
+
+        </div>
+
+
+        <div class="notification-summary-card">
+
+            <div class="summary-icon green">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+
+            <div>
+                <span>Lidas</span>
+                <strong id="lidas">0</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- FILTROS -->
+    <div class="notification-toolbar">
+
+        <div class="notification-search">
+
+            <i class="fa-solid fa-search"></i>
+
+            <input
+                type="text"
+                id="pesquisaNotificacao"
+                placeholder="Pesquisar notificações..."
+                autocomplete="off">
+
+        </div>
+
+
+        <select
+            id="filtroNotificacao"
+            class="form-select">
+
+            <option value="todas">
+                Todas
+            </option>
+
+            <option value="nao-lidas">
+                Não lidas
+            </option>
+
+            <option value="emprestimo">
+                Empréstimos
+            </option>
+
+            <option value="devolucao">
+                Devoluções
+            </option>
+
+            <option value="pagamento">
+                Pagamentos
+            </option>
+
+            <option value="livro">
+                Livros
+            </option>
+
+            <option value="sistema">
+                Sistema
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <!-- LISTA -->
+    <div class="notifications-card">
+
+        <div class="notifications-card-header">
+
+            <div>
+                <h5>
+                    Todas as notificações
+                </h5>
+
+                <span id="contadorResultados">
+                    0 notificações
+                </span>
+            </div>
+
+        </div>
+
+
+        <div
+            id="listaNotificacoes"
+            class="notifications-list">
+
+
+            <!-- NOTIFICAÇÃO -->
+            <div
+                class="notification-item unread"
+                data-type="emprestimo"
+                data-read="false">
+
+                <div class="notification-icon blue">
+
+                    <i class="fa-solid fa-book"></i>
+
+                </div>
+
+
+                <div class="notification-content">
+
+                    <div class="notification-top">
+
+                        <strong>
+                            Novo empréstimo registado
+                        </strong>
+
+                        <span>
+                            Há 10 minutos
+                        </span>
+
+                    </div>
+
+                    <p>
+                        João Manuel realizou um empréstimo do livro
+                        <strong>Programação Java</strong>.
+                    </p>
+
+                    <small>
+                        Empréstimo
+                    </small>
+
+                </div>
+
+
+                <button
+                    class="notification-action mark-read"
+                    title="Marcar como lida">
+
+                    <i class="fa-solid fa-check"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- NOTIFICAÇÃO -->
+            <div
+                class="notification-item unread"
+                data-type="devolucao"
+                data-read="false">
+
+                <div class="notification-icon orange">
+
+                    <i class="fa-solid fa-clock"></i>
+
+                </div>
+
+
+                <div class="notification-content">
+
+                    <div class="notification-top">
+
+                        <strong>
+                            Devolução próxima
+                        </strong>
+
+                        <span>
+                            Há 30 minutos
+                        </span>
+
+                    </div>
+
+                    <p>
+                        O empréstimo de
+                        <strong>Banco de Dados</strong>
+                        deverá ser devolvido amanhã.
+                    </p>
+
+                    <small>
+                        Devolução
+                    </small>
+
+                </div>
+
+
+                <button
+                    class="notification-action mark-read"
+                    title="Marcar como lida">
+
+                    <i class="fa-solid fa-check"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- NOTIFICAÇÃO -->
+            <div
+                class="notification-item unread important"
+                data-type="pagamento"
+                data-read="false">
+
+                <div class="notification-icon red">
+
+                    <i class="fa-solid fa-money-bill-wave"></i>
+
+                </div>
+
+
+                <div class="notification-content">
+
+                    <div class="notification-top">
+
+                        <strong>
+                            Pagamento pendente
+                        </strong>
+
+                        <span>
+                            Há 1 hora
+                        </span>
+
+                    </div>
+
+                    <p>
+                        Existe um saldo pendente de
+                        <strong>20.000 Kz</strong>.
+                    </p>
+
+                    <small>
+                        Pagamento
+                    </small>
+
+                </div>
+
+
+                <button
+                    class="notification-action mark-read"
+                    title="Marcar como lida">
+
+                    <i class="fa-solid fa-check"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- NOTIFICAÇÃO -->
+            <div
+                class="notification-item"
+                data-type="livro"
+                data-read="true">
+
+                <div class="notification-icon green">
+
+                    <i class="fa-solid fa-book-open"></i>
+
+                </div>
+
+
+                <div class="notification-content">
+
+                    <div class="notification-top">
+
+                        <strong>
+                            Novo livro adicionado
+                        </strong>
+
+                        <span>
+                            Ontem
+                        </span>
+
+                    </div>
+
+                    <p>
+                        O livro <strong>Engenharia de Software</strong>
+                        foi adicionado ao catálogo.
+                    </p>
+
+                    <small>
+                        Livros
+                    </small>
+
+                </div>
+
+
+                <button
+                    class="notification-action delete-notification"
+                    title="Eliminar">
+
+                    <i class="fa-solid fa-trash"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- NOTIFICAÇÃO -->
+            <div
+                class="notification-item"
+                data-type="sistema"
+                data-read="true">
+
+                <div class="notification-icon purple">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                </div>
+
+
+                <div class="notification-content">
+
+                    <div class="notification-top">
+
+                        <strong>
+                            Sistema atualizado
+                        </strong>
+
+                        <span>
+                            Ontem
+                        </span>
+
+                    </div>
+
+                    <p>
+                        A Biblioteca Pro foi atualizada para a versão
+                        <strong>1.0.0</strong>.
+                    </p>
+
+                    <small>
+                        Sistema
+                    </small>
+
+                </div>
+
+
+                <button
+                    class="notification-action delete-notification"
+                    title="Eliminar">
+
+                    <i class="fa-solid fa-trash"></i>
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- VAZIO -->
+        <div
+            id="notificacoesVazio"
+            class="notifications-empty d-none">
+
+            <i class="fa-regular fa-bell-slash"></i>
+
+            <h5>
+                Nenhuma notificação encontrada
+            </h5>
+
+            <p>
+                Não existem notificações para os filtros selecionados.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>

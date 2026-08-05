@@ -1,0 +1,708 @@
+```css
+/* =========================================================
+   BIBLIOTECA PRO — NOTIFICAÇÕES
+   ========================================================= */
+
+.notificacoes-page {
+    width: 100%;
+    min-width: 0;
+    padding-bottom: 40px;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.notificacoes-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 28px;
+}
+
+.notificacoes-header h2 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 7px;
+    color: #0f172a;
+    font-size: 25px;
+    font-weight: 750;
+    letter-spacing: -0.4px;
+}
+
+.notificacoes-header h2 i {
+    color: #2563eb;
+}
+
+.notificacoes-header p {
+    margin: 0;
+    color: #64748b;
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   BOTÃO MARCAR TODAS
+   ========================================================= */
+
+.btn-mark-all {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    min-height: 44px;
+    padding: 0 18px;
+
+    border: 1px solid #dbe3ef;
+    border-radius: 12px;
+
+    background: #ffffff;
+    color: #334155;
+
+    font-size: 13px;
+    font-weight: 650;
+
+    cursor: pointer;
+
+    transition:
+        background .2s ease,
+        border-color .2s ease,
+        color .2s ease,
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.btn-mark-all:hover {
+    border-color: #2563eb;
+    color: #2563eb;
+    background: #eff6ff;
+    box-shadow: 0 7px 18px rgba(37, 99, 235, .08);
+    transform: translateY(-1px);
+}
+
+.btn-mark-all:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   RESUMO
+   ========================================================= */
+
+.notification-summary {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 24px;
+}
+
+.notification-summary-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    min-width: 0;
+    padding: 19px;
+
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+
+    box-shadow: 0 8px 25px rgba(15, 23, 42, .045);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        border-color .2s ease;
+}
+
+.notification-summary-card:hover {
+    transform: translateY(-2px);
+    border-color: #d5deea;
+    box-shadow: 0 14px 30px rgba(15, 23, 42, .07);
+}
+
+.notification-summary-card.active {
+    border-color: #bfdbfe;
+    background: linear-gradient(
+        135deg,
+        #ffffff 0%,
+        #f8fbff 100%
+    );
+}
+
+.notification-summary-card span {
+    display: block;
+    margin-bottom: 4px;
+    color: #64748b;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.notification-summary-card strong {
+    display: block;
+    color: #0f172a;
+    font-size: 24px;
+    line-height: 1.1;
+    font-weight: 750;
+}
+
+
+/* =========================================================
+   ÍCONES DO RESUMO
+   ========================================================= */
+
+.summary-icon {
+    width: 48px;
+    height: 48px;
+
+    flex: 0 0 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+    font-size: 18px;
+}
+
+.summary-icon.blue {
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.summary-icon.orange {
+    background: #fff7ed;
+    color: #ea580c;
+}
+
+.summary-icon.red {
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+.summary-icon.green {
+    background: #f0fdf4;
+    color: #16a34a;
+}
+
+
+/* =========================================================
+   BARRA DE FILTROS
+   ========================================================= */
+
+.notification-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+
+    margin-bottom: 18px;
+}
+
+.notification-search {
+    position: relative;
+    width: min(100%, 440px);
+}
+
+.notification-search i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+
+    color: #94a3b8;
+    font-size: 14px;
+
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.notification-search input {
+    width: 100%;
+    height: 46px;
+
+    padding: 0 16px 0 43px;
+
+    border: 1px solid #dbe3ef;
+    border-radius: 13px;
+
+    outline: none;
+
+    background: #ffffff;
+    color: #334155;
+
+    font-size: 13px;
+
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease;
+}
+
+.notification-search input::placeholder {
+    color: #94a3b8;
+}
+
+.notification-search input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, .08);
+}
+
+.notification-toolbar .form-select {
+    width: 210px;
+    height: 46px;
+
+    border: 1px solid #dbe3ef;
+    border-radius: 13px;
+
+    color: #334155;
+    background-color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 550;
+
+    box-shadow: none;
+}
+
+.notification-toolbar .form-select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, .08);
+}
+
+
+/* =========================================================
+   CARD PRINCIPAL
+   ========================================================= */
+
+.notifications-card {
+    width: 100%;
+    min-width: 0;
+
+    overflow: hidden;
+
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 22px;
+
+    box-shadow: 0 12px 35px rgba(15, 23, 42, .055);
+}
+
+.notifications-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: 76px;
+    padding: 18px 22px;
+
+    border-bottom: 1px solid #eef2f7;
+}
+
+.notifications-card-header h5 {
+    margin: 0 0 4px;
+
+    color: #0f172a;
+    font-size: 15px;
+    font-weight: 720;
+}
+
+.notifications-card-header span {
+    color: #94a3b8;
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   LISTA
+   ========================================================= */
+
+.notifications-list {
+    width: 100%;
+}
+
+
+/* =========================================================
+   ITEM
+   ========================================================= */
+
+.notification-item {
+    position: relative;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+
+    min-width: 0;
+
+    padding: 21px 22px;
+
+    border-bottom: 1px solid #eef2f7;
+
+    background: #ffffff;
+
+    transition:
+        background .2s ease,
+        padding-left .2s ease;
+}
+
+.notification-item:last-child {
+    border-bottom: none;
+}
+
+.notification-item:hover {
+    background: #f8fafc;
+}
+
+.notification-item.unread {
+    background: #f8fbff;
+}
+
+.notification-item.unread:hover {
+    background: #f1f7ff;
+}
+
+.notification-item.important {
+    border-left: 3px solid #ef4444;
+}
+
+
+/* =========================================================
+   ÍCONE
+   ========================================================= */
+
+.notification-icon {
+    width: 45px;
+    height: 45px;
+
+    flex: 0 0 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    font-size: 16px;
+}
+
+.notification-icon.blue {
+    color: #2563eb;
+    background: #eff6ff;
+}
+
+.notification-icon.orange {
+    color: #ea580c;
+    background: #fff7ed;
+}
+
+.notification-icon.red {
+    color: #dc2626;
+    background: #fef2f2;
+}
+
+.notification-icon.green {
+    color: #16a34a;
+    background: #f0fdf4;
+}
+
+.notification-icon.purple {
+    color: #7c3aed;
+    background: #f5f3ff;
+}
+
+
+/* =========================================================
+   CONTEÚDO
+   ========================================================= */
+
+.notification-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.notification-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 6px;
+}
+
+.notification-top strong {
+    color: #1e293b;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.notification-top span {
+    flex: 0 0 auto;
+
+    color: #94a3b8;
+    font-size: 11px;
+}
+
+.notification-content p {
+    margin: 0 0 9px;
+
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.65;
+}
+
+.notification-content p strong {
+    color: #475569;
+    font-weight: 650;
+}
+
+.notification-content small {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 4px 9px;
+
+    border-radius: 7px;
+
+    background: #f1f5f9;
+    color: #64748b;
+
+    font-size: 10px;
+    font-weight: 650;
+}
+
+
+/* =========================================================
+   AÇÕES
+   ========================================================= */
+
+.notification-action {
+    width: 34px;
+    height: 34px;
+
+    flex: 0 0 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 2px;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 9px;
+
+    background: #ffffff;
+    color: #94a3b8;
+
+    cursor: pointer;
+
+    transition:
+        color .2s ease,
+        background .2s ease,
+        border-color .2s ease,
+        transform .2s ease;
+}
+
+.notification-action:hover {
+    transform: translateY(-1px);
+}
+
+.notification-action.mark-read:hover {
+    color: #16a34a;
+    background: #f0fdf4;
+    border-color: #bbf7d0;
+}
+
+.notification-action.delete-notification:hover {
+    color: #dc2626;
+    background: #fef2f2;
+    border-color: #fecaca;
+}
+
+
+/* =========================================================
+   NOTIFICAÇÃO LIDA
+   ========================================================= */
+
+.notification-item:not(.unread) .notification-icon {
+    opacity: .78;
+}
+
+.notification-item:not(.unread) .notification-content strong {
+    color: #475569;
+}
+
+
+/* =========================================================
+   VAZIO
+   ========================================================= */
+
+.notifications-empty {
+    min-height: 280px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px 20px;
+
+    text-align: center;
+}
+
+.notifications-empty > i {
+    margin-bottom: 16px;
+
+    color: #cbd5e1;
+    font-size: 42px;
+}
+
+.notifications-empty h5 {
+    margin: 0 0 7px;
+
+    color: #334155;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.notifications-empty p {
+    margin: 0;
+
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   ANIMAÇÃO
+   ========================================================= */
+
+.notification-item {
+    animation: notificationFade .3s ease both;
+}
+
+@keyframes notificationFade {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVO — TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .notification-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVO — MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .notificacoes-page {
+        padding: 0 2px 30px;
+    }
+
+    .notificacoes-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .btn-mark-all {
+        width: 100%;
+    }
+
+    .notification-toolbar {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .notification-search {
+        width: 100%;
+    }
+
+    .notification-toolbar .form-select {
+        width: 100%;
+    }
+
+    .notification-item {
+        padding: 17px 16px;
+        gap: 12px;
+    }
+
+    .notification-icon {
+        width: 40px;
+        height: 40px;
+        flex-basis: 40px;
+        border-radius: 11px;
+        font-size: 14px;
+    }
+
+    .notification-top {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 3px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVO — TELEMÓVEL PEQUENO
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .notification-summary {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .notification-summary-card {
+        padding: 15px;
+    }
+
+    .notification-summary-card strong {
+        font-size: 21px;
+    }
+
+    .notifications-card {
+        border-radius: 17px;
+    }
+
+    .notifications-card-header {
+        padding: 16px;
+    }
+
+    .notification-item {
+        position: relative;
+        padding: 17px 14px 52px;
+    }
+
+    .notification-action {
+        position: absolute;
+        right: 14px;
+        bottom: 14px;
+    }
+
+    .notification-content p {
+        font-size: 12px;
+    }
+
+}
+```

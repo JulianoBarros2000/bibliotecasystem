@@ -1,131 +1,4 @@
-<!-- <div class="page-header">
 
-<div>
-<h2>Livros</h2>
-<p>Gestão do acervo da biblioteca</p>
-</div>
-
-
-<button class="btn btn-primary">
-<i class="fa-solid fa-plus"></i>
-Novo Livro
-</button>
-
-</div>
-
-
-
-<div class="content-card">
-
-
-<div class="table-responsive">
-
-
-<table id="tabelaLivros" class="table table-hover align-middle">
-
-
-<thead>
-
-<tr>
-
-<th>ID</th>
-
-<th>Capa</th>
-
-<th>Título</th>
-
-<th>Autor</th>
-
-<th>Categoria</th>
-
-<th>Ano</th>
-
-<th>Quantidade</th>
-
-<th>Estado</th>
-
-<th>Ações</th>
-
-
-</tr>
-
-</thead>
-
-
-
-<tbody>
-
-
-<tr>
-
-<td>1</td>
-
-<td>
-<img src="assets/img/book.png" width="45">
-</td>
-
-<td>
-Programação Web
-</td>
-
-<td>
-Carlos Silva
-</td>
-
-<td>
-Tecnologia
-</td>
-
-<td>
-2025
-</td>
-
-<td>
-15
-</td>
-
-<td>
-
-<span class="badge bg-success">
-Disponível
-</span>
-
-</td>
-
-
-<td>
-
-
-<button class="btn btn-sm btn-primary">
-
-<i class="fa-solid fa-pen"></i>
-
-</button>
-
-
-<button class="btn btn-sm btn-danger">
-
-<i class="fa-solid fa-trash"></i>
-
-</button>
-
-
-</td>
-
-
-</tr>
-
-
-</tbody>
-
-
-</table>
-
-
-</div>
-
-
-</div> -->
 
 <div class="livros-page">
   <!-- CABEÇALHO -->
@@ -141,11 +14,6 @@ Disponível
       <p>Gerencie o acervo completo da biblioteca</p>
     </div>
 
-    <button class="btn-add">
-      <i class="fa-solid fa-plus"></i>
-
-      Novo Livro
-    </button>
   </div>
 
   <!-- FILTROS -->
@@ -182,9 +50,13 @@ Disponível
 
   <div class="book-table-card">
     <div class="table-responsive">
-      <table id="booksTable" class="table">
-        <thead>
-          <tr>
+   
+<table id="booksTable" class="table">
+
+    <thead>
+
+        <tr>
+
             <th>Capa</th>
 
             <th>Código</th>
@@ -200,93 +72,697 @@ Disponível
             <th>Estado</th>
 
             <th>Ações</th>
-          </tr>
-        </thead>
 
-        <tbody>
-          <tr>
-            <td>
-              <img
-                src="https://m.fca.pt/fotos/produtos/d_9789727228973_capa_introdu_o_ao_desenvolvimento_moderno_para_a_web.jpg"
-                class="book-image"
-              />
-            </td>
+        </tr>
 
-            <td>BK001</td>
+    </thead>
 
-            <td>Desenvolvimento Web Moderno</td>
 
-            <td>João Silva</td>
+    <tbody>
+
+        <!-- =================================================
+             LIVRO 1
+        ================================================== -->
+
+        <tr data-id="1">
 
             <td>
-              <span class="category-badge"> Programação </span>
+
+                <img
+                    src="https://m.fca.pt/fotos/produtos/d_9789727228973_capa_introdu_o_ao_desenvolvimento_moderno_para_a_web.jpg"
+                    class="book-image"
+                    alt="Capa do livro"
+                >
+
             </td>
 
-            <td>2025</td>
 
             <td>
-              <span class="status available"> Disponível </span>
+                BK001
             </td>
+
 
             <td>
-              <div class="action-buttons">
-                <button class="action view">
-                  <i class="fa-solid fa-eye"></i>
-                </button>
-
-                <button class="action edit">
-                  <i class="fa-solid fa-pen"></i>
-                </button>
-
-                <button class="action delete">
-                  <i class="fa-solid fa-trash"></i>
-                </button>
-              </div>
-            </td>
-          </tr>
-
-          <tr>
-            <td>
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs3IkENDRFJXifCjMnREa2ZR9U7dYZw3PLEEdd4IfRCPcb_sDAWXwTOCAu&s=10"
-                class="book-image"
-              />
+                Desenvolvimento Web Moderno
             </td>
 
-            <td>BK002</td>
-
-            <td>Banco de Dados Avançado</td>
-
-            <td>Maria Costa</td>
 
             <td>
-              <span class="category-badge"> Tecnologia </span>
+                João Silva
             </td>
 
-            <td>2024</td>
 
             <td>
-              <span class="status borrowed"> Emprestado </span>
+
+                <span class="category-badge">
+                    Programação
+                </span>
+
             </td>
+
 
             <td>
-              <div class="action-buttons">
-                <button class="action view">
-                  <i class="fa-solid fa-eye"></i>
-                </button>
-
-                <button class="action edit">
-                  <i class="fa-solid fa-pen"></i>
-                </button>
-
-                <button class="action delete">
-                  <i class="fa-solid fa-trash"></i>
-                </button>
-              </div>
+                2025
             </td>
-          </tr>
-        </tbody>
-      </table>
+
+
+            <td>
+
+                <span class="status available">
+                    Disponível
+                </span>
+
+            </td>
+
+
+            <td>
+
+                <div class="action-buttons">
+
+                    <!-- VER -->
+
+                    <button
+                        type="button"
+                        class="action view btn-view-book"
+                        data-id="1"
+                        title="Ver livro"
+                    >
+
+                        <i class="fa-solid fa-eye"></i>
+
+                    </button>
+
+
+                    <!-- EDITAR -->
+
+                    <button
+                        type="button"
+                        class="action edit btn-edit-book"
+                        data-id="1"
+                        title="Editar livro"
+                    >
+
+                        <i class="fa-solid fa-pen"></i>
+
+                    </button>
+
+
+                    <!-- ELIMINAR -->
+
+                    <button
+                        type="button"
+                        class="action delete btn-delete-book"
+                        data-id="1"
+                        title="Eliminar livro"
+                    >
+
+                        <i class="fa-solid fa-trash"></i>
+
+                    </button>
+
+                </div>
+
+            </td>
+
+        </tr>
+
+
+        <!-- =================================================
+             LIVRO 2
+        ================================================== -->
+
+        <tr data-id="2">
+
+            <td>
+
+                <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs3IkENDRFJXifCjMnREa2ZR9U7dYZw3PLEEdd4IfRCPcb_sDAWXwTOCAu&s=10"
+                    class="book-image"
+                    alt="Capa do livro"
+                >
+
+            </td>
+
+
+            <td>
+                BK002
+            </td>
+
+
+            <td>
+                Banco de Dados Avançado
+            </td>
+
+
+            <td>
+                Maria Costa
+            </td>
+
+
+            <td>
+
+                <span class="category-badge">
+                    Tecnologia
+                </span>
+
+            </td>
+
+
+            <td>
+                2024
+            </td>
+
+
+            <td>
+
+                <span class="status borrowed">
+                    Emprestado
+                </span>
+
+            </td>
+
+
+            <td>
+
+                <div class="action-buttons">
+
+                    <!-- VER -->
+
+                    <button
+                        type="button"
+                        class="action view btn-view-book"
+                        data-id="2"
+                        title="Ver livro"
+                    >
+
+                        <i class="fa-solid fa-eye"></i>
+
+                    </button>
+
+
+                    <!-- EDITAR -->
+
+                    <button
+                        type="button"
+                        class="action edit btn-edit-book"
+                        data-id="2"
+                        title="Editar livro"
+                    >
+
+                        <i class="fa-solid fa-pen"></i>
+
+                    </button>
+
+
+                    <!-- ELIMINAR -->
+
+                    <button
+                        type="button"
+                        class="action delete btn-delete-book"
+                        data-id="2"
+                        title="Eliminar livro"
+                    >
+
+                        <i class="fa-solid fa-trash"></i>
+
+                    </button>
+
+                </div>
+
+            </td>
+
+        </tr>
+
+    </tbody>
+
+</table>
+
+
     </div>
   </div>
 </div>
+
+<!-- =====================================================
+     MODAL — VER LIVRO
+===================================================== -->
+
+<div class="book-modal-overlay" id="viewBookModal">
+
+    <div class="book-modal">
+
+        <div class="book-modal-header">
+
+            <div class="book-modal-title">
+
+                <div class="book-modal-icon blue">
+                    <i class="fa-solid fa-book-open"></i>
+                </div>
+
+                <div>
+                    <h3>Detalhes do livro</h3>
+                    <p>Informações completas do livro</p>
+                </div>
+
+            </div>
+
+            <button
+                class="book-modal-close"
+                data-close-book-modal="viewBookModal">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <div class="book-modal-body">
+
+            <div class="book-preview">
+
+                <img
+                    id="viewBookCover"
+                    src=""
+                    alt="Capa do livro">
+
+                <div class="book-preview-info">
+
+                    <h3 id="viewBookTitle">
+                        Desenvolvimento Web Moderno
+                    </h3>
+
+                    <span
+                        class="book-code"
+                        id="viewBookCode">
+
+                        BK001
+
+                    </span>
+
+                    <p id="viewBookAuthor">
+                        João Silva
+                    </p>
+
+                    <span
+                        class="category-badge"
+                        id="viewBookCategory">
+
+                        Programação
+
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="book-details-grid">
+
+                <div class="book-detail-item">
+
+                    <span>Código</span>
+
+                    <strong id="viewBookCodeInfo">
+                        BK001
+                    </strong>
+
+                </div>
+
+
+                <div class="book-detail-item">
+
+                    <span>Título</span>
+
+                    <strong id="viewBookTitleInfo">
+                        Desenvolvimento Web Moderno
+                    </strong>
+
+                </div>
+
+
+                <div class="book-detail-item">
+
+                    <span>Autor</span>
+
+                    <strong id="viewBookAuthorInfo">
+                        João Silva
+                    </strong>
+
+                </div>
+
+
+                <div class="book-detail-item">
+
+                    <span>Categoria</span>
+
+                    <strong id="viewBookCategoryInfo">
+                        Programação
+                    </strong>
+
+                </div>
+
+
+                <div class="book-detail-item">
+
+                    <span>Ano de publicação</span>
+
+                    <strong id="viewBookYear">
+                        2025
+                    </strong>
+
+                </div>
+
+
+                <div class="book-detail-item">
+
+                    <span>Estado</span>
+
+                    <strong id="viewBookStatus">
+                        Disponível
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="book-modal-footer">
+
+            <button
+                class="btn-book-cancel"
+                data-close-book-modal="viewBookModal">
+
+                Fechar
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     MODAL — EDITAR LIVRO
+===================================================== -->
+
+<div class="book-modal-overlay" id="editBookModal">
+
+    <div class="book-modal">
+
+        <div class="book-modal-header">
+
+            <div class="book-modal-title">
+
+                <div class="book-modal-icon orange">
+                    <i class="fa-solid fa-pen"></i>
+                </div>
+
+                <div>
+                    <h3>Editar livro</h3>
+                    <p>Atualize os dados do livro</p>
+                </div>
+
+            </div>
+
+            <button
+                class="book-modal-close"
+                data-close-book-modal="editBookModal">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <form id="editBookForm">
+
+            <div class="book-modal-body">
+
+                <input
+                    type="hidden"
+                    id="editBookId">
+
+
+                <div class="book-form-grid">
+
+                    <div class="book-form-group">
+
+                        <label>Código</label>
+
+                        <div class="book-input">
+
+                            <i class="fa-solid fa-barcode"></i>
+
+                            <input
+                                type="text"
+                                id="editBookCode"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="book-form-group">
+
+                        <label>Título</label>
+
+                        <div class="book-input">
+
+                            <i class="fa-solid fa-book"></i>
+
+                            <input
+                                type="text"
+                                id="editBookTitle"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="book-form-group">
+
+                        <label>Autor</label>
+
+                        <div class="book-input">
+
+                            <i class="fa-solid fa-user"></i>
+
+                            <input
+                                type="text"
+                                id="editBookAuthor"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="book-form-group">
+
+                        <label>Categoria</label>
+
+                        <div class="book-input">
+
+                            <i class="fa-solid fa-layer-group"></i>
+
+                            <select
+                                id="editBookCategory"
+                                required>
+
+                                <option value="">
+                                    Selecionar categoria
+                                </option>
+
+                                <option value="Programação">
+                                    Programação
+                                </option>
+
+                                <option value="Tecnologia">
+                                    Tecnologia
+                                </option>
+
+                                <option value="Romance">
+                                    Romance
+                                </option>
+
+                                <option value="História">
+                                    História
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="book-form-group">
+
+                        <label>Ano</label>
+
+                        <div class="book-input">
+
+                            <i class="fa-solid fa-calendar"></i>
+
+                            <input
+                                type="number"
+                                id="editBookYear"
+                                min="1000"
+                                max="2100"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="book-form-group">
+
+                        <label>Estado</label>
+
+                        <div class="book-input">
+
+                            <i class="fa-solid fa-circle-check"></i>
+
+                            <select
+                                id="editBookStatus"
+                                required>
+
+                                <option value="Disponível">
+                                    Disponível
+                                </option>
+
+                                <option value="Emprestado">
+                                    Emprestado
+                                </option>
+
+                                <option value="Atrasado">
+                                    Atrasado
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="book-form-group full">
+
+                        <label>URL da capa</label>
+
+                        <div class="book-input">
+
+                            <i class="fa-solid fa-image"></i>
+
+                            <input
+                                type="url"
+                                id="editBookCover"
+                                placeholder="https://...">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="book-modal-footer">
+
+                <button
+                    type="button"
+                    class="btn-book-cancel"
+                    data-close-book-modal="editBookModal">
+
+                    Cancelar
+
+                </button>
+
+                <button
+                    type="submit"
+                    class="btn-book-primary">
+
+                    <i class="fa-solid fa-floppy-disk"></i>
+
+                    Guardar alterações
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     MODAL — ELIMINAR LIVRO
+===================================================== -->
+
+<div class="book-modal-overlay" id="deleteBookModal">
+
+    <div class="book-modal delete-book-modal">
+
+        <div class="delete-book-content">
+
+            <div class="delete-book-icon">
+
+                <i class="fa-solid fa-trash"></i>
+
+            </div>
+
+            <h3>Eliminar livro?</h3>
+
+            <p>
+                Tem certeza de que deseja eliminar
+                <strong id="deleteBookName">
+                    este livro
+                </strong>?
+            </p>
+
+            <span>
+                Esta ação não poderá ser desfeita.
+            </span>
+
+        </div>
+
+
+        <div class="book-modal-footer">
+
+            <button
+                class="btn-book-cancel"
+                data-close-book-modal="deleteBookModal">
+
+                Cancelar
+
+            </button>
+
+            <button
+                class="btn-book-danger"
+                id="confirmDeleteBook">
+
+                <i class="fa-solid fa-trash"></i>
+
+                Eliminar
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+

@@ -12,11 +12,13 @@
       <p>Gestão de utilizadores e permissões do sistema</p>
     </div>
 
-    <button class="btn-add">
-      <i class="fa-solid fa-user-plus"></i>
+    <button class="btn-add" id="openAddUserModal">
 
-      Novo Utilizador
-    </button>
+    <i class="fa-solid fa-user-plus"></i>
+
+    Novo Utilizador
+
+</button>
   </div>
 
   <!-- CARDS -->
@@ -154,17 +156,31 @@
 
             <td>
               <div class="action-buttons">
-                <button class="action view">
-                  <i class="fa-solid fa-eye"></i>
-                </button>
+                <button
+    class="action view btn-view-user"
+    title="Ver utilizador">
 
-                <button class="action edit">
-                  <i class="fa-solid fa-pen"></i>
-                </button>
+    <i class="fa-solid fa-eye"></i>
 
-                <button class="action delete">
-                  <i class="fa-solid fa-trash"></i>
-                </button>
+</button>
+
+
+<button
+    class="action edit btn-edit-user"
+    title="Editar utilizador">
+
+    <i class="fa-solid fa-pen"></i>
+
+</button>
+
+
+<button
+    class="action delete btn-delete-user"
+    title="Eliminar utilizador">
+
+    <i class="fa-solid fa-trash"></i>
+
+</button>
               </div>
             </td>
           </tr>
@@ -172,4 +188,649 @@
       </table>
     </div>
   </div>
+</div>
+
+<!-- =====================================================
+     MODAL: ADICIONAR UTILIZADOR
+===================================================== -->
+
+<div class="user-modal-overlay" id="addUserModal">
+
+    <div class="user-modal">
+
+        <div class="user-modal-header">
+
+            <div class="user-modal-title">
+
+                <div class="user-modal-icon blue">
+                    <i class="fa-solid fa-user-plus"></i>
+                </div>
+
+                <div>
+                    <h3>Adicionar utilizador</h3>
+                    <p>Registe um novo utilizador no sistema</p>
+                </div>
+
+            </div>
+
+            <button class="user-modal-close"
+                    data-close-modal="addUserModal">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <form id="addUserForm">
+
+            <div class="user-modal-body">
+
+                <div class="user-form-grid">
+
+                    <div class="form-group">
+
+                        <label>Nome completo</label>
+
+                        <div class="input-icon">
+
+                            <i class="fa-solid fa-user"></i>
+
+                            <input
+                                type="text"
+                                id="addUserName"
+                                placeholder="Digite o nome completo"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>Nome de utilizador</label>
+
+                        <div class="input-icon">
+
+                            <i class="fa-solid fa-at"></i>
+
+                            <input
+                                type="text"
+                                id="addUsername"
+                                placeholder="Nome de utilizador"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>Email</label>
+
+                        <div class="input-icon">
+
+                            <i class="fa-solid fa-envelope"></i>
+
+                            <input
+                                type="email"
+                                id="addUserEmail"
+                                placeholder="exemplo@email.com"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>Telefone</label>
+
+                        <div class="input-icon">
+
+                            <i class="fa-solid fa-phone"></i>
+
+                            <input
+                                type="tel"
+                                id="addUserPhone"
+                                placeholder="923 000 000">
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>Perfil</label>
+
+                        <div class="input-icon">
+
+                            <i class="fa-solid fa-user-shield"></i>
+
+                            <select id="addUserRole" required>
+
+                                <option value="">
+                                    Selecionar perfil
+                                </option>
+
+                                <option value="Administrador">
+                                    Administrador
+                                </option>
+
+                                <option value="Bibliotecário">
+                                    Bibliotecário
+                                </option>
+
+                                <option value="Leitor">
+                                    Leitor
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>Estado</label>
+
+                        <div class="input-icon">
+
+                            <i class="fa-solid fa-circle-check"></i>
+
+                            <select id="addUserStatus">
+
+                                <option value="Ativo">
+                                    Ativo
+                                </option>
+
+                                <option value="Inativo">
+                                    Inativo
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>Palavra-passe</label>
+
+                        <div class="input-icon password-field">
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            <input
+                                type="password"
+                                id="addUserPassword"
+                                placeholder="Digite a palavra-passe"
+                                required>
+
+                            <button
+                                type="button"
+                                class="toggle-user-password">
+
+                                <i class="fa-solid fa-eye"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>Confirmar palavra-passe</label>
+
+                        <div class="input-icon password-field">
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            <input
+                                type="password"
+                                id="addUserPasswordConfirm"
+                                placeholder="Confirme a palavra-passe"
+                                required>
+
+                            <button
+                                type="button"
+                                class="toggle-user-password">
+
+                                <i class="fa-solid fa-eye"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="user-modal-footer">
+
+                <button
+                    type="button"
+                    class="btn-modal-cancel"
+                    data-close-modal="addUserModal">
+
+                    Cancelar
+
+                </button>
+
+                <button
+                    type="submit"
+                    class="btn-modal-primary">
+
+                    <i class="fa-solid fa-user-plus"></i>
+
+                    Adicionar utilizador
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     MODAL: VER UTILIZADOR
+===================================================== -->
+
+<div class="user-modal-overlay" id="viewUserModal">
+
+    <div class="user-modal view-user-modal">
+
+        <div class="user-modal-header">
+
+            <div class="user-modal-title">
+
+                <div class="user-modal-icon blue">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div>
+                    <h3>Detalhes do utilizador</h3>
+                    <p>Informações da conta selecionada</p>
+                </div>
+
+            </div>
+
+            <button
+                class="user-modal-close"
+                data-close-modal="viewUserModal">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <div class="user-modal-body">
+
+            <div class="user-profile-preview">
+
+                <div class="preview-avatar">
+
+                    <span id="viewUserInitials">
+                        JB
+                    </span>
+
+                </div>
+
+                <div>
+
+                    <h3 id="viewUserName">
+                        Juliano Barros
+                    </h3>
+
+                    <span
+                        class="role admin"
+                        id="viewUserRole">
+
+                        Administrador
+
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="user-details-grid">
+
+                <div class="detail-item">
+
+                    <span>Nome completo</span>
+
+                    <strong id="viewFullName">
+                        Juliano Barros
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span>Nome de utilizador</span>
+
+                    <strong id="viewUsername">
+                        juliano
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span>Email</span>
+
+                    <strong id="viewEmail">
+                        juliano@email.com
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span>Telefone</span>
+
+                    <strong id="viewPhone">
+                        923 000 000
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span>Perfil</span>
+
+                    <strong id="viewRole">
+                        Administrador
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span>Estado</span>
+
+                    <strong
+                        class="status active"
+                        id="viewStatus">
+
+                        Ativo
+
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span>Data de cadastro</span>
+
+                    <strong id="viewDate">
+                        03/08/2026
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span>Último acesso</span>
+
+                    <strong id="viewLastAccess">
+                        Hoje, 20:45
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="user-modal-footer">
+
+            <button
+                class="btn-modal-cancel"
+                data-close-modal="viewUserModal">
+
+                Fechar
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     MODAL: EDITAR UTILIZADOR
+===================================================== -->
+
+<div class="user-modal-overlay" id="editUserModal">
+
+    <div class="user-modal">
+
+        <div class="user-modal-header">
+
+            <div class="user-modal-title">
+
+                <div class="user-modal-icon orange">
+                    <i class="fa-solid fa-user-pen"></i>
+                </div>
+
+                <div>
+                    <h3>Editar utilizador</h3>
+                    <p>Atualize os dados deste utilizador</p>
+                </div>
+
+            </div>
+
+            <button
+                class="user-modal-close"
+                data-close-modal="editUserModal">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <form id="editUserForm">
+
+            <div class="user-modal-body">
+
+                <input
+                    type="hidden"
+                    id="editUserId">
+
+
+                <div class="user-form-grid">
+
+                    <div class="form-group">
+
+                        <label>Nome completo</label>
+
+                        <div class="input-icon">
+
+                            <i class="fa-solid fa-user"></i>
+
+                            <input
+                                type="text"
+                                id="editUserName"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>Nome de utilizador</label>
+
+                        <div class="input-icon">
+
+                            <i class="fa-solid fa-at"></i>
+
+                            <input
+                                type="text"
+                                id="editUsername"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>Email</label>
+
+                        <div class="input-icon">
+
+                            <i class="fa-solid fa-envelope"></i>
+
+                            <input
+                                type="email"
+                                id="editUserEmail"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>Telefone</label>
+
+                        <div class="input-icon">
+
+                            <i class="fa-solid fa-phone"></i>
+
+                            <input
+                                type="tel"
+                                id="editUserPhone">
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>Perfil</label>
+
+                        <div class="input-icon">
+
+                            <i class="fa-solid fa-user-shield"></i>
+
+                            <select id="editUserRole">
+
+                                <option value="Administrador">
+                                    Administrador
+                                </option>
+
+                                <option value="Bibliotecário">
+                                    Bibliotecário
+                                </option>
+
+                                <option value="Leitor">
+                                    Leitor
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>Estado</label>
+
+                        <div class="input-icon">
+
+                            <i class="fa-solid fa-circle-check"></i>
+
+                            <select id="editUserStatus">
+
+                                <option value="Ativo">
+                                    Ativo
+                                </option>
+
+                                <option value="Inativo">
+                                    Inativo
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="user-modal-footer">
+
+                <button
+                    type="button"
+                    class="btn-modal-cancel"
+                    data-close-modal="editUserModal">
+
+                    Cancelar
+
+                </button>
+
+                <button
+                    type="submit"
+                    class="btn-modal-primary">
+
+                    <i class="fa-solid fa-floppy-disk"></i>
+
+                    Guardar alterações
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
 </div>
