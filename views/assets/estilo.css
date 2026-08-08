@@ -2175,3 +2175,453 @@ RESPONSIVO
 
 
 }
+/* =========================================================
+   PAGE LOADER
+   SISTEMA DE GESTÃO DE BIBLIOTECA
+========================================================= */
+
+.page-loader {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 999999;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #f8fafc;
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transition:
+        opacity .5s ease,
+        visibility .5s ease;
+
+}
+
+
+/* =========================================================
+   LOADER ESCONDIDO
+========================================================= */
+
+.page-loader.loaded {
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+}
+
+
+/* =========================================================
+   CONTEÚDO
+========================================================= */
+
+.page-loader-content {
+
+    width: 280px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.page-loader-logo {
+
+    width: 170px;
+
+    min-height: 80px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 28px;
+
+}
+
+
+.page-loader-logo img {
+
+    display: block;
+
+    width: 100%;
+
+    max-width: 170px;
+
+    max-height: 90px;
+
+    height: auto;
+
+    object-fit: contain;
+
+    animation:
+        logoEntrance .8s ease both,
+        logoPulse 2.5s ease-in-out infinite;
+
+}
+
+
+/* =========================================================
+   SPINNER
+========================================================= */
+
+.page-loader-spinner {
+
+    position: relative;
+
+    width: 38px;
+
+    height: 38px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.page-loader-spinner::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    border: 2px solid #dbeafe;
+
+    border-radius: 50%;
+
+}
+
+
+.page-loader-spinner span {
+
+    position: absolute;
+
+    inset: 0;
+
+    border: 2px solid transparent;
+
+    border-top-color: #2563eb;
+
+    border-right-color: #2563eb;
+
+    border-radius: 50%;
+
+    animation:
+        loaderRotate .8s linear infinite;
+
+}
+
+
+/* =========================================================
+   PEQUENO PONTO CENTRAL
+========================================================= */
+
+.page-loader-spinner::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 50%;
+
+    width: 5px;
+
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: #2563eb;
+
+    transform:
+        translate(-50%, -50%);
+
+    animation:
+        loaderDot 1.2s ease-in-out infinite;
+
+}
+
+
+/* =========================================================
+   TEXTO
+========================================================= */
+
+.page-loader-text {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 5px;
+
+    margin-bottom: 17px;
+
+}
+
+
+.page-loader-text strong {
+
+    color: #1e293b;
+
+    font-size: 13px;
+
+    font-weight: 650;
+
+    letter-spacing: -.01em;
+
+}
+
+
+.page-loader-text span {
+
+    color: #94a3b8;
+
+    font-size: 10px;
+
+}
+
+
+/* =========================================================
+   PROGRESS BAR
+========================================================= */
+
+.page-loader-progress {
+
+    position: relative;
+
+    width: 150px;
+
+    height: 3px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: #e2e8f0;
+
+}
+
+
+.page-loader-progress span {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 45%;
+
+    height: 100%;
+
+    border-radius: inherit;
+
+    background: #2563eb;
+
+    transform: translateX(-120%);
+
+    animation:
+        loaderProgress 1.35s
+        cubic-bezier(.4, 0, .2, 1)
+        infinite;
+
+}
+
+
+/* =========================================================
+   ANIMAÇÕES
+========================================================= */
+
+@keyframes loaderRotate {
+
+    from {
+
+        transform: rotate(0deg);
+
+    }
+
+    to {
+
+        transform: rotate(360deg);
+
+    }
+
+}
+
+
+@keyframes loaderDot {
+
+    0%,
+    100% {
+
+        opacity: .35;
+
+        transform:
+            translate(-50%, -50%)
+            scale(.8);
+
+    }
+
+    50% {
+
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.15);
+
+    }
+
+}
+
+
+@keyframes loaderProgress {
+
+    0% {
+
+        transform: translateX(-120%);
+
+    }
+
+    50% {
+
+        transform: translateX(180%);
+
+    }
+
+    100% {
+
+        transform: translateX(350%);
+
+    }
+
+}
+
+
+@keyframes logoEntrance {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(10px)
+            scale(.96);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+@keyframes logoPulse {
+
+    0%,
+    100% {
+
+        opacity: .92;
+
+    }
+
+    50% {
+
+        opacity: 1;
+
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .page-loader-content {
+
+        width: 220px;
+
+    }
+
+
+    .page-loader-logo {
+
+        width: 145px;
+
+        min-height: 70px;
+
+    }
+
+
+    .page-loader-logo img {
+
+        max-width: 145px;
+
+        max-height: 75px;
+
+    }
+
+
+    .page-loader-text strong {
+
+        font-size: 12px;
+
+    }
+
+}
+
+
+/* =========================================================
+   REDUÇÃO DE MOVIMENTO
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .page-loader-logo img,
+    .page-loader-spinner span,
+    .page-loader-spinner::after,
+    .page-loader-progress span {
+
+        animation: none;
+
+    }
+
+}

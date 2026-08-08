@@ -1,85 +1,85 @@
-const themeButton = document.querySelector(".theme-btn");
+// const themeButton = document.querySelector(".theme-btn");
 
-const icon = themeButton.querySelector("i");
-
-
-// carregar tema salvo
-
-const savedTheme = localStorage.getItem("theme");
+// const icon = themeButton.querySelector("i");
 
 
-if(savedTheme === "dark"){
+// // carregar tema salvo
 
-    document.documentElement.setAttribute(
-        "data-theme",
-        "dark"
-    );
+// const savedTheme = localStorage.getItem("theme");
 
 
-    icon.classList.replace(
-        "fa-moon",
-        "fa-sun"
-    );
+// if(savedTheme === "dark"){
 
-}
-
-
-
-// alterar tema
-
-themeButton.addEventListener("click",()=>{
+//     document.documentElement.setAttribute(
+//         "data-theme",
+//         "dark"
+//     );
 
 
-    const currentTheme =
-    document.documentElement.getAttribute(
-        "data-theme"
-    );
+//     icon.classList.replace(
+//         "fa-moon",
+//         "fa-sun"
+//     );
+
+// }
 
 
 
-    if(currentTheme === "dark"){
+// // alterar tema
+
+// themeButton.addEventListener("click",()=>{
 
 
-        document.documentElement.removeAttribute(
-            "data-theme"
-        );
-
-
-        localStorage.setItem(
-            "theme",
-            "light"
-        );
-
-
-        icon.classList.replace(
-            "fa-sun",
-            "fa-moon"
-        );
+//     const currentTheme =
+//     document.documentElement.getAttribute(
+//         "data-theme"
+//     );
 
 
 
-    }else{
+//     if(currentTheme === "dark"){
 
 
-        document.documentElement.setAttribute(
-            "data-theme",
-            "dark"
-        );
+//         document.documentElement.removeAttribute(
+//             "data-theme"
+//         );
 
 
-        localStorage.setItem(
-            "theme",
-            "dark"
-        );
+//         localStorage.setItem(
+//             "theme",
+//             "light"
+//         );
 
 
-        icon.classList.replace(
-            "fa-moon",
-            "fa-sun"
-        );
+//         icon.classList.replace(
+//             "fa-sun",
+//             "fa-moon"
+//         );
 
 
-    }
+
+//     }else{
 
 
-});
+//         document.documentElement.setAttribute(
+//             "data-theme",
+//             "dark"
+//         );
+
+
+//         localStorage.setItem(
+//             "theme",
+//             "dark"
+//         );
+
+
+//         icon.classList.replace(
+//             "fa-moon",
+//             "fa-sun"
+//         );
+
+
+//     }
+
+
+// });

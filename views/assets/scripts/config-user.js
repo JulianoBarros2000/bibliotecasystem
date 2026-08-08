@@ -1,590 +1,1056 @@
-(function () {
+/* =========================================================
+   CONFIGURAÇÕES DA CONTA
+========================================================= */
 
-"use strict";
+document.addEventListener("DOMContentLoaded", () => {
 
-console.log("Config-user.js carregado");
+    const modal = document.getElementById("accountSettingsModal");
 
+    const closeButton =
+        document.getElementById("closeAccountSettings");
 
-/* =====================================================
-   INICIALIZAÇÃO
-===================================================== */
+    const cancelButton =
+        document.getElementById("cancelAccountSettings");
 
-function iniciarConfiguracoesUsuario() {
+    const saveButton =
+        document.getElementById("saveAccountSettings");
 
-    const modal = document.querySelector("#userConfigModal");
+    const toast =
+        document.getElementById("accountToast");
 
-    /*
-     * O modal pode ainda não existir porque a página
-     * é carregada dinamicamente.
-     */
-    if (!modal) {
-        console.log("Aguardando modal de configurações...");
-        return;
-    }
-
-
-    console.log("Modal de configurações encontrado");
+    const closeToast =
+        document.getElementById("closeAccountToast");
 
 
-    /* =================================================
-       ELEMENTOS
-    ================================================= */
-
-    const openButtons = document.querySelectorAll(
-        "[data-open-user-config]"
-    );
-
-    const closeButtons = modal.querySelectorAll(
-        "[data-close-user-config]"
-    );
-
-    const tabs = modal.querySelectorAll(
-        ".user-config-tab"
-    );
-
-    const sections = modal.querySelectorAll(
-        ".user-config-section"
-    );
-
-
-    /* =================================================
+    /* =====================================================
        ABRIR MODAL
-    ================================================= */
+    ===================================================== */
 
-    openButtons.forEach(button => {
+    window.openAccountSettings = function () {
 
-        button.addEventListener("click", function (event) {
+        if (!modal) return;
 
-            event.preventDefault();
-
-            abrirModal();
-
-        });
-
-    });
-
-
-    /* =================================================
-       ABRIR
-    ================================================= */
-
-    function abrirModal() {
-
-        modal.classList.add("active");
-
-        document.body.classList.add(
-            "user-config-modal-open"
-        );
+        modal.classList.add("show");
 
         document.body.style.overflow = "hidden";
+    };
 
 
-        /*
-         * Aba padrão
-         */
-        ativarAba("perfil");
+    /* =====================================================
+       FECHAR MODAL
+    ===================================================== */
 
-    }
+    function closeAccountModal() {
 
+        if (!modal) return;
 
-    /* =================================================
-       FECHAR
-    ================================================= */
-
-    function fecharModal() {
-
-        modal.classList.remove("active");
-
-        document.body.classList.remove(
-            "user-config-modal-open"
-        );
+        modal.classList.remove("show");
 
         document.body.style.overflow = "";
-
     }
 
 
-    /* =================================================
-       BOTÕES FECHAR
-    ================================================= */
+    closeButton?.addEventListener(
+        "click",
+        closeAccountModal
+    );
 
-    closeButtons.forEach(button => {
-
-        button.addEventListener("click", function () {
-
-            fecharModal();
-
-        });
-
-    });
-
-
-    /* =================================================
-       CLICAR NO FUNDO
-    ================================================= */
-
-    modal.addEventListener("click", function (event) {
-
-        if (event.target === modal) {
-
-            fecharModal();
-
-        }
-
-    });
-
-
-    /* =================================================
-       ESC
-    ================================================= */
-
-    document.addEventListener(
-        "keydown",
-        function (event) {
-
-            if (
-                event.key === "Escape" &&
-                modal.classList.contains("active")
-            ) {
-
-                fecharModal();
-
-            }
-
-        }
+    cancelButton?.addEventListener(
+        "click",
+        closeAccountModal
     );
 
 
-    /* =================================================
+    modal?.addEventListener("click", (event) => {
+
+        if (event.target === modal) {
+            closeAccountModal();
+        }
+
+    });
+
+
+    document.addEventListener("keydown", (event) => {
+
+        if (
+            event.key === "Escape" &&
+            modal?.classList.contains("show")
+        ) {
+            closeAccountModal();
+        }
+
+    });
+
+
+    /* =====================================================
        ABAS
-    ================================================= */
+    ===================================================== */
+
+    const tabs =
+        document.querySelectorAll(".settings-tab");
+
+    const panels =
+        document.querySelectorAll(".settings-panel");
+
 
     tabs.forEach(tab => {
 
-        tab.addEventListener("click", function () {
+        tab.addEventListener("click", () => {
 
             const target =
-                this.dataset.tab;
+                tab.dataset.tab;
 
-            if (!target) {
-                return;
-            }
+            tabs.forEach(item => {
+                item.classList.remove("active");
+            });
 
-            ativarAba(target);
+            panels.forEach(panel => {
+                panel.classList.remove("active");
+            });
+
+            tab.classList.add("active");
+
+            const targetPanel =
+                document.getElementById(`tab-${target}`);
+
+            targetPanel?.classList.add("active");
 
         });
 
     });
 
 
-    /* =================================================
-       ATIVAR ABA
-    ================================================= */
+    /* =====================================================
+       MOSTRAR / OCULTAR SENHA
+    ===================================================== */
 
-    function ativarAba(nomeAba) {
+    document
+        .querySelectorAll(".password-toggle")
+        .forEach(button => {
 
-        tabs.forEach(tab => {
+            button.addEventListener("click", () => {
 
-            tab.classList.remove("active");
-
-            if (
-                tab.dataset.tab === nomeAba
-            ) {
-
-                tab.classList.add("active");
-
-            }
-
-        });
-
-
-        sections.forEach(section => {
-
-            section.classList.remove("active");
-
-            if (
-                section.dataset.section === nomeAba
-            ) {
-
-                section.classList.add("active");
-
-            }
-
-        });
-
-    }
-
-
-    /* =================================================
-       ALTERAR FOTO
-    ================================================= */
-
-    const avatarInput =
-        modal.querySelector("#userAvatarInput");
-
-    const avatarPreview =
-        modal.querySelector("#userAvatarPreview");
-
-
-    if (
-        avatarInput &&
-        avatarPreview
-    ) {
-
-        avatarInput.addEventListener(
-            "change",
-            function () {
-
-                const file =
-                    this.files?.[0];
-
-                if (!file) {
-                    return;
-                }
-
-
-                if (
-                    !file.type.startsWith(
-                        "image/"
-                    )
-                ) {
-
-                    alert(
-                        "Selecione uma imagem válida."
-                    );
-
-                    this.value = "";
-
-                    return;
-
-                }
-
-
-                const reader =
-                    new FileReader();
-
-
-                reader.onload = function (event) {
-
-                    avatarPreview.src =
-                        event.target.result;
-
-                };
-
-
-                reader.readAsDataURL(file);
-
-            }
-        );
-
-    }
-
-
-    /* =================================================
-       ALTERAR SENHA
-    ================================================= */
-
-    const senhaAtual =
-        modal.querySelector("#senhaAtual");
-
-    const novaSenha =
-        modal.querySelector("#novaSenha");
-
-    const confirmarSenha =
-        modal.querySelector("#confirmarSenha");
-
-
-    const togglePasswordButtons =
-        modal.querySelectorAll(
-            "[data-toggle-password]"
-        );
-
-
-    togglePasswordButtons.forEach(button => {
-
-        button.addEventListener(
-            "click",
-            function () {
-
-                const targetId =
-                    this.dataset.togglePassword;
-
-                const input =
+                const target =
                     document.getElementById(
-                        targetId
+                        button.dataset.target
                     );
 
-                if (!input) {
-                    return;
-                }
+                if (!target) return;
 
+                const icon =
+                    button.querySelector("i");
 
-                if (
-                    input.type === "password"
-                ) {
+                if (target.type === "password") {
 
-                    input.type = "text";
+                    target.type = "text";
 
-                    this.innerHTML =
-                        '<i class="fa-solid fa-eye-slash"></i>';
+                    icon.classList.remove(
+                        "bi-eye"
+                    );
+
+                    icon.classList.add(
+                        "bi-eye-slash"
+                    );
 
                 } else {
 
-                    input.type = "password";
+                    target.type = "password";
 
-                    this.innerHTML =
-                        '<i class="fa-solid fa-eye"></i>';
-
-                }
-
-            }
-        );
-
-    });
-
-
-    /* =================================================
-       FORMULÁRIO DE SENHA
-    ================================================= */
-
-    const passwordForm =
-        modal.querySelector(
-            "#userPasswordForm"
-        );
-
-
-    if (passwordForm) {
-
-        passwordForm.addEventListener(
-            "submit",
-            function (event) {
-
-                event.preventDefault();
-
-
-                const atual =
-                    senhaAtual?.value.trim() || "";
-
-                const nova =
-                    novaSenha?.value.trim() || "";
-
-                const confirmar =
-                    confirmarSenha?.value.trim() || "";
-
-
-                if (!atual) {
-
-                    alert(
-                        "Digite a senha atual."
+                    icon.classList.remove(
+                        "bi-eye-slash"
                     );
 
-                    return;
-
-                }
-
-
-                if (nova.length < 6) {
-
-                    alert(
-                        "A nova senha deve ter pelo menos 6 caracteres."
+                    icon.classList.add(
+                        "bi-eye"
                     );
 
-                    return;
-
                 }
 
+            });
 
-                if (nova !== confirmar) {
-
-                    alert(
-                        "As senhas não coincidem."
-                    );
-
-                    return;
-
-                }
+        });
 
 
-                alert(
-                    "Senha alterada com sucesso."
-                );
+    /* =====================================================
+       VALIDAÇÃO DO PERFIL
+    ===================================================== */
+
+    const fullName =
+        document.getElementById("accountFullName");
+
+    const username =
+        document.getElementById("accountUsername");
+
+    const email =
+        document.getElementById("accountEmail");
+
+    const phone =
+        document.getElementById("accountPhone");
 
 
-                passwordForm.reset();
+    function setError(input, message) {
 
-            }
-        );
+        const group =
+            input.closest(".form-group");
 
-    }
+        const wrapper =
+            input.closest(".input-wrapper");
 
+        const error =
+            group?.querySelector(".input-error");
 
-    /* =================================================
-       FORMULÁRIO DO PERFIL
-    ================================================= */
+        wrapper?.classList.remove("valid");
 
-    const profileForm =
-        modal.querySelector(
-            "#userProfileForm"
-        );
+        wrapper?.classList.add("invalid");
 
-
-    if (profileForm) {
-
-        profileForm.addEventListener(
-            "submit",
-            function (event) {
-
-                event.preventDefault();
-
-
-                alert(
-                    "Dados do perfil atualizados com sucesso."
-                );
-
-            }
-        );
+        if (error) {
+            error.textContent = message;
+        }
 
     }
 
 
-    /* =================================================
-       NOTIFICAÇÕES
-    ================================================= */
+    function setValid(input) {
 
-    const notificationForm =
-        modal.querySelector(
-            "#userNotificationForm"
-        );
+        const group =
+            input.closest(".form-group");
 
+        const wrapper =
+            input.closest(".input-wrapper");
 
-    if (notificationForm) {
+        const error =
+            group?.querySelector(".input-error");
 
-        notificationForm.addEventListener(
-            "submit",
-            function (event) {
+        wrapper?.classList.remove("invalid");
 
-                event.preventDefault();
+        wrapper?.classList.add("valid");
 
-
-                alert(
-                    "Preferências de notificações guardadas."
-                );
-
-            }
-        );
+        if (error) {
+            error.textContent = "";
+        }
 
     }
 
 
-    /* =================================================
-       PREFERÊNCIAS
-    ================================================= */
+    function validateName() {
 
-    const preferencesForm =
-        modal.querySelector(
-            "#userPreferencesForm"
-        );
+        const value =
+            fullName.value.trim();
 
+        if (value.length < 3) {
 
-    if (preferencesForm) {
+            setError(
+                fullName,
+                "Informe o seu nome completo."
+            );
 
-        preferencesForm.addEventListener(
-            "submit",
-            function (event) {
+            return false;
+        }
 
-                event.preventDefault();
+        setValid(fullName);
 
-
-                alert(
-                    "Preferências guardadas com sucesso."
-                );
-
-            }
-        );
-
+        return true;
     }
 
 
-    /* =================================================
-       RESTAURAR CONFIGURAÇÕES
-    ================================================= */
+    function validateUsername() {
 
-    const resetButton =
-        modal.querySelector(
-            "#resetUserConfig"
-        );
+        const value =
+            username.value.trim();
 
+        const regex =
+            /^[A-Za-z0-9._-]{4,30}$/;
 
-    if (resetButton) {
+        if (!regex.test(value)) {
 
-        resetButton.addEventListener(
-            "click",
-            function () {
+            setError(
+                username,
+                "Use 4–30 caracteres: letras, números, . _ ou -."
+            );
 
-                const confirmar =
-                    confirm(
-                        "Deseja restaurar as configurações padrão?"
-                    );
+            return false;
+        }
 
+        setValid(username);
 
-                if (!confirmar) {
-                    return;
-                }
-
-
-                const forms =
-                    modal.querySelectorAll("form");
-
-
-                forms.forEach(form => {
-
-                    form.reset();
-
-                });
-
-
-                ativarAba("perfil");
-
-
-                alert(
-                    "Configurações restauradas."
-                );
-
-            }
-        );
-
+        return true;
     }
 
 
-}
+    function validateEmail() {
+
+        const value =
+            email.value.trim();
+
+        const regex =
+            /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+        if (!regex.test(value)) {
+
+            setError(
+                email,
+                "Informe um endereço de e-mail válido."
+            );
+
+            return false;
+        }
+
+        setValid(email);
+
+        return true;
+    }
 
 
-/* =====================================================
-   EXECUTAR QUANDO DOM ESTIVER PRONTO
-===================================================== */
+    function validatePhone() {
 
-if (
-    document.readyState ===
-    "loading"
-) {
+        const value =
+            phone.value.trim();
 
-    document.addEventListener(
-        "DOMContentLoaded",
-        iniciarConfiguracoesUsuario
+        if (!value) {
+            return true;
+        }
+
+        const digits =
+            value.replace(/\D/g, "");
+
+        if (digits.length < 9) {
+
+            setError(
+                phone,
+                "Informe um número de telefone válido."
+            );
+
+            return false;
+        }
+
+        setValid(phone);
+
+        return true;
+    }
+
+
+    fullName?.addEventListener(
+        "input",
+        validateName
     );
 
-} else {
+    username?.addEventListener(
+        "input",
+        validateUsername
+    );
 
-    iniciarConfiguracoesUsuario();
+    email?.addEventListener(
+        "input",
+        validateEmail
+    );
 
-}
+    phone?.addEventListener(
+        "input",
+        validatePhone
+    );
 
 
-/* =====================================================
-   SUPORTE AO TEU SISTEMA DE PÁGINAS DINÂMICAS
-===================================================== */
+    /* =====================================================
+       FORÇA DA SENHA
+    ===================================================== */
 
-window.iniciarConfiguracoesUsuario =
-    iniciarConfiguracoesUsuario;
+    const newPassword =
+        document.getElementById("newPassword");
 
-})();
+    const confirmPassword =
+        document.getElementById("confirmPassword");
+
+    const strengthText =
+        document.getElementById(
+            "passwordStrengthText"
+        );
+
+    const strengthPercent =
+        document.getElementById(
+            "passwordStrengthPercent"
+        );
+
+    const strengthBars =
+        document.querySelectorAll(
+            ".strength-bars span"
+        );
+
+
+    function checkPassword() {
+
+        const password =
+            newPassword.value;
+
+        const rules = {
+
+            length:
+                password.length >= 8,
+
+            uppercase:
+                /[A-Z]/.test(password),
+
+            lowercase:
+                /[a-z]/.test(password),
+
+            number:
+                /\d/.test(password),
+
+            special:
+                /[^A-Za-z0-9]/.test(password)
+
+        };
+
+
+        Object.entries(rules).forEach(
+            ([rule, valid]) => {
+
+                const element =
+                    document.querySelector(
+                        `[data-rule="${rule}"]`
+                    );
+
+                if (!element) return;
+
+                const icon =
+                    element.querySelector("i");
+
+                if (valid) {
+
+                    element.classList.add(
+                        "valid"
+                    );
+
+                    icon.className =
+                        "bi bi-check-circle-fill";
+
+                } else {
+
+                    element.classList.remove(
+                        "valid"
+                    );
+
+                    icon.className =
+                        "bi bi-circle";
+
+                }
+
+            }
+        );
+
+
+        const score =
+            Object.values(rules)
+                .filter(Boolean)
+                .length;
+
+
+        const percentage =
+            score * 20;
+
+
+        strengthPercent.textContent =
+            `${percentage}%`;
+
+
+        strengthBars.forEach(
+            (bar, index) => {
+
+                bar.style.background =
+                    index < Math.ceil(score / 1.25)
+                        ? "#2563eb"
+                        : "#e2e8f0";
+
+            }
+        );
+
+
+        if (!password) {
+
+            strengthText.textContent =
+                "Digite uma senha";
+
+        } else if (score <= 2) {
+
+            strengthText.textContent =
+                "Senha fraca";
+
+        } else if (score === 3) {
+
+            strengthText.textContent =
+                "Senha razoável";
+
+        } else if (score === 4) {
+
+            strengthText.textContent =
+                "Senha forte";
+
+        } else {
+
+            strengthText.textContent =
+                "Senha excelente";
+
+        }
+
+        validatePasswordMatch();
+
+    }
+
+
+    newPassword?.addEventListener(
+        "input",
+        checkPassword
+    );
+
+
+    /* =====================================================
+       CONFIRMAÇÃO DA SENHA
+    ===================================================== */
+
+    const passwordMatch =
+        document.getElementById(
+            "passwordMatch"
+        );
+
+
+    function validatePasswordMatch() {
+
+        if (!confirmPassword.value) {
+
+            passwordMatch.textContent = "";
+
+            return false;
+        }
+
+
+        if (
+            newPassword.value !==
+            confirmPassword.value
+        ) {
+
+            passwordMatch.textContent =
+                "As senhas não coincidem.";
+
+            passwordMatch.style.color =
+                "#ef4444";
+
+            return false;
+
+        }
+
+
+        passwordMatch.textContent =
+            "As senhas coincidem.";
+
+        passwordMatch.style.color =
+            "#16a34a";
+
+        return true;
+
+    }
+
+
+    confirmPassword?.addEventListener(
+        "input",
+        validatePasswordMatch
+    );
+
+
+    /* =====================================================
+       FOTO DE PERFIL
+    ===================================================== */
+
+    const avatarInput =
+        document.getElementById(
+            "profileAvatarInput"
+        );
+
+    const profilePreview =
+        document.getElementById(
+            "profilePreview"
+        );
+
+
+    avatarInput?.addEventListener(
+        "change",
+        event => {
+
+            const file =
+                event.target.files[0];
+
+            if (!file) return;
+
+
+            const allowedTypes = [
+                "image/jpeg",
+                "image/png",
+                "image/webp"
+            ];
+
+
+            if (
+                !allowedTypes.includes(
+                    file.type
+                )
+            ) {
+
+                showToast(
+                    "Formato inválido",
+                    "Utilize JPG, PNG ou WEBP.",
+                    false
+                );
+
+                avatarInput.value = "";
+
+                return;
+            }
+
+
+            if (
+                file.size >
+                2 * 1024 * 1024
+            ) {
+
+                showToast(
+                    "Imagem muito grande",
+                    "O tamanho máximo permitido é 2 MB.",
+                    false
+                );
+
+                avatarInput.value = "";
+
+                return;
+            }
+
+
+            const reader =
+                new FileReader();
+
+
+            reader.onload = event => {
+
+                profilePreview.innerHTML =
+                    `<img src="${event.target.result}"
+                          alt="Foto de perfil">`;
+
+            };
+
+
+            reader.readAsDataURL(file);
+
+        }
+    );
+
+
+    /* =====================================================
+       REMOVER FOTO
+    ===================================================== */
+
+    document
+        .getElementById("removeAvatar")
+        ?.addEventListener(
+            "click",
+            () => {
+
+                profilePreview.innerHTML =
+                    "JB";
+
+                avatarInput.value = "";
+
+            }
+        );
+
+
+    /* =====================================================
+       TEMAS
+    ===================================================== */
+
+    document
+        .querySelectorAll(".theme-card")
+        .forEach(card => {
+
+            card.addEventListener(
+                "click",
+                () => {
+
+                    document
+                        .querySelectorAll(
+                            ".theme-card"
+                        )
+                        .forEach(item => {
+                            item.classList.remove(
+                                "active"
+                            );
+                        });
+
+                    card.classList.add("active");
+
+                    const radio =
+                        card.querySelector(
+                            "input"
+                        );
+
+                    if (radio) {
+                        radio.checked = true;
+                    }
+
+                }
+            );
+
+        });
+
+
+    /* =====================================================
+       DENSIDADE
+    ===================================================== */
+
+    document
+        .querySelectorAll(".density-option")
+        .forEach(option => {
+
+            option.addEventListener(
+                "click",
+                () => {
+
+                    document
+                        .querySelectorAll(
+                            ".density-option"
+                        )
+                        .forEach(item => {
+                            item.classList.remove(
+                                "active"
+                            );
+                        });
+
+                    option.classList.add("active");
+
+                    const radio =
+                        option.querySelector(
+                            "input"
+                        );
+
+                    if (radio) {
+                        radio.checked = true;
+                    }
+
+                }
+            );
+
+        });
+
+
+    /* =====================================================
+       SESSÕES
+    ===================================================== */
+
+    document
+        .querySelectorAll(".session-remove")
+        .forEach(button => {
+
+            button.addEventListener(
+                "click",
+                () => {
+
+                    const confirmed =
+                        confirm(
+                            "Deseja terminar esta sessão?"
+                        );
+
+                    if (!confirmed) return;
+
+                    const session =
+                        button.closest(
+                            ".session-item"
+                        );
+
+                    session?.remove();
+
+                    showToast(
+                        "Sessão terminada",
+                        "O dispositivo foi desconectado."
+                    );
+
+                }
+            );
+
+        });
+
+
+    /* =====================================================
+       TERMINAR TODAS AS SESSÕES
+    ===================================================== */
+
+    function logoutAllSessions() {
+
+        const confirmed =
+            confirm(
+                "Tem certeza que deseja terminar todas as sessões, exceto a atual?"
+            );
+
+        if (!confirmed) return;
+
+        document
+            .querySelectorAll(
+                ".session-item:not(.current)"
+            )
+            .forEach(session => {
+                session.remove();
+            });
+
+        showToast(
+            "Sessões terminadas",
+            "Todos os outros dispositivos foram desconectados."
+        );
+
+    }
+
+
+    document
+        .getElementById("logoutAllDevices")
+        ?.addEventListener(
+            "click",
+            logoutAllSessions
+        );
+
+
+    document
+        .getElementById("logoutEverywhere")
+        ?.addEventListener(
+            "click",
+            logoutAllSessions
+        );
+
+
+    /* =====================================================
+       TOAST
+    ===================================================== */
+
+    let toastTimeout;
+
+
+    function showToast(
+        title,
+        message,
+        success = true
+    ) {
+
+        const toastTitle =
+            document.getElementById(
+                "toastTitle"
+            );
+
+        const toastMessage =
+            document.getElementById(
+                "toastMessage"
+            );
+
+        const toastIcon =
+            toast.querySelector(
+                ".toast-icon"
+            );
+
+        toastTitle.textContent =
+            title;
+
+        toastMessage.textContent =
+            message;
+
+
+        if (success) {
+
+            toastIcon.innerHTML =
+                `<i class="bi bi-check-lg"></i>`;
+
+            toastIcon.style.background =
+                "#dcfce7";
+
+            toastIcon.style.color =
+                "#16a34a";
+
+        } else {
+
+            toastIcon.innerHTML =
+                `<i class="bi bi-exclamation-lg"></i>`;
+
+            toastIcon.style.background =
+                "#fee2e2";
+
+            toastIcon.style.color =
+                "#dc2626";
+
+        }
+
+
+        toast.classList.add("show");
+
+
+        clearTimeout(toastTimeout);
+
+
+        toastTimeout =
+            setTimeout(() => {
+
+                toast.classList.remove(
+                    "show"
+                );
+
+            }, 4500);
+
+    }
+
+
+    closeToast?.addEventListener(
+        "click",
+        () => {
+            toast.classList.remove("show");
+        }
+    );
+
+
+    /* =====================================================
+       GUARDAR ALTERAÇÕES
+    ===================================================== */
+
+    saveButton?.addEventListener(
+        "click",
+        async () => {
+
+            const validName =
+                validateName();
+
+            const validUsername =
+                validateUsername();
+
+            const validEmail =
+                validateEmail();
+
+            const validPhone =
+                validatePhone();
+
+
+            if (
+                !validName ||
+                !validUsername ||
+                !validEmail ||
+                !validPhone
+            ) {
+
+                showToast(
+                    "Verifique os dados",
+                    "Existem campos que precisam de correção.",
+                    false
+                );
+
+                document
+                    .querySelector(
+                        '[data-tab="profile"]'
+                    )
+                    ?.click();
+
+                return;
+            }
+
+
+            if (
+                newPassword.value ||
+                confirmPassword.value
+            ) {
+
+                const passwordRules =
+                    newPassword.value.length >= 8 &&
+                    /[A-Z]/.test(
+                        newPassword.value
+                    ) &&
+                    /[a-z]/.test(
+                        newPassword.value
+                    ) &&
+                    /\d/.test(
+                        newPassword.value
+                    ) &&
+                    /[^A-Za-z0-9]/.test(
+                        newPassword.value
+                    );
+
+
+                if (!passwordRules) {
+
+                    showToast(
+                        "Senha insuficiente",
+                        "A nova senha não cumpre todos os requisitos.",
+                        false
+                    );
+
+                    document
+                        .querySelector(
+                            '[data-tab="security"]'
+                        )
+                        ?.click();
+
+                    return;
+                }
+
+
+                if (
+                    !validatePasswordMatch()
+                ) {
+
+                    showToast(
+                        "Senhas diferentes",
+                        "Confirme corretamente a nova senha.",
+                        false
+                    );
+
+                    document
+                        .querySelector(
+                            '[data-tab="security"]'
+                        )
+                        ?.click();
+
+                    return;
+                }
+
+            }
+
+
+            saveButton.classList.add(
+                "loading"
+            );
+
+            saveButton.disabled = true;
+
+
+            await new Promise(
+                resolve =>
+                    setTimeout(
+                        resolve,
+                        1200
+                    )
+            );
+
+
+            saveButton.classList.remove(
+                "loading"
+            );
+
+            saveButton.disabled = false;
+
+
+            showToast(
+                "Alterações guardadas",
+                "As configurações da sua conta foram atualizadas."
+            );
+
+
+            document
+                .getElementById("saveStatus")
+                ?.querySelector("span")
+                ?.replaceChildren(
+                    document.createTextNode(
+                        "Alterações guardadas agora"
+                    )
+                );
+
+        }
+    );
+
+});
+
