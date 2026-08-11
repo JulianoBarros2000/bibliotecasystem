@@ -48,56 +48,34 @@
   </head>
 
   <body>
-
     <!-- =========================================================
      PAGE LOADER
 ========================================================= -->
-<div class="page-loader" id="pageLoader">
-
-    <div class="page-loader-content">
-
+    <div class="page-loader" id="pageLoader">
+      <div class="page-loader-content">
         <!-- LOGO -->
         <div class="page-loader-logo">
-
-            <img
-                src="views/assets/img/LOGO.png"
-                alt="Logo da Biblioteca">
-
+          <img src="views/assets/img/LOGO.png" alt="Logo da Biblioteca" />
         </div>
-
 
         <!-- INDICADOR -->
         <div class="page-loader-spinner">
-
-            <span></span>
-
+          <span></span>
         </div>
-
 
         <!-- TEXTO -->
         <div class="page-loader-text">
+          <strong id="loaderTitle"> A preparar o sistema </strong>
 
-            <strong id="loaderTitle">
-                A preparar o sistema
-            </strong>
-
-            <span id="loaderMessage">
-                Aguarde um momento...
-            </span>
-
+          <span id="loaderMessage"> Aguarde um momento... </span>
         </div>
-
 
         <!-- PROGRESSO -->
         <div class="page-loader-progress">
-
-            <span id="loaderProgress"></span>
-
+          <span id="loaderProgress"></span>
         </div>
-
+      </div>
     </div>
-
-</div>
 
     <div class="dashboard-layout">
       <nav class="navbar navbar-expand-lg bg-white shadow-sm fixed-top px-3">
@@ -129,14 +107,10 @@
 
           <div class="collapse navbar-collapse" id="navbarMenu">
             <!-- PESQUISA -->
-            <form class="mx-auto">
-              
-            </form>
+            <form class="mx-auto"></form>
 
             <!-- DIREITA -->
             <div class="d-flex align-items-center gap-5 px-5">
-              
-
               <!-- NOTIFICAÇÕES -->
 
               <div class="dropdown">
@@ -268,15 +242,14 @@
                     id="openUserSettings"
                   >
                     <button
-    type="button"
-    class="dropdown-item"
-    onclick="openAccountSettings()">
+                      type="button"
+                      class="dropdown-item"
+                      onclick="openAccountSettings()"
+                    >
+                      <i class="fa-solid fa-user-gear"></i>
 
-    <i class="fa-solid fa-user-gear"></i>
-
-    <span>Configurações da conta</span>
-
-</button>
+                      <span>Configurações da conta</span>
+                    </button>
                   </a>
 
                   <!-- Sair -->
@@ -460,7 +433,7 @@
      FOOTER DO SISTEMA
 ================================= -->
 
-    <footer class=" mt-5 system-footer">
+    <footer class="mt-5 system-footer">
       <div class="footer-brand">
         <strong> Biblioteca Pro </strong>
 
@@ -479,1362 +452,922 @@
       </div>
     </footer>
 
-
-
     <!-- =========================================================
      MODAL — CONFIGURAÇÕES DA CONTA
 ========================================================= -->
-<div class="account-modal-overlay" id="accountSettingsModal">
-
-    <div class="account-modal">
-
+    <div class="account-modal-overlay" id="accountSettingsModal">
+      <div class="account-modal">
         <!-- HEADER -->
         <div class="account-modal-header">
-
-            <div class="account-modal-title">
-                <div class="account-modal-icon">
-                    <i class="fa-solid fa-user-gear"></i>
-                </div>
-
-                <div>
-                    <h3>Configurações da conta</h3>
-                    <p>Gerencie as suas informações e preferências</p>
-                </div>
+          <div class="account-modal-title">
+            <div class="account-modal-icon">
+              <i class="fa-solid fa-user-gear"></i>
             </div>
 
-            <button
-                type="button"
-                class="account-modal-close"
-                id="closeAccountSettings"
-                aria-label="Fechar">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
+            <div>
+              <h3>Configurações da conta</h3>
+              <p>Gerencie as suas informações e preferências</p>
+            </div>
+          </div>
 
+          <button
+            type="button"
+            class="account-modal-close"
+            id="closeAccountSettings"
+            aria-label="Fechar"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
         </div>
-
 
         <!-- BODY -->
         <div class="account-modal-body">
+          <!-- SIDEBAR DAS ABAS -->
+          <aside class="account-settings-sidebar">
+            <div class="settings-user-mini">
+              <div class="settings-avatar">
+                <span>JB</span>
 
-            <!-- SIDEBAR DAS ABAS -->
-            <aside class="account-settings-sidebar">
+                <label for="accountAvatarInput">
+                  <i class="bi bi-camera-fill"></i>
+                </label>
 
-                <div class="settings-user-mini">
+                <input
+                  type="file"
+                  id="accountAvatarInput"
+                  accept="image/png,image/jpeg,image/webp"
+                />
+              </div>
 
-                    <div class="settings-avatar">
-                        <span>JB</span>
+              <div class="settings-user-info">
+                <strong id="settingsUserName">Juliano Barros</strong>
+                <span id="settingsUserRole">Administrador</span>
+              </div>
+            </div>
 
-                        <label for="accountAvatarInput">
-                            <i class="bi bi-camera-fill"></i>
-                        </label>
+            <nav class="settings-tabs">
+              <button class="settings-tab active" data-tab="profile">
+                <span class="tab-icon">
+                  <i class="fa-solid fa-user"></i>
+                </span>
 
-                        <input
-                            type="file"
-                            id="accountAvatarInput"
-                            accept="image/png,image/jpeg,image/webp">
-                    </div>
+                <span>
+                  <strong>Meu perfil</strong>
+                  <small>Informações pessoais</small>
+                </span>
 
-                    <div class="settings-user-info">
-                        <strong id="settingsUserName">Juliano Barros</strong>
-                        <span id="settingsUserRole">Administrador</span>
-                    </div>
+                <i class="bi bi-chevron-right tab-arrow"></i>
+              </button>
 
+              <button class="settings-tab" data-tab="security">
+                <span class="tab-icon security">
+                  <i class="fa-solid fa-shield-halved"></i>
+                </span>
+
+                <span>
+                  <strong>Segurança</strong>
+                  <small>Senha e proteção</small>
+                </span>
+
+                <i class="bi bi-chevron-right tab-arrow"></i>
+              </button>
+
+              <button class="settings-tab" data-tab="notifications">
+                <span class="tab-icon notification">
+                  <i class="fa-solid fa-bell"></i>
+                </span>
+
+                <span>
+                  <strong>Notificações</strong>
+                  <small>Alertas e avisos</small>
+                </span>
+
+                <i class="bi bi-chevron-right tab-arrow"></i>
+              </button>
+
+              <button class="settings-tab" data-tab="appearance">
+                <span class="tab-icon appearance">
+                  <i class="fa-solid fa-bell"></i>
+                </span>
+
+                <span>
+                  <strong>Aparência</strong>
+                  <small>Personalize o sistema</small>
+                </span>
+
+                <i class="bi bi-chevron-right tab-arrow"></i>
+              </button>
+
+              <button class="settings-tab" data-tab="privacy">
+                <span class="tab-icon privacy">
+                  <i class="bi bi-fingerprint"></i>
+                </span>
+
+                <span>
+                  <strong>Privacidade</strong>
+                  <small>Controle e proteção</small>
+                </span>
+
+                <i class="fa-solid fa-fingerprint"></i>
+              </button>
+
+              <button class="settings-tab" data-tab="sessions">
+                <span class="tab-icon sessions">
+                  <i class="fa-solid fa-display"></i>
+                </span>
+
+                <span>
+                  <strong>Sessões</strong>
+                  <small>Dispositivos conectados</small>
+                </span>
+
+                <i class="fa-solid fa-display"></i>
+              </button>
+            </nav>
+
+            <div class="settings-sidebar-footer">
+              <div class="security-status">
+                <div class="status-icon">
+                  <i class="fa-solid fa-shield-halved"></i>
                 </div>
 
-
-                <nav class="settings-tabs">
-
-                    <button
-                        class="settings-tab active"
-                        data-tab="profile">
-
-                        <span class="tab-icon">
-                            <i class="fa-solid fa-user"></i>
-                        </span>
-
-                        <span>
-                            <strong>Meu perfil</strong>
-                            <small>Informações pessoais</small>
-                        </span>
-
-                        <i class="bi bi-chevron-right tab-arrow"></i>
-                    </button>
-
-
-                    <button
-                        class="settings-tab"
-                        data-tab="security">
-
-                        <span class="tab-icon security">
-                            <i class="fa-solid fa-shield-halved"></i>
-                        </span>
-
-                        <span>
-                            <strong>Segurança</strong>
-                            <small>Senha e proteção</small>
-                        </span>
-
-                        <i class="bi bi-chevron-right tab-arrow"></i>
-                    </button>
-
-
-                    <button
-                        class="settings-tab"
-                        data-tab="notifications">
-
-                        <span class="tab-icon notification">
-                            <i class="fa-solid fa-bell"></i>
-                        </span>
-
-                        <span>
-                            <strong>Notificações</strong>
-                            <small>Alertas e avisos</small>
-                        </span>
-
-                        <i class="bi bi-chevron-right tab-arrow"></i>
-                    </button>
-
-
-                    <button
-                        class="settings-tab"
-                        data-tab="appearance">
-
-                        <span class="tab-icon appearance">
-                            <i class="fa-solid fa-bell"></i>
-                        </span>
-
-                        <span>
-                            <strong>Aparência</strong>
-                            <small>Personalize o sistema</small>
-                        </span>
-
-                        <i class="bi bi-chevron-right tab-arrow"></i>
-                    </button>
-
-
-                    <button
-                        class="settings-tab"
-                        data-tab="privacy">
-
-                        <span class="tab-icon privacy">
-                            <i class="bi bi-fingerprint"></i>
-                        </span>
-
-                        <span>
-                            <strong>Privacidade</strong>
-                            <small>Controle e proteção</small>
-                        </span>
-
-                        <i class="fa-solid fa-fingerprint"></i>
-                    </button>
-
-
-                    <button
-                        class="settings-tab"
-                        data-tab="sessions">
-
-                        <span class="tab-icon sessions">
-                            <i class="fa-solid fa-display"></i>
-                        </span>
-
-                        <span>
-                            <strong>Sessões</strong>
-                            <small>Dispositivos conectados</small>
-                        </span>
-
-                        <i class="fa-solid fa-display"></i>
-                    </button>
-
-                </nav>
-
-
-                <div class="settings-sidebar-footer">
-
-                    <div class="security-status">
-                        <div class="status-icon">
-                            <i class="fa-solid fa-shield-halved"></i>
-                        </div>
-
-                        <div>
-                            <strong>Conta protegida</strong>
-                            <span>Segurança da conta: boa</span>
-                        </div>
-                    </div>
-
+                <div>
+                  <strong>Conta protegida</strong>
+                  <span>Segurança da conta: boa</span>
                 </div>
+              </div>
+            </div>
+          </aside>
 
-            </aside>
-
-
-            <!-- CONTEÚDO DAS ABAS -->
-            <main class="account-settings-content">
-
-
-                <!-- =====================================================
+          <!-- CONTEÚDO DAS ABAS -->
+          <main class="account-settings-content">
+            <!-- =====================================================
                      PERFIL
                 ====================================================== -->
-                <section
-                    class="settings-panel active"
-                    id="tab-profile">
+            <section class="settings-panel active" id="tab-profile">
+              <div class="settings-panel-header">
+                <div>
+                  <span class="settings-eyebrow"> INFORMAÇÕES DA CONTA </span>
 
-                    <div class="settings-panel-header">
+                  <h2>Meu perfil</h2>
 
-                        <div>
-                            <span class="settings-eyebrow">
-                                INFORMAÇÕES DA CONTA
-                            </span>
+                  <p>Atualize as informações utilizadas na sua conta.</p>
+                </div>
+              </div>
 
-                            <h2>Meu perfil</h2>
+              <form id="profileForm" novalidate>
+                <div class="profile-photo-section">
+                  <div class="large-account-avatar" id="profilePreview">JB</div>
 
-                            <p>
-                                Atualize as informações utilizadas na sua conta.
-                            </p>
-                        </div>
+                  <div class="profile-photo-info">
+                    <h4>Foto de perfil</h4>
 
+                    <p>JPG, PNG ou WEBP. Tamanho máximo recomendado de 2 MB.</p>
+
+                    <div class="profile-photo-actions">
+                      <label
+                        for="profileAvatarInput"
+                        class="btn-outline-primary"
+                      >
+                        <i class="bi bi-upload"></i>
+                        Alterar foto
+                      </label>
+
+                      <button
+                        type="button"
+                        class="btn-text-danger"
+                        id="removeAvatar"
+                      >
+                        Remover
+                      </button>
                     </div>
 
-
-                    <form id="profileForm" novalidate>
-
-                        <div class="profile-photo-section">
-
-                            <div class="large-account-avatar" id="profilePreview">
-                                JB
-                            </div>
-
-                            <div class="profile-photo-info">
-
-                                <h4>Foto de perfil</h4>
-
-                                <p>
-                                    JPG, PNG ou WEBP. Tamanho máximo recomendado
-                                    de 2 MB.
-                                </p>
-
-                                <div class="profile-photo-actions">
-
-                                    <label
-                                        for="profileAvatarInput"
-                                        class="btn-outline-primary">
-                                        <i class="bi bi-upload"></i>
-                                        Alterar foto
-                                    </label>
-
-                                    <button
-                                        type="button"
-                                        class="btn-text-danger"
-                                        id="removeAvatar">
-                                        Remover
-                                    </button>
-
-                                </div>
-
-                                <input
-                                    type="file"
-                                    id="profileAvatarInput"
-                                    accept="image/png,image/jpeg,image/webp"
-                                    hidden>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="form-section-title">
-                            <h4>Dados pessoais</h4>
-                            <span>Informações básicas</span>
-                        </div>
-
-
-                        <div class="form-grid">
-
-                            <div class="form-group">
-
-                                <label for="accountFullName">
-                                    Nome completo
-                                </label>
-
-                                <div class="input-wrapper">
-
-                                    <i class="bi bi-person"></i>
-
-                                    <input
-                                        type="text"
-                                        id="accountFullName"
-                                        value="Juliano Barros"
-                                        minlength="3"
-                                        maxlength="100"
-                                        autocomplete="name"
-                                        required>
-
-                                </div>
-
-                                <small class="input-error"></small>
-
-                            </div>
-
-
-                            <div class="form-group">
-
-                                <label for="accountUsername">
-                                    Nome de utilizador
-                                </label>
-
-                                <div class="input-wrapper">
-
-                                    <i class="bi bi-at"></i>
-
-                                    <input
-                                        type="text"
-                                        id="accountUsername"
-                                        value="juliano"
-                                        minlength="4"
-                                        maxlength="30"
-                                        autocomplete="username"
-                                        required>
-
-                                </div>
-
-                                <small class="input-error"></small>
-
-                            </div>
-
-
-                            <div class="form-group">
-
-                                <label for="accountEmail">
-                                    E-mail
-                                </label>
-
-                                <div class="input-wrapper">
-
-                                    <i class="bi bi-envelope"></i>
-
-                                    <input
-                                        type="email"
-                                        id="accountEmail"
-                                        value="juliano@email.com"
-                                        autocomplete="email"
-                                        required>
-
-                                </div>
-
-                                <small class="input-error"></small>
-
-                            </div>
-
-
-                            <div class="form-group">
-
-                                <label for="accountPhone">
-                                    Telefone
-                                </label>
-
-                                <div class="input-wrapper">
-
-                                    <i class="bi bi-telephone"></i>
-
-                                    <input
-                                        type="tel"
-                                        id="accountPhone"
-                                        placeholder="+244 9XX XXX XXX"
-                                        autocomplete="tel">
-
-                                </div>
-
-                                <small class="input-error"></small>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="form-section-title">
-                            <h4>Informações adicionais</h4>
-                            <span>Detalhes complementares</span>
-                        </div>
-
-
-                        <div class="form-grid">
-
-                            <div class="form-group">
-
-                                <label for="accountLanguage">
-                                    Idioma
-                                </label>
-
-                                <div class="select-wrapper">
-
-                                    <i class="bi bi-translate"></i>
-
-                                    <select id="accountLanguage">
-                                        <option value="pt-AO">
-                                            Português — Angola
-                                        </option>
-
-                                        <option value="pt-BR">
-                                            Português — Brasil
-                                        </option>
-
-                                        <option value="en">
-                                            English
-                                        </option>
-                                    </select>
-
-                                </div>
-
-                            </div>
-
-
-                            <div class="form-group">
-
-                                <label for="accountTimezone">
-                                    Fuso horário
-                                </label>
-
-                                <div class="select-wrapper">
-
-                                    <i class="bi bi-clock"></i>
-
-                                    <select id="accountTimezone">
-
-                                        <option value="Africa/Luanda">
-                                            (UTC+01:00) Luanda
-                                        </option>
-
-                                        <option value="UTC">
-                                            (UTC+00:00) UTC
-                                        </option>
-
-                                    </select>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </form>
-
-                </section>
-
-
-
-                <!-- =====================================================
+                    <input
+                      type="file"
+                      id="profileAvatarInput"
+                      accept="image/png,image/jpeg,image/webp"
+                      hidden
+                    />
+                  </div>
+                </div>
+
+                <div class="form-section-title">
+                  <h4>Dados pessoais</h4>
+                  <span>Informações básicas</span>
+                </div>
+
+                <div class="form-grid">
+                  <div class="form-group">
+                    <label for="accountFullName"> Nome completo </label>
+
+                    <div class="input-wrapper">
+                      <i class="bi bi-person"></i>
+
+                      <input
+                        type="text"
+                        id="accountFullName"
+                        value="Juliano Barros"
+                        minlength="3"
+                        maxlength="100"
+                        autocomplete="name"
+                        required
+                      />
+                    </div>
+
+                    <small class="input-error"></small>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="accountUsername"> Nome de utilizador </label>
+
+                    <div class="input-wrapper">
+                      <i class="bi bi-at"></i>
+
+                      <input
+                        type="text"
+                        id="accountUsername"
+                        value="juliano"
+                        minlength="4"
+                        maxlength="30"
+                        autocomplete="username"
+                        required
+                      />
+                    </div>
+
+                    <small class="input-error"></small>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="accountEmail"> E-mail </label>
+
+                    <div class="input-wrapper">
+                      <i class="bi bi-envelope"></i>
+
+                      <input
+                        type="email"
+                        id="accountEmail"
+                        value="juliano@email.com"
+                        autocomplete="email"
+                        required
+                      />
+                    </div>
+
+                    <small class="input-error"></small>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="accountPhone"> Telefone </label>
+
+                    <div class="input-wrapper">
+                      <i class="bi bi-telephone"></i>
+
+                      <input
+                        type="tel"
+                        id="accountPhone"
+                        placeholder="+244 9XX XXX XXX"
+                        autocomplete="tel"
+                      />
+                    </div>
+
+                    <small class="input-error"></small>
+                  </div>
+                </div>
+
+                <div class="form-section-title">
+                  <h4>Informações adicionais</h4>
+                  <span>Detalhes complementares</span>
+                </div>
+
+                <div class="form-grid">
+                  <div class="form-group">
+                    <label for="accountLanguage"> Idioma </label>
+
+                    <div class="select-wrapper">
+                      <i class="bi bi-translate"></i>
+
+                      <select id="accountLanguage">
+                        <option value="pt-AO">Português — Angola</option>
+
+                        <option value="pt-BR">Português — Brasil</option>
+
+                        <option value="en">English</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="accountTimezone"> Fuso horário </label>
+
+                    <div class="select-wrapper">
+                      <i class="bi bi-clock"></i>
+
+                      <select id="accountTimezone">
+                        <option value="Africa/Luanda">
+                          (UTC+01:00) Luanda
+                        </option>
+
+                        <option value="UTC">(UTC+00:00) UTC</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </section>
+
+            <!-- =====================================================
                      SEGURANÇA
                 ====================================================== -->
-                <section
-                    class="settings-panel"
-                    id="tab-security">
+            <section class="settings-panel" id="tab-security">
+              <div class="settings-panel-header">
+                <div>
+                  <span class="settings-eyebrow"> PROTEÇÃO DA CONTA </span>
 
-                    <div class="settings-panel-header">
+                  <h2>Segurança</h2>
 
-                        <div>
+                  <p>Mantenha a sua conta protegida com uma senha forte.</p>
+                </div>
+              </div>
 
-                            <span class="settings-eyebrow">
-                                PROTEÇÃO DA CONTA
-                            </span>
+              <div class="security-alert">
+                <div class="security-alert-icon">
+                  <i class="bi bi-shield-check"></i>
+                </div>
 
-                            <h2>Segurança</h2>
+                <div>
+                  <strong> A sua conta está protegida </strong>
 
-                            <p>
-                                Mantenha a sua conta protegida com uma senha forte.
-                            </p>
+                  <p>Recomendamos atualizar a sua senha regularmente.</p>
+                </div>
+              </div>
 
-                        </div>
+              <form id="passwordForm" novalidate>
+                <div class="form-section-title">
+                  <h4>Alterar senha</h4>
+                  <span>Use uma senha forte e exclusiva</span>
+                </div>
 
+                <div class="form-group">
+                  <label for="currentPassword"> Senha atual </label>
+
+                  <div class="input-wrapper password-wrapper">
+                    <i class="bi bi-lock"></i>
+
+                    <input
+                      type="password"
+                      id="currentPassword"
+                      autocomplete="current-password"
+                      required
+                    />
+
+                    <button
+                      type="button"
+                      class="password-toggle"
+                      data-target="currentPassword"
+                    >
+                      <i class="bi bi-eye"></i>
+                    </button>
+                  </div>
+
+                  <small class="input-error"></small>
+                </div>
+
+                <div class="form-grid">
+                  <div class="form-group">
+                    <label for="newPassword"> Nova senha </label>
+
+                    <div class="input-wrapper password-wrapper">
+                      <i class="bi bi-key"></i>
+
+                      <input
+                        type="password"
+                        id="newPassword"
+                        minlength="8"
+                        maxlength="64"
+                        autocomplete="new-password"
+                        required
+                      />
+
+                      <button
+                        type="button"
+                        class="password-toggle"
+                        data-target="newPassword"
+                      >
+                        <i class="bi bi-eye"></i>
+                      </button>
                     </div>
 
-
-                    <div class="security-alert">
-
-                        <div class="security-alert-icon">
-                            <i class="bi bi-shield-check"></i>
-                        </div>
-
-                        <div>
-
-                            <strong>
-                                A sua conta está protegida
-                            </strong>
-
-                            <p>
-                                Recomendamos atualizar a sua senha regularmente.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <form id="passwordForm" novalidate>
-
-                        <div class="form-section-title">
-                            <h4>Alterar senha</h4>
-                            <span>Use uma senha forte e exclusiva</span>
-                        </div>
-
-
-                        <div class="form-group">
-
-                            <label for="currentPassword">
-                                Senha atual
-                            </label>
-
-                            <div class="input-wrapper password-wrapper">
-
-                                <i class="bi bi-lock"></i>
-
-                                <input
-                                    type="password"
-                                    id="currentPassword"
-                                    autocomplete="current-password"
-                                    required>
-
-                                <button
-                                    type="button"
-                                    class="password-toggle"
-                                    data-target="currentPassword">
-
-                                    <i class="bi bi-eye"></i>
-
-                                </button>
-
-                            </div>
-
-                            <small class="input-error"></small>
-
-                        </div>
-
-
-                        <div class="form-grid">
-
-                            <div class="form-group">
-
-                                <label for="newPassword">
-                                    Nova senha
-                                </label>
-
-                                <div class="input-wrapper password-wrapper">
-
-                                    <i class="bi bi-key"></i>
-
-                                    <input
-                                        type="password"
-                                        id="newPassword"
-                                        minlength="8"
-                                        maxlength="64"
-                                        autocomplete="new-password"
-                                        required>
-
-                                    <button
-                                        type="button"
-                                        class="password-toggle"
-                                        data-target="newPassword">
-
-                                        <i class="bi bi-eye"></i>
-
-                                    </button>
-
-                                </div>
-
-
-                                <div class="password-strength">
-
-                                    <div class="strength-bars">
-
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-
-                                    </div>
-
-                                    <div class="strength-info">
-
-                                        <span id="passwordStrengthText">
-                                            Digite uma senha
-                                        </span>
-
-                                        <span id="passwordStrengthPercent">
-                                            0%
-                                        </span>
-
-                                    </div>
-
-                                </div>
-
-                                <div class="password-rules">
-
-                                    <span data-rule="length">
-                                        <i class="bi bi-circle"></i>
-                                        8 ou mais caracteres
-                                    </span>
-
-                                    <span data-rule="uppercase">
-                                        <i class="bi bi-circle"></i>
-                                        Uma letra maiúscula
-                                    </span>
-
-                                    <span data-rule="lowercase">
-                                        <i class="bi bi-circle"></i>
-                                        Uma letra minúscula
-                                    </span>
-
-                                    <span data-rule="number">
-                                        <i class="bi bi-circle"></i>
-                                        Um número
-                                    </span>
-
-                                    <span data-rule="special">
-                                        <i class="bi bi-circle"></i>
-                                        Um caractere especial
-                                    </span>
-
-                                </div>
-
-                                <small class="input-error"></small>
-
-                            </div>
-
-
-                            <div class="form-group">
-
-                                <label for="confirmPassword">
-                                    Confirmar nova senha
-                                </label>
-
-                                <div class="input-wrapper password-wrapper">
-
-                                    <i class="bi bi-lock-fill"></i>
-
-                                    <input
-                                        type="password"
-                                        id="confirmPassword"
-                                        autocomplete="new-password"
-                                        required>
-
-                                    <button
-                                        type="button"
-                                        class="password-toggle"
-                                        data-target="confirmPassword">
-
-                                        <i class="bi bi-eye"></i>
-
-                                    </button>
-
-                                </div>
-
-                                <small
-                                    class="password-match"
-                                    id="passwordMatch">
-                                </small>
-
-                                <small class="input-error"></small>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="password-tip">
-
-                            <i class="bi bi-lightbulb"></i>
-
-                            <div>
-
-                                <strong>Dica de segurança</strong>
-
-                                <p>
-                                    Evite utilizar o seu nome, data de nascimento
-                                    ou informações facilmente associadas a si.
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </form>
-
-                </section>
-
-
-
-                <!-- =====================================================
-                     NOTIFICAÇÕES
-                ====================================================== -->
-                <section
-                    class="settings-panel"
-                    id="tab-notifications">
-
-                    <div class="settings-panel-header">
-
-                        <div>
-
-                            <span class="settings-eyebrow">
-                                CENTRAL DE ALERTAS
-                            </span>
-
-                            <h2>Notificações</h2>
-
-                            <p>
-                                Escolha como pretende receber os seus avisos.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="settings-options">
-
-                        <div class="setting-option">
-
-                            <div class="setting-option-icon">
-                                <i class="fa-solid fa-bell"></i>
-                            </div>
-
-                            <div class="setting-option-info">
-
-                                <strong>
-                                    Notificações do sistema
-                                </strong>
-
-                                <span>
-                                    Receber notificações importantes do sistema.
-                                </span>
-
-                            </div>
-
-                            <label class="modern-switch">
-                                <input
-                                    type="checkbox"
-                                    id="systemNotifications"
-                                    checked>
-                                <span></span>
-                            </label>
-
-                        </div>
-
-
-                        <div class="setting-option">
-
-                            <div class="setting-option-icon email">
-                                <i class="bi bi-envelope"></i>
-                            </div>
-
-                            <div class="setting-option-info">
-
-                                <strong>
-                                    Notificações por e-mail
-                                </strong>
-
-                                <span>
-                                    Receber atualizações e informações por e-mail.
-                                </span>
-
-                            </div>
-
-                            <label class="modern-switch">
-                                <input
-                                    type="checkbox"
-                                    id="emailNotifications"
-                                    checked>
-                                <span></span>
-                            </label>
-
-                        </div>
-
-
-                        <div class="setting-option">
-
-                            <div class="setting-option-icon warning">
-                                <i class="bi bi-exclamation-triangle"></i>
-                            </div>
-
-                            <div class="setting-option-info">
-
-                                <strong>
-                                    Alertas de segurança
-                                </strong>
-
-                                <span>
-                                    Avisar sobre atividades suspeitas na conta.
-                                </span>
-
-                            </div>
-
-                            <label class="modern-switch">
-                                <input
-                                    type="checkbox"
-                                    id="securityNotifications"
-                                    checked>
-                                <span></span>
-                            </label>
-
-                        </div>
-
-
-                        <div class="setting-option">
-
-                            <div class="setting-option-icon book">
-                                <i class="bi bi-book"></i>
-                            </div>
-
-                            <div class="setting-option-info">
-
-                                <strong>
-                                    Alertas de empréstimos
-                                </strong>
-
-                                <span>
-                                    Receber lembretes sobre empréstimos e devoluções.
-                                </span>
-
-                            </div>
-
-                            <label class="modern-switch">
-                                <input
-                                    type="checkbox"
-                                    id="loanNotifications"
-                                    checked>
-                                <span></span>
-                            </label>
-
-                        </div>
-
-                    </div>
-
-                </section>
-
-
-
-                <!-- =====================================================
-                     APARÊNCIA
-                ====================================================== -->
-                <section
-                    class="settings-panel"
-                    id="tab-appearance">
-
-                    <div class="settings-panel-header">
-
-                        <div>
-
-                            <span class="settings-eyebrow">
-                                PERSONALIZAÇÃO
-                            </span>
-
-                            <h2>Aparência</h2>
-
-                            <p>
-                                Personalize a experiência visual do sistema.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="form-section-title">
-                        <h4>Tema</h4>
-                        <span>Escolha a aparência do sistema</span>
-                    </div>
-
-
-                    <div class="theme-options">
-
-                        <label class="theme-card active">
-
-                            <input
-                                type="radio"
-                                name="theme"
-                                value="light"
-                                checked>
-
-                            <div class="theme-preview light-preview">
-
-                                <div class="preview-sidebar"></div>
-
-                                <div class="preview-content">
-
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-
-                                </div>
-
-                            </div>
-
-                            <strong>
-                                Claro
-                            </strong>
-
-                        </label>
-
-
-                        <label class="theme-card">
-
-                            <input
-                                type="radio"
-                                name="theme"
-                                value="dark">
-
-                            <div class="theme-preview dark-preview">
-
-                                <div class="preview-sidebar"></div>
-
-                                <div class="preview-content">
-
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-
-                                </div>
-
-                            </div>
-
-                            <strong>
-                                Escuro
-                            </strong>
-
-                        </label>
-
-
-                        <label class="theme-card">
-
-                            <input
-                                type="radio"
-                                name="theme"
-                                value="system">
-
-                            <div class="theme-preview system-preview">
-
-                                <div class="preview-sidebar"></div>
-
-                                <div class="preview-content">
-
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-
-                                </div>
-
-                            </div>
-
-                            <strong>
-                                Sistema
-                            </strong>
-
-                        </label>
-
-                    </div>
-
-
-                    <div class="form-section-title appearance-spacing">
-                        <h4>Densidade</h4>
-                        <span>Controle o espaço entre os elementos</span>
-                    </div>
-
-
-                    <div class="density-options">
-
-                        <label class="density-option active">
-
-                            <input
-                                type="radio"
-                                name="density"
-                                value="comfortable"
-                                checked>
-
-                            <span class="density-icon">
-                                <i class="bi bi-list"></i>
-                            </span>
-
-                            <span>
-                                Confortável
-                            </span>
-
-                        </label>
-
-
-                        <label class="density-option">
-
-                            <input
-                                type="radio"
-                                name="density"
-                                value="compact">
-
-                            <span class="density-icon">
-                                <i class="bi bi-list-ul"></i>
-                            </span>
-
-                            <span>
-                                Compacto
-                            </span>
-
-                        </label>
-
-                    </div>
-
-                </section>
-
-
-
-                <!-- =====================================================
-                     PRIVACIDADE
-                ====================================================== -->
-                <section
-                    class="settings-panel"
-                    id="tab-privacy">
-
-                    <div class="settings-panel-header">
-
-                        <div>
-
-                            <span class="settings-eyebrow">
-                                PRIVACIDADE
-                            </span>
-
-                            <h2>Privacidade</h2>
-
-                            <p>
-                                Controle os dados e a proteção da sua conta.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="privacy-card">
-
-                        <div class="privacy-card-icon">
-                            <i class="fa-solid fa-shield-halved"></i>
-                        </div>
-
-                        <div>
-
-                            <h4>Proteção da conta</h4>
-
-                            <p>
-                                A sua conta utiliza mecanismos de proteção
-                                para impedir acessos não autorizados.
-                            </p>
-
-                        </div>
-
-                        <span class="privacy-badge">
-                            Ativa
+                    <div class="password-strength">
+                      <div class="strength-bars">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </div>
+
+                      <div class="strength-info">
+                        <span id="passwordStrengthText">
+                          Digite uma senha
                         </span>
 
+                        <span id="passwordStrengthPercent"> 0% </span>
+                      </div>
                     </div>
 
+                    <div class="password-rules">
+                      <span data-rule="length">
+                        <i class="bi bi-circle"></i>
+                        8 ou mais caracteres
+                      </span>
 
-                    <div class="settings-options">
+                      <span data-rule="uppercase">
+                        <i class="bi bi-circle"></i>
+                        Uma letra maiúscula
+                      </span>
 
-                        <div class="setting-option">
+                      <span data-rule="lowercase">
+                        <i class="bi bi-circle"></i>
+                        Uma letra minúscula
+                      </span>
 
-                            <div class="setting-option-icon">
-                                <i class="bi bi-clock-history"></i>
-                            </div>
+                      <span data-rule="number">
+                        <i class="bi bi-circle"></i>
+                        Um número
+                      </span>
 
-                            <div class="setting-option-info">
-
-                                <strong>
-                                    Histórico de atividades
-                                </strong>
-
-                                <span>
-                                    Guardar o histórico das atividades realizadas.
-                                </span>
-
-                            </div>
-
-                            <label class="modern-switch">
-
-                                <input
-                                    type="checkbox"
-                                    checked>
-
-                                <span></span>
-
-                            </label>
-
-                        </div>
-
-
-                        <div class="setting-option">
-
-                            <div class="setting-option-icon">
-                                <i class="bi bi-person-check"></i>
-                            </div>
-
-                            <div class="setting-option-info">
-
-                                <strong>
-                                    Verificação de novos dispositivos
-                                </strong>
-
-                                <span>
-                                    Solicitar confirmação ao iniciar sessão
-                                    num novo dispositivo.
-                                </span>
-
-                            </div>
-
-                            <label class="modern-switch">
-
-                                <input
-                                    type="checkbox"
-                                    checked>
-
-                                <span></span>
-
-                            </label>
-
-                        </div>
-
+                      <span data-rule="special">
+                        <i class="bi bi-circle"></i>
+                        Um caractere especial
+                      </span>
                     </div>
 
+                    <small class="input-error"></small>
+                  </div>
 
-                    <div class="danger-zone">
+                  <div class="form-group">
+                    <label for="confirmPassword"> Confirmar nova senha </label>
 
-                        <div>
+                    <div class="input-wrapper password-wrapper">
+                      <i class="bi bi-lock-fill"></i>
 
-                            <h4>
-                                <i class="bi bi-exclamation-octagon"></i>
-                                Zona de perigo
-                            </h4>
+                      <input
+                        type="password"
+                        id="confirmPassword"
+                        autocomplete="new-password"
+                        required
+                      />
 
-                            <p>
-                                Estas ações podem afetar permanentemente
-                                a sua conta.
-                            </p>
-
-                        </div>
-
-                        <button
-                            type="button"
-                            class="danger-button"
-                            id="logoutAllDevices">
-                            Terminar todas as sessões
-                        </button>
-
+                      <button
+                        type="button"
+                        class="password-toggle"
+                        data-target="confirmPassword"
+                      >
+                        <i class="bi bi-eye"></i>
+                      </button>
                     </div>
 
-                </section>
+                    <small class="password-match" id="passwordMatch"> </small>
 
+                    <small class="input-error"></small>
+                  </div>
+                </div>
 
+                <div class="password-tip">
+                  <i class="bi bi-lightbulb"></i>
 
-                <!-- =====================================================
+                  <div>
+                    <strong>Dica de segurança</strong>
+
+                    <p>
+                      Evite utilizar o seu nome, data de nascimento ou
+                      informações facilmente associadas a si.
+                    </p>
+                  </div>
+                </div>
+              </form>
+            </section>
+
+            <!-- =====================================================
+                     NOTIFICAÇÕES
+                ====================================================== -->
+            <section class="settings-panel" id="tab-notifications">
+              <div class="settings-panel-header">
+                <div>
+                  <span class="settings-eyebrow"> CENTRAL DE ALERTAS </span>
+
+                  <h2>Notificações</h2>
+
+                  <p>Escolha como pretende receber os seus avisos.</p>
+                </div>
+              </div>
+
+              <div class="settings-options">
+                <div class="setting-option">
+                  <div class="setting-option-icon">
+                    <i class="fa-solid fa-bell"></i>
+                  </div>
+
+                  <div class="setting-option-info">
+                    <strong> Notificações do sistema </strong>
+
+                    <span> Receber notificações importantes do sistema. </span>
+                  </div>
+
+                  <label class="modern-switch">
+                    <input type="checkbox" id="systemNotifications" checked />
+                    <span></span>
+                  </label>
+                </div>
+
+                <div class="setting-option">
+                  <div class="setting-option-icon email">
+                    <i class="bi bi-envelope"></i>
+                  </div>
+
+                  <div class="setting-option-info">
+                    <strong> Notificações por e-mail </strong>
+
+                    <span>
+                      Receber atualizações e informações por e-mail.
+                    </span>
+                  </div>
+
+                  <label class="modern-switch">
+                    <input type="checkbox" id="emailNotifications" checked />
+                    <span></span>
+                  </label>
+                </div>
+
+                <div class="setting-option">
+                  <div class="setting-option-icon warning">
+                    <i class="bi bi-exclamation-triangle"></i>
+                  </div>
+
+                  <div class="setting-option-info">
+                    <strong> Alertas de segurança </strong>
+
+                    <span> Avisar sobre atividades suspeitas na conta. </span>
+                  </div>
+
+                  <label class="modern-switch">
+                    <input type="checkbox" id="securityNotifications" checked />
+                    <span></span>
+                  </label>
+                </div>
+
+                <div class="setting-option">
+                  <div class="setting-option-icon book">
+                    <i class="bi bi-book"></i>
+                  </div>
+
+                  <div class="setting-option-info">
+                    <strong> Alertas de empréstimos </strong>
+
+                    <span>
+                      Receber lembretes sobre empréstimos e devoluções.
+                    </span>
+                  </div>
+
+                  <label class="modern-switch">
+                    <input type="checkbox" id="loanNotifications" checked />
+                    <span></span>
+                  </label>
+                </div>
+              </div>
+            </section>
+
+            <!-- =====================================================
+                     APARÊNCIA
+                ====================================================== -->
+            <section class="settings-panel" id="tab-appearance">
+              <div class="settings-panel-header">
+                <div>
+                  <span class="settings-eyebrow"> PERSONALIZAÇÃO </span>
+
+                  <h2>Aparência</h2>
+
+                  <p>Personalize a experiência visual do sistema.</p>
+                </div>
+              </div>
+
+              <div class="form-section-title">
+                <h4>Tema</h4>
+                <span>Escolha a aparência do sistema</span>
+              </div>
+
+              <div class="theme-options">
+                <label class="theme-card active">
+                  <input type="radio" name="theme" value="light" checked />
+
+                  <div class="theme-preview light-preview">
+                    <div class="preview-sidebar"></div>
+
+                    <div class="preview-content">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                  </div>
+
+                  <strong> Claro </strong>
+                </label>
+
+                <label class="theme-card">
+                  <input type="radio" name="theme" value="dark" />
+
+                  <div class="theme-preview dark-preview">
+                    <div class="preview-sidebar"></div>
+
+                    <div class="preview-content">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                  </div>
+
+                  <strong> Escuro </strong>
+                </label>
+
+                <label class="theme-card">
+                  <input type="radio" name="theme" value="system" />
+
+                  <div class="theme-preview system-preview">
+                    <div class="preview-sidebar"></div>
+
+                    <div class="preview-content">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                  </div>
+
+                  <strong> Sistema </strong>
+                </label>
+              </div>
+
+              <div class="form-section-title appearance-spacing">
+                <h4>Densidade</h4>
+                <span>Controle o espaço entre os elementos</span>
+              </div>
+
+              <div class="density-options">
+                <label class="density-option active">
+                  <input
+                    type="radio"
+                    name="density"
+                    value="comfortable"
+                    checked
+                  />
+
+                  <span class="density-icon">
+                    <i class="bi bi-list"></i>
+                  </span>
+
+                  <span> Confortável </span>
+                </label>
+
+                <label class="density-option">
+                  <input type="radio" name="density" value="compact" />
+
+                  <span class="density-icon">
+                    <i class="bi bi-list-ul"></i>
+                  </span>
+
+                  <span> Compacto </span>
+                </label>
+              </div>
+            </section>
+
+            <!-- =====================================================
+                     PRIVACIDADE
+                ====================================================== -->
+            <section class="settings-panel" id="tab-privacy">
+              <div class="settings-panel-header">
+                <div>
+                  <span class="settings-eyebrow"> PRIVACIDADE </span>
+
+                  <h2>Privacidade</h2>
+
+                  <p>Controle os dados e a proteção da sua conta.</p>
+                </div>
+              </div>
+
+              <div class="privacy-card">
+                <div class="privacy-card-icon">
+                  <i class="fa-solid fa-shield-halved"></i>
+                </div>
+
+                <div>
+                  <h4>Proteção da conta</h4>
+
+                  <p>
+                    A sua conta utiliza mecanismos de proteção para impedir
+                    acessos não autorizados.
+                  </p>
+                </div>
+
+                <span class="privacy-badge"> Ativa </span>
+              </div>
+
+              <div class="settings-options">
+                <div class="setting-option">
+                  <div class="setting-option-icon">
+                    <i class="bi bi-clock-history"></i>
+                  </div>
+
+                  <div class="setting-option-info">
+                    <strong> Histórico de atividades </strong>
+
+                    <span>
+                      Guardar o histórico das atividades realizadas.
+                    </span>
+                  </div>
+
+                  <label class="modern-switch">
+                    <input type="checkbox" checked />
+
+                    <span></span>
+                  </label>
+                </div>
+
+                <div class="setting-option">
+                  <div class="setting-option-icon">
+                    <i class="bi bi-person-check"></i>
+                  </div>
+
+                  <div class="setting-option-info">
+                    <strong> Verificação de novos dispositivos </strong>
+
+                    <span>
+                      Solicitar confirmação ao iniciar sessão num novo
+                      dispositivo.
+                    </span>
+                  </div>
+
+                  <label class="modern-switch">
+                    <input type="checkbox" checked />
+
+                    <span></span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="danger-zone">
+                <div>
+                  <h4>
+                    <i class="bi bi-exclamation-octagon"></i>
+                    Zona de perigo
+                  </h4>
+
+                  <p>Estas ações podem afetar permanentemente a sua conta.</p>
+                </div>
+
+                <button
+                  type="button"
+                  class="danger-button"
+                  id="logoutAllDevices"
+                >
+                  Terminar todas as sessões
+                </button>
+              </div>
+            </section>
+
+            <!-- =====================================================
                      SESSÕES
                 ====================================================== -->
-                <section
-                    class="settings-panel"
-                    id="tab-sessions">
+            <section class="settings-panel" id="tab-sessions">
+              <div class="settings-panel-header">
+                <div>
+                  <span class="settings-eyebrow"> ATIVIDADE DA CONTA </span>
 
-                    <div class="settings-panel-header">
+                  <h2>Sessões ativas</h2>
 
-                        <div>
+                  <p>
+                    Consulte os dispositivos atualmente ligados à sua conta.
+                  </p>
+                </div>
 
-                            <span class="settings-eyebrow">
-                                ATIVIDADE DA CONTA
-                            </span>
+                <button
+                  type="button"
+                  class="logout-all-btn"
+                  id="logoutEverywhere"
+                >
+                  <i class="bi bi-box-arrow-right"></i>
+                  Terminar todas
+                </button>
+              </div>
 
-                            <h2>Sessões ativas</h2>
-
-                            <p>
-                                Consulte os dispositivos atualmente ligados à sua conta.
-                            </p>
-
-                        </div>
-
-                        <button
-                            type="button"
-                            class="logout-all-btn"
-                            id="logoutEverywhere">
-                            <i class="bi bi-box-arrow-right"></i>
-                            Terminar todas
-                        </button>
-
+              <div class="sessions-list">
+                <div class="session-item current">
+                  <div class="session-device">
+                    <div class="session-icon">
+                      <i class="bi bi-laptop"></i>
                     </div>
 
+                    <div>
+                      <strong> Windows — Chrome </strong>
 
-                    <div class="sessions-list">
+                      <span> Luanda, Angola · Este dispositivo </span>
+                    </div>
+                  </div>
 
-                        <div class="session-item current">
+                  <div class="session-status">
+                    <span class="current-session">
+                      <i class="bi bi-circle-fill"></i>
+                      Atual
+                    </span>
+                  </div>
+                </div>
 
-                            <div class="session-device">
-
-                                <div class="session-icon">
-                                    <i class="bi bi-laptop"></i>
-                                </div>
-
-                                <div>
-
-                                    <strong>
-                                        Windows — Chrome
-                                    </strong>
-
-                                    <span>
-                                        Luanda, Angola · Este dispositivo
-                                    </span>
-
-                                </div>
-
-                            </div>
-
-                            <div class="session-status">
-
-                                <span class="current-session">
-                                    <i class="bi bi-circle-fill"></i>
-                                    Atual
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="session-item">
-
-                            <div class="session-device">
-
-                                <div class="session-icon">
-                                    <i class="bi bi-phone"></i>
-                                </div>
-
-                                <div>
-
-                                    <strong>
-                                        Android — Chrome
-                                    </strong>
-
-                                    <span>
-                                        Último acesso há 2 horas
-                                    </span>
-
-                                </div>
-
-                            </div>
-
-                            <button
-                                type="button"
-                                class="session-remove">
-                                Terminar
-                            </button>
-
-                        </div>
-
-
-                        <div class="session-item">
-
-                            <div class="session-device">
-
-                                <div class="session-icon">
-                                    <i class="bi bi-display"></i>
-                                </div>
-
-                                <div>
-
-                                    <strong>
-                                        Windows — Edge
-                                    </strong>
-
-                                    <span>
-                                        Último acesso ontem
-                                    </span>
-
-                                </div>
-
-                            </div>
-
-                            <button
-                                type="button"
-                                class="session-remove">
-                                Terminar
-                            </button>
-
-                        </div>
-
+                <div class="session-item">
+                  <div class="session-device">
+                    <div class="session-icon">
+                      <i class="bi bi-phone"></i>
                     </div>
 
-                </section>
+                    <div>
+                      <strong> Android — Chrome </strong>
 
-            </main>
+                      <span> Último acesso há 2 horas </span>
+                    </div>
+                  </div>
 
+                  <button type="button" class="session-remove">Terminar</button>
+                </div>
+
+                <div class="session-item">
+                  <div class="session-device">
+                    <div class="session-icon">
+                      <i class="bi bi-display"></i>
+                    </div>
+
+                    <div>
+                      <strong> Windows — Edge </strong>
+
+                      <span> Último acesso ontem </span>
+                    </div>
+                  </div>
+
+                  <button type="button" class="session-remove">Terminar</button>
+                </div>
+              </div>
+            </section>
+          </main>
         </div>
-
 
         <!-- FOOTER -->
         <div class="account-modal-footer">
+          <div class="save-status" id="saveStatus">
+            <i class="bi bi-check-circle"></i>
 
-            <div class="save-status" id="saveStatus">
+            <span>Alterações guardadas automaticamente</span>
+          </div>
 
-                <i class="bi bi-check-circle"></i>
+          <div class="modal-footer-actions">
+            <button
+              type="button"
+              class="btn-modal-cancel"
+              id="cancelAccountSettings"
+            >
+              Cancelar
+            </button>
 
-                <span>Alterações guardadas automaticamente</span>
+            <button
+              type="button"
+              class="btn-modal-save"
+              id="saveAccountSettings"
+            >
+              <span class="save-button-content">
+                <i class="bi bi-check2"></i>
+                Guardar alterações
+              </span>
 
-            </div>
-
-            <div class="modal-footer-actions">
-
-                <button
-                    type="button"
-                    class="btn-modal-cancel"
-                    id="cancelAccountSettings">
-                    Cancelar
-                </button>
-
-                <button
-                    type="button"
-                    class="btn-modal-save"
-                    id="saveAccountSettings">
-
-                    <span class="save-button-content">
-                        <i class="bi bi-check2"></i>
-                        Guardar alterações
-                    </span>
-
-                    <span class="save-button-loading">
-                        <span class="spinner"></span>
-                        A guardar...
-                    </span>
-
-                </button>
-
-            </div>
-
+              <span class="save-button-loading">
+                <span class="spinner"></span>
+                A guardar...
+              </span>
+            </button>
+          </div>
         </div>
-
+      </div>
     </div>
 
-</div>
-
-
-<!-- TOAST -->
-<div
-    class="account-toast"
-    id="accountToast">
-
-    <div class="toast-icon">
+    <!-- TOAST -->
+    <div class="account-toast" id="accountToast">
+      <div class="toast-icon">
         <i class="bi bi-check-lg"></i>
-    </div>
+      </div>
 
-    <div class="toast-content">
+      <div class="toast-content">
         <strong id="toastTitle">Alterações guardadas</strong>
         <span id="toastMessage">
-            As suas configurações foram atualizadas.
+          As suas configurações foram atualizadas.
         </span>
-    </div>
+      </div>
 
-    <button
-        type="button"
-        id="closeAccountToast">
+      <button type="button" id="closeAccountToast">
         <i class="bi bi-x"></i>
-    </button>
-
-</div>
+      </button>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script

@@ -1,0 +1,1909 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Documentação | BibliotecaSystem</title>
+
+    <meta
+        name="description"
+        content="Documentação técnica da Base de Dados do Sistema de Gestão de Biblioteca"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="documentacao-bd.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         MOBILE HEADER
+    ========================== -->
+    <header class="mobile-header">
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <div class="mobile-brand">
+            <div class="brand-icon">
+                <i class="fa-solid fa-database"></i>
+            </div>
+
+            <div>
+                <strong>BibliotecaSystem</strong>
+                <span>Documentação BD</span>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- =========================
+         OVERLAY
+    ========================== -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-header">
+
+            <div class="brand">
+
+                <div class="brand-logo">
+                    <i class="fa-solid fa-database"></i>
+                </div>
+
+                <div class="brand-text">
+                    <strong>BibliotecaSystem</strong>
+                    <span>Database Documentation</span>
+                </div>
+
+            </div>
+
+            <button class="sidebar-close" id="sidebarClose">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <!-- PROGRESS -->
+        <div class="documentation-progress">
+
+            <div class="progress-header">
+                <span>Documentação</span>
+                <strong>100%</strong>
+            </div>
+
+            <div class="progress-bar">
+                <span></span>
+            </div>
+
+            <small>Base de dados documentada</small>
+
+        </div>
+
+
+        <!-- MENU -->
+        <nav class="sidebar-nav">
+
+            <span class="nav-label">DOCUMENTAÇÃO</span>
+
+            <a href="#introducao" class="nav-link active">
+                <i class="fa-solid fa-house"></i>
+                <span>Introdução</span>
+            </a>
+
+            <a href="#objetivos" class="nav-link">
+                <i class="fa-solid fa-bullseye"></i>
+                <span>Objetivos</span>
+            </a>
+
+            <a href="#modelo-conceitual" class="nav-link">
+                <i class="fa-solid fa-diagram-project"></i>
+                <span>Modelo Conceitual</span>
+            </a>
+
+            <a href="#modelo-logico" class="nav-link">
+                <i class="fa-solid fa-sitemap"></i>
+                <span>Modelo Lógico</span>
+            </a>
+
+            <a href="#modelo-fisico" class="nav-link">
+                <i class="fa-solid fa-database"></i>
+                <span>Modelo Físico</span>
+            </a>
+
+            <a href="#dicionario" class="nav-link">
+                <i class="fa-solid fa-table-list"></i>
+                <span>Dicionário de Dados</span>
+            </a>
+
+            <span class="nav-label">RECURSOS DA BD</span>
+
+            <a href="#relacionamentos" class="nav-link">
+                <i class="fa-solid fa-link"></i>
+                <span>Relacionamentos</span>
+            </a>
+
+            <a href="#views" class="nav-link">
+                <i class="fa-solid fa-eye"></i>
+                <span>Views</span>
+            </a>
+
+            <a href="#triggers" class="nav-link">
+                <i class="fa-solid fa-bolt"></i>
+                <span>Triggers</span>
+            </a>
+
+            <a href="#procedures" class="nav-link">
+                <i class="fa-solid fa-gears"></i>
+                <span>Procedures</span>
+            </a>
+
+            <a href="#functions" class="nav-link">
+                <i class="fa-solid fa-function"></i>
+                <span>Functions</span>
+            </a>
+
+            <a href="#events" class="nav-link">
+                <i class="fa-solid fa-clock"></i>
+                <span>Events</span>
+            </a>
+
+            <span class="nav-label">SEGURANÇA</span>
+
+            <a href="#indices" class="nav-link">
+                <i class="fa-solid fa-gauge-high"></i>
+                <span>Índices</span>
+            </a>
+
+            <a href="#integridade" class="nav-link">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>Integridade</span>
+            </a>
+
+            <a href="#auditoria" class="nav-link">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                <span>Auditoria</span>
+            </a>
+
+            <a href="#backup" class="nav-link">
+                <i class="fa-solid fa-hard-drive"></i>
+                <span>Backup</span>
+            </a>
+
+            <a href="#seguranca" class="nav-link">
+                <i class="fa-solid fa-lock"></i>
+                <span>Segurança</span>
+            </a>
+
+            <span class="nav-label">FINAL</span>
+
+            <a href="#fluxo" class="nav-link">
+                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                <span>Fluxo do Sistema</span>
+            </a>
+
+            <a href="#conclusao" class="nav-link">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Conclusão</span>
+            </a>
+
+        </nav>
+
+
+        <!-- SIDEBAR FOOTER -->
+        <div class="sidebar-footer">
+
+            <div class="database-status">
+                <span class="status-dot"></span>
+
+                <div>
+                    <strong>MySQL / MariaDB</strong>
+                    <small>Database online</small>
+                </div>
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <div class="breadcrumb">
+                <span>BibliotecaSystem</span>
+                <i class="fa-solid fa-chevron-right"></i>
+                <strong>Documentação</strong>
+            </div>
+
+            <div class="topbar-actions">
+
+                <button
+                    class="icon-button"
+                    id="printDocumentation"
+                    title="Imprimir documentação"
+                >
+                    <i class="fa-solid fa-print"></i>
+                </button>
+
+                <div class="version">
+                    <span>Versão</span>
+                    <strong>1.0</strong>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================
+             HERO
+        ========================== -->
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <div class="hero-badge">
+                    <i class="fa-solid fa-database"></i>
+                    Documentação Técnica
+                </div>
+
+                <h1>
+                    Base de Dados
+                    <span>BibliotecaSystem</span>
+                </h1>
+
+                <p>
+                    Documentação técnica da estrutura, relacionamentos,
+                    regras de negócio e recursos avançados da base de dados
+                    do Sistema de Gestão de Biblioteca.
+                </p>
+
+                <div class="hero-meta">
+
+                    <div>
+                        <i class="fa-solid fa-server"></i>
+                        <span>MySQL / MariaDB</span>
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-table"></i>
+                        <span>14+ tabelas</span>
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>Integridade relacional</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="hero-decoration">
+
+                <div class="database-visual">
+
+                    <div class="db-cylinder">
+                        <i class="fa-solid fa-database"></i>
+                    </div>
+
+                    <span class="floating-icon icon-one">
+                        <i class="fa-solid fa-table"></i>
+                    </span>
+
+                    <span class="floating-icon icon-two">
+                        <i class="fa-solid fa-bolt"></i>
+                    </span>
+
+                    <span class="floating-icon icon-three">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             OVERVIEW CARDS
+        ========================== -->
+        <section class="overview-grid">
+
+            <article class="overview-card">
+
+                <div class="overview-icon blue">
+                    <i class="fa-solid fa-table"></i>
+                </div>
+
+                <div>
+                    <span>Tabelas</span>
+                    <strong>14+</strong>
+                    <small>Estruturas relacionais</small>
+                </div>
+
+            </article>
+
+
+            <article class="overview-card">
+
+                <div class="overview-icon purple">
+                    <i class="fa-solid fa-eye"></i>
+                </div>
+
+                <div>
+                    <span>Views</span>
+                    <strong>7</strong>
+                    <small>Consultas reutilizáveis</small>
+                </div>
+
+            </article>
+
+
+            <article class="overview-card">
+
+                <div class="overview-icon orange">
+                    <i class="fa-solid fa-bolt"></i>
+                </div>
+
+                <div>
+                    <span>Triggers</span>
+                    <strong>4+</strong>
+                    <small>Automação e validação</small>
+                </div>
+
+            </article>
+
+
+            <article class="overview-card">
+
+                <div class="overview-icon green">
+                    <i class="fa-solid fa-gears"></i>
+                </div>
+
+                <div>
+                    <span>Procedures</span>
+                    <strong>10+</strong>
+                    <small>Regras de negócio</small>
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- =========================
+             CONTENT
+        ========================== -->
+        <div class="documentation">
+
+
+            <!-- INTRODUÇÃO -->
+            <section class="doc-section" id="introducao">
+
+                <div class="section-heading">
+
+                    <span class="section-number">01</span>
+
+                    <div>
+                        <span class="eyebrow">Visão geral</span>
+                        <h2>Introdução</h2>
+                    </div>
+
+                </div>
+
+                <div class="content-card">
+
+                    <p>
+                        A Base de Dados <strong>BibliotecaSystem</strong> foi
+                        desenvolvida programador<strong> Juliano Soca Barros</strong> para suportar um Sistema de Gestão de
+                        Biblioteca, permitindo o armazenamento, organização,
+                        consulta e processamento das principais informações
+                        relacionadas ao funcionamento de uma biblioteca.
+                    </p>
+
+                    <p>
+                        A base foi estruturada segundo os princípios do modelo
+                        relacional, garantindo integridade, consistência,
+                        segurança e facilidade de manutenção dos dados.
+                    </p>
+
+                    <div class="info-box">
+
+                        <i class="fa-solid fa-circle-info"></i>
+
+                        <div>
+                            <strong>Objetivo da documentação</strong>
+
+                            <p>
+                                Apresentar de forma clara a estrutura física,
+                                lógica e funcional da base de dados.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- OBJETIVOS -->
+            <section class="doc-section" id="objetivos">
+
+                <div class="section-heading">
+
+                    <span class="section-number">02</span>
+
+                    <div>
+                        <span class="eyebrow">Finalidade</span>
+                        <h2>Objetivos da Base de Dados</h2>
+                    </div>
+
+                </div>
+
+                <div class="content-card">
+
+                    <p>
+                        A base de dados tem como objetivo centralizar e
+                        controlar as informações necessárias para o
+                        funcionamento da biblioteca.
+                    </p>
+
+                    <div class="feature-list">
+
+                        <div>
+                            <i class="fa-solid fa-check"></i>
+                            <span>Gerenciar usuários, funcionários e administradores.</span>
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-check"></i>
+                            <span>Cadastrar livros, autores e categorias.</span>
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-check"></i>
+                            <span>Controlar exemplares físicos.</span>
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-check"></i>
+                            <span>Registrar empréstimos e devoluções.</span>
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-check"></i>
+                            <span>Controlar multas e pagamentos.</span>
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-check"></i>
+                            <span>Gerar informações para o dashboard.</span>
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-check"></i>
+                            <span>Automatizar processos através de Triggers e Events.</span>
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-check"></i>
+                            <span>Garantir auditoria e mecanismos de backup.</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- MODELO CONCEITUAL -->
+            <section class="doc-section" id="modelo-conceitual">
+
+                <div class="section-heading">
+
+                    <span class="section-number">03</span>
+
+                    <div>
+                        <span class="eyebrow">Modelagem</span>
+                        <h2>Modelo Conceitual</h2>
+                    </div>
+
+                </div>
+
+                <div class="content-card">
+
+                    <p>
+                        O modelo conceitual representa as principais entidades
+                        do sistema e os relacionamentos existentes entre elas.
+                    </p>
+
+                    <div class="entity-flow">
+
+                        <div class="entity">PESSOA</div>
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                        <div class="entity-group">
+
+                            <div class="entity">USUARIO</div>
+                            <div class="entity">FUNCIONARIO</div>
+                            <div class="entity">ADMINISTRADOR</div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="entity-flow">
+
+                        <div class="entity">CATEGORIA</div>
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                        <div class="entity">LIVRO</div>
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                        <div class="entity">EXEMPLAR</div>
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                        <div class="entity">EMPRESTIMO</div>
+
+                    </div>
+
+                    <div class="entity-flow">
+
+                        <div class="entity">AUTOR</div>
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                        <div class="entity">LIVRO_AUTOR</div>
+
+                        <i class="fa-solid fa-arrow-left"></i>
+
+                        <div class="entity">LIVRO</div>
+
+                    </div>
+
+                    <div class="entity-flow">
+
+                        <div class="entity">EMPRESTIMO</div>
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                        <div class="entity">DEVOLUCAO</div>
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                        <div class="entity">MULTA</div>
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                        <div class="entity">PAGAMENTO</div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- MODELO LÓGICO -->
+            <section class="doc-section" id="modelo-logico">
+
+                <div class="section-heading">
+
+                    <span class="section-number">04</span>
+
+                    <div>
+                        <span class="eyebrow">Relacionamento</span>
+                        <h2>Modelo Lógico</h2>
+                    </div>
+
+                </div>
+
+                <div class="content-card">
+
+                    <div class="schema-tree">
+
+                        <div class="schema-root">
+                            <i class="fa-solid fa-user"></i>
+                            PESSOA
+                        </div>
+
+                        <div class="schema-branches">
+
+                            <div class="schema-item">
+                                <i class="fa-solid fa-user-tag"></i>
+                                USUARIO
+                            </div>
+
+                            <div class="schema-item">
+                                <i class="fa-solid fa-user-tie"></i>
+                                FUNCIONARIO
+                            </div>
+
+                            <div class="schema-item">
+                                <i class="fa-solid fa-user-shield"></i>
+                                ADMINISTRADOR
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="relationship-grid">
+
+                        <div class="relationship-card">
+                            <span>1 : N</span>
+                            <strong>CATEGORIA → LIVRO</strong>
+                            <small>Uma categoria possui vários livros.</small>
+                        </div>
+
+                        <div class="relationship-card">
+                            <span>N : N</span>
+                            <strong>LIVRO ↔ AUTOR</strong>
+                            <small>Relacionamento através de livro_autor.</small>
+                        </div>
+
+                        <div class="relationship-card">
+                            <span>1 : N</span>
+                            <strong>LIVRO → EXEMPLAR</strong>
+                            <small>Um livro pode possuir vários exemplares.</small>
+                        </div>
+
+                        <div class="relationship-card">
+                            <span>1 : N</span>
+                            <strong>USUARIO → EMPRESTIMO</strong>
+                            <small>Um usuário pode realizar vários empréstimos.</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- MODELO FÍSICO -->
+            <section class="doc-section" id="modelo-fisico">
+
+                <div class="section-heading">
+
+                    <span class="section-number">05</span>
+
+                    <div>
+                        <span class="eyebrow">Implementação</span>
+                        <h2>Modelo Físico</h2>
+                    </div>
+
+                </div>
+
+                <div class="content-card">
+
+                    <p>
+                        O modelo físico representa a implementação efetiva
+                        da estrutura no MySQL/MariaDB.
+                    </p>
+
+                    <div class="table-wrapper">
+
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>Tabela</th>
+                                    <th>Finalidade</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <td><code>pessoa</code></td>
+                                    <td>Dados básicos das pessoas.</td>
+                                </tr>
+
+                                <tr>
+                                    <td><code>usuario</code></td>
+                                    <td>Informações dos usuários.</td>
+                                </tr>
+
+                                <tr>
+                                    <td><code>funcionario</code></td>
+                                    <td>Funcionários da biblioteca.</td>
+                                </tr>
+
+                                <tr>
+                                    <td><code>administrador</code></td>
+                                    <td>Administradores e níveis de acesso.</td>
+                                </tr>
+
+                                <tr>
+                                    <td><code>livro</code></td>
+                                    <td>Informações bibliográficas.</td>
+                                </tr>
+
+                                <tr>
+                                    <td><code>autor</code></td>
+                                    <td>Autores dos livros.</td>
+                                </tr>
+
+                                <tr>
+                                    <td><code>categoria</code></td>
+                                    <td>Categorias dos livros.</td>
+                                </tr>
+
+                                <tr>
+                                    <td><code>livro_autor</code></td>
+                                    <td>Relacionamento entre livros e autores.</td>
+                                </tr>
+
+                                <tr>
+                                    <td><code>exemplar</code></td>
+                                    <td>Cópias físicas dos livros.</td>
+                                </tr>
+
+                                <tr>
+                                    <td><code>emprestimo</code></td>
+                                    <td>Empréstimos realizados.</td>
+                                </tr>
+
+                                <tr>
+                                    <td><code>devolucao</code></td>
+                                    <td>Devoluções dos exemplares.</td>
+                                </tr>
+
+                                <tr>
+                                    <td><code>multa</code></td>
+                                    <td>Multas geradas.</td>
+                                </tr>
+
+                                <tr>
+                                    <td><code>pagamento</code></td>
+                                    <td>Pagamentos das multas.</td>
+                                </tr>
+
+                                <tr>
+                                    <td><code>log_auditoria</code></td>
+                                    <td>Registo de operações.</td>
+                                </tr>
+
+                                <tr>
+                                    <td><code>backup</code></td>
+                                    <td>Controle dos backups.</td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- DICIONÁRIO -->
+            <section class="doc-section" id="dicionario">
+
+                <div class="section-heading">
+
+                    <span class="section-number">06</span>
+
+                    <div>
+                        <span class="eyebrow">Estrutura</span>
+                        <h2>Dicionário de Dados</h2>
+                    </div>
+
+                </div>
+
+                <div class="content-card">
+
+                    <p>
+                        O dicionário de dados descreve os principais campos
+                        presentes nas tabelas da base de dados.
+                    </p>
+
+                    <div class="dictionary-grid">
+
+                        <div class="dictionary-card">
+
+                            <div class="dictionary-icon">
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+
+                            <div>
+                                <strong>pessoa</strong>
+                                <span>Dados pessoais</span>
+                            </div>
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </div>
+
+                        <div class="dictionary-card">
+
+                            <div class="dictionary-icon">
+                                <i class="fa-solid fa-book"></i>
+                            </div>
+
+                            <div>
+                                <strong>livro</strong>
+                                <span>Dados bibliográficos</span>
+                            </div>
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </div>
+
+                        <div class="dictionary-card">
+
+                            <div class="dictionary-icon">
+                                <i class="fa-solid fa-user-pen"></i>
+                            </div>
+
+                            <div>
+                                <strong>autor</strong>
+                                <span>Autores</span>
+                            </div>
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </div>
+
+                        <div class="dictionary-card">
+
+                            <div class="dictionary-icon">
+                                <i class="fa-solid fa-right-left"></i>
+                            </div>
+
+                            <div>
+                                <strong>emprestimo</strong>
+                                <span>Empréstimos</span>
+                            </div>
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </div>
+
+                        <div class="dictionary-card">
+
+                            <div class="dictionary-icon">
+                                <i class="fa-solid fa-money-bill"></i>
+                            </div>
+
+                            <div>
+                                <strong>multa</strong>
+                                <span>Multas</span>
+                            </div>
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </div>
+
+                        <div class="dictionary-card">
+
+                            <div class="dictionary-icon">
+                                <i class="fa-solid fa-receipt"></i>
+                            </div>
+
+                            <div>
+                                <strong>pagamento</strong>
+                                <span>Pagamentos</span>
+                            </div>
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- RELACIONAMENTOS -->
+            <section class="doc-section" id="relacionamentos">
+
+                <div class="section-heading">
+
+                    <span class="section-number">07</span>
+
+                    <div>
+                        <span class="eyebrow">Integridade</span>
+                        <h2>Relacionamentos</h2>
+                    </div>
+
+                </div>
+
+                <div class="content-card">
+
+                    <div class="relationship-list">
+
+                        <div class="relationship-row">
+                            <strong>categoria</strong>
+                            <i class="fa-solid fa-arrow-right"></i>
+                            <strong>livro</strong>
+                            <span>1 : N</span>
+                        </div>
+
+                        <div class="relationship-row">
+                            <strong>livro</strong>
+                            <i class="fa-solid fa-arrow-right"></i>
+                            <strong>exemplar</strong>
+                            <span>1 : N</span>
+                        </div>
+
+                        <div class="relationship-row">
+                            <strong>usuario</strong>
+                            <i class="fa-solid fa-arrow-right"></i>
+                            <strong>emprestimo</strong>
+                            <span>1 : N</span>
+                        </div>
+
+                        <div class="relationship-row">
+                            <strong>funcionario</strong>
+                            <i class="fa-solid fa-arrow-right"></i>
+                            <strong>emprestimo</strong>
+                            <span>1 : N</span>
+                        </div>
+
+                        <div class="relationship-row">
+                            <strong>emprestimo</strong>
+                            <i class="fa-solid fa-arrow-right"></i>
+                            <strong>devolucao</strong>
+                            <span>1 : 1</span>
+                        </div>
+
+                        <div class="relationship-row">
+                            <strong>emprestimo</strong>
+                            <i class="fa-solid fa-arrow-right"></i>
+                            <strong>multa</strong>
+                            <span>1 : 1</span>
+                        </div>
+
+                        <div class="relationship-row">
+                            <strong>multa</strong>
+                            <i class="fa-solid fa-arrow-right"></i>
+                            <strong>pagamento</strong>
+                            <span>1 : N</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- VIEWS -->
+            <section class="doc-section" id="views">
+
+                <div class="section-heading">
+
+                    <span class="section-number">08</span>
+
+                    <div>
+                        <span class="eyebrow">Consultas</span>
+                        <h2>Views</h2>
+                    </div>
+
+                </div>
+
+                <div class="content-card">
+
+                    <div class="object-grid">
+
+                        <article class="object-card">
+
+                            <div class="object-icon purple">
+                                <i class="fa-solid fa-chart-pie"></i>
+                            </div>
+
+                            <code>vw_dashboard_biblioteca</code>
+
+                            <p>
+                                Indicadores gerais da biblioteca.
+                            </p>
+
+                        </article>
+
+                        <article class="object-card">
+
+                            <div class="object-icon blue">
+                                <i class="fa-solid fa-book-open"></i>
+                            </div>
+
+                            <code>vw_livros_acervo</code>
+
+                            <p>
+                                Situação do acervo e exemplares.
+                            </p>
+
+                        </article>
+
+                        <article class="object-card">
+
+                            <div class="object-icon orange">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+
+                            <code>vw_emprestimos_ativos</code>
+
+                            <p>
+                                Empréstimos atualmente ativos.
+                            </p>
+
+                        </article>
+
+                        <article class="object-card">
+
+                            <div class="object-icon red">
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                            </div>
+
+                            <code>vw_emprestimos_atrasados</code>
+
+                            <p>
+                                Empréstimos em atraso.
+                            </p>
+
+                        </article>
+
+                        <article class="object-card">
+
+                            <div class="object-icon green">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+
+                            <code>vw_historico_emprestimos</code>
+
+                            <p>
+                                Histórico dos empréstimos.
+                            </p>
+
+                        </article>
+
+                        <article class="object-card">
+
+                            <div class="object-icon red">
+                                <i class="fa-solid fa-money-bill-wave"></i>
+                            </div>
+
+                            <code>vw_multas_pendentes</code>
+
+                            <p>
+                                Multas ainda pendentes.
+                            </p>
+
+                        </article>
+
+                        <article class="object-card">
+
+                            <div class="object-icon blue">
+                                <i class="fa-solid fa-wallet"></i>
+                            </div>
+
+                            <code>vw_situacao_financeira_usuario</code>
+
+                            <p>
+                                Situação financeira dos usuários.
+                            </p>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- TRIGGERS -->
+            <section class="doc-section" id="triggers">
+
+                <div class="section-heading">
+
+                    <span class="section-number">09</span>
+
+                    <div>
+                        <span class="eyebrow">Automação</span>
+                        <h2>Triggers</h2>
+                    </div>
+
+                </div>
+
+                <div class="content-card">
+
+                    <div class="timeline">
+
+                        <div class="timeline-item">
+
+                            <span class="timeline-icon">
+                                <i class="fa-solid fa-shield"></i>
+                            </span>
+
+                            <div>
+                                <code>trg_emprestimo_validar</code>
+
+                                <p>
+                                    Valida usuário, exemplar e limite de
+                                    empréstimos antes da operação.
+                                </p>
+
+                                <span class="trigger-type">BEFORE INSERT</span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="timeline-item">
+
+                            <span class="timeline-icon">
+                                <i class="fa-solid fa-book-open"></i>
+                            </span>
+
+                            <div>
+                                <code>trg_emprestimo_exemplar</code>
+
+                                <p>
+                                    Atualiza o exemplar para
+                                    <strong>Emprestado</strong>.
+                                </p>
+
+                                <span class="trigger-type">AFTER INSERT</span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="timeline-item">
+
+                            <span class="timeline-icon">
+                                <i class="fa-solid fa-rotate-left"></i>
+                            </span>
+
+                            <div>
+                                <code>trg_devolucao_processar</code>
+
+                                <p>
+                                    Processa a devolução e atualiza o
+                                    estado do empréstimo e exemplar.
+                                </p>
+
+                                <span class="trigger-type">AFTER INSERT</span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="timeline-item">
+
+                            <span class="timeline-icon">
+                                <i class="fa-solid fa-money-check-dollar"></i>
+                            </span>
+
+                            <div>
+                                <code>trg_pagamento_multa</code>
+
+                                <p>
+                                    Atualiza a situação da multa após
+                                    o pagamento.
+                                </p>
+
+                                <span class="trigger-type">AFTER INSERT</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- PROCEDURES -->
+            <section class="doc-section" id="procedures">
+
+                <div class="section-heading">
+
+                    <span class="section-number">10</span>
+
+                    <div>
+                        <span class="eyebrow">Regras de negócio</span>
+                        <h2>Stored Procedures</h2>
+                    </div>
+
+                </div>
+
+                <div class="content-card">
+
+                    <div class="code-list">
+
+                        <code>sp_cadastrar_usuario</code>
+                        <code>sp_cadastrar_livro</code>
+                        <code>sp_cadastrar_exemplar</code>
+                        <code>sp_realizar_emprestimo</code>
+                        <code>sp_renovar_emprestimo</code>
+                        <code>sp_registar_devolucao</code>
+                        <code>sp_gerar_multa</code>
+                        <code>sp_registar_pagamento</code>
+                        <code>sp_solicitar_backup</code>
+                        <code>sp_finalizar_backup</code>
+
+                    </div>
+
+                    <div class="info-box">
+
+                        <i class="fa-solid fa-lightbulb"></i>
+
+                        <div>
+
+                            <strong>Função das Procedures</strong>
+
+                            <p>
+                                Centralizar operações complexas e regras de
+                                negócio, reduzindo duplicação de lógica
+                                no backend.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- FUNCTIONS -->
+            <section class="doc-section" id="functions">
+
+                <div class="section-heading">
+
+                    <span class="section-number">11</span>
+
+                    <div>
+                        <span class="eyebrow">Cálculos</span>
+                        <h2>Functions</h2>
+                    </div>
+
+                </div>
+
+                <div class="content-card">
+
+                    <div class="function-grid">
+
+                        <div class="function-card">
+                            <code>fn_calcular_atraso</code>
+                            <p>Calcula dias de atraso.</p>
+                        </div>
+
+                        <div class="function-card">
+                            <code>fn_calcular_multa</code>
+                            <p>Calcula o valor da multa.</p>
+                        </div>
+
+                        <div class="function-card">
+                            <code>fn_limite_disponivel</code>
+                            <p>Calcula o limite disponível.</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- EVENTS -->
+            <section class="doc-section" id="events">
+
+                <div class="section-heading">
+
+                    <span class="section-number">12</span>
+
+                    <div>
+                        <span class="eyebrow">Automação temporal</span>
+                        <h2>Events</h2>
+                    </div>
+
+                </div>
+
+                <div class="content-card">
+
+                    <div class="event-card">
+
+                        <div class="event-icon">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+
+                        <div>
+
+                            <code>ev_atualizar_emprestimos_atrasados</code>
+
+                            <p>
+                                Verifica diariamente os empréstimos cujo
+                                prazo foi ultrapassado e atualiza o estado
+                                para <strong>Atrasado</strong>.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="event-card">
+
+                        <div class="event-icon">
+                            <i class="fa-solid fa-money-bill-trend-up"></i>
+                        </div>
+
+                        <div>
+
+                            <code>ev_gerar_multas_atrasadas</code>
+
+                            <p>
+                                Verifica empréstimos atrasados e gera
+                                automaticamente as respectivas multas.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ÍNDICES -->
+            <section class="doc-section" id="indices">
+
+                <div class="section-heading">
+
+                    <span class="section-number">13</span>
+
+                    <div>
+                        <span class="eyebrow">Performance</span>
+                        <h2>Índices</h2>
+                    </div>
+
+                </div>
+
+                <div class="content-card">
+
+                    <p>
+                        Os índices foram criados para otimizar consultas
+                        realizadas frequentemente pelo sistema.
+                    </p>
+
+                    <div class="index-list">
+
+                        <code>idx_emprestimo_usuario_status</code>
+                        <code>idx_emprestimo_status_data</code>
+                        <code>idx_emprestimo_devolucao</code>
+                        <code>idx_exemplar_livro_status</code>
+                        <code>idx_multa_status_data</code>
+                        <code>idx_pagamento_multa_data</code>
+                        <code>idx_livro_categoria_status</code>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- INTEGRIDADE -->
+            <section class="doc-section" id="integridade">
+
+                <div class="section-heading">
+
+                    <span class="section-number">14</span>
+
+                    <div>
+                        <span class="eyebrow">Confiabilidade</span>
+                        <h2>Integridade dos Dados</h2>
+                    </div>
+
+                </div>
+
+                <div class="content-card">
+
+                    <div class="security-grid">
+
+                        <div class="security-card">
+                            <i class="fa-solid fa-key"></i>
+                            <strong>Primary Keys</strong>
+                            <span>Identificação única.</span>
+                        </div>
+
+                        <div class="security-card">
+                            <i class="fa-solid fa-link"></i>
+                            <strong>Foreign Keys</strong>
+                            <span>Integridade referencial.</span>
+                        </div>
+
+                        <div class="security-card">
+                            <i class="fa-solid fa-ban"></i>
+                            <strong>UNIQUE</strong>
+                            <span>Evita duplicações.</span>
+                        </div>
+
+                        <div class="security-card">
+                            <i class="fa-solid fa-check-double"></i>
+                            <strong>CHECK</strong>
+                            <span>Valida valores.</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- AUDITORIA -->
+            <section class="doc-section" id="auditoria">
+
+                <div class="section-heading">
+
+                    <span class="section-number">15</span>
+
+                    <div>
+                        <span class="eyebrow">Segurança</span>
+                        <h2>Auditoria</h2>
+                    </div>
+
+                </div>
+
+                <div class="content-card">
+
+                    <p>
+                        O sistema possui mecanismos de auditoria para
+                        registrar operações relevantes realizadas na base
+                        de dados.
+                    </p>
+
+                    <div class="audit-flow">
+
+                        <div>
+                            <i class="fa-solid fa-user"></i>
+                            Usuário
+                        </div>
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                        <div>
+                            <i class="fa-solid fa-database"></i>
+                            Operação BD
+                        </div>
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                        <div>
+                            <i class="fa-solid fa-file-lines"></i>
+                            Log
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- BACKUP -->
+            <section class="doc-section" id="backup">
+
+                <div class="section-heading">
+
+                    <span class="section-number">16</span>
+
+                    <div>
+                        <span class="eyebrow">Proteção</span>
+                        <h2>Backup</h2>
+                    </div>
+
+                </div>
+
+                <div class="content-card">
+
+                    <div class="backup-visual">
+
+                        <div class="backup-step">
+                            <span>01</span>
+                            <i class="fa-solid fa-server"></i>
+                            <strong>Node.js</strong>
+                            <small>Solicita backup</small>
+                        </div>
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                        <div class="backup-step">
+                            <span>02</span>
+                            <i class="fa-solid fa-database"></i>
+                            <strong>MySQL</strong>
+                            <small>Registra solicitação</small>
+                        </div>
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                        <div class="backup-step">
+                            <span>03</span>
+                            <i class="fa-solid fa-box-archive"></i>
+                            <strong>mysqldump</strong>
+                            <small>Cria arquivo SQL</small>
+                        </div>
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                        <div class="backup-step">
+                            <span>04</span>
+                            <i class="fa-solid fa-circle-check"></i>
+                            <strong>Concluído</strong>
+                            <small>Registra resultado</small>
+                        </div>
+
+                    </div>
+
+                    <div class="code-block">
+
+                        <div class="code-header">
+                            <span>SQL</span>
+
+                            <span>
+                                <i class="fa-solid fa-database"></i>
+                                Backup
+                            </span>
+                        </div>
+
+<pre><code>CALL sp_solicitar_backup(
+    'bibliotecasystem_backup.sql',
+    'administrador'
+);</code></pre>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- SEGURANÇA -->
+            <section class="doc-section" id="seguranca">
+
+                <div class="section-heading">
+
+                    <span class="section-number">17</span>
+
+                    <div>
+                        <span class="eyebrow">Proteção</span>
+                        <h2>Segurança</h2>
+                    </div>
+
+                </div>
+
+                <div class="content-card">
+
+                    <div class="security-banner">
+
+                        <div class="security-banner-icon">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Controle de acesso recomendado
+                            </strong>
+
+                            <p>
+                                A aplicação deve utilizar um usuário
+                                específico com apenas as permissões
+                                necessárias.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="code-block">
+
+<pre><code>biblioteca_app
+        ↓
+Permissões específicas
+        ↓
+bibliotecasystem</code></pre>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- FLUXO -->
+            <section class="doc-section" id="fluxo">
+
+                <div class="section-heading">
+
+                    <span class="section-number">18</span>
+
+                    <div>
+                        <span class="eyebrow">Funcionamento</span>
+                        <h2>Fluxo Principal</h2>
+                    </div>
+
+                </div>
+
+                <div class="content-card">
+
+                    <h3>Fluxo de empréstimo</h3>
+
+                    <div class="process-flow">
+
+                        <div class="process-step">
+                            <span>01</span>
+                            <strong>Solicitação</strong>
+                            <small>Usuário solicita livro</small>
+                        </div>
+
+                        <div class="process-line"></div>
+
+                        <div class="process-step">
+                            <span>02</span>
+                            <strong>Validação</strong>
+                            <small>Verifica usuário e exemplar</small>
+                        </div>
+
+                        <div class="process-line"></div>
+
+                        <div class="process-step">
+                            <span>03</span>
+                            <strong>Empréstimo</strong>
+                            <small>Registra operação</small>
+                        </div>
+
+                        <div class="process-line"></div>
+
+                        <div class="process-step">
+                            <span>04</span>
+                            <strong>Atualização</strong>
+                            <small>Exemplar fica emprestado</small>
+                        </div>
+
+                    </div>
+
+
+                    <h3 class="flow-title">
+                        Fluxo de devolução
+                    </h3>
+
+                    <div class="process-flow">
+
+                        <div class="process-step">
+                            <span>01</span>
+                            <strong>Devolução</strong>
+                            <small>Livro é devolvido</small>
+                        </div>
+
+                        <div class="process-line"></div>
+
+                        <div class="process-step">
+                            <span>02</span>
+                            <strong>Atraso</strong>
+                            <small>Calcula dias de atraso</small>
+                        </div>
+
+                        <div class="process-line"></div>
+
+                        <div class="process-step">
+                            <span>03</span>
+                            <strong>Multa</strong>
+                            <small>Gera multa quando necessário</small>
+                        </div>
+
+                        <div class="process-line"></div>
+
+                        <div class="process-step">
+                            <span>04</span>
+                            <strong>Pagamento</strong>
+                            <small>Registra pagamento</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- CONCLUSÃO -->
+            <section class="doc-section" id="conclusao">
+
+                <div class="section-heading">
+
+                    <span class="section-number">19</span>
+
+                    <div>
+                        <span class="eyebrow">Encerramento</span>
+                        <h2>Conclusão</h2>
+                    </div>
+
+                </div>
+
+                <div class="content-card conclusion-card">
+
+                    <div class="conclusion-icon">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+
+                    <h3>Base de dados estruturada e documentada.</h3>
+
+                    <p>
+                        A Base de Dados <strong>BibliotecaSystem</strong>
+                        apresenta uma estrutura relacional completa para
+                        suportar as principais operações de um Sistema de
+                        Gestão de Biblioteca.
+                    </p>
+
+                    <p>
+                        A utilização de Views, Triggers, Procedures,
+                        Functions, Events, índices, constraints, auditoria
+                        e mecanismos de backup proporciona uma solução
+                        organizada, segura, consistente e preparada para
+                        integração com a aplicação.
+                    </p>
+
+                    <div class="completion-badge">
+                        <i class="fa-solid fa-check"></i>
+                        Documentação concluída
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+        <!-- FOOTER -->
+        <footer class="documentation-footer">
+
+            <div>
+                <strong>BibliotecaSystem</strong>
+                <span>By Programador, Juliano Soca Barros, FullStack</span>
+            </div>
+
+            <div>
+                <span>MySQL / MariaDB</span>
+                <span>•</span>
+                <span>Versão 1.0</span>
+            </div>
+
+        </footer>
+
+    </main>
+
+
+    <!-- JS -->
+    <script>
+
+        const sidebar = document.getElementById("sidebar");
+        const overlay = document.getElementById("sidebarOverlay");
+        const menuToggle = document.getElementById("menuToggle");
+        const sidebarClose = document.getElementById("sidebarClose");
+
+        function openSidebar() {
+            sidebar.classList.add("open");
+            overlay.classList.add("active");
+            document.body.classList.add("no-scroll");
+        }
+
+        function closeSidebar() {
+            sidebar.classList.remove("open");
+            overlay.classList.remove("active");
+            document.body.classList.remove("no-scroll");
+        }
+
+        menuToggle.addEventListener("click", openSidebar);
+        sidebarClose.addEventListener("click", closeSidebar);
+        overlay.addEventListener("click", closeSidebar);
+
+
+        /* MENU ACTIVE */
+
+        const sections = document.querySelectorAll(".doc-section");
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        window.addEventListener("scroll", () => {
+
+            let current = "";
+
+            sections.forEach(section => {
+
+                const sectionTop = section.offsetTop - 160;
+
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute("id");
+                }
+
+            });
+
+            navLinks.forEach(link => {
+
+                link.classList.remove("active");
+
+                if (link.getAttribute("href") === `#${current}`) {
+                    link.classList.add("active");
+                }
+
+            });
+
+        });
+
+
+        /* FECHAR MENU AO CLICAR */
+
+        navLinks.forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                if (window.innerWidth <= 992) {
+                    closeSidebar();
+                }
+
+            });
+
+        });
+
+
+        /* PRINT */
+
+        document
+            .getElementById("printDocumentation")
+            .addEventListener("click", () => {
+
+                window.print();
+
+            });
+
+
+        /* SCROLL SUAVE */
+
+        document.documentElement.style.scrollBehavior = "smooth";
+
+    </script>
+
+</body>
+</html>
+
